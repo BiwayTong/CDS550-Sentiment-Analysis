@@ -1,0 +1,79 @@
+[23:01:45] ======================================================================
+[23:01:45] command: code\finetune_transformer.py --data-dir data --output runs\retrain-cv-control\deberta-f0 --folds 5 --fold 0 --preset large --seed 42 --split-seed 42 --max-len 512 --head 128 --eval-every 0.25 --epochs 2.0 --lr 1e-05 --fresh-start --verify-fresh
+[23:01:45] device=cuda (NVIDIA GeForce RTX 5090 D v2, 23.9 GB) torch=2.11.0+cu128 transformers=4.57.6 preset=large amp=torch.bfloat16
+[23:01:45] config: {"model": "microsoft/deberta-v3-large", "lr": 1e-05, "epochs": 2.0, "batch_size": 8, "grad_accum": 2, "grad_ckpt": false}
+[23:01:45] train=20,000 holdout=5,000 test=25,000 max_len=512 head=128 split={'mode': 'kfold', 'folds': 5, 'fold': 0}
+[23:01:53] tokenised in 5s; mean length 257 tokens, 3,006 of 25,000 training reviews truncated (head+tail)
+[23:01:55] memory probe ok: batch 8 x accumulation 2, grad_ckpt=False, peak 15.7 GB
+[23:02:13]   FRESH-START baseline: hold-out accuracy 49.8800% at update 0
+[23:02:14]   initial baseline saved -> runs\retrain-cv-control\deberta-f0\best_model
+[23:02:14] 1250 updates/epoch, 2500 updates total, warm-up 250, eval every 312
+[23:02:26] epoch 1 update 50/2500 loss 0.6979 lr 2.04e-06 elapsed 0.2 min ETA 9.3 min
+[23:02:41] epoch 1 update 100/2500 loss 0.6718 lr 4.04e-06 elapsed 0.4 min ETA 10.6 min
+[23:02:56] epoch 1 update 150/2500 loss 0.3996 lr 6.04e-06 elapsed 0.7 min ETA 10.8 min
+[23:03:10] epoch 1 update 200/2500 loss 0.1765 lr 8.04e-06 elapsed 0.9 min ETA 10.6 min
+[23:03:26] epoch 1 update 250/2500 loss 0.1942 lr 1.00e-05 elapsed 1.2 min ETA 10.7 min
+[23:03:40] epoch 1 update 300/2500 loss 0.1518 lr 9.78e-06 elapsed 1.4 min ETA 10.5 min
+[23:04:10]   HOLD-OUT accuracy 90.1400% at update 312 (epoch 0.25)
+[23:04:11]   new best -> saved runs\retrain-cv-control\deberta-f0\best_model
+[23:04:25] epoch 1 update 350/2500 loss 0.2044 lr 9.56e-06 elapsed 2.2 min ETA 13.4 min
+[23:04:40] epoch 1 update 400/2500 loss 0.1782 lr 9.33e-06 elapsed 2.4 min ETA 12.8 min
+[23:04:56] epoch 1 update 450/2500 loss 0.1788 lr 9.11e-06 elapsed 2.7 min ETA 12.3 min
+[23:05:11] epoch 1 update 500/2500 loss 0.1442 lr 8.89e-06 elapsed 2.9 min ETA 11.8 min
+[23:05:26] epoch 1 update 550/2500 loss 0.1554 lr 8.67e-06 elapsed 3.2 min ETA 11.3 min
+[23:05:43] epoch 1 update 600/2500 loss 0.1321 lr 8.44e-06 elapsed 3.5 min ETA 11.0 min
+[23:06:16]   HOLD-OUT accuracy 94.8600% at update 624 (epoch 0.50)
+[23:06:16]   new best -> saved runs\retrain-cv-control\deberta-f0\best_model
+[23:06:25] epoch 1 update 650/2500 loss 0.1477 lr 8.22e-06 elapsed 4.2 min ETA 11.9 min
+[23:06:41] epoch 1 update 700/2500 loss 0.1628 lr 8.00e-06 elapsed 4.4 min ETA 11.4 min
+[23:06:54] epoch 1 update 750/2500 loss 0.1265 lr 7.78e-06 elapsed 4.7 min ETA 10.9 min
+[23:07:09] epoch 1 update 800/2500 loss 0.1607 lr 7.56e-06 elapsed 4.9 min ETA 10.4 min
+[23:07:25] epoch 1 update 850/2500 loss 0.1675 lr 7.33e-06 elapsed 5.2 min ETA 10.1 min
+[23:07:40] epoch 1 update 900/2500 loss 0.0941 lr 7.11e-06 elapsed 5.4 min ETA 9.7 min
+[23:08:18]   HOLD-OUT accuracy 95.9600% at update 936 (epoch 0.75)
+[23:08:19]   new best -> saved runs\retrain-cv-control\deberta-f0\best_model
+[23:08:23] epoch 1 update 950/2500 loss 0.1414 lr 6.89e-06 elapsed 6.2 min ETA 10.0 min
+[23:08:39] epoch 1 update 1000/2500 loss 0.1512 lr 6.67e-06 elapsed 6.4 min ETA 9.6 min
+[23:08:54] epoch 1 update 1050/2500 loss 0.1439 lr 6.44e-06 elapsed 6.7 min ETA 9.2 min
+[23:09:11] epoch 1 update 1100/2500 loss 0.1500 lr 6.22e-06 elapsed 6.9 min ETA 8.8 min
+[23:09:39] epoch 1 update 1150/2500 loss 0.1311 lr 6.00e-06 elapsed 7.4 min ETA 8.7 min
+[23:10:04] epoch 1 update 1200/2500 loss 0.1264 lr 5.78e-06 elapsed 7.8 min ETA 8.5 min
+[23:10:58]   HOLD-OUT accuracy 96.4800% at update 1248 (epoch 1.00)
+[23:10:59]   new best -> saved runs\retrain-cv-control\deberta-f0\best_model
+[23:11:00] epoch 1 update 1250/2500 loss 0.1075 lr 5.56e-06 elapsed 8.8 min ETA 8.8 min
+[23:11:26]   HOLD-OUT accuracy 96.4800% at update 1250 (epoch 1.00)
+[23:11:54] epoch 2 update 1300/2500 loss 0.0824 lr 5.33e-06 elapsed 9.7 min ETA 8.9 min
+[23:12:22] epoch 2 update 1350/2500 loss 0.1413 lr 5.11e-06 elapsed 10.1 min ETA 8.6 min
+[23:12:49] epoch 2 update 1400/2500 loss 0.0497 lr 4.89e-06 elapsed 10.6 min ETA 8.3 min
+[23:13:18] epoch 2 update 1450/2500 loss 0.0664 lr 4.67e-06 elapsed 11.1 min ETA 8.0 min
+[23:13:45] epoch 2 update 1500/2500 loss 0.1058 lr 4.44e-06 elapsed 11.5 min ETA 7.7 min
+[23:14:12] epoch 2 update 1550/2500 loss 0.0502 lr 4.22e-06 elapsed 12.0 min ETA 7.3 min
+[23:14:43]   HOLD-OUT accuracy 94.9600% at update 1560 (epoch 1.25)
+[23:15:06] epoch 2 update 1600/2500 loss 0.1107 lr 4.00e-06 elapsed 12.9 min ETA 7.2 min
+[23:15:32] epoch 2 update 1650/2500 loss 0.0622 lr 3.78e-06 elapsed 13.3 min ETA 6.9 min
+[23:16:01] epoch 2 update 1700/2500 loss 0.0738 lr 3.56e-06 elapsed 13.8 min ETA 6.5 min
+[23:16:27] epoch 2 update 1750/2500 loss 0.1069 lr 3.33e-06 elapsed 14.2 min ETA 6.1 min
+[23:16:53] epoch 2 update 1800/2500 loss 0.0678 lr 3.11e-06 elapsed 14.6 min ETA 5.7 min
+[23:17:18] epoch 2 update 1850/2500 loss 0.1165 lr 2.89e-06 elapsed 15.1 min ETA 5.3 min
+[23:17:53]   HOLD-OUT accuracy 96.3400% at update 1872 (epoch 1.50)
+[23:18:08] epoch 2 update 1900/2500 loss 0.0676 lr 2.67e-06 elapsed 15.9 min ETA 5.0 min
+[23:18:34] epoch 2 update 1950/2500 loss 0.0892 lr 2.44e-06 elapsed 16.3 min ETA 4.6 min
+[23:19:02] epoch 2 update 2000/2500 loss 0.0613 lr 2.22e-06 elapsed 16.8 min ETA 4.2 min
+[23:19:28] epoch 2 update 2050/2500 loss 0.0620 lr 2.00e-06 elapsed 17.2 min ETA 3.8 min
+[23:19:58] epoch 2 update 2100/2500 loss 0.0916 lr 1.78e-06 elapsed 17.7 min ETA 3.4 min
+[23:20:24] epoch 2 update 2150/2500 loss 0.0995 lr 1.56e-06 elapsed 18.2 min ETA 3.0 min
+[23:21:11]   HOLD-OUT accuracy 96.4200% at update 2184 (epoch 1.75)
+[23:21:19] epoch 2 update 2200/2500 loss 0.0729 lr 1.33e-06 elapsed 19.1 min ETA 2.6 min
+[23:21:47] epoch 2 update 2250/2500 loss 0.0580 lr 1.11e-06 elapsed 19.5 min ETA 2.2 min
+[23:22:12] epoch 2 update 2300/2500 loss 0.0736 lr 8.89e-07 elapsed 20.0 min ETA 1.7 min
+[23:22:39] epoch 2 update 2350/2500 loss 0.0886 lr 6.67e-07 elapsed 20.4 min ETA 1.3 min
+[23:23:08] epoch 2 update 2400/2500 loss 0.0756 lr 4.44e-07 elapsed 20.9 min ETA 0.9 min
+[23:23:36] epoch 2 update 2450/2500 loss 0.0828 lr 2.22e-07 elapsed 21.4 min ETA 0.4 min
+[23:24:28]   HOLD-OUT accuracy 96.4800% at update 2496 (epoch 2.00)
+[23:24:30] epoch 2 update 2500/2500 loss 0.0988 lr 0.00e+00 elapsed 22.3 min ETA 0.0 min
+[23:24:56]   HOLD-OUT accuracy 96.4800% at update 2500 (epoch 2.00)
+[23:24:56] training finished in 22.7 min; best hold-out accuracy 96.4800%
+[23:26:43] best checkpoint: hold-out accuracy 96.4600%; test positive share 0.5036
+[23:26:43] wrote runs\retrain-cv-control\deberta-f0\submission.csv sha256=372064634ec7cd61d4b5247ae5b51272aea6b1cf1af5cd8f8c9915e91dba7a88
+[23:26:43] note: in --folds mode this is the *single-fold* prediction. The submission to use is the average of the folds, written by code/run_cv.py or code/assemble_cv.py.
+[23:26:43] done in 24.97 min -> runs\retrain-cv-control\deberta-f0

@@ -1,0 +1,37 @@
+{
+  "description": "Full 25,000-review training set, ngram_range=(1,3), min_df=2, max_df=.95; separate clean processes under bundled Python. Timing is a one-run comparison, not a universal speed guarantee.",
+  "baseline": {
+    "elapsed_seconds": 13.58092554200266,
+    "max_rss_bytes": 740065280,
+    "shape": [
+      25000,
+      921043
+    ],
+    "nnz": 10392267,
+    "feature_names": "6033e03fc2f00c3f3ec08a5d5edccc985769615ee3b9b747bbed863186cbd9df",
+    "data": "a3c987405dd572cf025bceb35b702ef936ca12a2e00f6215e9e379a476a118b3",
+    "indices": "5850b136f9bc539b6bc377eaf4e6026a4f7fedfc24b9578b1388d23d467ec767",
+    "indptr": "0a51235fc5ab4519f142b5d5e268ad7a87e41b8b014cf271f23bcee8854f2096",
+    "document_frequency": "97e3a69f6e491c4f11659fa6844078a68bbac2afcfc719461563d76ff90d2742"
+  },
+  "optimized": {
+    "elapsed_seconds": 11.893621041992446,
+    "max_rss_bytes": 826785792,
+    "shape": [
+      25000,
+      921043
+    ],
+    "nnz": 10392267,
+    "feature_names": "6033e03fc2f00c3f3ec08a5d5edccc985769615ee3b9b747bbed863186cbd9df",
+    "data": "a3c987405dd572cf025bceb35b702ef936ca12a2e00f6215e9e379a476a118b3",
+    "indices": "5850b136f9bc539b6bc377eaf4e6026a4f7fedfc24b9578b1388d23d467ec767",
+    "indptr": "0a51235fc5ab4519f142b5d5e268ad7a87e41b8b014cf271f23bcee8854f2096",
+    "document_frequency": "97e3a69f6e491c4f11659fa6844078a68bbac2afcfc719461563d76ff90d2742"
+  },
+  "time_reduction_fraction": 0.1242407592024396,
+  "peak_rss_ratio": 1.1171795439450962,
+  "exact_hash_comparison": true,
+  "semantic_edge_cases_passed": 90,
+  "one_extraction_per_document": true,
+  "resource_tradeoff": "Uses compact unpruned per-document sparse counts (4-byte integer IDs plus 4-byte float32 values) until DF pruning; transient term strings stored once in candidate vocabulary, never in per-document caches. Candidate hash table released before fitted vocabulary creation; all extraction caches local to fit_transform."
+}

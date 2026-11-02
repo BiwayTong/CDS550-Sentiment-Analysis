@@ -1,0 +1,75 @@
+{
+  "runs": [
+    "runs/deberta",
+    "runs/deberta-large-s1",
+    "runs/deberta-large-s2",
+    "runs/roberta-large"
+  ],
+  "models": [
+    "deberta",
+    "deberta-large-s1",
+    "deberta-large-s2",
+    "roberta-large",
+    "nblr"
+  ],
+  "n_holdout": 2500,
+  "single_holdout_accuracy": {
+    "deberta": 0.9672,
+    "deberta-large-s1": 0.9672,
+    "deberta-large-s2": 0.962,
+    "roberta-large": 0.9624,
+    "nblr": 0.9176
+  },
+  "options_estimated_accuracy": {
+    "single:deberta": 0.9672,
+    "mean": 0.96904,
+    "stack": 0.96872
+  },
+  "choice": "mean",
+  "weights": {
+    "deberta": 0.2,
+    "deberta-large-s1": 0.2,
+    "deberta-large-s2": 0.2,
+    "roberta-large": 0.2,
+    "nblr": 0.2
+  },
+  "margin_correlation": [
+    [
+      1.0,
+      0.9893,
+      0.9889,
+      0.9809,
+      0.7906
+    ],
+    [
+      0.9893,
+      1.0,
+      0.9898,
+      0.9848,
+      0.8024
+    ],
+    [
+      0.9889,
+      0.9898,
+      1.0,
+      0.9822,
+      0.7909
+    ],
+    [
+      0.9809,
+      0.9848,
+      0.9822,
+      1.0,
+      0.8079
+    ],
+    [
+      0.7906,
+      0.8024,
+      0.7909,
+      0.8079,
+      1.0
+    ]
+  ],
+  "test_positive_share": 0.49928,
+  "submission_sha256": "90ef5e1f83edbd60d5a24f79c63d94dd95ed596f2753f755e84a57ffd7104dd9"
+}

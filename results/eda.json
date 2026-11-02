@@ -1,0 +1,276 @@
+{
+  "n_train": 25000,
+  "n_test": 25000,
+  "class_counts": {
+    "positive": 12528,
+    "negative": 12472
+  },
+  "class_balance_positive_share": 0.50112,
+  "missing_values_train": 0,
+  "missing_values_test": 0,
+  "duplicate_reviews_train": 104,
+  "duplicate_reviews_test": 92,
+  "train_test_text_overlap": 222,
+  "conflicting_duplicate_labels_train": 0,
+  "share_with_html_br_train": 0.58212,
+  "words_per_review_train": {
+    "count": 25000.0,
+    "mean": 231.61304,
+    "std": 173.19610058407406,
+    "min": 6.0,
+    "25%": 126.0,
+    "50%": 173.0,
+    "75%": 280.0,
+    "max": 2278.0
+  },
+  "words_per_review_test": {
+    "count": 25000.0,
+    "mean": 230.70084,
+    "std": 169.4738914384442,
+    "min": 4.0,
+    "25%": 127.0,
+    "50%": 173.0,
+    "75%": 281.0,
+    "max": 2470.0
+  },
+  "chars_per_review_train": {
+    "count": 25000.0,
+    "mean": 1312.0844,
+    "std": 999.5005065167006,
+    "min": 32.0,
+    "25%": 698.0,
+    "50%": 969.0,
+    "75%": 1591.25,
+    "max": 12988.0
+  },
+  "mean_words_by_class": {
+    "negative": 229.91,
+    "positive": 233.31
+  },
+  "median_words_by_class": {
+    "negative": 174.0,
+    "positive": 172.0
+  },
+  "id_range_train": [
+    1,
+    25000
+  ],
+  "id_range_test": [
+    25001,
+    50000
+  ],
+  "most_negative_ngrams": [
+    [
+      "awful the",
+      -4.656929739814325,
+      106
+    ],
+    [
+      "terrible movie",
+      -4.353548757819441,
+      78
+    ],
+    [
+      "avoid at",
+      -4.2745603465008095,
+      72
+    ],
+    [
+      "movie sucks",
+      -4.111235290397511,
+      61
+    ],
+    [
+      "this turkey",
+      -4.009452596087568,
+      55
+    ],
+    [
+      "1 out",
+      -4.000483926104808,
+      111
+    ],
+    [
+      "worst movie",
+      -3.840309131674168,
+      336
+    ],
+    [
+      "this stinker",
+      -3.834248507062478,
+      46
+    ],
+    [
+      "this crap",
+      -3.8127423018415154,
+      139
+    ],
+    [
+      "grade d",
+      -3.8127423018415136,
+      45
+    ],
+    [
+      "potential but",
+      -3.790763395122738,
+      44
+    ],
+    [
+      "complete waste",
+      -3.76829053927068,
+      88
+    ],
+    [
+      "this garbage",
+      -3.756861843447057,
+      87
+    ],
+    [
+      "awful it",
+      -3.7453010210459823,
+      42
+    ],
+    [
+      "a 0",
+      -3.7453010210459823,
+      42
+    ],
+    [
+      "this pile",
+      -3.7217705236357883,
+      41
+    ],
+    [
+      "wasted my",
+      -3.672980359466356,
+      39
+    ],
+    [
+      "this rubbish",
+      -3.672980359466356,
+      39
+    ],
+    [
+      "worst movies",
+      -3.6321583649461004,
+      195
+    ],
+    [
+      "awful !",
+      -3.5950188179966442,
+      36
+    ]
+  ],
+  "most_positive_ngrams": [
+    [
+      "are amazing",
+      3.5994180331036905,
+      35
+    ],
+    [
+      "blew me",
+      3.2347749195157824,
+      24
+    ],
+    [
+      "simply amazing",
+      3.1939529249955267,
+      23
+    ],
+    [
+      "9 10",
+      3.1759344194928474,
+      170
+    ],
+    [
+      "rating 8",
+      3.151393310576731,
+      22
+    ],
+    [
+      "amazing job",
+      3.151393310576731,
+      22
+    ],
+    [
+      "greatest of",
+      3.1069415480058975,
+      21
+    ],
+    [
+      "is flawless",
+      3.1069415480058975,
+      21
+    ],
+    [
+      "is unforgettable",
+      3.060421532371004,
+      20
+    ],
+    [
+      "is timeless",
+      3.060421532371004,
+      20
+    ],
+    [
+      "beautiful film",
+      2.94263849671462,
+      57
+    ],
+    [
+      "so real",
+      2.924619991211941,
+      56
+    ],
+    [
+      "7 10",
+      2.906270852543745,
+      188
+    ],
+    [
+      "8 10",
+      2.807536011858055,
+      223
+    ],
+    [
+      "7 out",
+      2.778016517020065,
+      99
+    ],
+    [
+      "is fascinating",
+      2.7567391185727814,
+      31
+    ],
+    [
+      "must for",
+      2.7459282024685656,
+      47
+    ],
+    [
+      "highly recommended",
+      2.729064396416561,
+      207
+    ],
+    [
+      "recommended !",
+      2.72394929574979,
+      30
+    ],
+    [
+      "great too",
+      2.72394929574979,
+      30
+    ]
+  ],
+  "vocabulary_size_min_df20_uni_bi": 43220,
+  "tokens_per_review_after_cleaning": {
+    "mean": 233.06672,
+    "median": 174.0,
+    "min": 7,
+    "max": 2250
+  },
+  "vocabulary_size_min_df2_ngram_1_1": 48012,
+  "vocabulary_size_min_df2_ngram_1_2": 434924,
+  "vocabulary_size_min_df2_ngram_1_3": 921043
+}

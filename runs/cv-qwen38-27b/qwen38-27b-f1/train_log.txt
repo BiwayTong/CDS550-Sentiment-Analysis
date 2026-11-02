@@ -1,0 +1,75 @@
+[23:10:47] ======================================================================
+[23:10:47] command: code/finetune_llm.py --data-dir data --output runs/cv-qwen38-27b/qwen38-27b-f1 --folds 5 --fold 1 --preset qwen3.8-27b --seed 42 --split-seed 42 --eval-every 0.5 --model Qwen/Qwen3.8-27B
+[23:10:47] GPU NVIDIA RTX PRO 6000 Blackwell Server Edition: 95.0 GB, 94.4 GB free before loading (close games / browsers / other GPU programs if this is much lower than the total)
+[23:10:47] device=cuda (NVIDIA RTX PRO 6000 Blackwell Server Edition) torch=2.8.0+cu128 transformers=5.22.0 peft=0.21.2 preset=qwen3.8-27b dtype=torch.bfloat16
+[23:10:47] config: {"lr": 0.0001, "epochs": 1.0, "seqs_per_update": 16, "token_budget": 4096, "max_micro": 16, "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "model": "Qwen/Qwen3.8-27B", "grad_ckpt": true, "post_trained": true, "loader": "vlm", "lora_targets": "text-linear", "max_len": 1024, "head": 256, "head_lr_mult": 2.0, "label_smoothing": 0.0, "weight_decay": 0.01, "warmup": 0.05, "prompt_version": "v1"}
+[23:10:48] train=20,000 validation=5,000 test=25,000 split={'mode': 'kfold', 'folds': 5, 'fold': 1, 'split_seed': 42}
+[23:10:48] prompt: 4 prefix + 18 suffix tokens, bos=None, pad=248044, verbalizer ids {' negative': 7968, ' positive': 6572}
+[23:11:11] tokenised 50,000 reviews in 23s; mean length 305 tokens (prompt included); 450 train / 416 test reviews truncated to 1024
+[23:11:11] linear-attention kernels: flash-linear-attention found, causal-conv1d missing (torch fallback for the conv)
+[23:12:05] loaded class Qwen3_5ForConditionalGeneration; using its text backbone Qwen3_5TextModel
+[23:12:05] LoRA targets (every linear layer of the text backbone): {'down_proj': 64, 'gate_proj': 64, 'in_proj_a': 48, 'in_proj_b': 48, 'in_proj_qkv': 48, 'in_proj_z': 48, 'k_proj': 16, 'o_proj': 16, 'out_proj': 48, 'q_proj': 16, 'up_proj': 64, 'v_proj': 16}
+[23:12:06] loaded Qwen/Qwen3.8-27B in 56s; hidden 5120; LoRA r=16 trains 116.7M of 25.74B weights (+ 10,242 head); GPU memory 48.2 GB
+[23:12:10] memory probe ok: 4 x 1024 tokens per micro-batch, grad_ckpt=True, peak 53.3 GB allocated / 54.0 GB reserved of 95.0 GB
+[23:12:34] UPDATE-0 CHECK (zero-shot, nothing trained yet) on 256 validation reviews: AUC 0.973, accuracy 88.28%  <- AUC should be clearly above 0.5
+[23:12:34] 1250 updates/epoch x 16 reviews, 1250 updates total, warm-up 62, token budget 4096, mid-training evaluation every 625 updates
+[23:14:07] epoch 1 update 25/1250 loss 0.2312 lr 4.19e-05 1,166 tok/s elapsed 1.5 min ETA 75.5 min peak 55.3 GB
+[23:15:56] epoch 1 update 50/1250 loss 0.1116 lr 8.23e-05 1,164 tok/s elapsed 3.4 min ETA 80.7 min peak 55.5 GB
+[23:17:14] epoch 1 update 75/1250 loss 0.1443 lr 1.00e-04 1,165 tok/s elapsed 4.7 min ETA 73.0 min peak 55.6 GB
+[23:18:33] epoch 1 update 100/1250 loss 0.1348 lr 9.97e-05 1,161 tok/s elapsed 6.0 min ETA 68.8 min peak 55.6 GB
+[23:20:12] epoch 1 update 125/1250 loss 0.1439 lr 9.93e-05 1,164 tok/s elapsed 7.6 min ETA 68.7 min peak 55.6 GB
+[23:21:55] epoch 1 update 150/1250 loss 0.0898 lr 9.87e-05 1,165 tok/s elapsed 9.3 min ETA 68.5 min peak 55.6 GB
+[23:23:47] epoch 1 update 175/1250 loss 0.1422 lr 9.78e-05 1,165 tok/s elapsed 11.2 min ETA 68.9 min peak 55.6 GB
+[23:25:37] epoch 1 update 200/1250 loss 0.1236 lr 9.67e-05 1,165 tok/s elapsed 13.0 min ETA 68.5 min peak 55.6 GB
+[23:28:06] epoch 1 update 225/1250 loss 0.1249 lr 9.54e-05 1,163 tok/s elapsed 15.5 min ETA 70.7 min peak 55.6 GB
+[23:29:58] epoch 1 update 250/1250 loss 0.1187 lr 9.39e-05 1,163 tok/s elapsed 17.4 min ETA 69.6 min peak 55.6 GB
+[23:31:44] epoch 1 update 275/1250 loss 0.0882 lr 9.23e-05 1,162 tok/s elapsed 19.2 min ETA 68.0 min peak 55.6 GB
+[23:33:55] epoch 1 update 300/1250 loss 0.1515 lr 9.04e-05 1,160 tok/s elapsed 21.3 min ETA 67.6 min peak 55.6 GB
+[23:35:48] epoch 1 update 325/1250 loss 0.1621 lr 8.84e-05 1,160 tok/s elapsed 23.2 min ETA 66.1 min peak 55.6 GB
+[23:37:21] epoch 1 update 350/1250 loss 0.0863 lr 8.62e-05 1,161 tok/s elapsed 24.8 min ETA 63.7 min peak 55.6 GB
+[23:38:55] epoch 1 update 375/1250 loss 0.1476 lr 8.38e-05 1,161 tok/s elapsed 26.3 min ETA 61.5 min peak 55.6 GB
+[23:41:01] epoch 1 update 400/1250 loss 0.1582 lr 8.13e-05 1,161 tok/s elapsed 28.4 min ETA 60.4 min peak 55.6 GB
+[23:42:52] epoch 1 update 425/1250 loss 0.1600 lr 7.87e-05 1,161 tok/s elapsed 30.3 min ETA 58.8 min peak 55.6 GB
+[23:44:45] epoch 1 update 450/1250 loss 0.1090 lr 7.59e-05 1,161 tok/s elapsed 32.2 min ETA 57.2 min peak 55.6 GB
+[23:46:15] epoch 1 update 475/1250 loss 0.1856 lr 7.30e-05 1,162 tok/s elapsed 33.7 min ETA 54.9 min peak 55.6 GB
+[23:47:49] epoch 1 update 500/1250 loss 0.0797 lr 7.00e-05 1,162 tok/s elapsed 35.2 min ETA 52.9 min peak 55.6 GB
+[23:49:24] epoch 1 update 525/1250 loss 0.1334 lr 6.70e-05 1,162 tok/s elapsed 36.8 min ETA 50.9 min peak 55.6 GB
+[23:51:15] epoch 1 update 550/1250 loss 0.1203 lr 6.38e-05 1,162 tok/s elapsed 38.7 min ETA 49.2 min peak 55.6 GB
+[23:52:44] epoch 1 update 575/1250 loss 0.0982 lr 6.06e-05 1,162 tok/s elapsed 40.2 min ETA 47.1 min peak 55.6 GB
+[23:54:45] epoch 1 update 600/1250 loss 0.0582 lr 5.74e-05 1,162 tok/s elapsed 42.2 min ETA 45.7 min peak 55.6 GB
+[23:56:44] epoch 1 update 625/1250 loss 0.1219 lr 5.41e-05 1,162 tok/s elapsed 44.2 min ETA 44.2 min peak 55.6 GB
+[00:03:27]   VALIDATION accuracy 97.1600% (AUC 0.9937) at update 625 (epoch 0.50)
+[00:05:02] epoch 1 update 650/1250 loss 0.0977 lr 5.08e-05 1,162 tok/s elapsed 52.5 min ETA 42.2 min peak 55.6 GB
+[00:07:20] epoch 1 update 675/1250 loss 0.1093 lr 4.75e-05 1,162 tok/s elapsed 54.8 min ETA 40.9 min peak 55.6 GB
+[00:08:58] epoch 1 update 700/1250 loss 0.1626 lr 4.42e-05 1,161 tok/s elapsed 56.4 min ETA 39.0 min peak 55.6 GB
+[00:10:41] epoch 1 update 725/1250 loss 0.0748 lr 4.09e-05 1,161 tok/s elapsed 58.1 min ETA 37.2 min peak 55.6 GB
+[00:12:20] epoch 1 update 750/1250 loss 0.1339 lr 3.77e-05 1,161 tok/s elapsed 59.8 min ETA 35.4 min peak 55.6 GB
+[00:14:02] epoch 1 update 775/1250 loss 0.0794 lr 3.45e-05 1,161 tok/s elapsed 61.5 min ETA 33.5 min peak 55.6 GB
+[00:15:40] epoch 1 update 800/1250 loss 0.1040 lr 3.14e-05 1,161 tok/s elapsed 63.1 min ETA 31.7 min peak 55.6 GB
+[00:17:19] epoch 1 update 825/1250 loss 0.1191 lr 2.84e-05 1,162 tok/s elapsed 64.8 min ETA 29.9 min peak 55.6 GB
+[00:19:05] epoch 1 update 850/1250 loss 0.1219 lr 2.55e-05 1,162 tok/s elapsed 66.5 min ETA 28.1 min peak 55.6 GB
+[00:20:46] epoch 1 update 875/1250 loss 0.0913 lr 2.26e-05 1,162 tok/s elapsed 68.2 min ETA 26.3 min peak 55.6 GB
+[00:22:15] epoch 1 update 900/1250 loss 0.0824 lr 1.99e-05 1,162 tok/s elapsed 69.7 min ETA 24.5 min peak 55.6 GB
+[00:23:47] epoch 1 update 925/1250 loss 0.0894 lr 1.74e-05 1,162 tok/s elapsed 71.2 min ETA 22.7 min peak 55.7 GB
+[00:25:41] epoch 1 update 950/1250 loss 0.0659 lr 1.49e-05 1,162 tok/s elapsed 73.1 min ETA 21.0 min peak 55.7 GB
+[00:27:42] epoch 1 update 975/1250 loss 0.0753 lr 1.26e-05 1,162 tok/s elapsed 75.1 min ETA 19.3 min peak 55.7 GB
+[00:29:32] epoch 1 update 1000/1250 loss 0.1238 lr 1.05e-05 1,162 tok/s elapsed 77.0 min ETA 17.6 min peak 55.7 GB
+[00:31:18] epoch 1 update 1025/1250 loss 0.0642 lr 8.59e-06 1,162 tok/s elapsed 78.7 min ETA 15.8 min peak 55.7 GB
+[00:33:17] epoch 1 update 1050/1250 loss 0.0739 lr 6.83e-06 1,162 tok/s elapsed 80.7 min ETA 14.1 min peak 55.7 GB
+[00:34:52] epoch 1 update 1075/1250 loss 0.1039 lr 5.26e-06 1,161 tok/s elapsed 82.3 min ETA 12.3 min peak 55.7 GB
+[00:36:26] epoch 1 update 1100/1250 loss 0.0748 lr 3.88e-06 1,162 tok/s elapsed 83.9 min ETA 10.5 min peak 55.7 GB
+[00:38:22] epoch 1 update 1125/1250 loss 0.0644 lr 2.71e-06 1,162 tok/s elapsed 85.8 min ETA 8.8 min peak 55.7 GB
+[00:39:36] epoch 1 update 1150/1250 loss 0.0858 lr 1.74e-06 1,162 tok/s elapsed 87.0 min ETA 7.0 min peak 55.7 GB
+[00:41:15] epoch 1 update 1175/1250 loss 0.1054 lr 9.80e-07 1,162 tok/s elapsed 88.7 min ETA 5.2 min peak 55.7 GB
+[00:42:49] epoch 1 update 1200/1250 loss 0.0880 lr 4.36e-07 1,162 tok/s elapsed 90.3 min ETA 3.5 min peak 55.7 GB
+[00:45:13] epoch 1 update 1225/1250 loss 0.0911 lr 1.09e-07 1,162 tok/s elapsed 92.7 min ETA 1.8 min peak 55.7 GB
+[00:46:41] epoch 1 update 1250/1250 loss 0.1004 lr 0.00e+00 1,162 tok/s elapsed 94.1 min ETA 0.0 min peak 55.7 GB
+[00:46:41] training finished in 94.1 min (1,162 tok/s without the 6.7 min of mid-training evaluation, 0 skipped updates, 0 out-of-memory retries)
+[00:47:06] saved LoRA adapter + head -> runs/cv-qwen38-27b/qwen38-27b-f1/adapter
+[00:47:06] training model freed; 0.0 GB still allocated before re-loading
+[00:47:17] re-loaded base model + adapter from disk in 11s
+[00:47:41] reload check on 256 reviews: max |margin(reloaded) - margin(in memory)| = 0.0000; training moved the margins by 5.184 on average
+[01:27:20] VALIDATION accuracy 97.4400% (AUC 0.9946) on 5,000 reviews; test positive share 0.4952; prediction took 39.7 min
+[01:27:20] wrote runs/cv-qwen38-27b/qwen38-27b-f1/submission.csv sha256=f37f09ac359cd913bf504a4771d0be788a055f48a0cc71a85af1e4a43fc5007f
+[01:27:20] note: this is a single-fold prediction; the file to submit is the fold average written by assemble_cv.py (or the ensemble written by ensemble_cv.py / compare_runs.py)
+[01:27:21] done in 136.56 min -> runs/cv-qwen38-27b/qwen38-27b-f1

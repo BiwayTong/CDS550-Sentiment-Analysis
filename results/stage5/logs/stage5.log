@@ -1,0 +1,485 @@
+env: DATA_DISK=/root/autodl-tmp  HF_HOME=/root/autodl-tmp/hf_home  HF_ENDPOINT=https://hf-mirror.com  python=python
+free space on that disk: 23G
+stage 5 started 2026-10-24 21:19:40 with /root/autodl-tmp/Qwen/Qwen3-14B-Base
+trainer llm: folds [0, 1, 2, 3, 4] of 5: 0 already complete [], 5 to run [0, 1, 2, 3, 4]
+
+==============================================================================
+fold 0/5  (1 of 5 to run, 0.0 min elapsed)
+  /root/miniconda3/bin/python /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f0 --folds 5 --fold 0 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+==============================================================================
+[21:19:43] ======================================================================
+[21:19:43] command: /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f0 --folds 5 --fold 0 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+[21:19:43] GPU NVIDIA RTX PRO 6000 Blackwell Server Edition: 95.0 GB, 94.4 GB free before loading (close games / browsers / other GPU programs if this is much lower than the total)
+[21:19:43] device=cuda (NVIDIA RTX PRO 6000 Blackwell Server Edition) torch=2.8.0+cu128 transformers=4.57.6 peft=0.18.1 preset=qwen3-14b dtype=torch.bfloat16
+[21:19:43] config: {"lr": 0.0001, "epochs": 1.0, "seqs_per_update": 16, "token_budget": 4096, "max_micro": 16, "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "model": "/root/autodl-tmp/Qwen/Qwen3-14B-Base", "grad_ckpt": false, "max_len": 1024, "head": 256, "head_lr_mult": 2.0, "label_smoothing": 0.0, "weight_decay": 0.01, "warmup": 0.05, "prompt_version": "v1"}
+[21:19:44] train=20,000 validation=5,000 test=25,000 split={'mode': 'kfold', 'folds': 5, 'fold': 0, 'split_seed': 42}
+[21:19:44] prompt: 3 prefix + 17 suffix tokens, bos=None, pad=151643, verbalizer ids {' negative': 8225, ' positive': 6785}
+[21:20:09] tokenised 50,000 reviews in 25s; mean length 304 tokens (prompt included); 453 train / 420 test reviews truncated to 1024
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.30it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.30it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.29it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.28it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.29it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.31it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.32it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.59it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.40it/s]
+[21:20:15] loaded /root/autodl-tmp/Qwen/Qwen3-14B-Base in 6s; hidden 5120; LoRA r=16 trains 64.2M of 14.05B weights (+ 10,242 head); GPU memory 26.3 GB
+[21:20:17] memory probe ok: 4 x 1024 tokens per micro-batch, grad_ckpt=False, peak 79.0 GB allocated / 79.8 GB reserved of 95.0 GB
+[21:20:29] UPDATE-0 CHECK (zero-shot, nothing trained yet) on 256 validation reviews: AUC 0.993, accuracy 95.70%  <- AUC should be clearly above 0.5
+[21:20:29] 1250 updates/epoch x 16 reviews, 1250 updates total, warm-up 62, token budget 4096, mid-training evaluation every 625 updates
+[21:21:01] epoch 1 update 25/1250 loss 0.1395 lr 4.19e-05 3,314 tok/s elapsed 0.5 min ETA 26.6 min peak 84.6 GB
+[21:21:39] epoch 1 update 50/1250 loss 0.1403 lr 8.23e-05 3,305 tok/s elapsed 1.2 min ETA 28.2 min peak 85.2 GB
+[21:22:06] epoch 1 update 75/1250 loss 0.1438 lr 1.00e-04 3,327 tok/s elapsed 1.6 min ETA 25.3 min peak 85.2 GB
+[21:22:33] epoch 1 update 100/1250 loss 0.2198 lr 9.97e-05 3,337 tok/s elapsed 2.1 min ETA 23.8 min peak 85.2 GB
+[21:23:07] epoch 1 update 125/1250 loss 0.0957 lr 9.93e-05 3,333 tok/s elapsed 2.6 min ETA 23.8 min peak 85.2 GB
+[21:23:42] epoch 1 update 150/1250 loss 0.1886 lr 9.87e-05 3,338 tok/s elapsed 3.2 min ETA 23.7 min peak 85.2 GB
+[21:24:22] epoch 1 update 175/1250 loss 0.1862 lr 9.78e-05 3,332 tok/s elapsed 3.9 min ETA 23.9 min peak 85.2 GB
+[21:25:01] epoch 1 update 200/1250 loss 0.1432 lr 9.67e-05 3,327 tok/s elapsed 4.5 min ETA 23.8 min peak 85.2 GB
+[21:25:52] epoch 1 update 225/1250 loss 0.1669 lr 9.54e-05 3,322 tok/s elapsed 5.4 min ETA 24.6 min peak 85.2 GB
+[21:26:32] epoch 1 update 250/1250 loss 0.0895 lr 9.39e-05 3,321 tok/s elapsed 6.1 min ETA 24.2 min peak 85.2 GB
+[21:27:09] epoch 1 update 275/1250 loss 0.1524 lr 9.23e-05 3,319 tok/s elapsed 6.7 min ETA 23.7 min peak 85.2 GB
+[21:27:57] epoch 1 update 300/1250 loss 0.1470 lr 9.04e-05 3,311 tok/s elapsed 7.5 min ETA 23.7 min peak 85.2 GB
+[21:28:37] epoch 1 update 325/1250 loss 0.1867 lr 8.84e-05 3,312 tok/s elapsed 8.1 min ETA 23.2 min peak 85.2 GB
+[21:29:10] epoch 1 update 350/1250 loss 0.2150 lr 8.62e-05 3,311 tok/s elapsed 8.7 min ETA 22.3 min peak 85.3 GB
+[21:29:44] epoch 1 update 375/1250 loss 0.1558 lr 8.38e-05 3,312 tok/s elapsed 9.3 min ETA 21.6 min peak 85.3 GB
+[21:30:28] epoch 1 update 400/1250 loss 0.1480 lr 8.13e-05 3,312 tok/s elapsed 10.0 min ETA 21.2 min peak 85.3 GB
+[21:31:07] epoch 1 update 425/1250 loss 0.2342 lr 7.87e-05 3,312 tok/s elapsed 10.6 min ETA 20.7 min peak 85.3 GB
+[21:31:47] epoch 1 update 450/1250 loss 0.2423 lr 7.59e-05 3,313 tok/s elapsed 11.3 min ETA 20.1 min peak 85.3 GB
+[21:32:18] epoch 1 update 475/1250 loss 0.2215 lr 7.30e-05 3,314 tok/s elapsed 11.8 min ETA 19.3 min peak 85.3 GB
+[21:32:50] epoch 1 update 500/1250 loss 0.1514 lr 7.00e-05 3,317 tok/s elapsed 12.4 min ETA 18.5 min peak 85.3 GB
+[21:33:22] epoch 1 update 525/1250 loss 0.1288 lr 6.70e-05 3,318 tok/s elapsed 12.9 min ETA 17.8 min peak 85.3 GB
+[21:34:01] epoch 1 update 550/1250 loss 0.1093 lr 6.38e-05 3,315 tok/s elapsed 13.5 min ETA 17.2 min peak 85.3 GB
+[21:34:32] epoch 1 update 575/1250 loss 0.0976 lr 6.06e-05 3,316 tok/s elapsed 14.1 min ETA 16.5 min peak 85.3 GB
+[21:35:13] epoch 1 update 600/1250 loss 0.1281 lr 5.74e-05 3,317 tok/s elapsed 14.7 min ETA 16.0 min peak 85.3 GB
+[21:35:54] epoch 1 update 625/1250 loss 0.1369 lr 5.41e-05 3,318 tok/s elapsed 15.4 min ETA 15.4 min peak 85.3 GB
+[21:39:13]   VALIDATION accuracy 96.7800% (AUC 0.9942) at update 625 (epoch 0.50)
+[21:39:46] epoch 1 update 650/1250 loss 0.1021 lr 5.08e-05 3,318 tok/s elapsed 19.3 min ETA 14.7 min peak 85.3 GB
+[21:40:34] epoch 1 update 675/1250 loss 0.1044 lr 4.75e-05 3,314 tok/s elapsed 20.1 min ETA 14.3 min peak 85.4 GB
+[21:41:09] epoch 1 update 700/1250 loss 0.1232 lr 4.42e-05 3,314 tok/s elapsed 20.7 min ETA 13.6 min peak 85.4 GB
+[21:41:45] epoch 1 update 725/1250 loss 0.0629 lr 4.09e-05 3,312 tok/s elapsed 21.3 min ETA 13.0 min peak 85.4 GB
+[21:42:21] epoch 1 update 750/1250 loss 0.1154 lr 3.77e-05 3,312 tok/s elapsed 21.9 min ETA 12.4 min peak 85.4 GB
+[21:42:56] epoch 1 update 775/1250 loss 0.1284 lr 3.45e-05 3,313 tok/s elapsed 22.5 min ETA 11.7 min peak 85.4 GB
+[21:43:31] epoch 1 update 800/1250 loss 0.1342 lr 3.14e-05 3,313 tok/s elapsed 23.0 min ETA 11.1 min peak 85.4 GB
+[21:44:05] epoch 1 update 825/1250 loss 0.0679 lr 2.84e-05 3,314 tok/s elapsed 23.6 min ETA 10.4 min peak 85.4 GB
+[21:44:42] epoch 1 update 850/1250 loss 0.1169 lr 2.55e-05 3,313 tok/s elapsed 24.2 min ETA 9.8 min peak 85.4 GB
+[21:45:17] epoch 1 update 875/1250 loss 0.1162 lr 2.26e-05 3,313 tok/s elapsed 24.8 min ETA 9.2 min peak 85.4 GB
+[21:45:48] epoch 1 update 900/1250 loss 0.0842 lr 1.99e-05 3,315 tok/s elapsed 25.3 min ETA 8.6 min peak 85.4 GB
+[21:46:21] epoch 1 update 925/1250 loss 0.0682 lr 1.74e-05 3,314 tok/s elapsed 25.9 min ETA 7.9 min peak 85.4 GB
+[21:47:01] epoch 1 update 950/1250 loss 0.0736 lr 1.49e-05 3,314 tok/s elapsed 26.5 min ETA 7.3 min peak 85.4 GB
+[21:47:43] epoch 1 update 975/1250 loss 0.0684 lr 1.26e-05 3,313 tok/s elapsed 27.2 min ETA 6.7 min peak 85.4 GB
+[21:48:21] epoch 1 update 1000/1250 loss 0.0811 lr 1.05e-05 3,312 tok/s elapsed 27.9 min ETA 6.1 min peak 85.4 GB
+[21:48:58] epoch 1 update 1025/1250 loss 0.0969 lr 8.59e-06 3,312 tok/s elapsed 28.5 min ETA 5.5 min peak 85.4 GB
+[21:49:39] epoch 1 update 1050/1250 loss 0.1314 lr 6.83e-06 3,311 tok/s elapsed 29.2 min ETA 4.9 min peak 85.4 GB
+[21:50:12] epoch 1 update 1075/1250 loss 0.1525 lr 5.26e-06 3,311 tok/s elapsed 29.7 min ETA 4.3 min peak 85.4 GB
+[21:50:46] epoch 1 update 1100/1250 loss 0.0881 lr 3.88e-06 3,311 tok/s elapsed 30.3 min ETA 3.7 min peak 85.4 GB
+[21:51:26] epoch 1 update 1125/1250 loss 0.1526 lr 2.71e-06 3,312 tok/s elapsed 31.0 min ETA 3.1 min peak 85.4 GB
+[21:51:52] epoch 1 update 1150/1250 loss 0.1260 lr 1.74e-06 3,313 tok/s elapsed 31.4 min ETA 2.4 min peak 85.4 GB
+[21:52:26] epoch 1 update 1175/1250 loss 0.0789 lr 9.80e-07 3,314 tok/s elapsed 32.0 min ETA 1.8 min peak 85.4 GB
+[21:52:59] epoch 1 update 1200/1250 loss 0.1127 lr 4.36e-07 3,314 tok/s elapsed 32.5 min ETA 1.2 min peak 85.4 GB
+[21:53:49] epoch 1 update 1225/1250 loss 0.0833 lr 1.09e-07 3,314 tok/s elapsed 33.3 min ETA 0.6 min peak 85.4 GB
+[21:54:20] epoch 1 update 1250/1250 loss 0.0720 lr 0.00e+00 3,314 tok/s elapsed 33.9 min ETA 0.0 min peak 85.4 GB
+[21:54:20] training finished in 33.9 min (3,314 tok/s without the 3.3 min of mid-training evaluation, 0 skipped updates, 0 out-of-memory retries)
+[21:54:32] saved LoRA adapter + head -> runs/cv-qwen3-14b/qwen3-14b-f0/adapter
+[21:54:32] training model freed; 0.0 GB still allocated before re-loading
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.35it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.34it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.33it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.32it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.33it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.33it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.34it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.51it/s]
+[21:54:38] re-loaded base model + adapter from disk in 6s
+[21:54:50] reload check on 256 reviews: max |margin(reloaded) - margin(in memory)| = 0.0000; training moved the margins by 2.248 on average
+[22:14:30] VALIDATION accuracy 96.9800% (AUC 0.9949) on 5,000 reviews; test positive share 0.4980; prediction took 19.7 min
+[22:14:30] wrote runs/cv-qwen3-14b/qwen3-14b-f0/submission.csv sha256=0022c3d10e1d6df4448144c3dd9180de01dd6a54f0fe1761b5e19b0dc4afa6b4
+[22:14:30] note: this is a single-fold prediction; the file to submit is the fold average written by assemble_cv.py (or the ensemble written by ensemble_cv.py / compare_runs.py)
+[22:14:30] done in 54.78 min -> runs/cv-qwen3-14b/qwen3-14b-f0
+fold 0 done in 54.8 min
+
+==============================================================================
+fold 1/5  (2 of 5 to run, 54.8 min elapsed)
+  /root/miniconda3/bin/python /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f1 --folds 5 --fold 1 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+==============================================================================
+[22:14:34] ======================================================================
+[22:14:34] command: /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f1 --folds 5 --fold 1 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+[22:14:34] GPU NVIDIA RTX PRO 6000 Blackwell Server Edition: 95.0 GB, 94.4 GB free before loading (close games / browsers / other GPU programs if this is much lower than the total)
+[22:14:34] device=cuda (NVIDIA RTX PRO 6000 Blackwell Server Edition) torch=2.8.0+cu128 transformers=4.57.6 peft=0.18.1 preset=qwen3-14b dtype=torch.bfloat16
+[22:14:34] config: {"lr": 0.0001, "epochs": 1.0, "seqs_per_update": 16, "token_budget": 4096, "max_micro": 16, "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "model": "/root/autodl-tmp/Qwen/Qwen3-14B-Base", "grad_ckpt": false, "max_len": 1024, "head": 256, "head_lr_mult": 2.0, "label_smoothing": 0.0, "weight_decay": 0.01, "warmup": 0.05, "prompt_version": "v1"}
+[22:14:34] train=20,000 validation=5,000 test=25,000 split={'mode': 'kfold', 'folds': 5, 'fold': 1, 'split_seed': 42}
+[22:14:34] prompt: 3 prefix + 17 suffix tokens, bos=None, pad=151643, verbalizer ids {' negative': 8225, ' positive': 6785}
+[22:14:59] tokenised 50,000 reviews in 25s; mean length 304 tokens (prompt included); 453 train / 420 test reviews truncated to 1024
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.32it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.30it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.29it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.28it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.29it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.30it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.30it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.57it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.39it/s]
+[22:15:06] loaded /root/autodl-tmp/Qwen/Qwen3-14B-Base in 7s; hidden 5120; LoRA r=16 trains 64.2M of 14.05B weights (+ 10,242 head); GPU memory 26.3 GB
+[22:15:07] memory probe ok: 4 x 1024 tokens per micro-batch, grad_ckpt=False, peak 79.0 GB allocated / 79.8 GB reserved of 95.0 GB
+[22:15:19] UPDATE-0 CHECK (zero-shot, nothing trained yet) on 256 validation reviews: AUC 0.990, accuracy 94.53%  <- AUC should be clearly above 0.5
+[22:15:19] 1250 updates/epoch x 16 reviews, 1250 updates total, warm-up 62, token budget 4096, mid-training evaluation every 625 updates
+[22:15:52] epoch 1 update 25/1250 loss 0.1929 lr 4.19e-05 3,324 tok/s elapsed 0.5 min ETA 26.4 min peak 84.6 GB
+[22:16:30] epoch 1 update 50/1250 loss 0.0934 lr 8.23e-05 3,303 tok/s elapsed 1.2 min ETA 28.3 min peak 85.2 GB
+[22:16:57] epoch 1 update 75/1250 loss 0.1754 lr 1.00e-04 3,322 tok/s elapsed 1.6 min ETA 25.5 min peak 85.2 GB
+[22:17:24] epoch 1 update 100/1250 loss 0.1707 lr 9.97e-05 3,330 tok/s elapsed 2.1 min ETA 23.9 min peak 85.2 GB
+[22:17:59] epoch 1 update 125/1250 loss 0.1666 lr 9.93e-05 3,330 tok/s elapsed 2.7 min ETA 23.9 min peak 85.3 GB
+[22:18:34] epoch 1 update 150/1250 loss 0.1411 lr 9.87e-05 3,336 tok/s elapsed 3.2 min ETA 23.8 min peak 85.3 GB
+[22:19:13] epoch 1 update 175/1250 loss 0.1347 lr 9.78e-05 3,333 tok/s elapsed 3.9 min ETA 24.0 min peak 85.3 GB
+[22:19:52] epoch 1 update 200/1250 loss 0.0881 lr 9.67e-05 3,330 tok/s elapsed 4.5 min ETA 23.8 min peak 85.3 GB
+[22:20:44] epoch 1 update 225/1250 loss 0.1110 lr 9.54e-05 3,323 tok/s elapsed 5.4 min ETA 24.7 min peak 85.3 GB
+[22:21:23] epoch 1 update 250/1250 loss 0.1330 lr 9.39e-05 3,321 tok/s elapsed 6.1 min ETA 24.3 min peak 85.3 GB
+[22:22:00] epoch 1 update 275/1250 loss 0.0925 lr 9.23e-05 3,316 tok/s elapsed 6.7 min ETA 23.7 min peak 85.3 GB
+[22:22:47] epoch 1 update 300/1250 loss 0.1521 lr 9.04e-05 3,309 tok/s elapsed 7.5 min ETA 23.6 min peak 85.6 GB
+[22:23:26] epoch 1 update 325/1250 loss 0.1632 lr 8.84e-05 3,307 tok/s elapsed 8.1 min ETA 23.1 min peak 85.6 GB
+[22:23:59] epoch 1 update 350/1250 loss 0.0937 lr 8.62e-05 3,308 tok/s elapsed 8.7 min ETA 22.3 min peak 85.6 GB
+[22:24:31] epoch 1 update 375/1250 loss 0.1514 lr 8.38e-05 3,309 tok/s elapsed 9.2 min ETA 21.5 min peak 85.6 GB
+[22:25:16] epoch 1 update 400/1250 loss 0.1439 lr 8.13e-05 3,308 tok/s elapsed 9.9 min ETA 21.1 min peak 85.6 GB
+[22:25:55] epoch 1 update 425/1250 loss 0.1335 lr 7.87e-05 3,308 tok/s elapsed 10.6 min ETA 20.6 min peak 85.6 GB
+[22:26:34] epoch 1 update 450/1250 loss 0.1153 lr 7.59e-05 3,309 tok/s elapsed 11.2 min ETA 20.0 min peak 85.6 GB
+[22:27:05] epoch 1 update 475/1250 loss 0.2004 lr 7.30e-05 3,311 tok/s elapsed 11.8 min ETA 19.2 min peak 85.6 GB
+[22:27:38] epoch 1 update 500/1250 loss 0.0461 lr 7.00e-05 3,314 tok/s elapsed 12.3 min ETA 18.5 min peak 85.6 GB
+[22:28:10] epoch 1 update 525/1250 loss 0.1737 lr 6.70e-05 3,315 tok/s elapsed 12.9 min ETA 17.7 min peak 85.6 GB
+[22:28:50] epoch 1 update 550/1250 loss 0.1514 lr 6.38e-05 3,313 tok/s elapsed 13.5 min ETA 17.2 min peak 85.6 GB
+[22:29:20] epoch 1 update 575/1250 loss 0.1072 lr 6.06e-05 3,314 tok/s elapsed 14.0 min ETA 16.5 min peak 85.6 GB
+[22:30:02] epoch 1 update 600/1250 loss 0.0479 lr 5.74e-05 3,315 tok/s elapsed 14.7 min ETA 15.9 min peak 85.6 GB
+[22:30:44] epoch 1 update 625/1250 loss 0.1190 lr 5.41e-05 3,315 tok/s elapsed 15.4 min ETA 15.4 min peak 85.6 GB
+[22:34:04]   VALIDATION accuracy 96.3800% (AUC 0.9933) at update 625 (epoch 0.50)
+[22:34:37] epoch 1 update 650/1250 loss 0.1130 lr 5.08e-05 3,316 tok/s elapsed 19.3 min ETA 14.7 min peak 85.6 GB
+[22:35:27] epoch 1 update 675/1250 loss 0.1283 lr 4.75e-05 3,311 tok/s elapsed 20.1 min ETA 14.3 min peak 85.6 GB
+[22:36:01] epoch 1 update 700/1250 loss 0.1952 lr 4.42e-05 3,310 tok/s elapsed 20.7 min ETA 13.6 min peak 85.6 GB
+[22:36:37] epoch 1 update 725/1250 loss 0.0648 lr 4.09e-05 3,309 tok/s elapsed 21.3 min ETA 13.0 min peak 85.6 GB
+[22:37:12] epoch 1 update 750/1250 loss 0.1426 lr 3.77e-05 3,309 tok/s elapsed 21.9 min ETA 12.4 min peak 85.6 GB
+[22:37:47] epoch 1 update 775/1250 loss 0.0948 lr 3.45e-05 3,310 tok/s elapsed 22.5 min ETA 11.7 min peak 85.6 GB
+[22:38:21] epoch 1 update 800/1250 loss 0.1203 lr 3.14e-05 3,311 tok/s elapsed 23.0 min ETA 11.1 min peak 85.6 GB
+[22:38:55] epoch 1 update 825/1250 loss 0.1374 lr 2.84e-05 3,312 tok/s elapsed 23.6 min ETA 10.4 min peak 85.6 GB
+[22:39:32] epoch 1 update 850/1250 loss 0.1445 lr 2.55e-05 3,313 tok/s elapsed 24.2 min ETA 9.8 min peak 85.6 GB
+[22:40:07] epoch 1 update 875/1250 loss 0.1025 lr 2.26e-05 3,314 tok/s elapsed 24.8 min ETA 9.2 min peak 85.6 GB
+[22:40:38] epoch 1 update 900/1250 loss 0.0874 lr 1.99e-05 3,316 tok/s elapsed 25.3 min ETA 8.5 min peak 85.6 GB
+[22:41:10] epoch 1 update 925/1250 loss 0.0946 lr 1.74e-05 3,316 tok/s elapsed 25.8 min ETA 7.9 min peak 85.6 GB
+[22:41:50] epoch 1 update 950/1250 loss 0.0659 lr 1.49e-05 3,316 tok/s elapsed 26.5 min ETA 7.3 min peak 85.6 GB
+[22:42:32] epoch 1 update 975/1250 loss 0.0726 lr 1.26e-05 3,315 tok/s elapsed 27.2 min ETA 6.7 min peak 85.6 GB
+[22:43:10] epoch 1 update 1000/1250 loss 0.1100 lr 1.05e-05 3,315 tok/s elapsed 27.9 min ETA 6.1 min peak 85.6 GB
+[22:43:48] epoch 1 update 1025/1250 loss 0.0528 lr 8.59e-06 3,314 tok/s elapsed 28.5 min ETA 5.5 min peak 85.6 GB
+[22:44:30] epoch 1 update 1050/1250 loss 0.1051 lr 6.83e-06 3,312 tok/s elapsed 29.2 min ETA 4.9 min peak 85.6 GB
+[22:45:03] epoch 1 update 1075/1250 loss 0.1168 lr 5.26e-06 3,311 tok/s elapsed 29.7 min ETA 4.3 min peak 85.6 GB
+[22:45:36] epoch 1 update 1100/1250 loss 0.0798 lr 3.88e-06 3,313 tok/s elapsed 30.3 min ETA 3.7 min peak 85.6 GB
+[22:46:16] epoch 1 update 1125/1250 loss 0.0788 lr 2.71e-06 3,313 tok/s elapsed 30.9 min ETA 3.1 min peak 85.6 GB
+[22:46:42] epoch 1 update 1150/1250 loss 0.0959 lr 1.74e-06 3,314 tok/s elapsed 31.4 min ETA 2.4 min peak 85.6 GB
+[22:47:16] epoch 1 update 1175/1250 loss 0.0863 lr 9.80e-07 3,316 tok/s elapsed 31.9 min ETA 1.8 min peak 85.6 GB
+[22:47:48] epoch 1 update 1200/1250 loss 0.1159 lr 4.36e-07 3,316 tok/s elapsed 32.5 min ETA 1.2 min peak 85.6 GB
+[22:48:39] epoch 1 update 1225/1250 loss 0.0940 lr 1.09e-07 3,316 tok/s elapsed 33.3 min ETA 0.6 min peak 85.6 GB
+[22:49:09] epoch 1 update 1250/1250 loss 0.0879 lr 0.00e+00 3,316 tok/s elapsed 33.8 min ETA 0.0 min peak 85.6 GB
+[22:49:09] training finished in 33.8 min (3,316 tok/s without the 3.3 min of mid-training evaluation, 0 skipped updates, 0 out-of-memory retries)
+[22:49:22] saved LoRA adapter + head -> runs/cv-qwen3-14b/qwen3-14b-f1/adapter
+[22:49:22] training model freed; 0.0 GB still allocated before re-loading
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.34it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.32it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.31it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.31it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.32it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.32it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.32it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.49it/s]
+[22:49:28] re-loaded base model + adapter from disk in 6s
+[22:49:40] reload check on 256 reviews: max |margin(reloaded) - margin(in memory)| = 0.0000; training moved the margins by 2.564 on average
+[23:09:22] VALIDATION accuracy 96.9600% (AUC 0.9942) on 5,000 reviews; test positive share 0.4986; prediction took 19.7 min
+[23:09:22] wrote runs/cv-qwen3-14b/qwen3-14b-f1/submission.csv sha256=8953e4f963ff299c30818f9ffa738a37995e22464a0f5bd389a82587a6153bf7
+[23:09:22] note: this is a single-fold prediction; the file to submit is the fold average written by assemble_cv.py (or the ensemble written by ensemble_cv.py / compare_runs.py)
+[23:09:22] done in 54.8 min -> runs/cv-qwen3-14b/qwen3-14b-f1
+fold 1 done in 54.9 min
+
+==============================================================================
+fold 2/5  (3 of 5 to run, 109.7 min elapsed)
+  /root/miniconda3/bin/python /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f2 --folds 5 --fold 2 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+==============================================================================
+[23:09:25] ======================================================================
+[23:09:25] command: /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f2 --folds 5 --fold 2 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+[23:09:25] GPU NVIDIA RTX PRO 6000 Blackwell Server Edition: 95.0 GB, 94.4 GB free before loading (close games / browsers / other GPU programs if this is much lower than the total)
+[23:09:25] device=cuda (NVIDIA RTX PRO 6000 Blackwell Server Edition) torch=2.8.0+cu128 transformers=4.57.6 peft=0.18.1 preset=qwen3-14b dtype=torch.bfloat16
+[23:09:25] config: {"lr": 0.0001, "epochs": 1.0, "seqs_per_update": 16, "token_budget": 4096, "max_micro": 16, "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "model": "/root/autodl-tmp/Qwen/Qwen3-14B-Base", "grad_ckpt": false, "max_len": 1024, "head": 256, "head_lr_mult": 2.0, "label_smoothing": 0.0, "weight_decay": 0.01, "warmup": 0.05, "prompt_version": "v1"}
+[23:09:26] train=20,000 validation=5,000 test=25,000 split={'mode': 'kfold', 'folds': 5, 'fold': 2, 'split_seed': 42}
+[23:09:26] prompt: 3 prefix + 17 suffix tokens, bos=None, pad=151643, verbalizer ids {' negative': 8225, ' positive': 6785}
+[23:09:51] tokenised 50,000 reviews in 25s; mean length 304 tokens (prompt included); 453 train / 420 test reviews truncated to 1024
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.34it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.32it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.32it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.31it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.32it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.33it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.33it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.61it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.42it/s]
+[23:09:58] loaded /root/autodl-tmp/Qwen/Qwen3-14B-Base in 6s; hidden 5120; LoRA r=16 trains 64.2M of 14.05B weights (+ 10,242 head); GPU memory 26.3 GB
+[23:09:59] memory probe ok: 4 x 1024 tokens per micro-batch, grad_ckpt=False, peak 79.0 GB allocated / 79.8 GB reserved of 95.0 GB
+[23:10:11] UPDATE-0 CHECK (zero-shot, nothing trained yet) on 256 validation reviews: AUC 0.988, accuracy 95.31%  <- AUC should be clearly above 0.5
+[23:10:11] 1250 updates/epoch x 16 reviews, 1250 updates total, warm-up 62, token budget 4096, mid-training evaluation every 625 updates
+[23:10:44] epoch 1 update 25/1250 loss 0.1013 lr 4.19e-05 3,326 tok/s elapsed 0.6 min ETA 27.0 min peak 84.5 GB
+[23:11:23] epoch 1 update 50/1250 loss 0.2436 lr 8.23e-05 3,303 tok/s elapsed 1.2 min ETA 28.6 min peak 84.9 GB
+[23:11:49] epoch 1 update 75/1250 loss 0.3440 lr 1.00e-04 3,328 tok/s elapsed 1.6 min ETA 25.6 min peak 84.9 GB
+[23:12:16] epoch 1 update 100/1250 loss 0.1918 lr 9.97e-05 3,340 tok/s elapsed 2.1 min ETA 23.9 min peak 84.9 GB
+[23:12:50] epoch 1 update 125/1250 loss 0.2149 lr 9.93e-05 3,340 tok/s elapsed 2.6 min ETA 23.8 min peak 84.9 GB
+[23:13:25] epoch 1 update 150/1250 loss 0.2259 lr 9.87e-05 3,345 tok/s elapsed 3.2 min ETA 23.7 min peak 85.0 GB
+[23:14:04] epoch 1 update 175/1250 loss 0.1674 lr 9.78e-05 3,342 tok/s elapsed 3.9 min ETA 23.9 min peak 85.0 GB
+[23:14:43] epoch 1 update 200/1250 loss 0.1428 lr 9.67e-05 3,336 tok/s elapsed 4.5 min ETA 23.8 min peak 85.0 GB
+[23:15:35] epoch 1 update 225/1250 loss 0.1467 lr 9.54e-05 3,331 tok/s elapsed 5.4 min ETA 24.6 min peak 85.0 GB
+[23:16:15] epoch 1 update 250/1250 loss 0.1814 lr 9.39e-05 3,325 tok/s elapsed 6.1 min ETA 24.2 min peak 85.0 GB
+[23:16:53] epoch 1 update 275/1250 loss 0.0729 lr 9.23e-05 3,320 tok/s elapsed 6.7 min ETA 23.7 min peak 85.0 GB
+[23:17:39] epoch 1 update 300/1250 loss 0.1188 lr 9.04e-05 3,312 tok/s elapsed 7.5 min ETA 23.6 min peak 85.0 GB
+[23:18:19] epoch 1 update 325/1250 loss 0.1582 lr 8.84e-05 3,312 tok/s elapsed 8.1 min ETA 23.1 min peak 85.3 GB
+[23:18:53] epoch 1 update 350/1250 loss 0.1597 lr 8.62e-05 3,310 tok/s elapsed 8.7 min ETA 22.4 min peak 85.3 GB
+[23:19:27] epoch 1 update 375/1250 loss 0.1087 lr 8.38e-05 3,310 tok/s elapsed 9.3 min ETA 21.6 min peak 85.3 GB
+[23:20:12] epoch 1 update 400/1250 loss 0.1508 lr 8.13e-05 3,308 tok/s elapsed 10.0 min ETA 21.3 min peak 85.3 GB
+[23:20:50] epoch 1 update 425/1250 loss 0.1587 lr 7.87e-05 3,307 tok/s elapsed 10.7 min ETA 20.7 min peak 85.3 GB
+[23:21:30] epoch 1 update 450/1250 loss 0.1672 lr 7.59e-05 3,308 tok/s elapsed 11.3 min ETA 20.1 min peak 85.3 GB
+[23:22:01] epoch 1 update 475/1250 loss 0.4048 lr 7.30e-05 3,310 tok/s elapsed 11.8 min ETA 19.3 min peak 85.3 GB
+[23:22:34] epoch 1 update 500/1250 loss 0.2268 lr 7.00e-05 3,313 tok/s elapsed 12.4 min ETA 18.6 min peak 85.3 GB
+[23:23:06] epoch 1 update 525/1250 loss 0.0923 lr 6.70e-05 3,314 tok/s elapsed 12.9 min ETA 17.8 min peak 85.3 GB
+[23:23:45] epoch 1 update 550/1250 loss 0.2408 lr 6.38e-05 3,313 tok/s elapsed 13.6 min ETA 17.3 min peak 85.3 GB
+[23:24:16] epoch 1 update 575/1250 loss 0.1708 lr 6.06e-05 3,314 tok/s elapsed 14.1 min ETA 16.5 min peak 85.3 GB
+[23:24:58] epoch 1 update 600/1250 loss 0.1852 lr 5.74e-05 3,315 tok/s elapsed 14.8 min ETA 16.0 min peak 85.3 GB
+[23:25:39] epoch 1 update 625/1250 loss 0.0527 lr 5.41e-05 3,315 tok/s elapsed 15.5 min ETA 15.5 min peak 85.3 GB
+[23:28:57]   VALIDATION accuracy 97.1600% (AUC 0.9948) at update 625 (epoch 0.50)
+[23:29:30] epoch 1 update 650/1250 loss 0.1445 lr 5.08e-05 3,315 tok/s elapsed 19.3 min ETA 14.8 min peak 85.3 GB
+[23:30:19] epoch 1 update 675/1250 loss 0.1074 lr 4.75e-05 3,311 tok/s elapsed 20.1 min ETA 14.3 min peak 85.3 GB
+[23:30:53] epoch 1 update 700/1250 loss 0.1183 lr 4.42e-05 3,312 tok/s elapsed 20.7 min ETA 13.7 min peak 85.3 GB
+[23:31:30] epoch 1 update 725/1250 loss 0.1265 lr 4.09e-05 3,310 tok/s elapsed 21.3 min ETA 13.0 min peak 85.3 GB
+[23:32:05] epoch 1 update 750/1250 loss 0.1058 lr 3.77e-05 3,310 tok/s elapsed 21.9 min ETA 12.4 min peak 85.3 GB
+[23:32:41] epoch 1 update 775/1250 loss 0.0974 lr 3.45e-05 3,312 tok/s elapsed 22.5 min ETA 11.8 min peak 85.3 GB
+[23:33:16] epoch 1 update 800/1250 loss 0.1503 lr 3.14e-05 3,312 tok/s elapsed 23.1 min ETA 11.1 min peak 85.3 GB
+[23:33:50] epoch 1 update 825/1250 loss 0.0991 lr 2.84e-05 3,313 tok/s elapsed 23.6 min ETA 10.5 min peak 85.3 GB
+[23:34:27] epoch 1 update 850/1250 loss 0.0910 lr 2.55e-05 3,313 tok/s elapsed 24.3 min ETA 9.9 min peak 85.3 GB
+[23:35:03] epoch 1 update 875/1250 loss 0.0884 lr 2.26e-05 3,313 tok/s elapsed 24.9 min ETA 9.2 min peak 85.3 GB
+[23:35:33] epoch 1 update 900/1250 loss 0.0440 lr 1.99e-05 3,315 tok/s elapsed 25.4 min ETA 8.6 min peak 85.3 GB
+[23:36:06] epoch 1 update 925/1250 loss 0.1977 lr 1.74e-05 3,315 tok/s elapsed 25.9 min ETA 7.9 min peak 85.3 GB
+[23:36:46] epoch 1 update 950/1250 loss 0.0894 lr 1.49e-05 3,314 tok/s elapsed 26.6 min ETA 7.4 min peak 85.3 GB
+[23:37:28] epoch 1 update 975/1250 loss 0.0877 lr 1.26e-05 3,312 tok/s elapsed 27.3 min ETA 6.8 min peak 85.3 GB
+[23:38:06] epoch 1 update 1000/1250 loss 0.1094 lr 1.05e-05 3,312 tok/s elapsed 27.9 min ETA 6.2 min peak 85.3 GB
+[23:38:43] epoch 1 update 1025/1250 loss 0.1094 lr 8.59e-06 3,311 tok/s elapsed 28.5 min ETA 5.5 min peak 85.3 GB
+[23:39:26] epoch 1 update 1050/1250 loss 0.0635 lr 6.83e-06 3,310 tok/s elapsed 29.2 min ETA 4.9 min peak 85.3 GB
+[23:39:59] epoch 1 update 1075/1250 loss 0.1184 lr 5.26e-06 3,310 tok/s elapsed 29.8 min ETA 4.3 min peak 85.3 GB
+[23:40:32] epoch 1 update 1100/1250 loss 0.1004 lr 3.88e-06 3,310 tok/s elapsed 30.3 min ETA 3.7 min peak 85.3 GB
+[23:41:12] epoch 1 update 1125/1250 loss 0.1384 lr 2.71e-06 3,311 tok/s elapsed 31.0 min ETA 3.1 min peak 85.3 GB
+[23:41:37] epoch 1 update 1150/1250 loss 0.0868 lr 1.74e-06 3,312 tok/s elapsed 31.4 min ETA 2.4 min peak 85.3 GB
+[23:42:12] epoch 1 update 1175/1250 loss 0.0834 lr 9.80e-07 3,314 tok/s elapsed 32.0 min ETA 1.8 min peak 85.3 GB
+[23:42:45] epoch 1 update 1200/1250 loss 0.0965 lr 4.36e-07 3,314 tok/s elapsed 32.6 min ETA 1.2 min peak 85.3 GB
+[23:43:36] epoch 1 update 1225/1250 loss 0.1019 lr 1.09e-07 3,313 tok/s elapsed 33.4 min ETA 0.6 min peak 85.3 GB
+[23:44:07] epoch 1 update 1250/1250 loss 0.1612 lr 0.00e+00 3,314 tok/s elapsed 33.9 min ETA 0.0 min peak 85.3 GB
+[23:44:07] training finished in 33.9 min (3,314 tok/s without the 3.3 min of mid-training evaluation, 0 skipped updates, 0 out-of-memory retries)
+[23:44:19] saved LoRA adapter + head -> runs/cv-qwen3-14b/qwen3-14b-f2/adapter
+[23:44:19] training model freed; 0.0 GB still allocated before re-loading
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.29it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.30it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.29it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.29it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.30it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.31it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.31it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.47it/s]
+[23:44:26] re-loaded base model + adapter from disk in 6s
+[23:44:38] reload check on 256 reviews: max |margin(reloaded) - margin(in memory)| = 0.0000; training moved the margins by 2.242 on average
+[00:04:16] VALIDATION accuracy 97.3800% (AUC 0.9959) on 5,000 reviews; test positive share 0.4972; prediction took 19.6 min
+[00:04:16] wrote runs/cv-qwen3-14b/qwen3-14b-f2/submission.csv sha256=53649354ec058ce6803f7940dbab5a0140cfd4d8c0e17aa1b21f78f784911ee0
+[00:04:16] note: this is a single-fold prediction; the file to submit is the fold average written by assemble_cv.py (or the ensemble written by ensemble_cv.py / compare_runs.py)
+[00:04:16] done in 54.86 min -> runs/cv-qwen3-14b/qwen3-14b-f2
+fold 2 done in 54.9 min
+
+==============================================================================
+fold 3/5  (4 of 5 to run, 164.6 min elapsed)
+  /root/miniconda3/bin/python /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f3 --folds 5 --fold 3 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+==============================================================================
+[00:04:20] ======================================================================
+[00:04:20] command: /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f3 --folds 5 --fold 3 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+[00:04:20] GPU NVIDIA RTX PRO 6000 Blackwell Server Edition: 95.0 GB, 94.4 GB free before loading (close games / browsers / other GPU programs if this is much lower than the total)
+[00:04:20] device=cuda (NVIDIA RTX PRO 6000 Blackwell Server Edition) torch=2.8.0+cu128 transformers=4.57.6 peft=0.18.1 preset=qwen3-14b dtype=torch.bfloat16
+[00:04:20] config: {"lr": 0.0001, "epochs": 1.0, "seqs_per_update": 16, "token_budget": 4096, "max_micro": 16, "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "model": "/root/autodl-tmp/Qwen/Qwen3-14B-Base", "grad_ckpt": false, "max_len": 1024, "head": 256, "head_lr_mult": 2.0, "label_smoothing": 0.0, "weight_decay": 0.01, "warmup": 0.05, "prompt_version": "v1"}
+[00:04:21] train=20,000 validation=5,000 test=25,000 split={'mode': 'kfold', 'folds': 5, 'fold': 3, 'split_seed': 42}
+[00:04:21] prompt: 3 prefix + 17 suffix tokens, bos=None, pad=151643, verbalizer ids {' negative': 8225, ' positive': 6785}
+[00:04:46] tokenised 50,000 reviews in 25s; mean length 304 tokens (prompt included); 453 train / 420 test reviews truncated to 1024
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.30it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.29it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.28it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.27it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.28it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.29it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.29it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.57it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.38it/s]
+[00:04:53] loaded /root/autodl-tmp/Qwen/Qwen3-14B-Base in 7s; hidden 5120; LoRA r=16 trains 64.2M of 14.05B weights (+ 10,242 head); GPU memory 26.3 GB
+[00:04:54] memory probe ok: 4 x 1024 tokens per micro-batch, grad_ckpt=False, peak 79.0 GB allocated / 79.8 GB reserved of 95.0 GB
+[00:05:06] UPDATE-0 CHECK (zero-shot, nothing trained yet) on 256 validation reviews: AUC 0.993, accuracy 96.09%  <- AUC should be clearly above 0.5
+[00:05:06] 1250 updates/epoch x 16 reviews, 1250 updates total, warm-up 62, token budget 4096, mid-training evaluation every 625 updates
+[00:05:39] epoch 1 update 25/1250 loss 0.1080 lr 4.19e-05 3,319 tok/s elapsed 0.5 min ETA 26.7 min peak 85.0 GB
+[00:06:17] epoch 1 update 50/1250 loss 0.3295 lr 8.23e-05 3,315 tok/s elapsed 1.2 min ETA 28.3 min peak 85.0 GB
+[00:06:44] epoch 1 update 75/1250 loss 0.1933 lr 1.00e-04 3,338 tok/s elapsed 1.6 min ETA 25.5 min peak 85.0 GB
+[00:07:11] epoch 1 update 100/1250 loss 0.2205 lr 9.97e-05 3,340 tok/s elapsed 2.1 min ETA 24.0 min peak 85.0 GB
+[00:07:46] epoch 1 update 125/1250 loss 0.1914 lr 9.93e-05 3,337 tok/s elapsed 2.7 min ETA 24.0 min peak 85.3 GB
+[00:08:22] epoch 1 update 150/1250 loss 0.1537 lr 9.87e-05 3,347 tok/s elapsed 3.3 min ETA 23.9 min peak 85.3 GB
+[00:09:01] epoch 1 update 175/1250 loss 0.1493 lr 9.78e-05 3,340 tok/s elapsed 3.9 min ETA 24.1 min peak 85.3 GB
+[00:09:40] epoch 1 update 200/1250 loss 0.1664 lr 9.67e-05 3,334 tok/s elapsed 4.6 min ETA 23.9 min peak 85.3 GB
+[00:10:31] epoch 1 update 225/1250 loss 0.2397 lr 9.54e-05 3,328 tok/s elapsed 5.4 min ETA 24.7 min peak 85.3 GB
+[00:11:12] epoch 1 update 250/1250 loss 0.1248 lr 9.39e-05 3,324 tok/s elapsed 6.1 min ETA 24.4 min peak 85.3 GB
+[00:11:49] epoch 1 update 275/1250 loss 0.2100 lr 9.23e-05 3,321 tok/s elapsed 6.7 min ETA 23.8 min peak 85.3 GB
+[00:12:35] epoch 1 update 300/1250 loss 0.0980 lr 9.04e-05 3,312 tok/s elapsed 7.5 min ETA 23.7 min peak 85.3 GB
+[00:13:16] epoch 1 update 325/1250 loss 0.1552 lr 8.84e-05 3,309 tok/s elapsed 8.2 min ETA 23.2 min peak 85.3 GB
+[00:13:48] epoch 1 update 350/1250 loss 0.1936 lr 8.62e-05 3,310 tok/s elapsed 8.7 min ETA 22.4 min peak 85.3 GB
+[00:14:22] epoch 1 update 375/1250 loss 0.1044 lr 8.38e-05 3,312 tok/s elapsed 9.3 min ETA 21.6 min peak 85.3 GB
+[00:15:06] epoch 1 update 400/1250 loss 0.2614 lr 8.13e-05 3,312 tok/s elapsed 10.0 min ETA 21.3 min peak 85.3 GB
+[00:15:44] epoch 1 update 425/1250 loss 0.1768 lr 7.87e-05 3,312 tok/s elapsed 10.6 min ETA 20.6 min peak 85.3 GB
+[00:16:25] epoch 1 update 450/1250 loss 0.1526 lr 7.59e-05 3,312 tok/s elapsed 11.3 min ETA 20.1 min peak 85.3 GB
+[00:16:57] epoch 1 update 475/1250 loss 0.1212 lr 7.30e-05 3,313 tok/s elapsed 11.8 min ETA 19.3 min peak 85.3 GB
+[00:17:29] epoch 1 update 500/1250 loss 0.1732 lr 7.00e-05 3,317 tok/s elapsed 12.4 min ETA 18.6 min peak 85.3 GB
+[00:18:01] epoch 1 update 525/1250 loss 0.1403 lr 6.70e-05 3,318 tok/s elapsed 12.9 min ETA 17.8 min peak 85.3 GB
+[00:18:41] epoch 1 update 550/1250 loss 0.2474 lr 6.38e-05 3,315 tok/s elapsed 13.6 min ETA 17.3 min peak 85.3 GB
+[00:19:12] epoch 1 update 575/1250 loss 0.0978 lr 6.06e-05 3,317 tok/s elapsed 14.1 min ETA 16.5 min peak 85.3 GB
+[00:19:54] epoch 1 update 600/1250 loss 0.1212 lr 5.74e-05 3,318 tok/s elapsed 14.8 min ETA 16.0 min peak 85.3 GB
+[00:20:35] epoch 1 update 625/1250 loss 0.1214 lr 5.41e-05 3,318 tok/s elapsed 15.5 min ETA 15.5 min peak 85.3 GB
+[00:23:51]   VALIDATION accuracy 97.1600% (AUC 0.9954) at update 625 (epoch 0.50)
+[00:24:24] epoch 1 update 650/1250 loss 0.1303 lr 5.08e-05 3,318 tok/s elapsed 19.3 min ETA 14.8 min peak 85.3 GB
+[00:25:14] epoch 1 update 675/1250 loss 0.0434 lr 4.75e-05 3,314 tok/s elapsed 20.1 min ETA 14.4 min peak 85.3 GB
+[00:25:48] epoch 1 update 700/1250 loss 0.0915 lr 4.42e-05 3,314 tok/s elapsed 20.7 min ETA 13.7 min peak 85.3 GB
+[00:26:25] epoch 1 update 725/1250 loss 0.0912 lr 4.09e-05 3,313 tok/s elapsed 21.3 min ETA 13.1 min peak 85.3 GB
+[00:27:00] epoch 1 update 750/1250 loss 0.0899 lr 3.77e-05 3,314 tok/s elapsed 21.9 min ETA 12.4 min peak 85.3 GB
+[00:27:35] epoch 1 update 775/1250 loss 0.1191 lr 3.45e-05 3,315 tok/s elapsed 22.5 min ETA 11.8 min peak 85.3 GB
+[00:28:10] epoch 1 update 800/1250 loss 0.0843 lr 3.14e-05 3,315 tok/s elapsed 23.1 min ETA 11.1 min peak 85.3 GB
+[00:28:45] epoch 1 update 825/1250 loss 0.1054 lr 2.84e-05 3,317 tok/s elapsed 23.6 min ETA 10.5 min peak 85.3 GB
+[00:29:21] epoch 1 update 850/1250 loss 0.1008 lr 2.55e-05 3,317 tok/s elapsed 24.3 min ETA 9.9 min peak 85.3 GB
+[00:29:57] epoch 1 update 875/1250 loss 0.0369 lr 2.26e-05 3,317 tok/s elapsed 24.8 min ETA 9.2 min peak 85.3 GB
+[00:30:28] epoch 1 update 900/1250 loss 0.0644 lr 1.99e-05 3,319 tok/s elapsed 25.4 min ETA 8.6 min peak 85.3 GB
+[00:31:01] epoch 1 update 925/1250 loss 0.1374 lr 1.74e-05 3,318 tok/s elapsed 25.9 min ETA 8.0 min peak 85.3 GB
+[00:31:41] epoch 1 update 950/1250 loss 0.1079 lr 1.49e-05 3,318 tok/s elapsed 26.6 min ETA 7.4 min peak 85.3 GB
+[00:32:24] epoch 1 update 975/1250 loss 0.1041 lr 1.26e-05 3,317 tok/s elapsed 27.3 min ETA 6.8 min peak 85.3 GB
+[00:33:02] epoch 1 update 1000/1250 loss 0.1196 lr 1.05e-05 3,316 tok/s elapsed 27.9 min ETA 6.2 min peak 85.3 GB
+[00:33:40] epoch 1 update 1025/1250 loss 0.0641 lr 8.59e-06 3,315 tok/s elapsed 28.6 min ETA 5.6 min peak 85.3 GB
+[00:34:22] epoch 1 update 1050/1250 loss 0.1123 lr 6.83e-06 3,313 tok/s elapsed 29.3 min ETA 5.0 min peak 85.3 GB
+[00:34:55] epoch 1 update 1075/1250 loss 0.0968 lr 5.26e-06 3,313 tok/s elapsed 29.8 min ETA 4.3 min peak 85.3 GB
+[00:35:28] epoch 1 update 1100/1250 loss 0.0993 lr 3.88e-06 3,313 tok/s elapsed 30.4 min ETA 3.7 min peak 85.3 GB
+[00:36:09] epoch 1 update 1125/1250 loss 0.0739 lr 2.71e-06 3,314 tok/s elapsed 31.0 min ETA 3.1 min peak 85.3 GB
+[00:36:35] epoch 1 update 1150/1250 loss 0.1219 lr 1.74e-06 3,315 tok/s elapsed 31.5 min ETA 2.5 min peak 85.3 GB
+[00:37:08] epoch 1 update 1175/1250 loss 0.1150 lr 9.80e-07 3,316 tok/s elapsed 32.0 min ETA 1.8 min peak 85.3 GB
+[00:37:42] epoch 1 update 1200/1250 loss 0.0412 lr 4.36e-07 3,316 tok/s elapsed 32.6 min ETA 1.2 min peak 85.3 GB
+[00:38:32] epoch 1 update 1225/1250 loss 0.1215 lr 1.09e-07 3,315 tok/s elapsed 33.4 min ETA 0.6 min peak 85.3 GB
+[00:39:03] epoch 1 update 1250/1250 loss 0.1246 lr 0.00e+00 3,316 tok/s elapsed 33.9 min ETA 0.0 min peak 85.3 GB
+[00:39:03] training finished in 33.9 min (3,316 tok/s without the 3.3 min of mid-training evaluation, 0 skipped updates, 0 out-of-memory retries)
+[00:39:15] saved LoRA adapter + head -> runs/cv-qwen3-14b/qwen3-14b-f3/adapter
+[00:39:16] training model freed; 0.0 GB still allocated before re-loading
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.32it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.31it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.30it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.29it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.30it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.30it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.31it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.47it/s]
+[00:39:22] re-loaded base model + adapter from disk in 6s
+[00:39:34] reload check on 256 reviews: max |margin(reloaded) - margin(in memory)| = 0.0000; training moved the margins by 2.224 on average
+[00:59:10] VALIDATION accuracy 97.4400% (AUC 0.9960) on 5,000 reviews; test positive share 0.5014; prediction took 19.6 min
+[00:59:10] wrote runs/cv-qwen3-14b/qwen3-14b-f3/submission.csv sha256=8ae753ea0895c5bcb5359c51943a3f48e3685b629594b215b644032285d9993f
+[00:59:10] note: this is a single-fold prediction; the file to submit is the fold average written by assemble_cv.py (or the ensemble written by ensemble_cv.py / compare_runs.py)
+[00:59:10] done in 54.84 min -> runs/cv-qwen3-14b/qwen3-14b-f3
+fold 3 done in 54.9 min
+
+==============================================================================
+fold 4/5  (5 of 5 to run, 219.5 min elapsed)
+  /root/miniconda3/bin/python /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f4 --folds 5 --fold 4 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+==============================================================================
+[00:59:14] ======================================================================
+[00:59:14] command: /root/autodl-tmp/cds550_cloud/code/finetune_llm.py --data-dir data --output runs/cv-qwen3-14b/qwen3-14b-f4 --folds 5 --fold 4 --preset qwen3-14b --seed 42 --split-seed 42 --eval-every 0.5 --model /root/autodl-tmp/Qwen/Qwen3-14B-Base
+[00:59:14] GPU NVIDIA RTX PRO 6000 Blackwell Server Edition: 95.0 GB, 94.4 GB free before loading (close games / browsers / other GPU programs if this is much lower than the total)
+[00:59:14] device=cuda (NVIDIA RTX PRO 6000 Blackwell Server Edition) torch=2.8.0+cu128 transformers=4.57.6 peft=0.18.1 preset=qwen3-14b dtype=torch.bfloat16
+[00:59:14] config: {"lr": 0.0001, "epochs": 1.0, "seqs_per_update": 16, "token_budget": 4096, "max_micro": 16, "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "model": "/root/autodl-tmp/Qwen/Qwen3-14B-Base", "grad_ckpt": false, "max_len": 1024, "head": 256, "head_lr_mult": 2.0, "label_smoothing": 0.0, "weight_decay": 0.01, "warmup": 0.05, "prompt_version": "v1"}
+[00:59:15] train=20,000 validation=5,000 test=25,000 split={'mode': 'kfold', 'folds': 5, 'fold': 4, 'split_seed': 42}
+[00:59:15] prompt: 3 prefix + 17 suffix tokens, bos=None, pad=151643, verbalizer ids {' negative': 8225, ' positive': 6785}
+[00:59:40] tokenised 50,000 reviews in 25s; mean length 304 tokens (prompt included); 453 train / 420 test reviews truncated to 1024
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.35it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.33it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.32it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.32it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.33it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.33it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.34it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.62it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.43it/s]
+[00:59:46] loaded /root/autodl-tmp/Qwen/Qwen3-14B-Base in 6s; hidden 5120; LoRA r=16 trains 64.2M of 14.05B weights (+ 10,242 head); GPU memory 26.3 GB
+[00:59:48] memory probe ok: 4 x 1024 tokens per micro-batch, grad_ckpt=False, peak 79.0 GB allocated / 79.8 GB reserved of 95.0 GB
+[01:00:01] UPDATE-0 CHECK (zero-shot, nothing trained yet) on 256 validation reviews: AUC 0.998, accuracy 94.53%  <- AUC should be clearly above 0.5
+[01:00:01] 1250 updates/epoch x 16 reviews, 1250 updates total, warm-up 62, token budget 4096, mid-training evaluation every 625 updates
+[01:00:33] epoch 1 update 25/1250 loss 0.1145 lr 4.19e-05 3,324 tok/s elapsed 0.5 min ETA 26.4 min peak 84.5 GB
+[01:01:11] epoch 1 update 50/1250 loss 0.1103 lr 8.23e-05 3,313 tok/s elapsed 1.2 min ETA 28.0 min peak 84.6 GB
+[01:01:37] epoch 1 update 75/1250 loss 0.1694 lr 1.00e-04 3,336 tok/s elapsed 1.6 min ETA 25.3 min peak 84.6 GB
+[01:02:04] epoch 1 update 100/1250 loss 0.2473 lr 9.97e-05 3,341 tok/s elapsed 2.1 min ETA 23.7 min peak 84.6 GB
+[01:02:39] epoch 1 update 125/1250 loss 0.2645 lr 9.93e-05 3,335 tok/s elapsed 2.6 min ETA 23.8 min peak 85.2 GB
+[01:03:15] epoch 1 update 150/1250 loss 0.1846 lr 9.87e-05 3,342 tok/s elapsed 3.2 min ETA 23.7 min peak 85.2 GB
+[01:03:54] epoch 1 update 175/1250 loss 0.1171 lr 9.78e-05 3,337 tok/s elapsed 3.9 min ETA 23.9 min peak 85.2 GB
+[01:04:32] epoch 1 update 200/1250 loss 0.1340 lr 9.67e-05 3,333 tok/s elapsed 4.5 min ETA 23.7 min peak 85.2 GB
+[01:05:23] epoch 1 update 225/1250 loss 0.3259 lr 9.54e-05 3,328 tok/s elapsed 5.4 min ETA 24.5 min peak 85.2 GB
+[01:06:03] epoch 1 update 250/1250 loss 0.1597 lr 9.39e-05 3,324 tok/s elapsed 6.0 min ETA 24.2 min peak 85.3 GB
+[01:06:41] epoch 1 update 275/1250 loss 0.0867 lr 9.23e-05 3,318 tok/s elapsed 6.7 min ETA 23.7 min peak 85.3 GB
+[01:07:28] epoch 1 update 300/1250 loss 0.1054 lr 9.04e-05 3,312 tok/s elapsed 7.5 min ETA 23.6 min peak 85.3 GB
+[01:08:08] epoch 1 update 325/1250 loss 0.1091 lr 8.84e-05 3,311 tok/s elapsed 8.1 min ETA 23.1 min peak 85.3 GB
+[01:08:40] epoch 1 update 350/1250 loss 0.1759 lr 8.62e-05 3,310 tok/s elapsed 8.7 min ETA 22.3 min peak 85.3 GB
+[01:09:13] epoch 1 update 375/1250 loss 0.1626 lr 8.38e-05 3,310 tok/s elapsed 9.2 min ETA 21.5 min peak 85.3 GB
+[01:09:57] epoch 1 update 400/1250 loss 0.1734 lr 8.13e-05 3,309 tok/s elapsed 9.9 min ETA 21.1 min peak 85.3 GB
+[01:10:36] epoch 1 update 425/1250 loss 0.1646 lr 7.87e-05 3,309 tok/s elapsed 10.6 min ETA 20.5 min peak 85.3 GB
+[01:11:16] epoch 1 update 450/1250 loss 0.1004 lr 7.59e-05 3,310 tok/s elapsed 11.3 min ETA 20.0 min peak 85.3 GB
+[01:11:46] epoch 1 update 475/1250 loss 0.1866 lr 7.30e-05 3,311 tok/s elapsed 11.8 min ETA 19.2 min peak 85.3 GB
+[01:12:19] epoch 1 update 500/1250 loss 0.1284 lr 7.00e-05 3,315 tok/s elapsed 12.3 min ETA 18.5 min peak 85.3 GB
+[01:12:51] epoch 1 update 525/1250 loss 0.1473 lr 6.70e-05 3,317 tok/s elapsed 12.8 min ETA 17.7 min peak 85.3 GB
+[01:13:30] epoch 1 update 550/1250 loss 0.1419 lr 6.38e-05 3,315 tok/s elapsed 13.5 min ETA 17.2 min peak 85.3 GB
+[01:14:00] epoch 1 update 575/1250 loss 0.1681 lr 6.06e-05 3,316 tok/s elapsed 14.0 min ETA 16.4 min peak 85.3 GB
+[01:14:41] epoch 1 update 600/1250 loss 0.1149 lr 5.74e-05 3,317 tok/s elapsed 14.7 min ETA 15.9 min peak 85.3 GB
+[01:15:22] epoch 1 update 625/1250 loss 0.1527 lr 5.41e-05 3,318 tok/s elapsed 15.4 min ETA 15.4 min peak 85.3 GB
+[01:18:44]   VALIDATION accuracy 97.1200% (AUC 0.9946) at update 625 (epoch 0.50)
+[01:19:16] epoch 1 update 650/1250 loss 0.1422 lr 5.08e-05 3,318 tok/s elapsed 19.3 min ETA 14.7 min peak 85.3 GB
+[01:20:05] epoch 1 update 675/1250 loss 0.1152 lr 4.75e-05 3,314 tok/s elapsed 20.1 min ETA 14.2 min peak 85.3 GB
+[01:20:39] epoch 1 update 700/1250 loss 0.1152 lr 4.42e-05 3,314 tok/s elapsed 20.6 min ETA 13.6 min peak 85.3 GB
+[01:21:15] epoch 1 update 725/1250 loss 0.1336 lr 4.09e-05 3,313 tok/s elapsed 21.2 min ETA 13.0 min peak 85.3 GB
+[01:21:50] epoch 1 update 750/1250 loss 0.1101 lr 3.77e-05 3,313 tok/s elapsed 21.8 min ETA 12.3 min peak 85.3 GB
+[01:22:25] epoch 1 update 775/1250 loss 0.1039 lr 3.45e-05 3,314 tok/s elapsed 22.4 min ETA 11.7 min peak 85.3 GB
+[01:23:00] epoch 1 update 800/1250 loss 0.1114 lr 3.14e-05 3,314 tok/s elapsed 23.0 min ETA 11.0 min peak 85.3 GB
+[01:23:34] epoch 1 update 825/1250 loss 0.1008 lr 2.84e-05 3,316 tok/s elapsed 23.6 min ETA 10.4 min peak 85.3 GB
+[01:24:11] epoch 1 update 850/1250 loss 0.0924 lr 2.55e-05 3,316 tok/s elapsed 24.2 min ETA 9.8 min peak 85.3 GB
+[01:24:46] epoch 1 update 875/1250 loss 0.0865 lr 2.26e-05 3,316 tok/s elapsed 24.8 min ETA 9.2 min peak 85.3 GB
+[01:25:18] epoch 1 update 900/1250 loss 0.1234 lr 1.99e-05 3,318 tok/s elapsed 25.3 min ETA 8.5 min peak 85.3 GB
+[01:25:50] epoch 1 update 925/1250 loss 0.0906 lr 1.74e-05 3,317 tok/s elapsed 25.8 min ETA 7.9 min peak 85.3 GB
+[01:26:30] epoch 1 update 950/1250 loss 0.0860 lr 1.49e-05 3,317 tok/s elapsed 26.5 min ETA 7.3 min peak 85.3 GB
+[01:27:12] epoch 1 update 975/1250 loss 0.0647 lr 1.26e-05 3,316 tok/s elapsed 27.2 min ETA 6.7 min peak 85.3 GB
+[01:27:50] epoch 1 update 1000/1250 loss 0.0984 lr 1.05e-05 3,316 tok/s elapsed 27.8 min ETA 6.1 min peak 85.3 GB
+[01:28:27] epoch 1 update 1025/1250 loss 0.0598 lr 8.59e-06 3,314 tok/s elapsed 28.4 min ETA 5.5 min peak 85.3 GB
+[01:29:09] epoch 1 update 1050/1250 loss 0.1501 lr 6.83e-06 3,313 tok/s elapsed 29.1 min ETA 4.9 min peak 85.3 GB
+[01:29:42] epoch 1 update 1075/1250 loss 0.0840 lr 5.26e-06 3,313 tok/s elapsed 29.7 min ETA 4.3 min peak 85.3 GB
+[01:30:15] epoch 1 update 1100/1250 loss 0.0995 lr 3.88e-06 3,314 tok/s elapsed 30.2 min ETA 3.7 min peak 85.3 GB
+[01:30:55] epoch 1 update 1125/1250 loss 0.0770 lr 2.71e-06 3,314 tok/s elapsed 30.9 min ETA 3.1 min peak 85.3 GB
+[01:31:21] epoch 1 update 1150/1250 loss 0.0911 lr 1.74e-06 3,314 tok/s elapsed 31.3 min ETA 2.4 min peak 85.3 GB
+[01:31:55] epoch 1 update 1175/1250 loss 0.0535 lr 9.80e-07 3,316 tok/s elapsed 31.9 min ETA 1.8 min peak 85.3 GB
+[01:32:28] epoch 1 update 1200/1250 loss 0.1225 lr 4.36e-07 3,316 tok/s elapsed 32.5 min ETA 1.2 min peak 85.3 GB
+[01:33:20] epoch 1 update 1225/1250 loss 0.0886 lr 1.09e-07 3,315 tok/s elapsed 33.3 min ETA 0.6 min peak 85.3 GB
+[01:33:50] epoch 1 update 1250/1250 loss 0.0865 lr 0.00e+00 3,316 tok/s elapsed 33.8 min ETA 0.0 min peak 85.3 GB
+[01:33:50] training finished in 33.8 min (3,316 tok/s without the 3.4 min of mid-training evaluation, 0 skipped updates, 0 out-of-memory retries)
+[01:34:03] saved LoRA adapter + head -> runs/cv-qwen3-14b/qwen3-14b-f4/adapter
+[01:34:03] training model freed; 0.0 GB still allocated before re-loading
+Loading checkpoint shards:   0%|                                                                                                                                                        | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|██████████████████                                                                                                                              | 1/8 [00:00<00:05,  1.33it/s]Loading checkpoint shards:  25%|████████████████████████████████████                                                                                                            | 2/8 [00:01<00:04,  1.32it/s]Loading checkpoint shards:  38%|██████████████████████████████████████████████████████                                                                                          | 3/8 [00:02<00:03,  1.31it/s]Loading checkpoint shards:  50%|████████████████████████████████████████████████████████████████████████                                                                        | 4/8 [00:03<00:03,  1.31it/s]Loading checkpoint shards:  62%|██████████████████████████████████████████████████████████████████████████████████████████                                                      | 5/8 [00:03<00:02,  1.32it/s]Loading checkpoint shards:  75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████                                    | 6/8 [00:04<00:01,  1.33it/s]Loading checkpoint shards:  88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                  | 7/8 [00:05<00:00,  1.33it/s]Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:05<00:00,  1.50it/s]
+[01:34:09] re-loaded base model + adapter from disk in 6s
+[01:34:22] reload check on 256 reviews: max |margin(reloaded) - margin(in memory)| = 0.0000; training moved the margins by 2.174 on average
+[01:54:04] VALIDATION accuracy 97.0000% (AUC 0.9956) on 5,000 reviews; test positive share 0.4956; prediction took 19.7 min
+[01:54:04] wrote runs/cv-qwen3-14b/qwen3-14b-f4/submission.csv sha256=0a177d5a01a5abe2155b925476a7e555146e69732e0f9cd995f39f3c17ae9997
+[01:54:04] note: this is a single-fold prediction; the file to submit is the fold average written by assemble_cv.py (or the ensemble written by ensemble_cv.py / compare_runs.py)
+[01:54:04] done in 54.84 min -> runs/cv-qwen3-14b/qwen3-14b-f4
+fold 4 done in 54.9 min
+
+------------------------------------------------------------------------------
+completed now: [0, 1, 2, 3, 4]   already there: []   failed: []
+still missing: none - ready to assemble
+
+next: python code/assemble_cv.py --data-dir data --runs runs/cv-qwen3-14b --output ensemble-qwen3-14b
+fold folders: qwen3-14b-f{0, 1, 2, 3, 4}
+fold 0: n=5,000 accuracy 96.9800% (/root/autodl-tmp/Qwen/Qwen3-14B-Base, 54.8 min)
+fold 1: n=5,000 accuracy 96.9600% (/root/autodl-tmp/Qwen/Qwen3-14B-Base, 54.8 min)
+fold 2: n=5,000 accuracy 97.3800% (/root/autodl-tmp/Qwen/Qwen3-14B-Base, 54.9 min)
+fold 3: n=5,000 accuracy 97.4400% (/root/autodl-tmp/Qwen/Qwen3-14B-Base, 54.8 min)
+fold 4: n=5,000 accuracy 97.0000% (/root/autodl-tmp/Qwen/Qwen3-14B-Base, 54.8 min)
+
+pooled out-of-fold accuracy: 97.1520%  (24,288/25,000, 95% CI 96.9384%–97.3511%, SE ±0.1052%)
+per-fold accuracy: mean 97.1520% ± 0.2369% (sd), min 96.9600%, max 97.4400%
+  length <100     n= 3,037  accuracy 96.8061% (95% CI 96.119%–97.375%)
+  length 100-199  n=11,702  accuracy 97.1714% (95% CI 96.855%–97.457%)
+  length 200-299  n= 4,636  accuracy 97.0664% (95% CI 96.540%–97.515%)
+  length 300-499  n= 3,635  accuracy 97.0839% (95% CI 96.485%–97.583%)
+  length >=500    n= 1,990  accuracy 97.8894% (95% CI 97.160%–98.435%)
+
+fold models on test: averaged positive share 0.4986; all 5 folds agree on 98.27% of the 25,000 reviews
+margin correlation between fold models: min 0.9955
+
+wrote ensemble-qwen3-14b/oof_predictions.csv (25,000 rows)
+wrote ensemble-qwen3-14b/submission.csv sha256=f126cdb741a6147194167961ca43552bb94535993d4a5090bfe87273e0abc5a8 (12,464 positive / 12,536 negative)
+wrote ensemble-qwen3-14b/cv_summary.json
+OOF rows: 25,000 (one prediction per training review); models: deberta, qwen3, qwen3_14b
+  single deberta                  OOF accuracy 96.7280%
+  single qwen3                    OOF accuracy 97.0240%
+  single qwen3_14b                OOF accuracy 97.1520%
+  OOF margin correlation: min 0.9831, mean 0.9862
+  option stack                    estimated accuracy 97.2208%
+  option s-mean                   estimated accuracy 97.2040%
+  option mean                     estimated accuracy 97.2000%   (comparison only)
+  option rank-mean                estimated accuracy 97.2000%   (comparison only)
+  option single:qwen3_14b         estimated accuracy 97.1520%
+  option z-mean                   estimated accuracy 97.1480%   (comparison only)
+  s-mean     vs single:qwen3_14b: fixes 131 / breaks 118 OOF reviews, McNemar p = 0.447
+  z-mean     vs single:qwen3_14b: fixes 129 / breaks 130 OOF reviews, McNemar p = 1
+  mean       vs single:qwen3_14b: fixes 131 / breaks 119 OOF reviews, McNemar p = 0.487
+  rank-mean  vs single:qwen3_14b: fixes 108 / breaks 96 OOF reviews, McNemar p = 0.441
+  stack beats s-mean by only 0.0168% (< 1 SE = 0.1043%) -> keeping s-mean
+chosen: s-mean
+test: 183 of 25,000 predictions differ from single:qwen3_14b
+wrote ensemble-stage5/submission.csv (positive share 0.5001, sha256 c8f1d7fc8c336216...)
+{
+  "train": "data/train.csv",
+  "test": "data/test.csv",
+  "input_submission": "ensemble-stage5/submission.csv",
+  "output_submission": "ensemble-stage5/submission_exact.csv",
+  "train_sha256": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+  "test_sha256": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f",
+  "input_sha256": "c8f1d7fc8c336216623906256b7b69720f19c1de9cf2e6a6f777f4e224c53383",
+  "output_sha256": "ccc45b404d633e05239aac92153e9c5ea82cd444119500d0d21fd7415e79c33f",
+  "n_train_unique_texts": 24896,
+  "n_test_rows_with_exact_train_match": 227,
+  "n_changed": 4,
+  "changed": [
+    {
+      "id": "30886",
+      "from": "positive",
+      "to": "negative"
+    },
+    {
+      "id": "34592",
+      "from": "negative",
+      "to": "positive"
+    },
+    {
+      "id": "38371",
+      "from": "positive",
+      "to": "negative"
+    },
+    {
+      "id": "42721",
+      "from": "negative",
+      "to": "positive"
+    }
+  ]
+}

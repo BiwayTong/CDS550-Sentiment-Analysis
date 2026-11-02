@@ -1,0 +1,17 @@
+/root/miniconda3/lib/python3.12/site-packages/fla/utils/hardware.py:62: UserWarning: Triton is not supported on current platform, roll back to CPU.
+  _cpu_device_warning()
+transformers 5.22.0 | model /root/autodl-tmp/Qwen/Qwen3.8-27B
+config class Qwen3_5Config | model_type qwen3_5 | architectures ['Qwen3_5ForConditionalGeneration']
+hidden size (text) 5120
+layers 64 {'full_attention': 16, 'linear_attention': 48}
+model class Qwen3_5ForConditionalGeneration
+text backbone Qwen3_5TextModel with 64 layers
+linear layers in the text backbone: 496 -> LoRA on 496
+  by name: {'down_proj': 64, 'gate_proj': 64, 'in_proj_a': 48, 'in_proj_b': 48, 'in_proj_qkv': 48, 'in_proj_z': 48, 'k_proj': 16, 'o_proj': 16, 'out_proj': 48, 'q_proj': 16, 'up_proj': 64, 'v_proj': 16}
+linear layers outside the text backbone (vision tower, MTP, output head; no LoRA): 111
+output head (248320, 5120)
+tokenizer Qwen3_5Tokenizer | vocab 248077 | bos None | eos 248046 | pad 248044
+answer tokens {' negative': [7968], ' positive': [6572]}
+prompt tokens: prefix 4 | suffix 18
+
+INSPECT OK

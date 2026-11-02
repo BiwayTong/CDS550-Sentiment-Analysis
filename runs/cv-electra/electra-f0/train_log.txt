@@ -1,0 +1,69 @@
+[16:04:31] ======================================================================
+[16:04:31] command: code\finetune_transformer.py --data-dir data --output runs\cv-electra\electra-f0 --folds 5 --fold 0 --preset large --seed 42 --split-seed 42 --max-len 512 --head 128 --model google/electra-large-discriminator
+[16:04:31] device=cuda (NVIDIA GeForce RTX 5090 D v2, 23.9 GB) torch=2.11.0+cu128 transformers=4.57.6 preset=large amp=torch.bfloat16
+[16:04:31] config: {"model": "google/electra-large-discriminator", "lr": 1e-05, "epochs": 2, "batch_size": 8, "grad_accum": 2, "grad_ckpt": false}
+[16:04:31] train=20,000 holdout=5,000 test=25,000 max_len=512 head=128 split={'mode': 'kfold', 'folds': 5, 'fold': 0}
+[16:04:40] tokenised in 5s; mean length 263 tokens, 3,252 of 25,000 training reviews truncated (head+tail)
+[16:09:20] memory probe ok: batch 8 x accumulation 2, grad_ckpt=False, peak 11.4 GB
+[16:09:20] 1250 updates/epoch, 2500 updates total, warm-up 250, eval every 625
+[16:09:27] epoch 1 update 50/2500 loss 0.6916 lr 2.04e-06 elapsed 0.1 min ETA 6.3 min
+[16:09:35] epoch 1 update 100/2500 loss 0.6858 lr 4.04e-06 elapsed 0.3 min ETA 6.3 min
+[16:09:43] epoch 1 update 150/2500 loss 0.4179 lr 6.04e-06 elapsed 0.4 min ETA 6.1 min
+[16:09:51] epoch 1 update 200/2500 loss 0.2243 lr 8.04e-06 elapsed 0.5 min ETA 5.9 min
+[16:09:59] epoch 1 update 250/2500 loss 0.2764 lr 1.00e-05 elapsed 0.7 min ETA 5.9 min
+[16:10:07] epoch 1 update 300/2500 loss 0.1685 lr 9.78e-06 elapsed 0.8 min ETA 5.8 min
+[16:10:15] epoch 1 update 350/2500 loss 0.1903 lr 9.56e-06 elapsed 0.9 min ETA 5.7 min
+[16:10:23] epoch 1 update 400/2500 loss 0.1628 lr 9.33e-06 elapsed 1.1 min ETA 5.6 min
+[16:10:31] epoch 1 update 450/2500 loss 0.2020 lr 9.11e-06 elapsed 1.2 min ETA 5.5 min
+[16:10:39] epoch 1 update 500/2500 loss 0.1594 lr 8.89e-06 elapsed 1.3 min ETA 5.3 min
+[16:10:47] epoch 1 update 550/2500 loss 0.1869 lr 8.67e-06 elapsed 1.5 min ETA 5.1 min
+[16:10:55] epoch 1 update 600/2500 loss 0.1420 lr 8.44e-06 elapsed 1.6 min ETA 5.0 min
+[16:11:10]   HOLD-OUT accuracy 95.5600% at update 625 (epoch 0.50)
+[16:11:10]   new best -> saved runs\cv-electra\electra-f0\best_model
+[16:11:14] epoch 1 update 650/2500 loss 0.1802 lr 8.22e-06 elapsed 1.9 min ETA 5.4 min
+[16:11:23] epoch 1 update 700/2500 loss 0.1799 lr 8.00e-06 elapsed 2.1 min ETA 5.3 min
+[16:11:29] epoch 1 update 750/2500 loss 0.1537 lr 7.78e-06 elapsed 2.2 min ETA 5.0 min
+[16:11:37] epoch 1 update 800/2500 loss 0.1653 lr 7.56e-06 elapsed 2.3 min ETA 4.9 min
+[16:11:45] epoch 1 update 850/2500 loss 0.1726 lr 7.33e-06 elapsed 2.4 min ETA 4.7 min
+[16:11:53] epoch 1 update 900/2500 loss 0.1398 lr 7.11e-06 elapsed 2.5 min ETA 4.5 min
+[16:12:01] epoch 1 update 950/2500 loss 0.1321 lr 6.89e-06 elapsed 2.7 min ETA 4.4 min
+[16:12:08] epoch 1 update 1000/2500 loss 0.1598 lr 6.67e-06 elapsed 2.8 min ETA 4.2 min
+[16:12:16] epoch 1 update 1050/2500 loss 0.1427 lr 6.44e-06 elapsed 2.9 min ETA 4.1 min
+[16:12:24] epoch 1 update 1100/2500 loss 0.1369 lr 6.22e-06 elapsed 3.1 min ETA 3.9 min
+[16:12:31] epoch 1 update 1150/2500 loss 0.1599 lr 6.00e-06 elapsed 3.2 min ETA 3.8 min
+[16:12:39] epoch 1 update 1200/2500 loss 0.1355 lr 5.78e-06 elapsed 3.3 min ETA 3.6 min
+[16:12:47] epoch 1 update 1250/2500 loss 0.1412 lr 5.56e-06 elapsed 3.5 min ETA 3.5 min
+[16:12:58]   HOLD-OUT accuracy 95.9400% at update 1250 (epoch 1.00)
+[16:12:58]   new best -> saved runs\cv-electra\electra-f0\best_model
+[16:13:07] epoch 2 update 1300/2500 loss 0.1066 lr 5.33e-06 elapsed 3.8 min ETA 3.5 min
+[16:13:14] epoch 2 update 1350/2500 loss 0.1183 lr 5.11e-06 elapsed 3.9 min ETA 3.3 min
+[16:13:22] epoch 2 update 1400/2500 loss 0.0727 lr 4.89e-06 elapsed 4.0 min ETA 3.2 min
+[16:13:30] epoch 2 update 1450/2500 loss 0.0940 lr 4.67e-06 elapsed 4.2 min ETA 3.0 min
+[16:13:39] epoch 2 update 1500/2500 loss 0.1190 lr 4.44e-06 elapsed 4.3 min ETA 2.9 min
+[16:13:46] epoch 2 update 1550/2500 loss 0.0603 lr 4.22e-06 elapsed 4.4 min ETA 2.7 min
+[16:13:54] epoch 2 update 1600/2500 loss 0.1273 lr 4.00e-06 elapsed 4.6 min ETA 2.6 min
+[16:14:02] epoch 2 update 1650/2500 loss 0.0902 lr 3.78e-06 elapsed 4.7 min ETA 2.4 min
+[16:14:10] epoch 2 update 1700/2500 loss 0.0814 lr 3.56e-06 elapsed 4.8 min ETA 2.3 min
+[16:14:17] epoch 2 update 1750/2500 loss 0.1199 lr 3.33e-06 elapsed 5.0 min ETA 2.1 min
+[16:14:25] epoch 2 update 1800/2500 loss 0.0741 lr 3.11e-06 elapsed 5.1 min ETA 2.0 min
+[16:14:33] epoch 2 update 1850/2500 loss 0.1156 lr 2.89e-06 elapsed 5.2 min ETA 1.8 min
+[16:14:47]   HOLD-OUT accuracy 95.7000% at update 1875 (epoch 1.50)
+[16:14:51] epoch 2 update 1900/2500 loss 0.1030 lr 2.67e-06 elapsed 5.5 min ETA 1.7 min
+[16:14:58] epoch 2 update 1950/2500 loss 0.0658 lr 2.44e-06 elapsed 5.6 min ETA 1.6 min
+[16:15:06] epoch 2 update 2000/2500 loss 0.0834 lr 2.22e-06 elapsed 5.8 min ETA 1.4 min
+[16:15:13] epoch 2 update 2050/2500 loss 0.0755 lr 2.00e-06 elapsed 5.9 min ETA 1.3 min
+[16:15:21] epoch 2 update 2100/2500 loss 0.1303 lr 1.78e-06 elapsed 6.0 min ETA 1.1 min
+[16:15:29] epoch 2 update 2150/2500 loss 0.1182 lr 1.56e-06 elapsed 6.2 min ETA 1.0 min
+[16:15:36] epoch 2 update 2200/2500 loss 0.0963 lr 1.33e-06 elapsed 6.3 min ETA 0.9 min
+[16:15:44] epoch 2 update 2250/2500 loss 0.0442 lr 1.11e-06 elapsed 6.4 min ETA 0.7 min
+[16:15:52] epoch 2 update 2300/2500 loss 0.0701 lr 8.89e-07 elapsed 6.5 min ETA 0.6 min
+[16:16:00] epoch 2 update 2350/2500 loss 0.0989 lr 6.67e-07 elapsed 6.7 min ETA 0.4 min
+[16:16:08] epoch 2 update 2400/2500 loss 0.1212 lr 4.44e-07 elapsed 6.8 min ETA 0.3 min
+[16:16:16] epoch 2 update 2450/2500 loss 0.1143 lr 2.22e-07 elapsed 6.9 min ETA 0.1 min
+[16:16:25] epoch 2 update 2500/2500 loss 0.0995 lr 0.00e+00 elapsed 7.1 min ETA 0.0 min
+[16:16:36]   HOLD-OUT accuracy 95.8400% at update 2500 (epoch 2.00)
+[16:16:36] training finished in 7.27 min; best hold-out accuracy 95.9400%
+[16:17:41] best checkpoint: hold-out accuracy 95.9200%; test positive share 0.5050
+[16:17:41] wrote runs\cv-electra\electra-f0\submission.csv sha256=3de28a6a0a44df2c249c5c28175e8e97f59d351d0515faf6ffc6d457b72bedd3
+[16:17:41] note: in --folds mode this is the *single-fold* prediction. The submission to use is the average of the folds, written by code/run_cv.py or code/assemble_cv.py.
+[16:17:41] done in 13.17 min -> runs\cv-electra\electra-f0

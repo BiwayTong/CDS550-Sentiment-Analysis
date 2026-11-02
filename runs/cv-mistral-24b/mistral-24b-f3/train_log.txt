@@ -1,0 +1,142 @@
+[17:57:51] ======================================================================
+[17:57:51] command: code/finetune_llm.py --data-dir data --output runs/cv-mistral-24b/mistral-24b-f3 --folds 5 --fold 3 --preset mistral-24b --seed 42 --split-seed 42 --eval-every 0.5 --model mistralai/Mistral-Small-24B-Base-2501
+[17:57:52] GPU NVIDIA H800 PCIe: 79.2 GB, 78.7 GB free before loading (close games / browsers / other GPU programs if this is much lower than the total)
+[17:57:52] device=cuda (NVIDIA H800 PCIe) torch=2.8.0+cu128 transformers=4.57.6 peft=0.18.1 preset=mistral-24b dtype=torch.bfloat16
+[17:57:52] config: {"lr": 0.0001, "epochs": 1.0, "seqs_per_update": 16, "token_budget": 4096, "max_micro": 16, "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "model": "mistralai/Mistral-Small-24B-Base-2501", "grad_ckpt": true, "tokenizer_kwargs": {"fix_mistral_regex": true}, "max_len": 1024, "head": 256, "head_lr_mult": 2.0, "label_smoothing": 0.0, "weight_decay": 0.01, "warmup": 0.05, "prompt_version": "v1"}
+[17:57:52] train=20,000 validation=5,000 test=25,000 split={'mode': 'kfold', 'folds': 5, 'fold': 3, 'split_seed': 42}
+[17:57:52] prompt: 3 prefix + 17 suffix tokens, bos=1, pad=2, verbalizer ids {' negative': 8289, ' positive': 6818}
+[17:58:23] tokenised 50,000 reviews in 31s; mean length 309 tokens (prompt included); 476 train / 460 test reviews truncated to 1024
+[17:58:33] loaded mistralai/Mistral-Small-24B-Base-2501 in 10s; hidden 5120; LoRA r=16 trains 92.4M of 22.99B weights (+ 10,242 head); GPU memory 43.0 GB
+[17:58:35] memory probe ok: 4 x 1024 tokens per micro-batch, grad_ckpt=True, peak 47.8 GB allocated / 48.4 GB reserved of 79.2 GB
+[17:58:50] UPDATE-0 CHECK (zero-shot, nothing trained yet) on 256 validation reviews: AUC 0.991, accuracy 95.70%  <- AUC should be clearly above 0.5
+[17:58:50] 1250 updates/epoch x 16 reviews, 1250 updates total, warm-up 62, token budget 4096, mid-training evaluation every 625 updates
+[17:59:54] epoch 1 update 25/1250 loss 0.1748 lr 4.19e-05 1,726 tok/s elapsed 1.1 min ETA 52.0 min peak 54.8 GB
+[18:01:08] epoch 1 update 50/1250 loss 0.4826 lr 8.23e-05 1,734 tok/s elapsed 2.3 min ETA 55.0 min peak 54.8 GB
+[18:02:01] epoch 1 update 75/1250 loss 0.2848 lr 1.00e-04 1,742 tok/s elapsed 3.2 min ETA 49.7 min peak 54.8 GB
+[18:02:54] epoch 1 update 100/1250 loss 0.4421 lr 9.97e-05 1,740 tok/s elapsed 4.1 min ETA 46.8 min peak 54.8 GB
+[18:04:02] epoch 1 update 125/1250 loss 0.4021 lr 9.93e-05 1,741 tok/s elapsed 5.2 min ETA 46.8 min peak 54.8 GB
+[18:05:11] epoch 1 update 150/1250 loss 0.1969 lr 9.87e-05 1,746 tok/s elapsed 6.3 min ETA 46.6 min peak 54.8 GB
+[18:06:28] epoch 1 update 175/1250 loss 0.2102 lr 9.78e-05 1,746 tok/s elapsed 7.6 min ETA 46.8 min peak 54.8 GB
+[18:07:42] epoch 1 update 200/1250 loss 0.5716 lr 9.67e-05 1,747 tok/s elapsed 8.9 min ETA 46.5 min peak 54.8 GB
+[18:09:19] epoch 1 update 225/1250 loss 0.6578 lr 9.54e-05 1,749 tok/s elapsed 10.5 min ETA 47.8 min peak 54.8 GB
+[18:10:36] epoch 1 update 250/1250 loss 0.3271 lr 9.39e-05 1,749 tok/s elapsed 11.8 min ETA 47.1 min peak 54.8 GB
+[18:11:47] epoch 1 update 275/1250 loss 0.8823 lr 9.23e-05 1,751 tok/s elapsed 12.9 min ETA 45.9 min peak 54.8 GB
+[18:13:13] epoch 1 update 300/1250 loss 0.9755 lr 9.04e-05 1,754 tok/s elapsed 14.4 min ETA 45.5 min peak 54.8 GB
+[18:14:28] epoch 1 update 325/1250 loss 0.9209 lr 8.84e-05 1,757 tok/s elapsed 15.6 min ETA 44.5 min peak 54.8 GB
+[18:15:30] epoch 1 update 350/1250 loss 0.9583 lr 8.62e-05 1,759 tok/s elapsed 16.7 min ETA 42.8 min peak 54.8 GB
+[18:16:34] epoch 1 update 375/1250 loss 0.9322 lr 8.38e-05 1,761 tok/s elapsed 17.7 min ETA 41.4 min peak 54.8 GB
+[18:17:56] epoch 1 update 400/1250 loss 1.0310 lr 8.13e-05 1,764 tok/s elapsed 19.1 min ETA 40.6 min peak 54.8 GB
+[18:19:08] epoch 1 update 425/1250 loss 0.7578 lr 7.87e-05 1,766 tok/s elapsed 20.3 min ETA 39.4 min peak 54.8 GB
+[18:20:24] epoch 1 update 450/1250 loss 0.7758 lr 7.59e-05 1,767 tok/s elapsed 21.6 min ETA 38.3 min peak 54.8 GB
+[18:21:24] epoch 1 update 475/1250 loss 0.7568 lr 7.30e-05 1,769 tok/s elapsed 22.6 min ETA 36.8 min peak 54.8 GB
+[18:22:26] epoch 1 update 500/1250 loss 0.7479 lr 7.00e-05 1,771 tok/s elapsed 23.6 min ETA 35.4 min peak 54.8 GB
+[18:23:27] epoch 1 update 525/1250 loss 0.7183 lr 6.70e-05 1,771 tok/s elapsed 24.6 min ETA 34.0 min peak 54.8 GB
+[18:24:41] epoch 1 update 550/1250 loss 0.7267 lr 6.38e-05 1,772 tok/s elapsed 25.9 min ETA 32.9 min peak 54.8 GB
+[18:25:40] epoch 1 update 575/1250 loss 0.7317 lr 6.06e-05 1,773 tok/s elapsed 26.8 min ETA 31.5 min peak 54.8 GB
+[18:26:59] epoch 1 update 600/1250 loss 0.7074 lr 5.74e-05 1,774 tok/s elapsed 28.1 min ETA 30.5 min peak 54.8 GB
+[18:28:17] epoch 1 update 625/1250 loss 0.8267 lr 5.41e-05 1,775 tok/s elapsed 29.4 min ETA 29.4 min peak 54.8 GB
+[18:32:14]   VALIDATION accuracy 49.9000% (AUC 0.5346) at update 625 (epoch 0.50)
+[18:33:18] epoch 1 update 650/1250 loss 0.7362 lr 5.08e-05 1,775 tok/s elapsed 34.5 min ETA 28.2 min peak 54.8 GB
+[18:34:49] epoch 1 update 675/1250 loss 0.7258 lr 4.75e-05 1,775 tok/s elapsed 36.0 min ETA 27.3 min peak 54.8 GB
+[18:35:54] epoch 1 update 700/1250 loss 0.7415 lr 4.42e-05 1,776 tok/s elapsed 37.1 min ETA 26.0 min peak 54.8 GB
+[18:37:02] epoch 1 update 725/1250 loss 0.7135 lr 4.09e-05 1,776 tok/s elapsed 38.2 min ETA 24.8 min peak 54.8 GB
+[18:38:09] epoch 1 update 750/1250 loss 0.7043 lr 3.77e-05 1,776 tok/s elapsed 39.3 min ETA 23.6 min peak 54.8 GB
+[18:39:16] epoch 1 update 775/1250 loss 0.6904 lr 3.45e-05 1,777 tok/s elapsed 40.4 min ETA 22.4 min peak 54.8 GB
+[18:40:22] epoch 1 update 800/1250 loss 0.7123 lr 3.14e-05 1,777 tok/s elapsed 41.5 min ETA 21.1 min peak 54.8 GB
+[18:41:28] epoch 1 update 825/1250 loss 0.7249 lr 2.84e-05 1,778 tok/s elapsed 42.6 min ETA 19.9 min peak 54.8 GB
+[18:42:37] epoch 1 update 850/1250 loss 0.7053 lr 2.55e-05 1,778 tok/s elapsed 43.8 min ETA 18.7 min peak 54.8 GB
+[18:43:45] epoch 1 update 875/1250 loss 0.7271 lr 2.26e-05 1,778 tok/s elapsed 44.9 min ETA 17.6 min peak 54.8 GB
+[18:44:44] epoch 1 update 900/1250 loss 0.6994 lr 1.99e-05 1,779 tok/s elapsed 45.9 min ETA 16.3 min peak 54.8 GB
+[18:45:46] epoch 1 update 925/1250 loss 0.7186 lr 1.74e-05 1,779 tok/s elapsed 46.9 min ETA 15.1 min peak 54.8 GB
+[18:47:02] epoch 1 update 950/1250 loss 0.7353 lr 1.49e-05 1,779 tok/s elapsed 48.2 min ETA 14.0 min peak 54.8 GB
+[18:48:22] epoch 1 update 975/1250 loss 0.6900 lr 1.26e-05 1,779 tok/s elapsed 49.5 min ETA 12.9 min peak 54.8 GB
+[18:49:34] epoch 1 update 1000/1250 loss 0.7077 lr 1.05e-05 1,779 tok/s elapsed 50.7 min ETA 11.7 min peak 54.8 GB
+[18:50:43] epoch 1 update 1025/1250 loss 0.6947 lr 8.59e-06 1,780 tok/s elapsed 51.9 min ETA 10.5 min peak 54.8 GB
+[18:52:02] epoch 1 update 1050/1250 loss 0.7010 lr 6.83e-06 1,779 tok/s elapsed 53.2 min ETA 9.4 min peak 54.8 GB
+[18:53:05] epoch 1 update 1075/1250 loss 0.6985 lr 5.26e-06 1,779 tok/s elapsed 54.2 min ETA 8.2 min peak 54.8 GB
+[18:54:08] epoch 1 update 1100/1250 loss 0.6948 lr 3.88e-06 1,780 tok/s elapsed 55.3 min ETA 7.0 min peak 54.8 GB
+[18:55:25] epoch 1 update 1125/1250 loss 0.6928 lr 2.71e-06 1,780 tok/s elapsed 56.6 min ETA 5.8 min peak 54.8 GB
+[18:56:14] epoch 1 update 1150/1250 loss 0.6948 lr 1.74e-06 1,780 tok/s elapsed 57.4 min ETA 4.6 min peak 54.8 GB
+[18:57:19] epoch 1 update 1175/1250 loss 0.6938 lr 9.80e-07 1,780 tok/s elapsed 58.5 min ETA 3.5 min peak 54.8 GB
+[18:58:22] epoch 1 update 1200/1250 loss 0.6937 lr 4.36e-07 1,780 tok/s elapsed 59.5 min ETA 2.3 min peak 54.8 GB
+[18:59:56] epoch 1 update 1225/1250 loss 0.6931 lr 1.09e-07 1,781 tok/s elapsed 61.1 min ETA 1.2 min peak 54.8 GB
+[19:00:54] epoch 1 update 1250/1250 loss 0.6927 lr 0.00e+00 1,781 tok/s elapsed 62.1 min ETA 0.0 min peak 54.8 GB
+[19:00:54] training finished in 62.1 min (1,781 tok/s without the 4.0 min of mid-training evaluation, 0 skipped updates, 0 out-of-memory retries)
+[19:01:09] saved LoRA adapter + head -> runs/cv-mistral-24b/mistral-24b-f3/adapter
+[19:01:09] training model freed; 0.1 GB still allocated before re-loading
+[19:01:19] re-loaded base model + adapter from disk in 10s
+[19:01:33] reload check on 256 reviews: max |margin(reloaded) - margin(in memory)| = 0.0000; training moved the margins by 2.875 on average
+[19:25:13] VALIDATION accuracy 52.0800% (AUC 0.5454) on 5,000 reviews; test positive share 0.1535; prediction took 23.7 min
+[00:14:52] ======================================================================
+[00:14:52] command: code/finetune_llm.py --data-dir data --output runs/cv-mistral-24b/mistral-24b-f3 --folds 5 --fold 3 --preset mistral-24b --seed 43 --split-seed 42 --eval-every 0.5 --model mistralai/Mistral-Small-24B-Base-2501
+[00:14:52] removed an incomplete adapter folder left by an interrupted run; training from scratch
+[00:14:53] GPU NVIDIA H800 PCIe: 79.2 GB, 78.7 GB free before loading (close games / browsers / other GPU programs if this is much lower than the total)
+[00:14:53] device=cuda (NVIDIA H800 PCIe) torch=2.8.0+cu128 transformers=4.57.6 peft=0.18.1 preset=mistral-24b dtype=torch.bfloat16
+[00:14:53] config: {"lr": 0.0001, "epochs": 1.0, "seqs_per_update": 16, "token_budget": 4096, "max_micro": 16, "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "model": "mistralai/Mistral-Small-24B-Base-2501", "grad_ckpt": true, "tokenizer_kwargs": {"fix_mistral_regex": true}, "max_len": 1024, "head": 256, "head_lr_mult": 2.0, "label_smoothing": 0.0, "weight_decay": 0.01, "warmup": 0.05, "prompt_version": "v1"}
+[00:14:53] train=20,000 validation=5,000 test=25,000 split={'mode': 'kfold', 'folds': 5, 'fold': 3, 'split_seed': 42}
+[00:14:54] prompt: 3 prefix + 17 suffix tokens, bos=1, pad=2, verbalizer ids {' negative': 8289, ' positive': 6818}
+[00:15:23] tokenised 50,000 reviews in 30s; mean length 309 tokens (prompt included); 476 train / 460 test reviews truncated to 1024
+[00:15:37] loaded mistralai/Mistral-Small-24B-Base-2501 in 14s; hidden 5120; LoRA r=16 trains 92.4M of 22.99B weights (+ 10,242 head); GPU memory 43.0 GB
+[00:15:39] memory probe ok: 4 x 1024 tokens per micro-batch, grad_ckpt=True, peak 47.8 GB allocated / 48.4 GB reserved of 79.2 GB
+[00:15:54] UPDATE-0 CHECK (zero-shot, nothing trained yet) on 256 validation reviews: AUC 0.991, accuracy 95.70%  <- AUC should be clearly above 0.5
+[00:15:54] 1250 updates/epoch x 16 reviews, 1250 updates total, warm-up 62, token budget 4096, mid-training evaluation every 625 updates
+[00:16:58] epoch 1 update 25/1250 loss 0.1905 lr 4.19e-05 1,738 tok/s elapsed 1.1 min ETA 52.5 min peak 54.8 GB
+[00:18:31] epoch 1 update 50/1250 loss 0.3964 lr 8.23e-05 1,740 tok/s elapsed 2.6 min ETA 62.9 min peak 54.8 GB
+[00:19:25] epoch 1 update 75/1250 loss 0.4969 lr 1.00e-04 1,743 tok/s elapsed 3.5 min ETA 55.0 min peak 54.8 GB
+[00:20:38] epoch 1 update 100/1250 loss 0.2135 lr 9.97e-05 1,744 tok/s elapsed 4.7 min ETA 54.4 min peak 54.8 GB
+[00:21:46] epoch 1 update 125/1250 loss 0.2114 lr 9.93e-05 1,746 tok/s elapsed 5.9 min ETA 52.8 min peak 54.8 GB
+[00:22:52] epoch 1 update 150/1250 loss 0.2022 lr 9.87e-05 1,748 tok/s elapsed 7.0 min ETA 51.1 min peak 54.8 GB
+[00:24:20] epoch 1 update 175/1250 loss 0.3497 lr 9.78e-05 1,750 tok/s elapsed 8.4 min ETA 51.9 min peak 54.8 GB
+[00:25:16] epoch 1 update 200/1250 loss 0.2028 lr 9.67e-05 1,749 tok/s elapsed 9.4 min ETA 49.1 min peak 54.8 GB
+[00:26:21] epoch 1 update 225/1250 loss 0.3910 lr 9.54e-05 1,750 tok/s elapsed 10.5 min ETA 47.6 min peak 54.8 GB
+[00:27:47] epoch 1 update 250/1250 loss 0.3591 lr 9.39e-05 1,750 tok/s elapsed 11.9 min ETA 47.5 min peak 54.8 GB
+[00:29:03] epoch 1 update 275/1250 loss 0.2658 lr 9.23e-05 1,750 tok/s elapsed 13.1 min ETA 46.6 min peak 54.8 GB
+[00:30:02] epoch 1 update 300/1250 loss 0.2693 lr 9.04e-05 1,749 tok/s elapsed 14.1 min ETA 44.8 min peak 54.8 GB
+[00:31:20] epoch 1 update 325/1250 loss 0.1568 lr 8.84e-05 1,749 tok/s elapsed 15.4 min ETA 43.9 min peak 54.8 GB
+[00:32:48] epoch 1 update 350/1250 loss 0.2549 lr 8.62e-05 1,748 tok/s elapsed 16.9 min ETA 43.5 min peak 54.8 GB
+[00:34:08] epoch 1 update 375/1250 loss 0.1714 lr 8.38e-05 1,749 tok/s elapsed 18.2 min ETA 42.5 min peak 54.8 GB
+[00:35:16] epoch 1 update 400/1250 loss 0.1594 lr 8.13e-05 1,750 tok/s elapsed 19.4 min ETA 41.2 min peak 54.8 GB
+[00:36:18] epoch 1 update 425/1250 loss 0.3070 lr 7.87e-05 1,750 tok/s elapsed 20.4 min ETA 39.6 min peak 54.8 GB
+[00:37:21] epoch 1 update 450/1250 loss 0.2197 lr 7.59e-05 1,750 tok/s elapsed 21.4 min ETA 38.1 min peak 54.8 GB
+[00:38:47] epoch 1 update 475/1250 loss 0.1126 lr 7.30e-05 1,750 tok/s elapsed 22.9 min ETA 37.3 min peak 54.8 GB
+[00:39:49] epoch 1 update 500/1250 loss 0.1601 lr 7.00e-05 1,751 tok/s elapsed 23.9 min ETA 35.9 min peak 54.8 GB
+[00:40:54] epoch 1 update 525/1250 loss 0.1286 lr 6.70e-05 1,751 tok/s elapsed 25.0 min ETA 34.5 min peak 54.8 GB
+[00:42:00] epoch 1 update 550/1250 loss 0.1882 lr 6.38e-05 1,751 tok/s elapsed 26.1 min ETA 33.2 min peak 54.8 GB
+[00:42:56] epoch 1 update 575/1250 loss 0.2447 lr 6.06e-05 1,751 tok/s elapsed 27.0 min ETA 31.7 min peak 54.8 GB
+[00:43:51] epoch 1 update 600/1250 loss 0.1192 lr 5.74e-05 1,752 tok/s elapsed 28.0 min ETA 30.3 min peak 54.8 GB
+[00:44:50] epoch 1 update 625/1250 loss 0.1843 lr 5.41e-05 1,752 tok/s elapsed 28.9 min ETA 28.9 min peak 54.8 GB
+[00:48:57]   VALIDATION accuracy 96.8200% (AUC 0.9948) at update 625 (epoch 0.50)
+[00:49:58] epoch 1 update 650/1250 loss 0.2667 lr 5.08e-05 1,751 tok/s elapsed 34.1 min ETA 27.7 min peak 54.8 GB
+[00:50:45] epoch 1 update 675/1250 loss 0.1194 lr 4.75e-05 1,751 tok/s elapsed 34.9 min ETA 26.2 min peak 54.8 GB
+[00:51:54] epoch 1 update 700/1250 loss 0.1574 lr 4.42e-05 1,752 tok/s elapsed 36.0 min ETA 25.1 min peak 54.8 GB
+[00:53:19] epoch 1 update 725/1250 loss 0.1587 lr 4.09e-05 1,753 tok/s elapsed 37.4 min ETA 24.1 min peak 54.8 GB
+[00:54:13] epoch 1 update 750/1250 loss 0.2084 lr 3.77e-05 1,753 tok/s elapsed 38.3 min ETA 22.8 min peak 54.8 GB
+[00:55:36] epoch 1 update 775/1250 loss 0.1263 lr 3.45e-05 1,753 tok/s elapsed 39.7 min ETA 21.8 min peak 54.8 GB
+[00:56:43] epoch 1 update 800/1250 loss 0.1540 lr 3.14e-05 1,752 tok/s elapsed 40.8 min ETA 20.6 min peak 54.8 GB
+[00:57:56] epoch 1 update 825/1250 loss 0.1858 lr 2.84e-05 1,752 tok/s elapsed 42.0 min ETA 19.5 min peak 54.8 GB
+[00:59:22] epoch 1 update 850/1250 loss 0.1726 lr 2.55e-05 1,753 tok/s elapsed 43.5 min ETA 18.5 min peak 54.8 GB
+[01:00:24] epoch 1 update 875/1250 loss 0.1467 lr 2.26e-05 1,753 tok/s elapsed 44.5 min ETA 17.3 min peak 54.8 GB
+[01:01:39] epoch 1 update 900/1250 loss 0.1713 lr 1.99e-05 1,754 tok/s elapsed 45.7 min ETA 16.2 min peak 54.8 GB
+[01:02:53] epoch 1 update 925/1250 loss 0.0970 lr 1.74e-05 1,754 tok/s elapsed 47.0 min ETA 15.1 min peak 54.8 GB
+[01:04:07] epoch 1 update 950/1250 loss 0.2385 lr 1.49e-05 1,754 tok/s elapsed 48.2 min ETA 13.9 min peak 54.8 GB
+[01:05:25] epoch 1 update 975/1250 loss 0.1554 lr 1.26e-05 1,753 tok/s elapsed 49.5 min ETA 12.8 min peak 54.8 GB
+[01:06:26] epoch 1 update 1000/1250 loss 0.1800 lr 1.05e-05 1,753 tok/s elapsed 50.5 min ETA 11.6 min peak 54.8 GB
+[01:07:51] epoch 1 update 1025/1250 loss 0.0531 lr 8.59e-06 1,753 tok/s elapsed 52.0 min ETA 10.5 min peak 54.8 GB
+[01:09:02] epoch 1 update 1050/1250 loss 0.0800 lr 6.83e-06 1,753 tok/s elapsed 53.1 min ETA 9.3 min peak 54.8 GB
+[01:10:08] epoch 1 update 1075/1250 loss 0.1333 lr 5.26e-06 1,753 tok/s elapsed 54.2 min ETA 8.2 min peak 54.8 GB
+[01:11:14] epoch 1 update 1100/1250 loss 0.1073 lr 3.88e-06 1,753 tok/s elapsed 55.3 min ETA 7.0 min peak 54.8 GB
+[01:12:32] epoch 1 update 1125/1250 loss 0.1450 lr 2.71e-06 1,754 tok/s elapsed 56.6 min ETA 5.8 min peak 54.8 GB
+[01:13:56] epoch 1 update 1150/1250 loss 0.1007 lr 1.74e-06 1,754 tok/s elapsed 58.0 min ETA 4.7 min peak 54.8 GB
+[01:15:18] epoch 1 update 1175/1250 loss 0.1373 lr 9.80e-07 1,754 tok/s elapsed 59.4 min ETA 3.5 min peak 54.8 GB
+[01:16:34] epoch 1 update 1200/1250 loss 0.0905 lr 4.36e-07 1,754 tok/s elapsed 60.7 min ETA 2.4 min peak 54.8 GB
+[01:17:47] epoch 1 update 1225/1250 loss 0.1040 lr 1.09e-07 1,753 tok/s elapsed 61.9 min ETA 1.2 min peak 54.8 GB
+[01:19:02] epoch 1 update 1250/1250 loss 0.0939 lr 0.00e+00 1,754 tok/s elapsed 63.1 min ETA 0.0 min peak 54.8 GB
+[01:19:02] training finished in 63.1 min (1,754 tok/s without the 4.1 min of mid-training evaluation, 0 skipped updates, 0 out-of-memory retries)
+[01:19:18] saved LoRA adapter + head -> runs/cv-mistral-24b/mistral-24b-f3/adapter
+[01:19:18] training model freed; 0.1 GB still allocated before re-loading
+[01:19:31] re-loaded base model + adapter from disk in 13s
+[01:19:45] reload check on 256 reviews: max |margin(reloaded) - margin(in memory)| = 0.0000; training moved the margins by 4.581 on average
+[01:44:30] VALIDATION accuracy 97.3800% (AUC 0.9958) on 5,000 reviews; test positive share 0.5016; prediction took 24.7 min
+[01:44:30] wrote runs/cv-mistral-24b/mistral-24b-f3/submission.csv sha256=4af05b6438d4a0f624f8a58e74030d561f61d649f8e72db51e1ab5994209bd5e
+[01:44:30] note: this is a single-fold prediction; the file to submit is the fold average written by assemble_cv.py (or the ensemble written by ensemble_cv.py / compare_runs.py)
+[01:44:30] done in 89.63 min -> runs/cv-mistral-24b/mistral-24b-f3

@@ -1,0 +1,5035 @@
+{
+  "n_train": 25000,
+  "families": {
+    "nblr": {
+      "label": "NB-LR (Stage 1), 5-fold",
+      "oof": {
+        "n": 25000,
+        "correct": 22945,
+        "accuracy": 0.9178,
+        "wilson_95": [
+          0.914331,
+          0.921141
+        ],
+        "se": 0.001737
+      },
+      "metrics": {
+        "tp": 11672,
+        "tn": 11273,
+        "fp": 1199,
+        "fn": 856,
+        "precision_positive": 0.906845,
+        "recall_positive": 0.931673,
+        "f1_positive": 0.919091,
+        "specificity": 0.903865
+      },
+      "by_length": [
+        {
+          "bucket": "<100",
+          "n": 3037,
+          "correct": 2788,
+          "accuracy": 0.918011,
+          "wilson_95": [
+            0.907718,
+            0.927249
+          ],
+          "se": 0.004978
+        },
+        {
+          "bucket": "100-199",
+          "n": 11702,
+          "correct": 10761,
+          "accuracy": 0.919586,
+          "wilson_95": [
+            0.914521,
+            0.924377
+          ],
+          "se": 0.002514
+        },
+        {
+          "bucket": "200-299",
+          "n": 4636,
+          "correct": 4223,
+          "accuracy": 0.910915,
+          "wilson_95": [
+            0.90237,
+            0.918778
+          ],
+          "se": 0.004184
+        },
+        {
+          "bucket": "300-499",
+          "n": 3635,
+          "correct": 3330,
+          "accuracy": 0.916094,
+          "wilson_95": [
+            0.906635,
+            0.924673
+          ],
+          "se": 0.004598
+        },
+        {
+          "bucket": ">=500",
+          "n": 1990,
+          "correct": 1843,
+          "accuracy": 0.926131,
+          "wilson_95": [
+            0.913799,
+            0.93682
+          ],
+          "se": 0.005863
+        }
+      ],
+      "by_confidence": [
+        {
+          "quintile": 1,
+          "accuracy": 0.7108,
+          "share_of_errors": 0.70365
+        },
+        {
+          "quintile": 2,
+          "accuracy": 0.9184,
+          "share_of_errors": 0.19854
+        },
+        {
+          "quintile": 3,
+          "accuracy": 0.9758,
+          "share_of_errors": 0.058881
+        },
+        {
+          "quintile": 4,
+          "accuracy": 0.9878,
+          "share_of_errors": 0.029684
+        },
+        {
+          "quintile": 5,
+          "accuracy": 0.9962,
+          "share_of_errors": 0.009246
+        }
+      ],
+      "test_positive_share": 0.5114
+    },
+    "deberta": {
+      "label": "DeBERTa-v3-large, 5-fold",
+      "oof": {
+        "n": 25000,
+        "correct": 24182,
+        "accuracy": 0.96728,
+        "wilson_95": [
+          0.965002,
+          0.969415
+        ],
+        "se": 0.001125
+      },
+      "metrics": {
+        "tp": 12159,
+        "tn": 12023,
+        "fp": 449,
+        "fn": 369,
+        "precision_positive": 0.964388,
+        "recall_positive": 0.970546,
+        "f1_positive": 0.967457,
+        "specificity": 0.963999
+      },
+      "by_length": [
+        {
+          "bucket": "<100",
+          "n": 3037,
+          "correct": 2930,
+          "accuracy": 0.964768,
+          "wilson_95": [
+            0.957601,
+            0.97076
+          ],
+          "se": 0.003345
+        },
+        {
+          "bucket": "100-199",
+          "n": 11702,
+          "correct": 11322,
+          "accuracy": 0.967527,
+          "wilson_95": [
+            0.964159,
+            0.970588
+          ],
+          "se": 0.001639
+        },
+        {
+          "bucket": "200-299",
+          "n": 4636,
+          "correct": 4473,
+          "accuracy": 0.96484,
+          "wilson_95": [
+            0.959142,
+            0.969769
+          ],
+          "se": 0.002705
+        },
+        {
+          "bucket": "300-499",
+          "n": 3635,
+          "correct": 3518,
+          "accuracy": 0.967813,
+          "wilson_95": [
+            0.961563,
+            0.973075
+          ],
+          "se": 0.002927
+        },
+        {
+          "bucket": ">=500",
+          "n": 1990,
+          "correct": 1939,
+          "accuracy": 0.974372,
+          "wilson_95": [
+            0.966462,
+            0.980454
+          ],
+          "se": 0.003542
+        }
+      ],
+      "by_confidence": [
+        {
+          "quintile": 1,
+          "accuracy": 0.855614,
+          "share_of_errors": 0.874083
+        },
+        {
+          "quintile": 2,
+          "accuracy": 0.989098,
+          "share_of_errors": 0.067237
+        },
+        {
+          "quintile": 3,
+          "accuracy": 0.995394,
+          "share_of_errors": 0.028117
+        },
+        {
+          "quintile": 4,
+          "accuracy": 0.99643,
+          "share_of_errors": 0.020782
+        },
+        {
+          "quintile": 5,
+          "accuracy": 0.998475,
+          "share_of_errors": 0.00978
+        }
+      ],
+      "test_positive_share": 0.50168,
+      "per_fold": [
+        0.9656,
+        0.967,
+        0.9686,
+        0.971,
+        0.9642
+      ],
+      "per_fold_sd": 0.002644,
+      "folds": [
+        {
+          "fold": 0,
+          "accuracy": 0.9656,
+          "auc": null,
+          "total_minutes": 17.77,
+          "timings": {
+            "train_minutes": 15.85,
+            "predict_minutes": 1.74
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9466
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9638
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.9656
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9632
+            }
+          ],
+          "submission_sha256": "6ba23668d608b8510291f3c00ac31ee62230729f08f20ccebd6ee7611ca061c3",
+          "last_eval_accuracy": 0.9632,
+          "best_eval_accuracy": 0.9656
+        },
+        {
+          "fold": 1,
+          "accuracy": 0.967,
+          "auc": null,
+          "total_minutes": 12.38,
+          "timings": {
+            "train_minutes": 10.46,
+            "predict_minutes": 1.74
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9618
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.966
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.9644
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.967
+            }
+          ],
+          "submission_sha256": "dbb43f102d7c3967f2ce8a00cdc6aeb5196f7cc1c25aa7a221d21cfa66aea219",
+          "last_eval_accuracy": 0.967,
+          "best_eval_accuracy": 0.967
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.9686,
+          "auc": null,
+          "total_minutes": 39.08,
+          "timings": {
+            "train_minutes": 37.16,
+            "predict_minutes": 1.74
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9582
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9614
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.9686
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9672
+            }
+          ],
+          "submission_sha256": "b593d30c175083d83413237dac025ba2a3b0e44defe7e450c75835585dbaa429",
+          "last_eval_accuracy": 0.9672,
+          "best_eval_accuracy": 0.9686
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.971,
+          "auc": null,
+          "total_minutes": 56.07,
+          "timings": {
+            "train_minutes": 54.15,
+            "predict_minutes": 1.73
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9622
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9638
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.9692
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.971
+            }
+          ],
+          "submission_sha256": "da738842134ffa0b0a6df3e161c22c9ac504826963d60fb978391347ffac0c94",
+          "last_eval_accuracy": 0.971,
+          "best_eval_accuracy": 0.971
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.9642,
+          "auc": null,
+          "total_minutes": 16.54,
+          "timings": {
+            "train_minutes": 14.62,
+            "predict_minutes": 1.74
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9564
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9612
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.9624
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9642
+            }
+          ],
+          "submission_sha256": "52dbb715c1c26bd485d6d813b821b2bc8c98e895ce44891d655af227e76fe6a9",
+          "last_eval_accuracy": 0.9642,
+          "best_eval_accuracy": 0.9642
+        }
+      ],
+      "cv_summary": {
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "n_folds": 5,
+        "n_oof": 25000,
+        "oof_accuracy": 0.96728,
+        "oof_correct": 24182,
+        "oof_wilson_95": [
+          0.9650019021604842,
+          0.9694145116757001
+        ],
+        "oof_se": 0.0011251560176259996,
+        "per_fold": [
+          {
+            "fold": 0,
+            "n_val": 5000,
+            "accuracy": 0.9656,
+            "epochs": 2,
+            "minutes": 17.77,
+            "model": "microsoft/deberta-v3-large"
+          },
+          {
+            "fold": 1,
+            "n_val": 5000,
+            "accuracy": 0.967,
+            "epochs": 2,
+            "minutes": 12.38,
+            "model": "microsoft/deberta-v3-large"
+          },
+          {
+            "fold": 2,
+            "n_val": 5000,
+            "accuracy": 0.9686,
+            "epochs": 2,
+            "minutes": 39.08,
+            "model": "microsoft/deberta-v3-large"
+          },
+          {
+            "fold": 3,
+            "n_val": 5000,
+            "accuracy": 0.971,
+            "epochs": 2,
+            "minutes": 56.07,
+            "model": "microsoft/deberta-v3-large"
+          },
+          {
+            "fold": 4,
+            "n_val": 5000,
+            "accuracy": 0.9642,
+            "epochs": 2,
+            "minutes": 16.54,
+            "model": "microsoft/deberta-v3-large"
+          }
+        ],
+        "per_fold_mean": 0.9672799999999999,
+        "per_fold_sd": 0.002644239020966153,
+        "model": "microsoft/deberta-v3-large",
+        "stage2_holdout": {
+          "file": "runs\\deberta\\holdout_predictions.csv",
+          "n": 2500,
+          "accuracy": 0.9672,
+          "fold_accuracy_on_same_rows": 0.9664,
+          "wilson_95": [
+            0.9585899190459609,
+            0.972778902368301
+          ],
+          "mcnemar": {
+            "a_only": 21,
+            "b_only": 19,
+            "n_discordant": 40,
+            "p_value": 0.8746293123804207
+          }
+        },
+        "accuracy_by_length": [
+          {
+            "bucket": "<100",
+            "n": 3037,
+            "accuracy": 0.9647678630227198,
+            "wilson_95": [
+              0.9576014546538754,
+              0.9707599568711445
+            ]
+          },
+          {
+            "bucket": "100-199",
+            "n": 11702,
+            "accuracy": 0.9675269184754742,
+            "wilson_95": [
+              0.9641587657174566,
+              0.9705882071101954
+            ]
+          },
+          {
+            "bucket": "200-299",
+            "n": 4636,
+            "accuracy": 0.9648403796376186,
+            "wilson_95": [
+              0.9591418174361759,
+              0.9697692040090389
+            ]
+          },
+          {
+            "bucket": "300-499",
+            "n": 3635,
+            "accuracy": 0.9678129298486933,
+            "wilson_95": [
+              0.96156311964743,
+              0.9730749805655609
+            ]
+          },
+          {
+            "bucket": ">=500",
+            "n": 1990,
+            "accuracy": 0.9743718592964824,
+            "wilson_95": [
+              0.9664615530358549,
+              0.9804541899198542
+            ]
+          }
+        ],
+        "test": {
+          "positive_share": 0.50168,
+          "unanimous_share": 0.971,
+          "mean_fold_correlation": 0.9937425007048307,
+          "min_fold_correlation": 0.9908799498140234
+        },
+        "submission": {
+          "rows": 25000,
+          "positive": 12542,
+          "negative": 12458,
+          "sha256": "a1ad4709f61085c592e03692aef98822cd50e82b16d86a01a9d24d9a41203add"
+        }
+      }
+    },
+    "electra": {
+      "label": "ELECTRA-large, 5-fold",
+      "oof": {
+        "n": 25000,
+        "correct": 24103,
+        "accuracy": 0.96412,
+        "wilson_95": [
+          0.961742,
+          0.966355
+        ],
+        "se": 0.001176
+      },
+      "metrics": {
+        "tp": 12117,
+        "tn": 11986,
+        "fp": 486,
+        "fn": 411,
+        "precision_positive": 0.961438,
+        "recall_positive": 0.967193,
+        "f1_positive": 0.964307,
+        "specificity": 0.961033
+      },
+      "by_length": [
+        {
+          "bucket": "<100",
+          "n": 3037,
+          "correct": 2909,
+          "accuracy": 0.957853,
+          "wilson_95": [
+            0.95011,
+            0.96444
+          ],
+          "se": 0.003646
+        },
+        {
+          "bucket": "100-199",
+          "n": 11702,
+          "correct": 11297,
+          "accuracy": 0.965391,
+          "wilson_95": [
+            0.961923,
+            0.968553
+          ],
+          "se": 0.00169
+        },
+        {
+          "bucket": "200-299",
+          "n": 4636,
+          "correct": 4460,
+          "accuracy": 0.962036,
+          "wilson_95": [
+            0.956141,
+            0.967166
+          ],
+          "se": 0.002807
+        },
+        {
+          "bucket": "300-499",
+          "n": 3635,
+          "correct": 3508,
+          "accuracy": 0.965062,
+          "wilson_95": [
+            0.958585,
+            0.970557
+          ],
+          "se": 0.003046
+        },
+        {
+          "bucket": ">=500",
+          "n": 1990,
+          "correct": 1929,
+          "accuracy": 0.969347,
+          "wilson_95": [
+            0.960822,
+            0.976063
+          ],
+          "se": 0.003864
+        }
+      ],
+      "by_confidence": [
+        {
+          "quintile": 1,
+          "accuracy": 0.853447,
+          "share_of_errors": 0.80825
+        },
+        {
+          "quintile": 2,
+          "accuracy": 0.985324,
+          "share_of_errors": 0.071349
+        },
+        {
+          "quintile": 3,
+          "accuracy": 0.991867,
+          "share_of_errors": 0.051282
+        },
+        {
+          "quintile": 4,
+          "accuracy": 0.991684,
+          "share_of_errors": 0.044593
+        },
+        {
+          "quintile": 5,
+          "accuracy": 0.99579,
+          "share_of_errors": 0.024526
+        }
+      ],
+      "test_positive_share": 0.503,
+      "per_fold": [
+        0.9592,
+        0.963,
+        0.9658,
+        0.9702,
+        0.9624
+      ],
+      "per_fold_sd": 0.004129,
+      "folds": [
+        {
+          "fold": 0,
+          "accuracy": 0.9592,
+          "auc": null,
+          "total_minutes": 13.17,
+          "timings": {
+            "train_minutes": 7.27,
+            "predict_minutes": 1.08
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9556
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9594
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.957
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9584
+            }
+          ],
+          "submission_sha256": "3de28a6a0a44df2c249c5c28175e8e97f59d351d0515faf6ffc6d457b72bedd3",
+          "last_eval_accuracy": 0.9584,
+          "best_eval_accuracy": 0.9594
+        },
+        {
+          "fold": 1,
+          "accuracy": 0.963,
+          "auc": null,
+          "total_minutes": 8.53,
+          "timings": {
+            "train_minutes": 7.29,
+            "predict_minutes": 1.07
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.94
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9576
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.9628
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9622
+            }
+          ],
+          "submission_sha256": "769bf8f66cc175540c8873b7d626cb09b4f920a36112f868fde4fb70c6b3e9ec",
+          "last_eval_accuracy": 0.9622,
+          "best_eval_accuracy": 0.9628
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.9658,
+          "auc": null,
+          "total_minutes": 8.52,
+          "timings": {
+            "train_minutes": 7.28,
+            "predict_minutes": 1.07
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9612
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9644
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.9572
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9658
+            }
+          ],
+          "submission_sha256": "35696301299c2f7d5b9597ab0805c5113870a8bc400a7e87f724adb39c4405b6",
+          "last_eval_accuracy": 0.9658,
+          "best_eval_accuracy": 0.9658
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.9702,
+          "auc": null,
+          "total_minutes": 8.54,
+          "timings": {
+            "train_minutes": 7.3,
+            "predict_minutes": 1.07
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9634
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9652
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.9686
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9698
+            }
+          ],
+          "submission_sha256": "a56063fb2b6e1d37b3426e08779977157c992dcf5f097a12977b8db309757025",
+          "last_eval_accuracy": 0.9698,
+          "best_eval_accuracy": 0.9698
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.9624,
+          "auc": null,
+          "total_minutes": 8.51,
+          "timings": {
+            "train_minutes": 7.27,
+            "predict_minutes": 1.08
+          },
+          "history": [
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9532
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.962
+            },
+            {
+              "epoch": 1.5,
+              "holdout_accuracy": 0.959
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9626
+            }
+          ],
+          "submission_sha256": "8ffb3fbabf50b2fa05fe6948fc66f95805e40ace8ec55c289dc5092fbb17d4a3",
+          "last_eval_accuracy": 0.9626,
+          "best_eval_accuracy": 0.9626
+        }
+      ],
+      "cv_summary": {
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "n_folds": 5,
+        "n_oof": 25000,
+        "oof_accuracy": 0.96412,
+        "oof_correct": 24103,
+        "oof_wilson_95": [
+          0.9617421995659569,
+          0.9663551852774986
+        ],
+        "oof_se": 0.0011763099183463518,
+        "per_fold": [
+          {
+            "fold": 0,
+            "n_val": 5000,
+            "accuracy": 0.9592,
+            "epochs": 2,
+            "minutes": 13.17,
+            "model": "google/electra-large-discriminator"
+          },
+          {
+            "fold": 1,
+            "n_val": 5000,
+            "accuracy": 0.963,
+            "epochs": 2,
+            "minutes": 8.53,
+            "model": "google/electra-large-discriminator"
+          },
+          {
+            "fold": 2,
+            "n_val": 5000,
+            "accuracy": 0.9658,
+            "epochs": 2,
+            "minutes": 8.52,
+            "model": "google/electra-large-discriminator"
+          },
+          {
+            "fold": 3,
+            "n_val": 5000,
+            "accuracy": 0.9702,
+            "epochs": 2,
+            "minutes": 8.54,
+            "model": "google/electra-large-discriminator"
+          },
+          {
+            "fold": 4,
+            "n_val": 5000,
+            "accuracy": 0.9624,
+            "epochs": 2,
+            "minutes": 8.51,
+            "model": "google/electra-large-discriminator"
+          }
+        ],
+        "per_fold_mean": 0.96412,
+        "per_fold_sd": 0.0041294067370506995,
+        "model": "google/electra-large-discriminator",
+        "stage2_holdout": {
+          "file": "runs\\deberta\\holdout_predictions.csv",
+          "n": 2500,
+          "accuracy": 0.9672,
+          "fold_accuracy_on_same_rows": 0.9612,
+          "wilson_95": [
+            0.9528949486888818,
+            0.968089829261928
+          ],
+          "mcnemar": {
+            "a_only": 33,
+            "b_only": 18,
+            "n_discordant": 51,
+            "p_value": 0.04887389231827033
+          }
+        },
+        "accuracy_by_length": [
+          {
+            "bucket": "<100",
+            "n": 3037,
+            "accuracy": 0.9578531445505433,
+            "wilson_95": [
+              0.9501098074573068,
+              0.964439638327702
+            ]
+          },
+          {
+            "bucket": "100-199",
+            "n": 11702,
+            "accuracy": 0.9653905315330713,
+            "wilson_95": [
+              0.9619229405364244,
+              0.9685526606369249
+            ]
+          },
+          {
+            "bucket": "200-299",
+            "n": 4636,
+            "accuracy": 0.9620362381363244,
+            "wilson_95": [
+              0.956141386699682,
+              0.9671659951730096
+            ]
+          },
+          {
+            "bucket": "300-499",
+            "n": 3635,
+            "accuracy": 0.9650618982118294,
+            "wilson_95": [
+              0.9585845012526555,
+              0.9705573443280919
+            ]
+          },
+          {
+            "bucket": ">=500",
+            "n": 1990,
+            "accuracy": 0.9693467336683417,
+            "wilson_95": [
+              0.9608221903640634,
+              0.976062665484064
+            ]
+          }
+        ],
+        "test": {
+          "positive_share": 0.503,
+          "unanimous_share": 0.96708,
+          "mean_fold_correlation": 0.9903536683334749,
+          "min_fold_correlation": 0.9860107537908191
+        },
+        "submission": {
+          "rows": 25000,
+          "positive": 12575,
+          "negative": 12425,
+          "sha256": "74d010426256e9ec4107be30b9553bc55178f7eb14c9375a7835f998e4264e6f"
+        }
+      }
+    },
+    "deberta_rerun": {
+      "label": "DeBERTa-v3-large, 5-fold re-run",
+      "oof": {
+        "n": 25000,
+        "correct": 24192,
+        "accuracy": 0.96768,
+        "wilson_95": [
+          0.965415,
+          0.969801
+        ],
+        "se": 0.001118
+      },
+      "metrics": {
+        "tp": 12167,
+        "tn": 12025,
+        "fp": 447,
+        "fn": 361,
+        "precision_positive": 0.964563,
+        "recall_positive": 0.971185,
+        "f1_positive": 0.967863,
+        "specificity": 0.96416
+      },
+      "by_length": [
+        {
+          "bucket": "<100",
+          "n": 3037,
+          "correct": 2934,
+          "accuracy": 0.966085,
+          "wilson_95": [
+            0.959036,
+            0.971957
+          ],
+          "se": 0.003285
+        },
+        {
+          "bucket": "100-199",
+          "n": 11702,
+          "correct": 11324,
+          "accuracy": 0.967698,
+          "wilson_95": [
+            0.964338,
+            0.970751
+          ],
+          "se": 0.001634
+        },
+        {
+          "bucket": "200-299",
+          "n": 4636,
+          "correct": 4476,
+          "accuracy": 0.965487,
+          "wilson_95": [
+            0.959835,
+            0.970369
+          ],
+          "se": 0.002681
+        },
+        {
+          "bucket": "300-499",
+          "n": 3635,
+          "correct": 3517,
+          "accuracy": 0.967538,
+          "wilson_95": [
+            0.961265,
+            0.972824
+          ],
+          "se": 0.002939
+        },
+        {
+          "bucket": ">=500",
+          "n": 1990,
+          "correct": 1941,
+          "accuracy": 0.975377,
+          "wilson_95": [
+            0.967597,
+            0.981325
+          ],
+          "se": 0.003474
+        }
+      ],
+      "by_confidence": [
+        {
+          "quintile": 1,
+          "accuracy": 0.861749,
+          "share_of_errors": 0.84901
+        },
+        {
+          "quintile": 2,
+          "accuracy": 0.987105,
+          "share_of_errors": 0.079208
+        },
+        {
+          "quintile": 3,
+          "accuracy": 0.993751,
+          "share_of_errors": 0.038366
+        },
+        {
+          "quintile": 4,
+          "accuracy": 0.996605,
+          "share_of_errors": 0.02104
+        },
+        {
+          "quintile": 5,
+          "accuracy": 0.998042,
+          "share_of_errors": 0.012376
+        }
+      ],
+      "test_positive_share": 0.50308,
+      "per_fold": [
+        0.9646,
+        0.9686,
+        0.9696,
+        0.9706,
+        0.965
+      ],
+      "per_fold_sd": 0.002726,
+      "folds": [
+        {
+          "fold": 0,
+          "accuracy": 0.9646,
+          "auc": null,
+          "total_minutes": 24.97,
+          "timings": {
+            "train_minutes": 22.7,
+            "predict_minutes": 1.78
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "holdout_accuracy": 0.4988,
+              "phase": "fresh_initialisation"
+            },
+            {
+              "epoch": 0.25,
+              "holdout_accuracy": 0.9014
+            },
+            {
+              "epoch": 0.499,
+              "holdout_accuracy": 0.9486
+            },
+            {
+              "epoch": 0.749,
+              "holdout_accuracy": 0.9596
+            },
+            {
+              "epoch": 0.998,
+              "holdout_accuracy": 0.9648
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9648
+            },
+            {
+              "epoch": 1.248,
+              "holdout_accuracy": 0.9496
+            },
+            {
+              "epoch": 1.498,
+              "holdout_accuracy": 0.9634
+            },
+            {
+              "epoch": 1.747,
+              "holdout_accuracy": 0.9642
+            },
+            {
+              "epoch": 1.997,
+              "holdout_accuracy": 0.9648
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9648
+            }
+          ],
+          "submission_sha256": "372064634ec7cd61d4b5247ae5b51272aea6b1cf1af5cd8f8c9915e91dba7a88",
+          "last_eval_accuracy": 0.9648,
+          "best_eval_accuracy": 0.9648
+        },
+        {
+          "fold": 1,
+          "accuracy": 0.9686,
+          "auc": null,
+          "total_minutes": 14.82,
+          "timings": {
+            "train_minutes": 12.51,
+            "predict_minutes": 1.78
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "holdout_accuracy": 0.499,
+              "phase": "fresh_initialisation"
+            },
+            {
+              "epoch": 0.25,
+              "holdout_accuracy": 0.938
+            },
+            {
+              "epoch": 0.499,
+              "holdout_accuracy": 0.9634
+            },
+            {
+              "epoch": 0.749,
+              "holdout_accuracy": 0.954
+            },
+            {
+              "epoch": 0.998,
+              "holdout_accuracy": 0.9664
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9666
+            },
+            {
+              "epoch": 1.248,
+              "holdout_accuracy": 0.9678
+            },
+            {
+              "epoch": 1.498,
+              "holdout_accuracy": 0.9646
+            },
+            {
+              "epoch": 1.747,
+              "holdout_accuracy": 0.9688
+            },
+            {
+              "epoch": 1.997,
+              "holdout_accuracy": 0.9678
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9678
+            }
+          ],
+          "submission_sha256": "a494010013463bc1e44ec1d6624ac32ac75c1e3d7f12aff809e7b3bd8fcbf1af",
+          "last_eval_accuracy": 0.9678,
+          "best_eval_accuracy": 0.9688
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.9696,
+          "auc": null,
+          "total_minutes": 29.73,
+          "timings": {
+            "train_minutes": 27.48,
+            "predict_minutes": 1.74
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "holdout_accuracy": 0.4988,
+              "phase": "fresh_initialisation"
+            },
+            {
+              "epoch": 0.25,
+              "holdout_accuracy": 0.958
+            },
+            {
+              "epoch": 0.499,
+              "holdout_accuracy": 0.9568
+            },
+            {
+              "epoch": 0.749,
+              "holdout_accuracy": 0.9662
+            },
+            {
+              "epoch": 0.998,
+              "holdout_accuracy": 0.9636
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9646
+            },
+            {
+              "epoch": 1.248,
+              "holdout_accuracy": 0.9688
+            },
+            {
+              "epoch": 1.498,
+              "holdout_accuracy": 0.9694
+            },
+            {
+              "epoch": 1.747,
+              "holdout_accuracy": 0.9692
+            },
+            {
+              "epoch": 1.997,
+              "holdout_accuracy": 0.967
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.967
+            }
+          ],
+          "submission_sha256": "bcfc4b68906b7296fa45f16fea35b42769715332a4c0db77d259101a5b265091",
+          "last_eval_accuracy": 0.967,
+          "best_eval_accuracy": 0.9694
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.9706,
+          "auc": null,
+          "total_minutes": 24.15,
+          "timings": {
+            "train_minutes": 21.93,
+            "predict_minutes": 1.73
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "holdout_accuracy": 0.499,
+              "phase": "fresh_initialisation"
+            },
+            {
+              "epoch": 0.25,
+              "holdout_accuracy": 0.9616
+            },
+            {
+              "epoch": 0.499,
+              "holdout_accuracy": 0.963
+            },
+            {
+              "epoch": 0.749,
+              "holdout_accuracy": 0.9624
+            },
+            {
+              "epoch": 0.998,
+              "holdout_accuracy": 0.9668
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9668
+            },
+            {
+              "epoch": 1.248,
+              "holdout_accuracy": 0.9676
+            },
+            {
+              "epoch": 1.498,
+              "holdout_accuracy": 0.9626
+            },
+            {
+              "epoch": 1.747,
+              "holdout_accuracy": 0.97
+            },
+            {
+              "epoch": 1.997,
+              "holdout_accuracy": 0.9704
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9704
+            }
+          ],
+          "submission_sha256": "47461f68d77a8cf4b76e87d0f93d07c6cccbae37030d3c67ef1b4adc88dda741",
+          "last_eval_accuracy": 0.9704,
+          "best_eval_accuracy": 0.9704
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.965,
+          "auc": null,
+          "total_minutes": 15.55,
+          "timings": {
+            "train_minutes": 13.32,
+            "predict_minutes": 1.74
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "holdout_accuracy": 0.4988,
+              "phase": "fresh_initialisation"
+            },
+            {
+              "epoch": 0.25,
+              "holdout_accuracy": 0.9552
+            },
+            {
+              "epoch": 0.499,
+              "holdout_accuracy": 0.9564
+            },
+            {
+              "epoch": 0.749,
+              "holdout_accuracy": 0.9624
+            },
+            {
+              "epoch": 0.998,
+              "holdout_accuracy": 0.9616
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9606
+            },
+            {
+              "epoch": 1.248,
+              "holdout_accuracy": 0.9624
+            },
+            {
+              "epoch": 1.498,
+              "holdout_accuracy": 0.9648
+            },
+            {
+              "epoch": 1.747,
+              "holdout_accuracy": 0.9638
+            },
+            {
+              "epoch": 1.997,
+              "holdout_accuracy": 0.965
+            },
+            {
+              "epoch": 2.0,
+              "holdout_accuracy": 0.9652
+            }
+          ],
+          "submission_sha256": "a4a5c4ee8c2899ee1046241b31798e7e8e1fc2f0787b8f2effa8aeb35e2245cb",
+          "last_eval_accuracy": 0.9652,
+          "best_eval_accuracy": 0.9652
+        }
+      ],
+      "cv_summary": {
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "n_folds": 5,
+        "n_oof": 25000,
+        "oof_accuracy": 0.96768,
+        "oof_correct": 24192,
+        "oof_wilson_95": [
+          0.9654148989040938,
+          0.9698013920197777
+        ],
+        "oof_se": 0.0011184885801830973,
+        "per_fold": [
+          {
+            "fold": 0,
+            "n_val": 5000,
+            "accuracy": 0.9646,
+            "epochs": 2.0,
+            "minutes": 24.97,
+            "model": "microsoft/deberta-v3-large"
+          },
+          {
+            "fold": 1,
+            "n_val": 5000,
+            "accuracy": 0.9686,
+            "epochs": 2.0,
+            "minutes": 14.82,
+            "model": "microsoft/deberta-v3-large"
+          },
+          {
+            "fold": 2,
+            "n_val": 5000,
+            "accuracy": 0.9696,
+            "epochs": 2.0,
+            "minutes": 29.73,
+            "model": "microsoft/deberta-v3-large"
+          },
+          {
+            "fold": 3,
+            "n_val": 5000,
+            "accuracy": 0.9706,
+            "epochs": 2.0,
+            "minutes": 24.15,
+            "model": "microsoft/deberta-v3-large"
+          },
+          {
+            "fold": 4,
+            "n_val": 5000,
+            "accuracy": 0.965,
+            "epochs": 2.0,
+            "minutes": 15.55,
+            "model": "microsoft/deberta-v3-large"
+          }
+        ],
+        "per_fold_mean": 0.96768,
+        "per_fold_sd": 0.002726169473822211,
+        "model": "microsoft/deberta-v3-large",
+        "stage2_holdout": {
+          "file": "runs\\retrain-screen-control\\holdout_predictions.csv",
+          "n": 2500,
+          "accuracy": 0.9684,
+          "fold_accuracy_on_same_rows": 0.966,
+          "wilson_95": [
+            0.9581503793747103,
+            0.9724196694654398
+          ],
+          "mcnemar": {
+            "a_only": 17,
+            "b_only": 23,
+            "n_discordant": 40,
+            "p_value": 0.42959050784338615
+          }
+        },
+        "accuracy_by_length": [
+          {
+            "bucket": "<100",
+            "n": 3037,
+            "accuracy": 0.9660849522555153,
+            "wilson_95": [
+              0.959035509325302,
+              0.9719567528168627
+            ]
+          },
+          {
+            "bucket": "100-199",
+            "n": 11702,
+            "accuracy": 0.9676978294308666,
+            "wilson_95": [
+              0.9643377870010517,
+              0.9707508955589448
+            ]
+          },
+          {
+            "bucket": "200-299",
+            "n": 4636,
+            "accuracy": 0.9654874892148404,
+            "wilson_95": [
+              0.9598354634385746,
+              0.9703687056002994
+            ]
+          },
+          {
+            "bucket": "300-499",
+            "n": 3635,
+            "accuracy": 0.9675378266850069,
+            "wilson_95": [
+              0.9612647819924749,
+              0.9728236927572915
+            ]
+          },
+          {
+            "bucket": ">=500",
+            "n": 1990,
+            "accuracy": 0.9753768844221106,
+            "wilson_95": [
+              0.9675970758932084,
+              0.981324844484017
+            ]
+          }
+        ],
+        "test": {
+          "positive_share": 0.50308,
+          "unanimous_share": 0.97108,
+          "mean_fold_correlation": 0.9926117993329869,
+          "min_fold_correlation": 0.987907628225396
+        },
+        "submission": {
+          "rows": 25000,
+          "positive": 12577,
+          "negative": 12423,
+          "sha256": "4df89334015c5e7ab0face997981fd2e7d0ef0a0125e2fc4659542380b59af12"
+        }
+      }
+    },
+    "qwen3": {
+      "label": "Qwen3-8B-Base + LoRA, 5-fold",
+      "oof": {
+        "n": 25000,
+        "correct": 24256,
+        "accuracy": 0.97024,
+        "wilson_95": [
+          0.96806,
+          0.972275
+        ],
+        "se": 0.001075
+      },
+      "metrics": {
+        "tp": 12151,
+        "tn": 12105,
+        "fp": 367,
+        "fn": 377,
+        "precision_positive": 0.970682,
+        "recall_positive": 0.969907,
+        "f1_positive": 0.970295,
+        "specificity": 0.970574
+      },
+      "by_length": [
+        {
+          "bucket": "<100",
+          "n": 3037,
+          "correct": 2936,
+          "accuracy": 0.966743,
+          "wilson_95": [
+            0.959753,
+            0.972554
+          ],
+          "se": 0.003254
+        },
+        {
+          "bucket": "100-199",
+          "n": 11702,
+          "correct": 11341,
+          "accuracy": 0.969151,
+          "wilson_95": [
+            0.96586,
+            0.972133
+          ],
+          "se": 0.001598
+        },
+        {
+          "bucket": "200-299",
+          "n": 4636,
+          "correct": 4493,
+          "accuracy": 0.969154,
+          "wilson_95": [
+            0.963776,
+            0.973756
+          ],
+          "se": 0.002539
+        },
+        {
+          "bucket": "300-499",
+          "n": 3635,
+          "correct": 3534,
+          "accuracy": 0.972215,
+          "wilson_95": [
+            0.966353,
+            0.97708
+          ],
+          "se": 0.002726
+        },
+        {
+          "bucket": ">=500",
+          "n": 1990,
+          "correct": 1952,
+          "accuracy": 0.980905,
+          "wilson_95": [
+            0.973899,
+            0.986056
+          ],
+          "se": 0.003068
+        }
+      ],
+      "by_confidence": [
+        {
+          "quintile": 1,
+          "accuracy": 0.867,
+          "share_of_errors": 0.893817
+        },
+        {
+          "quintile": 2,
+          "accuracy": 0.9906,
+          "share_of_errors": 0.063172
+        },
+        {
+          "quintile": 3,
+          "accuracy": 0.9968,
+          "share_of_errors": 0.021505
+        },
+        {
+          "quintile": 4,
+          "accuracy": 0.9976,
+          "share_of_errors": 0.016129
+        },
+        {
+          "quintile": 5,
+          "accuracy": 0.9992,
+          "share_of_errors": 0.005376
+        }
+      ],
+      "test_positive_share": 0.49956,
+      "per_fold": [
+        0.9684,
+        0.9698,
+        0.9736,
+        0.9718,
+        0.9676
+      ],
+      "per_fold_sd": 0.002463,
+      "folds": [
+        {
+          "fold": 0,
+          "accuracy": 0.9684,
+          "auc": 0.9937115637786074,
+          "total_minutes": 69.82,
+          "timings": {
+            "train_minutes": 49.83,
+            "mid_training_eval_minutes": 5.08,
+            "predict_minutes": 18.99
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.953125,
+              "check_auc": 0.9896844289812611,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9642,
+              "holdout_auc": 0.9933676417976167
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9684,
+              "holdout_auc": 0.9937115637786074,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "5edd682cb436fed86fedd376272dca0efc2805fe19b335d4b26230a3e3fe4e58",
+          "fingerprint": {
+            "zero_shot_auc": 0.9896844289812611,
+            "zero_shot_accuracy": 0.953125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 1.485211469233036
+          },
+          "last_eval_accuracy": 0.9684,
+          "best_eval_accuracy": 0.9684
+        },
+        {
+          "fold": 1,
+          "accuracy": 0.9698,
+          "auc": 0.9938250953003812,
+          "total_minutes": 69.35,
+          "timings": {
+            "train_minutes": 49.49,
+            "mid_training_eval_minutes": 4.71,
+            "predict_minutes": 18.94
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.9375,
+              "check_auc": 0.9882843648408268,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9666,
+              "holdout_auc": 0.9930452521810087
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9698,
+              "holdout_auc": 0.9938250953003812,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "08536a7766b839aef33799011d5bc1d33359087eda598ce985d244930b06790d",
+          "fingerprint": {
+            "zero_shot_auc": 0.9882843648408268,
+            "zero_shot_accuracy": 0.9375,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 1.6926529705524445
+          },
+          "last_eval_accuracy": 0.9698,
+          "best_eval_accuracy": 0.9698
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.9736,
+          "auc": 0.995641734896393,
+          "total_minutes": 69.24,
+          "timings": {
+            "train_minutes": 49.56,
+            "mid_training_eval_minutes": 4.63,
+            "predict_minutes": 18.74
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.94140625,
+              "check_auc": 0.9803466796875,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9718,
+              "holdout_auc": 0.9953026929435114
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9736,
+              "holdout_auc": 0.995641734896393,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "3f77b231fe32a6e35f8b3e876596512da413f98bd2d363d6fb8e114a8e882650",
+          "fingerprint": {
+            "zero_shot_auc": 0.9803466796875,
+            "zero_shot_accuracy": 0.94140625,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 1.905666671693325
+          },
+          "last_eval_accuracy": 0.9736,
+          "best_eval_accuracy": 0.9736
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.9718,
+          "auc": 0.9952633410533642,
+          "total_minutes": 69.33,
+          "timings": {
+            "train_minutes": 49.66,
+            "mid_training_eval_minutes": 4.6,
+            "predict_minutes": 18.7
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.9453125,
+              "check_auc": 0.9895470383275261,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9682,
+              "holdout_auc": 0.9938938955755823
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9718,
+              "holdout_auc": 0.9952633410533642,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "3893972f4e68bb66f67059ac9224154df1596093ff9eadc0fc02d08d217ef823",
+          "fingerprint": {
+            "zero_shot_auc": 0.9895470383275261,
+            "zero_shot_accuracy": 0.9453125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 2.0693689733743668
+          },
+          "last_eval_accuracy": 0.9718,
+          "best_eval_accuracy": 0.9718
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.9676,
+          "auc": 0.995173092197011,
+          "total_minutes": 69.21,
+          "timings": {
+            "train_minutes": 49.45,
+            "mid_training_eval_minutes": 4.72,
+            "predict_minutes": 18.79
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.95703125,
+              "check_auc": 0.9948415622697127,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9688,
+              "holdout_auc": 0.9950335713933712
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9676,
+              "holdout_auc": 0.995173092197011,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "395202905179173bed6e27be505bb3d7cea88d76705d657bf95fbc32d5b6ff9c",
+          "fingerprint": {
+            "zero_shot_auc": 0.9948415622697127,
+            "zero_shot_accuracy": 0.95703125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 1.3114453479647636
+          },
+          "last_eval_accuracy": 0.9676,
+          "best_eval_accuracy": 0.9688
+        }
+      ],
+      "cv_summary": {
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "n_folds": 5,
+        "n_oof": 25000,
+        "oof_accuracy": 0.97024,
+        "oof_correct": 24256,
+        "oof_wilson_95": [
+          0.9680602690443351,
+          0.9722752352407346
+        ],
+        "oof_se": 0.0010746970252122226,
+        "per_fold": [
+          {
+            "fold": 0,
+            "n_val": 5000,
+            "accuracy": 0.9684,
+            "epochs": 1.0,
+            "minutes": 69.82,
+            "model": "Qwen/Qwen3-8B-Base"
+          },
+          {
+            "fold": 1,
+            "n_val": 5000,
+            "accuracy": 0.9698,
+            "epochs": 1.0,
+            "minutes": 69.35,
+            "model": "Qwen/Qwen3-8B-Base"
+          },
+          {
+            "fold": 2,
+            "n_val": 5000,
+            "accuracy": 0.9736,
+            "epochs": 1.0,
+            "minutes": 69.24,
+            "model": "Qwen/Qwen3-8B-Base"
+          },
+          {
+            "fold": 3,
+            "n_val": 5000,
+            "accuracy": 0.9718,
+            "epochs": 1.0,
+            "minutes": 69.33,
+            "model": "Qwen/Qwen3-8B-Base"
+          },
+          {
+            "fold": 4,
+            "n_val": 5000,
+            "accuracy": 0.9676,
+            "epochs": 1.0,
+            "minutes": 69.21,
+            "model": "Qwen/Qwen3-8B-Base"
+          }
+        ],
+        "per_fold_mean": 0.9702400000000001,
+        "per_fold_sd": 0.0024633310780323415,
+        "model": "Qwen/Qwen3-8B-Base",
+        "stage2_holdout": {
+          "file": "runs\\deberta\\holdout_predictions.csv",
+          "n": 2500,
+          "accuracy": 0.9672,
+          "fold_accuracy_on_same_rows": 0.9692,
+          "wilson_95": [
+            0.9616743340925274,
+            0.9752858953405165
+          ],
+          "mcnemar": {
+            "a_only": 27,
+            "b_only": 22,
+            "n_discordant": 49,
+            "p_value": 0.5681724128491652
+          }
+        },
+        "accuracy_by_length": [
+          {
+            "bucket": "<100",
+            "n": 3037,
+            "accuracy": 0.9667434968719131,
+            "wilson_95": [
+              0.9597534893709743,
+              0.972554198079763
+            ]
+          },
+          {
+            "bucket": "100-199",
+            "n": 11702,
+            "accuracy": 0.9691505725517006,
+            "wilson_95": [
+              0.9658604497053349,
+              0.9721327655795873
+            ]
+          },
+          {
+            "bucket": "200-299",
+            "n": 4636,
+            "accuracy": 0.9691544434857636,
+            "wilson_95": [
+              0.9637758132174697,
+              0.9737561921854735
+            ]
+          },
+          {
+            "bucket": "300-499",
+            "n": 3635,
+            "accuracy": 0.9722145804676754,
+            "wilson_95": [
+              0.9663525548757964,
+              0.977079552748784
+            ]
+          },
+          {
+            "bucket": ">=500",
+            "n": 1990,
+            "accuracy": 0.9809045226130654,
+            "wilson_95": [
+              0.9738994726062622,
+              0.9860564235893032
+            ]
+          }
+        ],
+        "test": {
+          "positive_share": 0.49956,
+          "unanimous_share": 0.98036,
+          "mean_fold_correlation": 0.9959218578590944,
+          "min_fold_correlation": 0.9929235199363043
+        },
+        "submission": {
+          "rows": 25000,
+          "positive": 12489,
+          "negative": 12511,
+          "sha256": "ede9d5c0baf8f8b250280ebced14f5aa0b640c3de2fd25b645f99ed59e280add"
+        }
+      }
+    },
+    "qwen3_14b": {
+      "label": "Qwen3-14B-Base + LoRA, 5-fold (Stage 5)",
+      "oof": {
+        "n": 25000,
+        "correct": 24288,
+        "accuracy": 0.97152,
+        "wilson_95": [
+          0.969384,
+          0.973511
+        ],
+        "se": 0.001052
+      },
+      "metrics": {
+        "tp": 12143,
+        "tn": 12145,
+        "fp": 327,
+        "fn": 385,
+        "precision_positive": 0.973777,
+        "recall_positive": 0.969269,
+        "f1_positive": 0.971518,
+        "specificity": 0.973781
+      },
+      "by_length": [
+        {
+          "bucket": "<100",
+          "n": 3037,
+          "correct": 2940,
+          "accuracy": 0.968061,
+          "wilson_95": [
+            0.961191,
+            0.973747
+          ],
+          "se": 0.003191
+        },
+        {
+          "bucket": "100-199",
+          "n": 11702,
+          "correct": 11371,
+          "accuracy": 0.971714,
+          "wilson_95": [
+            0.968552,
+            0.974567
+          ],
+          "se": 0.001533
+        },
+        {
+          "bucket": "200-299",
+          "n": 4636,
+          "correct": 4500,
+          "accuracy": 0.970664,
+          "wilson_95": [
+            0.965404,
+            0.975146
+          ],
+          "se": 0.002478
+        },
+        {
+          "bucket": "300-499",
+          "n": 3635,
+          "correct": 3529,
+          "accuracy": 0.970839,
+          "wilson_95": [
+            0.964852,
+            0.975832
+          ],
+          "se": 0.002791
+        },
+        {
+          "bucket": ">=500",
+          "n": 1990,
+          "correct": 1948,
+          "accuracy": 0.978894,
+          "wilson_95": [
+            0.971595,
+            0.984348
+          ],
+          "se": 0.003222
+        }
+      ],
+      "by_confidence": [
+        {
+          "quintile": 1,
+          "accuracy": 0.8726,
+          "share_of_errors": 0.894663
+        },
+        {
+          "quintile": 2,
+          "accuracy": 0.9912,
+          "share_of_errors": 0.061798
+        },
+        {
+          "quintile": 3,
+          "accuracy": 0.996,
+          "share_of_errors": 0.02809
+        },
+        {
+          "quintile": 4,
+          "accuracy": 0.9988,
+          "share_of_errors": 0.008427
+        },
+        {
+          "quintile": 5,
+          "accuracy": 0.999,
+          "share_of_errors": 0.007022
+        }
+      ],
+      "test_positive_share": 0.49856,
+      "per_fold": [
+        0.9698,
+        0.9696,
+        0.9738,
+        0.9744,
+        0.97
+      ],
+      "per_fold_sd": 0.002369,
+      "folds": [
+        {
+          "fold": 0,
+          "accuracy": 0.9698,
+          "auc": 0.9948868505482592,
+          "total_minutes": 54.78,
+          "timings": {
+            "train_minutes": 33.85,
+            "mid_training_eval_minutes": 3.32,
+            "predict_minutes": 19.67
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.95703125,
+              "check_auc": 0.9930415674784838,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9678,
+              "holdout_auc": 0.9941985265835132
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9698,
+              "holdout_auc": 0.9948868505482592,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "0022c3d10e1d6df4448144c3dd9180de01dd6a54f0fe1761b5e19b0dc4afa6b4",
+          "fingerprint": {
+            "zero_shot_auc": 0.9930415674784838,
+            "zero_shot_accuracy": 0.95703125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 2.2475012857466936
+          },
+          "last_eval_accuracy": 0.9698,
+          "best_eval_accuracy": 0.9698
+        },
+        {
+          "fold": 1,
+          "accuracy": 0.9696,
+          "auc": 0.994184296737187,
+          "total_minutes": 54.8,
+          "timings": {
+            "train_minutes": 33.84,
+            "mid_training_eval_minutes": 3.34,
+            "predict_minutes": 19.69
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.9453125,
+              "check_auc": 0.9901858553640435,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9638,
+              "holdout_auc": 0.9932849331397325
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9696,
+              "holdout_auc": 0.994184296737187,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "8953e4f963ff299c30818f9ffa738a37995e22464a0f5bd389a82587a6153bf7",
+          "fingerprint": {
+            "zero_shot_auc": 0.9901858553640435,
+            "zero_shot_accuracy": 0.9453125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 2.5639276765286922
+          },
+          "last_eval_accuracy": 0.9696,
+          "best_eval_accuracy": 0.9696
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.9738,
+          "auc": 0.9958828562852522,
+          "total_minutes": 54.86,
+          "timings": {
+            "train_minutes": 33.92,
+            "mid_training_eval_minutes": 3.3,
+            "predict_minutes": 19.64
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.953125,
+              "check_auc": 0.9881591796875,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9716,
+              "holdout_auc": 0.9947831699510589
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9738,
+              "holdout_auc": 0.9958828562852522,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "53649354ec058ce6803f7940dbab5a0140cfd4d8c0e17aa1b21f78f784911ee0",
+          "fingerprint": {
+            "zero_shot_auc": 0.9881591796875,
+            "zero_shot_accuracy": 0.953125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 2.2421858441084623
+          },
+          "last_eval_accuracy": 0.9738,
+          "best_eval_accuracy": 0.9738
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.9744,
+          "auc": 0.9960471841887367,
+          "total_minutes": 54.84,
+          "timings": {
+            "train_minutes": 33.94,
+            "mid_training_eval_minutes": 3.26,
+            "predict_minutes": 19.61
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.9609375,
+              "check_auc": 0.9928479735925179,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9716,
+              "holdout_auc": 0.995378701514806
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9744,
+              "holdout_auc": 0.9960471841887367,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "8ae753ea0895c5bcb5359c51943a3f48e3685b629594b215b644032285d9993f",
+          "fingerprint": {
+            "zero_shot_auc": 0.9928479735925179,
+            "zero_shot_accuracy": 0.9609375,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 2.223592847585678
+          },
+          "last_eval_accuracy": 0.9744,
+          "best_eval_accuracy": 0.9744
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.97,
+          "auc": 0.9955988546494028,
+          "total_minutes": 54.84,
+          "timings": {
+            "train_minutes": 33.82,
+            "mid_training_eval_minutes": 3.35,
+            "predict_minutes": 19.69
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.9453125,
+              "check_auc": 0.9977278309997544,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9712,
+              "holdout_auc": 0.9945590086598899
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.97,
+              "holdout_auc": 0.9955988546494028,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "0a177d5a01a5abe2155b925476a7e555146e69732e0f9cd995f39f3c17ae9997",
+          "fingerprint": {
+            "zero_shot_auc": 0.9977278309997544,
+            "zero_shot_accuracy": 0.9453125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 2.1741530913859606
+          },
+          "last_eval_accuracy": 0.97,
+          "best_eval_accuracy": 0.9712
+        }
+      ],
+      "cv_summary": {
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "n_folds": 5,
+        "n_oof": 25000,
+        "oof_accuracy": 0.97152,
+        "oof_correct": 24288,
+        "oof_wilson_95": [
+          0.9693844735104374,
+          0.9735106374552313
+        ],
+        "oof_se": 0.0010520245168245833,
+        "per_fold": [
+          {
+            "fold": 0,
+            "n_val": 5000,
+            "accuracy": 0.9698,
+            "epochs": 1.0,
+            "minutes": 54.78,
+            "model": "Qwen/Qwen3-14B-Base"
+          },
+          {
+            "fold": 1,
+            "n_val": 5000,
+            "accuracy": 0.9696,
+            "epochs": 1.0,
+            "minutes": 54.8,
+            "model": "Qwen/Qwen3-14B-Base"
+          },
+          {
+            "fold": 2,
+            "n_val": 5000,
+            "accuracy": 0.9738,
+            "epochs": 1.0,
+            "minutes": 54.86,
+            "model": "Qwen/Qwen3-14B-Base"
+          },
+          {
+            "fold": 3,
+            "n_val": 5000,
+            "accuracy": 0.9744,
+            "epochs": 1.0,
+            "minutes": 54.84,
+            "model": "Qwen/Qwen3-14B-Base"
+          },
+          {
+            "fold": 4,
+            "n_val": 5000,
+            "accuracy": 0.97,
+            "epochs": 1.0,
+            "minutes": 54.84,
+            "model": "Qwen/Qwen3-14B-Base"
+          }
+        ],
+        "per_fold_mean": 0.9715199999999999,
+        "per_fold_sd": 0.0023689660191737807,
+        "model": "Qwen/Qwen3-14B-Base",
+        "accuracy_by_length": [
+          {
+            "bucket": "<100",
+            "n": 3037,
+            "accuracy": 0.9680605861047086,
+            "wilson_95": [
+              0.9611914463421718,
+              0.9737470917257103
+            ]
+          },
+          {
+            "bucket": "100-199",
+            "n": 11702,
+            "accuracy": 0.9717142368825842,
+            "wilson_95": [
+              0.9685520795104556,
+              0.9745667817596302
+            ]
+          },
+          {
+            "bucket": "200-299",
+            "n": 4636,
+            "accuracy": 0.9706643658326143,
+            "wilson_95": [
+              0.9654035307375308,
+              0.975145819050617
+            ]
+          },
+          {
+            "bucket": "300-499",
+            "n": 3635,
+            "accuracy": 0.9708390646492435,
+            "wilson_95": [
+              0.9648524418849764,
+              0.9758315384234824
+            ]
+          },
+          {
+            "bucket": ">=500",
+            "n": 1990,
+            "accuracy": 0.978894472361809,
+            "wilson_95": [
+              0.9715954205869708,
+              0.9843481207655618
+            ]
+          }
+        ],
+        "test": {
+          "positive_share": 0.49856,
+          "unanimous_share": 0.98272,
+          "mean_fold_correlation": 0.9969892794497877,
+          "min_fold_correlation": 0.9954978404746777
+        },
+        "submission": {
+          "rows": 25000,
+          "positive": 12464,
+          "negative": 12536,
+          "sha256": "f126cdb741a6147194167961ca43552bb94535993d4a5090bfe87273e0abc5a8"
+        }
+      }
+    },
+    "mistral_24b": {
+      "label": "Mistral-Small-24B-Base + LoRA, 5-fold (Stage 6)",
+      "oof": {
+        "n": 25000,
+        "correct": 24312,
+        "accuracy": 0.97248,
+        "wilson_95": [
+          0.970378,
+          0.974436
+        ],
+        "se": 0.001035
+      },
+      "metrics": {
+        "tp": 12185,
+        "tn": 12127,
+        "fp": 345,
+        "fn": 343,
+        "precision_positive": 0.972466,
+        "recall_positive": 0.972621,
+        "f1_positive": 0.972544,
+        "specificity": 0.972338
+      },
+      "by_length": [
+        {
+          "bucket": "<100",
+          "n": 3037,
+          "correct": 2937,
+          "accuracy": 0.967073,
+          "wilson_95": [
+            0.960113,
+            0.972853
+          ],
+          "se": 0.003238
+        },
+        {
+          "bucket": "100-199",
+          "n": 11702,
+          "correct": 11389,
+          "accuracy": 0.973252,
+          "wilson_95": [
+            0.97017,
+            0.976024
+          ],
+          "se": 0.001492
+        },
+        {
+          "bucket": "200-299",
+          "n": 4636,
+          "correct": 4505,
+          "accuracy": 0.971743,
+          "wilson_95": [
+            0.966568,
+            0.976136
+          ],
+          "se": 0.002434
+        },
+        {
+          "bucket": "300-499",
+          "n": 3635,
+          "correct": 3533,
+          "accuracy": 0.971939,
+          "wilson_95": [
+            0.966052,
+            0.97683
+          ],
+          "se": 0.002739
+        },
+        {
+          "bucket": ">=500",
+          "n": 1990,
+          "correct": 1948,
+          "accuracy": 0.978894,
+          "wilson_95": [
+            0.971595,
+            0.984348
+          ],
+          "se": 0.003222
+        }
+      ],
+      "by_confidence": [
+        {
+          "quintile": 1,
+          "accuracy": 0.878,
+          "share_of_errors": 0.886628
+        },
+        {
+          "quintile": 2,
+          "accuracy": 0.9914,
+          "share_of_errors": 0.0625
+        },
+        {
+          "quintile": 3,
+          "accuracy": 0.9972,
+          "share_of_errors": 0.020349
+        },
+        {
+          "quintile": 4,
+          "accuracy": 0.9978,
+          "share_of_errors": 0.015988
+        },
+        {
+          "quintile": 5,
+          "accuracy": 0.998,
+          "share_of_errors": 0.014535
+        }
+      ],
+      "test_positive_share": 0.50004,
+      "per_fold": [
+        0.9718,
+        0.9704,
+        0.9754,
+        0.9738,
+        0.971
+      ],
+      "per_fold_sd": 0.002077,
+      "folds": [
+        {
+          "fold": 0,
+          "accuracy": 0.9718,
+          "auc": 0.9944322879299785,
+          "total_minutes": 88.93,
+          "timings": {
+            "train_minutes": 62.66,
+            "mid_training_eval_minutes": 4.17,
+            "predict_minutes": 24.63
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.953125,
+              "check_auc": 0.9931026063602515,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9646,
+              "holdout_auc": 0.9931932407930669
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9718,
+              "holdout_auc": 0.9944322879299785,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "7300aae1bb70b31384e210240f5b9a2b6f0204cc5c533165bf8a5f4acca062d8",
+          "fingerprint": {
+            "zero_shot_auc": 0.9931026063602515,
+            "zero_shot_accuracy": 0.953125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 5.160560209304094
+          },
+          "last_eval_accuracy": 0.9718,
+          "best_eval_accuracy": 0.9718
+        },
+        {
+          "fold": 1,
+          "accuracy": 0.9704,
+          "auc": 0.9943250973003892,
+          "total_minutes": 88.91,
+          "timings": {
+            "train_minutes": 62.62,
+            "mid_training_eval_minutes": 4.19,
+            "predict_minutes": 24.65
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.94921875,
+              "check_auc": 0.9928234067349567,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9234,
+              "holdout_auc": 0.9920914083656335
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9704,
+              "holdout_auc": 0.9943250973003892,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "bfb40aaa22e01e3df0b10d58bde20b52eae7656d445905fbe2721f863402a575",
+          "fingerprint": {
+            "zero_shot_auc": 0.9928234067349567,
+            "zero_shot_accuracy": 0.94921875,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 5.921209421008825
+          },
+          "last_eval_accuracy": 0.9704,
+          "best_eval_accuracy": 0.9704
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.9754,
+          "auc": 0.9956953352051308,
+          "total_minutes": 89.06,
+          "timings": {
+            "train_minutes": 62.8,
+            "mid_training_eval_minutes": 4.13,
+            "predict_minutes": 24.6
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.953125,
+              "check_auc": 0.9873046875,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9654,
+              "holdout_auc": 0.9944060477788352
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9754,
+              "holdout_auc": 0.9956953352051308,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "1a4629a41ef3a5c11057d2d172b38fb0a3de7918eac1771d0ead74172510b05f",
+          "fingerprint": {
+            "zero_shot_auc": 0.9873046875,
+            "zero_shot_accuracy": 0.953125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 5.547132194042206
+          },
+          "last_eval_accuracy": 0.9754,
+          "best_eval_accuracy": 0.9754
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.9738,
+          "auc": 0.9957895831583327,
+          "total_minutes": 89.63,
+          "timings": {
+            "train_minutes": 63.14,
+            "mid_training_eval_minutes": 4.11,
+            "predict_minutes": 24.75
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.95703125,
+              "check_auc": 0.9910752490983556,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9682,
+              "holdout_auc": 0.9947942191768767
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9738,
+              "holdout_auc": 0.9957895831583327,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "4af05b6438d4a0f624f8a58e74030d561f61d649f8e72db51e1ab5994209bd5e",
+          "fingerprint": {
+            "zero_shot_auc": 0.9910752490983556,
+            "zero_shot_accuracy": 0.95703125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 4.581259256228805
+          },
+          "last_eval_accuracy": 0.9738,
+          "best_eval_accuracy": 0.9738
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.971,
+          "auc": 0.995208772402529,
+          "total_minutes": 89.63,
+          "timings": {
+            "train_minutes": 62.94,
+            "mid_training_eval_minutes": 4.24,
+            "predict_minutes": 24.87
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.96875,
+              "check_auc": 0.9963154016212233,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9578,
+              "holdout_auc": 0.9925996373739113
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.971,
+              "holdout_auc": 0.995208772402529,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "bf674e09eaf44f6181c081698229584a27e6d47199236eae1d4e774c7b80aa7f",
+          "fingerprint": {
+            "zero_shot_auc": 0.9963154016212233,
+            "zero_shot_accuracy": 0.96875,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 5.8469444662332535
+          },
+          "last_eval_accuracy": 0.971,
+          "best_eval_accuracy": 0.971
+        }
+      ],
+      "cv_summary": {
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "n_folds": 5,
+        "n_oof": 25000,
+        "oof_accuracy": 0.97248,
+        "oof_correct": 24312,
+        "oof_wilson_95": [
+          0.9703783457541645,
+          0.9744364702219533
+        ],
+        "oof_se": 0.0010346525909695483,
+        "per_fold": [
+          {
+            "fold": 0,
+            "n_val": 5000,
+            "accuracy": 0.9718,
+            "epochs": 1.0,
+            "minutes": 88.93,
+            "model": "mistralai/Mistral-Small-24B-Base-2501"
+          },
+          {
+            "fold": 1,
+            "n_val": 5000,
+            "accuracy": 0.9704,
+            "epochs": 1.0,
+            "minutes": 88.91,
+            "model": "mistralai/Mistral-Small-24B-Base-2501"
+          },
+          {
+            "fold": 2,
+            "n_val": 5000,
+            "accuracy": 0.9754,
+            "epochs": 1.0,
+            "minutes": 89.06,
+            "model": "mistralai/Mistral-Small-24B-Base-2501"
+          },
+          {
+            "fold": 3,
+            "n_val": 5000,
+            "accuracy": 0.9738,
+            "epochs": 1.0,
+            "minutes": 89.63,
+            "model": "mistralai/Mistral-Small-24B-Base-2501"
+          },
+          {
+            "fold": 4,
+            "n_val": 5000,
+            "accuracy": 0.971,
+            "epochs": 1.0,
+            "minutes": 89.63,
+            "model": "mistralai/Mistral-Small-24B-Base-2501"
+          }
+        ],
+        "per_fold_mean": 0.97248,
+        "per_fold_sd": 0.002076535576386796,
+        "model": "mistralai/Mistral-Small-24B-Base-2501",
+        "accuracy_by_length": [
+          {
+            "bucket": "<100",
+            "n": 3037,
+            "accuracy": 0.967072769180112,
+            "wilson_95": [
+              0.960112725427155,
+              0.9728526746778686
+            ]
+          },
+          {
+            "bucket": "100-199",
+            "n": 11702,
+            "accuracy": 0.9732524354811143,
+            "wilson_95": [
+              0.9701701301802677,
+              0.9760241186809162
+            ]
+          },
+          {
+            "bucket": "200-299",
+            "n": 4636,
+            "accuracy": 0.9717428817946505,
+            "wilson_95": [
+              0.9665682406902085,
+              0.9761363550873714
+            ]
+          },
+          {
+            "bucket": "300-499",
+            "n": 3635,
+            "accuracy": 0.971939477303989,
+            "wilson_95": [
+              0.9660522667839092,
+              0.9768302153774467
+            ]
+          },
+          {
+            "bucket": ">=500",
+            "n": 1990,
+            "accuracy": 0.978894472361809,
+            "wilson_95": [
+              0.9715954205869708,
+              0.9843481207655618
+            ]
+          }
+        ],
+        "test": {
+          "positive_share": 0.50004,
+          "unanimous_share": 0.97212,
+          "mean_fold_correlation": 0.9921980731638845,
+          "min_fold_correlation": 0.9883881718152684
+        },
+        "submission": {
+          "rows": 25000,
+          "positive": 12501,
+          "negative": 12499,
+          "sha256": "a5fc530b3ecd13404fb0376a99f7cff57fe698316d343f3de6c699a5cf53ac54"
+        }
+      }
+    },
+    "qwen38_27b": {
+      "label": "Qwen3.8-27B (post-trained) + LoRA, 5-fold (Stage 7)",
+      "oof": {
+        "n": 25000,
+        "correct": 24324,
+        "accuracy": 0.97296,
+        "wilson_95": [
+          0.970876,
+          0.974899
+        ],
+        "se": 0.001026
+      },
+      "metrics": {
+        "tp": 12158,
+        "tn": 12166,
+        "fp": 306,
+        "fn": 370,
+        "precision_positive": 0.975449,
+        "recall_positive": 0.970466,
+        "f1_positive": 0.972951,
+        "specificity": 0.975465
+      },
+      "by_length": [
+        {
+          "bucket": "<100",
+          "n": 3037,
+          "correct": 2946,
+          "accuracy": 0.970036,
+          "wilson_95": [
+            0.963354,
+            0.975531
+          ],
+          "se": 0.003094
+        },
+        {
+          "bucket": "100-199",
+          "n": 11702,
+          "correct": 11380,
+          "accuracy": 0.972483,
+          "wilson_95": [
+            0.969361,
+            0.975296
+          ],
+          "se": 0.001512
+        },
+        {
+          "bucket": "200-299",
+          "n": 4636,
+          "correct": 4501,
+          "accuracy": 0.97088,
+          "wilson_95": [
+            0.965636,
+            0.975344
+          ],
+          "se": 0.002469
+        },
+        {
+          "bucket": "300-499",
+          "n": 3635,
+          "correct": 3542,
+          "accuracy": 0.974415,
+          "wilson_95": [
+            0.96876,
+            0.979069
+          ],
+          "se": 0.002619
+        },
+        {
+          "bucket": ">=500",
+          "n": 1990,
+          "correct": 1955,
+          "accuracy": 0.982412,
+          "wilson_95": [
+            0.975638,
+            0.987327
+          ],
+          "se": 0.002947
+        }
+      ],
+      "by_confidence": [
+        {
+          "quintile": 1,
+          "accuracy": 0.876,
+          "share_of_errors": 0.91716
+        },
+        {
+          "quintile": 2,
+          "accuracy": 0.9936,
+          "share_of_errors": 0.047337
+        },
+        {
+          "quintile": 3,
+          "accuracy": 0.9978,
+          "share_of_errors": 0.016272
+        },
+        {
+          "quintile": 4,
+          "accuracy": 0.998,
+          "share_of_errors": 0.014793
+        },
+        {
+          "quintile": 5,
+          "accuracy": 0.9994,
+          "share_of_errors": 0.004438
+        }
+      ],
+      "test_positive_share": 0.49748,
+      "per_fold": [
+        0.9708,
+        0.9744,
+        0.9736,
+        0.9752,
+        0.9708
+      ],
+      "per_fold_sd": 0.002051,
+      "folds": [
+        {
+          "fold": 0,
+          "accuracy": 0.9708,
+          "auc": 0.9955617344355904,
+          "total_minutes": 137.21,
+          "timings": {
+            "train_minutes": 95.18,
+            "mid_training_eval_minutes": 7.63,
+            "predict_minutes": 39.67
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.87109375,
+              "check_auc": 0.979185741317219,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.959,
+              "holdout_auc": 0.9942207667116163
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9708,
+              "holdout_auc": 0.9955617344355904,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "c5fdbd67c62313c88c23d7128e6462b844a2d23d0c1521e71f10deba9240ca75",
+          "fingerprint": {
+            "zero_shot_auc": 0.979185741317219,
+            "zero_shot_accuracy": 0.87109375,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 4.534053510054946
+          },
+          "last_eval_accuracy": 0.9708,
+          "best_eval_accuracy": 0.9708
+        },
+        {
+          "fold": 1,
+          "accuracy": 0.9744,
+          "auc": 0.9946476585906343,
+          "total_minutes": 136.56,
+          "timings": {
+            "train_minutes": 94.11,
+            "mid_training_eval_minutes": 6.72,
+            "predict_minutes": 39.66
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.8828125,
+              "check_auc": 0.9729497638471447,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9716,
+              "holdout_auc": 0.9937426949707799
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9744,
+              "holdout_auc": 0.9946476585906343,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "f37f09ac359cd913bf504a4771d0be788a055f48a0cc71a85af1e4a43fc5007f",
+          "fingerprint": {
+            "zero_shot_auc": 0.9729497638471447,
+            "zero_shot_accuracy": 0.8828125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 5.183553837239742
+          },
+          "last_eval_accuracy": 0.9744,
+          "best_eval_accuracy": 0.9744
+        },
+        {
+          "fold": 2,
+          "accuracy": 0.9736,
+          "auc": 0.9958196559212181,
+          "total_minutes": 135.97,
+          "timings": {
+            "train_minutes": 94.32,
+            "mid_training_eval_minutes": 6.63,
+            "predict_minutes": 39.56
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.8828125,
+              "check_auc": 0.97216796875,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9738,
+              "holdout_auc": 0.9949966111804804
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9736,
+              "holdout_auc": 0.9958196559212181,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "765ef600b7a34ab6753a425a2f5e25c557e32b61b1d079b487a0a4358f8d405b",
+          "fingerprint": {
+            "zero_shot_auc": 0.97216796875,
+            "zero_shot_accuracy": 0.8828125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 5.105837212875485
+          },
+          "last_eval_accuracy": 0.9736,
+          "best_eval_accuracy": 0.9738
+        },
+        {
+          "fold": 3,
+          "accuracy": 0.9752,
+          "auc": 0.9964907059628239,
+          "total_minutes": 136.16,
+          "timings": {
+            "train_minutes": 94.58,
+            "mid_training_eval_minutes": 6.56,
+            "predict_minutes": 39.48
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.8828125,
+              "check_auc": 0.9790940766550522,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9728,
+              "holdout_auc": 0.9957654230616922
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9752,
+              "holdout_auc": 0.9964907059628239,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "a39bd19ba70e20d23168220f9ace24e15c3650734772f8fd135a0cee6004ceba",
+          "fingerprint": {
+            "zero_shot_auc": 0.9790940766550522,
+            "zero_shot_accuracy": 0.8828125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 4.995729458518326
+          },
+          "last_eval_accuracy": 0.9752,
+          "best_eval_accuracy": 0.9752
+        },
+        {
+          "fold": 4,
+          "accuracy": 0.9708,
+          "auc": 0.9963214188113724,
+          "total_minutes": 136.29,
+          "timings": {
+            "train_minutes": 94.36,
+            "mid_training_eval_minutes": 6.75,
+            "predict_minutes": 39.67
+          },
+          "history": [
+            {
+              "epoch": 0.0,
+              "check_accuracy": 0.92578125,
+              "check_auc": 0.9913411938098747,
+              "phase": "zero-shot"
+            },
+            {
+              "epoch": 0.5,
+              "holdout_accuracy": 0.9676,
+              "holdout_auc": 0.9954529338088988
+            },
+            {
+              "epoch": 1.0,
+              "holdout_accuracy": 0.9708,
+              "holdout_auc": 0.9963214188113724,
+              "phase": "final (re-loaded)"
+            }
+          ],
+          "submission_sha256": "6d38226bb4aba5eec90a9443b00b878ae0d6a3b3bf864d55118cdc567252451b",
+          "fingerprint": {
+            "zero_shot_auc": 0.9913411938098747,
+            "zero_shot_accuracy": 0.92578125,
+            "check_rows": 256,
+            "skipped_updates": 0,
+            "oom_retries": 0,
+            "reload_max_abs_diff": 0.0,
+            "mean_abs_margin_change": 5.079008987173438
+          },
+          "last_eval_accuracy": 0.9708,
+          "best_eval_accuracy": 0.9708
+        }
+      ],
+      "cv_summary": {
+        "folds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "n_folds": 5,
+        "n_oof": 25000,
+        "oof_accuracy": 0.97296,
+        "oof_correct": 24324,
+        "oof_wilson_95": [
+          0.9708755239784477,
+          0.9748991445028949
+        ],
+        "oof_se": 0.0010258428417647598,
+        "per_fold": [
+          {
+            "fold": 0,
+            "n_val": 5000,
+            "accuracy": 0.9708,
+            "epochs": 1.0,
+            "minutes": 137.21,
+            "model": "Qwen/Qwen3.8-27B"
+          },
+          {
+            "fold": 1,
+            "n_val": 5000,
+            "accuracy": 0.9744,
+            "epochs": 1.0,
+            "minutes": 136.56,
+            "model": "Qwen/Qwen3.8-27B"
+          },
+          {
+            "fold": 2,
+            "n_val": 5000,
+            "accuracy": 0.9736,
+            "epochs": 1.0,
+            "minutes": 135.97,
+            "model": "Qwen/Qwen3.8-27B"
+          },
+          {
+            "fold": 3,
+            "n_val": 5000,
+            "accuracy": 0.9752,
+            "epochs": 1.0,
+            "minutes": 136.16,
+            "model": "Qwen/Qwen3.8-27B"
+          },
+          {
+            "fold": 4,
+            "n_val": 5000,
+            "accuracy": 0.9708,
+            "epochs": 1.0,
+            "minutes": 136.29,
+            "model": "Qwen/Qwen3.8-27B"
+          }
+        ],
+        "per_fold_mean": 0.9729599999999999,
+        "per_fold_sd": 0.0020513410247932928,
+        "model": "Qwen/Qwen3.8-27B",
+        "accuracy_by_length": [
+          {
+            "bucket": "<100",
+            "n": 3037,
+            "accuracy": 0.9700362199539019,
+            "wilson_95": [
+              0.9633536770224638,
+              0.9755311369711359
+            ]
+          },
+          {
+            "bucket": "100-199",
+            "n": 11702,
+            "accuracy": 0.9724833361818492,
+            "wilson_95": [
+              0.9693608001323816,
+              0.9752957549332532
+            ]
+          },
+          {
+            "bucket": "200-299",
+            "n": 4636,
+            "accuracy": 0.9708800690250216,
+            "wilson_95": [
+              0.9656363318664685,
+              0.9753440671195659
+            ]
+          },
+          {
+            "bucket": "300-499",
+            "n": 3635,
+            "accuracy": 0.9744154057771665,
+            "wilson_95": [
+              0.9687599471284528,
+              0.9790691642019221
+            ]
+          },
+          {
+            "bucket": ">=500",
+            "n": 1990,
+            "accuracy": 0.9824120603015075,
+            "wilson_95": [
+              0.9756383374487432,
+              0.9873268248790965
+            ]
+          }
+        ],
+        "test": {
+          "positive_share": 0.49748,
+          "unanimous_share": 0.97968,
+          "mean_fold_correlation": 0.9964356219637017,
+          "min_fold_correlation": 0.9941546288968016
+        },
+        "submission": {
+          "rows": 25000,
+          "positive": 12437,
+          "negative": 12563,
+          "sha256": "0a13ddadf62879592a5ae5c3d449fff0a2b616747005a078de44930f0799478a"
+        }
+      }
+    }
+  },
+  "pairs": {
+    "qwen3_vs_deberta": {
+      "a": "qwen3",
+      "b": "deberta",
+      "pearson": 0.983129,
+      "spearman": 0.91556,
+      "both_right": 23958,
+      "a_only_right": 298,
+      "b_only_right": 224,
+      "both_wrong": 520,
+      "mcnemar_p": 0.001375,
+      "label_agreement": 0.97912,
+      "oracle_accuracy": 0.9792
+    },
+    "qwen3_vs_nblr": {
+      "a": "qwen3",
+      "b": "nblr",
+      "pearson": 0.814351,
+      "spearman": 0.863857,
+      "both_right": 22654,
+      "a_only_right": 1602,
+      "b_only_right": 291,
+      "both_wrong": 453,
+      "mcnemar_p": 5.335e-219,
+      "label_agreement": 0.92428,
+      "oracle_accuracy": 0.98188
+    },
+    "deberta_vs_nblr": {
+      "a": "deberta",
+      "b": "nblr",
+      "pearson": 0.804915,
+      "spearman": 0.865416,
+      "both_right": 22631,
+      "a_only_right": 1551,
+      "b_only_right": 314,
+      "both_wrong": 504,
+      "mcnemar_p": 3.249e-196,
+      "label_agreement": 0.9254,
+      "oracle_accuracy": 0.97984
+    },
+    "deberta_vs_electra": {
+      "a": "deberta",
+      "b": "electra",
+      "pearson": 0.983833,
+      "spearman": 0.862339,
+      "both_right": 23919,
+      "a_only_right": 263,
+      "b_only_right": 184,
+      "both_wrong": 634,
+      "mcnemar_p": 0.0002173,
+      "label_agreement": 0.98212,
+      "oracle_accuracy": 0.97464
+    },
+    "deberta_vs_deberta_rerun": {
+      "a": "deberta",
+      "b": "deberta_rerun",
+      "pearson": 0.994498,
+      "spearman": 0.961194,
+      "both_right": 24062,
+      "a_only_right": 120,
+      "b_only_right": 130,
+      "both_wrong": 688,
+      "mcnemar_p": 0.5693,
+      "label_agreement": 0.99,
+      "oracle_accuracy": 0.97248
+    },
+    "qwen3_vs_electra": {
+      "a": "qwen3",
+      "b": "electra",
+      "pearson": 0.974988,
+      "spearman": 0.848876,
+      "both_right": 23912,
+      "a_only_right": 344,
+      "b_only_right": 191,
+      "both_wrong": 553,
+      "mcnemar_p": 3.69e-11,
+      "label_agreement": 0.9786,
+      "oracle_accuracy": 0.97788
+    },
+    "qwen3_vs_deberta_rerun": {
+      "a": "qwen3",
+      "b": "deberta_rerun",
+      "pearson": 0.981991,
+      "spearman": 0.897852,
+      "both_right": 23970,
+      "a_only_right": 286,
+      "b_only_right": 222,
+      "both_wrong": 522,
+      "mcnemar_p": 0.005137,
+      "label_agreement": 0.97968,
+      "oracle_accuracy": 0.97912
+    },
+    "qwen3_14b_vs_qwen3": {
+      "a": "qwen3_14b",
+      "b": "qwen3",
+      "pearson": 0.991799,
+      "spearman": 0.934341,
+      "both_right": 24125,
+      "a_only_right": 163,
+      "b_only_right": 131,
+      "both_wrong": 581,
+      "mcnemar_p": 0.07043,
+      "label_agreement": 0.98824,
+      "oracle_accuracy": 0.97676
+    },
+    "qwen3_14b_vs_deberta": {
+      "a": "qwen3_14b",
+      "b": "deberta",
+      "pearson": 0.98367,
+      "spearman": 0.934105,
+      "both_right": 23986,
+      "a_only_right": 302,
+      "b_only_right": 196,
+      "both_wrong": 516,
+      "mcnemar_p": 2.334e-06,
+      "label_agreement": 0.98008,
+      "oracle_accuracy": 0.97936
+    },
+    "mistral_24b_vs_qwen3_14b": {
+      "a": "mistral_24b",
+      "b": "qwen3_14b",
+      "pearson": 0.988416,
+      "spearman": 0.939075,
+      "both_right": 24134,
+      "a_only_right": 178,
+      "b_only_right": 154,
+      "both_wrong": 534,
+      "mcnemar_p": 0.2068,
+      "label_agreement": 0.98672,
+      "oracle_accuracy": 0.97864
+    },
+    "mistral_24b_vs_qwen3": {
+      "a": "mistral_24b",
+      "b": "qwen3",
+      "pearson": 0.982005,
+      "spearman": 0.886636,
+      "both_right": 24088,
+      "a_only_right": 224,
+      "b_only_right": 168,
+      "both_wrong": 520,
+      "mcnemar_p": 0.005404,
+      "label_agreement": 0.98432,
+      "oracle_accuracy": 0.9792
+    },
+    "mistral_24b_vs_deberta": {
+      "a": "mistral_24b",
+      "b": "deberta",
+      "pearson": 0.978996,
+      "spearman": 0.898856,
+      "both_right": 23996,
+      "a_only_right": 316,
+      "b_only_right": 186,
+      "both_wrong": 502,
+      "mcnemar_p": 7.079e-09,
+      "label_agreement": 0.97992,
+      "oracle_accuracy": 0.97992
+    },
+    "qwen38_27b_vs_mistral_24b": {
+      "a": "qwen38_27b",
+      "b": "mistral_24b",
+      "pearson": 0.986687,
+      "spearman": 0.924364,
+      "both_right": 24153,
+      "a_only_right": 171,
+      "b_only_right": 159,
+      "both_wrong": 517,
+      "mcnemar_p": 0.5449,
+      "label_agreement": 0.9868,
+      "oracle_accuracy": 0.97932
+    },
+    "qwen38_27b_vs_qwen3_14b": {
+      "a": "qwen38_27b",
+      "b": "qwen3_14b",
+      "pearson": 0.993015,
+      "spearman": 0.95489,
+      "both_right": 24168,
+      "a_only_right": 156,
+      "b_only_right": 120,
+      "both_wrong": 556,
+      "mcnemar_p": 0.03495,
+      "label_agreement": 0.98896,
+      "oracle_accuracy": 0.97776
+    },
+    "qwen38_27b_vs_qwen3": {
+      "a": "qwen38_27b",
+      "b": "qwen3",
+      "pearson": 0.989549,
+      "spearman": 0.929671,
+      "both_right": 24116,
+      "a_only_right": 208,
+      "b_only_right": 140,
+      "both_wrong": 536,
+      "mcnemar_p": 0.0003158,
+      "label_agreement": 0.98608,
+      "oracle_accuracy": 0.97856
+    },
+    "qwen38_27b_vs_deberta": {
+      "a": "qwen38_27b",
+      "b": "deberta",
+      "pearson": 0.982421,
+      "spearman": 0.912264,
+      "both_right": 24016,
+      "a_only_right": 308,
+      "b_only_right": 166,
+      "both_wrong": 510,
+      "mcnemar_p": 6.822e-11,
+      "label_agreement": 0.98104,
+      "oracle_accuracy": 0.9796
+    }
+  },
+  "qwen3_vs_deberta_per_fold": [
+    {
+      "fold": 0,
+      "qwen3": 0.9684,
+      "deberta": 0.9656,
+      "qwen3_only_right": 57,
+      "deberta_only_right": 43,
+      "mcnemar_p": 0.1933
+    },
+    {
+      "fold": 1,
+      "qwen3": 0.9698,
+      "deberta": 0.967,
+      "qwen3_only_right": 59,
+      "deberta_only_right": 45,
+      "mcnemar_p": 0.2022
+    },
+    {
+      "fold": 2,
+      "qwen3": 0.9736,
+      "deberta": 0.9686,
+      "qwen3_only_right": 66,
+      "deberta_only_right": 41,
+      "mcnemar_p": 0.0199
+    },
+    {
+      "fold": 3,
+      "qwen3": 0.9718,
+      "deberta": 0.971,
+      "qwen3_only_right": 49,
+      "deberta_only_right": 45,
+      "mcnemar_p": 0.7572
+    },
+    {
+      "fold": 4,
+      "qwen3": 0.9676,
+      "deberta": 0.9642,
+      "qwen3_only_right": 67,
+      "deberta_only_right": 50,
+      "mcnemar_p": 0.1388
+    }
+  ],
+  "combination": {
+    "options_estimated_accuracy": {
+      "single:qwen3": 0.97024,
+      "s-mean": 0.97012,
+      "stack": 0.9707399999999999,
+      "z-mean": 0.9702520000000001,
+      "mean": 0.9702,
+      "rank-mean": 0.97112
+    },
+    "paired_vs_qwen3": {
+      "s-mean": {
+        "a_only": 177,
+        "b_only": 180,
+        "n_discordant": 357,
+        "p_value": 0.9157198565850878
+      },
+      "z-mean": {
+        "a_only": 182,
+        "b_only": 182,
+        "n_discordant": 364,
+        "p_value": 1.0
+      },
+      "mean": {
+        "a_only": 176,
+        "b_only": 177,
+        "n_discordant": 353,
+        "p_value": 1.0
+      },
+      "rank-mean": {
+        "a_only": 140,
+        "b_only": 118,
+        "n_discordant": 258,
+        "p_value": 0.1909746958145193
+      }
+    },
+    "standard_error": 0.0010767949777000265,
+    "rule_choice": "single:qwen3",
+    "stack_weights_raw": {
+      "bias": 0.055158,
+      "deberta": 0.16737,
+      "qwen3": 0.460876
+    },
+    "stack_weights_recorded": {
+      "bias": 0.05515774181942957,
+      "deberta": 0.16736964307645452,
+      "qwen3": 0.46087599979565164
+    },
+    "stack_weights_per_sd": {
+      "deberta": 1.21103,
+      "qwen3": 3.41368
+    },
+    "oof_margin_sd": {
+      "deberta": 7.235659,
+      "qwen3": 7.406937
+    },
+    "stack_in_sample_oof_accuracy": 0.97076,
+    "stack_vs_qwen3_oof": {
+      "a": "stack",
+      "b": "qwen3",
+      "pearson": 0.998845,
+      "spearman": 0.997092,
+      "both_right": 24164,
+      "a_only_right": 105,
+      "b_only_right": 92,
+      "both_wrong": 639,
+      "mcnemar_p": 0.3926,
+      "label_agreement": 0.99212,
+      "oracle_accuracy": 0.97444
+    },
+    "s_mean_vs_qwen3_oof": {
+      "a": "s-mean",
+      "b": "qwen3",
+      "pearson": 0.995773,
+      "spearman": 0.987036,
+      "both_right": 24076,
+      "a_only_right": 177,
+      "b_only_right": 180,
+      "both_wrong": 567,
+      "mcnemar_p": 0.9157,
+      "label_agreement": 0.98572,
+      "oracle_accuracy": 0.97732
+    },
+    "stack_test_changed_vs_qwen3": 119,
+    "stack_test_changed_recorded": 119,
+    "stack_test_positive_share": 0.50056
+  },
+  "stage5": {
+    "options_estimated_accuracy": {
+      "single:qwen3_14b": 0.97152,
+      "s-mean": 0.97204,
+      "stack": 0.972208,
+      "z-mean": 0.97148,
+      "mean": 0.972,
+      "rank-mean": 0.972
+    },
+    "paired_vs_qwen3_14b": {
+      "s-mean": {
+        "a_only": 131,
+        "b_only": 118,
+        "n_discordant": 249,
+        "p_value": 0.44703924382362525
+      },
+      "z-mean": {
+        "a_only": 129,
+        "b_only": 130,
+        "n_discordant": 259,
+        "p_value": 1.0
+      },
+      "mean": {
+        "a_only": 131,
+        "b_only": 119,
+        "n_discordant": 250,
+        "p_value": 0.4866918474841146
+      },
+      "rank-mean": {
+        "a_only": 108,
+        "b_only": 96,
+        "n_discordant": 204,
+        "p_value": 0.44128575924792734
+      }
+    },
+    "standard_error": 0.001042655041708426,
+    "rule_choice": "s-mean",
+    "rule_threshold_stage4_oof": 0.97024,
+    "oof_margin_sd": {
+      "deberta": 7.235659,
+      "qwen3": 7.406937,
+      "qwen3_14b": 6.953923
+    },
+    "stack3_weights_per_sd": {
+      "deberta": 0.712054,
+      "qwen3": 1.190976,
+      "qwen3_14b": 2.847797
+    },
+    "s_mean3_oof_accuracy": 0.97204,
+    "s_mean3_test_rows_differing_from_upload": 4,
+    "stack2_crossfit_oof_accuracy": 0.9708,
+    "C_vs_B_oof": {
+      "a": "s-mean3",
+      "b": "stack2_crossfit",
+      "pearson": 0.998619,
+      "spearman": 0.983144,
+      "both_right": 24227,
+      "a_only_right": 74,
+      "b_only_right": 43,
+      "both_wrong": 656,
+      "mcnemar_p": 0.005319,
+      "label_agreement": 0.99532,
+      "oracle_accuracy": 0.97376
+    },
+    "C_vs_qwen3_oof": {
+      "a": "s-mean3",
+      "b": "qwen3",
+      "pearson": 0.996236,
+      "spearman": 0.975353,
+      "both_right": 24138,
+      "a_only_right": 163,
+      "b_only_right": 118,
+      "both_wrong": 581,
+      "mcnemar_p": 0.008552,
+      "label_agreement": 0.98876,
+      "oracle_accuracy": 0.97676
+    },
+    "C_vs_qwen3_14b_oof": {
+      "a": "s-mean3",
+      "b": "qwen3_14b",
+      "pearson": 0.996417,
+      "spearman": 0.980314,
+      "both_right": 24170,
+      "a_only_right": 131,
+      "b_only_right": 118,
+      "both_wrong": 581,
+      "mcnemar_p": 0.447,
+      "label_agreement": 0.99004,
+      "oracle_accuracy": 0.97676
+    },
+    "test_changed_vs_qwen3_14b": 183,
+    "test_positive_share": 0.50012,
+    "qwen3_14b_per_fold_vs_qwen3": [
+      {
+        "fold": 0,
+        "qwen3_14b": 0.9698,
+        "qwen3": 0.9684,
+        "q14_only_right": 36,
+        "q8_only_right": 29,
+        "mcnemar_p": 0.457
+      },
+      {
+        "fold": 1,
+        "qwen3_14b": 0.9696,
+        "qwen3": 0.9698,
+        "q14_only_right": 30,
+        "q8_only_right": 31,
+        "mcnemar_p": 1.0
+      },
+      {
+        "fold": 2,
+        "qwen3_14b": 0.9738,
+        "qwen3": 0.9736,
+        "q14_only_right": 27,
+        "q8_only_right": 26,
+        "mcnemar_p": 1.0
+      },
+      {
+        "fold": 3,
+        "qwen3_14b": 0.9744,
+        "qwen3": 0.9718,
+        "q14_only_right": 34,
+        "q8_only_right": 21,
+        "mcnemar_p": 0.1048
+      },
+      {
+        "fold": 4,
+        "qwen3_14b": 0.97,
+        "qwen3": 0.9676,
+        "q14_only_right": 36,
+        "q8_only_right": 24,
+        "mcnemar_p": 0.155
+      }
+    ],
+    "fold_minutes": {
+      "qwen3": [
+        69.82,
+        69.35,
+        69.24,
+        69.33,
+        69.21
+      ],
+      "qwen3_14b": [
+        54.78,
+        54.8,
+        54.86,
+        54.84,
+        54.84
+      ]
+    }
+  },
+  "stage6": {
+    "options_estimated_accuracy": {
+      "single:mistral_24b": 0.97248,
+      "s-mean": 0.97304,
+      "stack": 0.9734960000000001,
+      "z-mean": 0.97324,
+      "mean": 0.97292,
+      "rank-mean": 0.97256
+    },
+    "paired_vs_mistral_24b": {
+      "s-mean": {
+        "a_only": 137,
+        "b_only": 123,
+        "n_discordant": 260,
+        "p_value": 0.42016563811741986
+      },
+      "z-mean": {
+        "a_only": 139,
+        "b_only": 120,
+        "n_discordant": 259,
+        "p_value": 0.26333033742836703
+      },
+      "mean": {
+        "a_only": 130,
+        "b_only": 119,
+        "n_discordant": 249,
+        "p_value": 0.5263444511446039
+      },
+      "rank-mean": {
+        "a_only": 126,
+        "b_only": 124,
+        "n_discordant": 250,
+        "p_value": 0.9495877868526903
+      }
+    },
+    "standard_error": 0.0010243663094811346,
+    "rule_choice": "s-mean",
+    "rule_threshold": 0.97254,
+    "rule_met": true,
+    "oof_margin_sd": {
+      "deberta": 7.235659,
+      "qwen3": 7.406937,
+      "qwen3_14b": 6.953923,
+      "mistral_24b": 8.546129
+    },
+    "oof_margin_correlation": [
+      [
+        1.0,
+        0.9831,
+        0.9837,
+        0.979
+      ],
+      [
+        0.9831,
+        1.0,
+        0.9918,
+        0.982
+      ],
+      [
+        0.9837,
+        0.9918,
+        1.0,
+        0.9884
+      ],
+      [
+        0.979,
+        0.982,
+        0.9884,
+        1.0
+      ]
+    ],
+    "s_mean4_oof_accuracy": 0.97304,
+    "s_mean4_test_rows_differing_from_upload": 4,
+    "D_vs_C_oof": {
+      "a": "s-mean4",
+      "b": "s-mean3",
+      "pearson": 0.999226,
+      "spearman": 0.986931,
+      "both_right": 24282,
+      "a_only_right": 44,
+      "b_only_right": 19,
+      "both_wrong": 655,
+      "mcnemar_p": 0.002228,
+      "label_agreement": 0.99748,
+      "oracle_accuracy": 0.9738
+    },
+    "D_vs_B_oof": {
+      "a": "s-mean4",
+      "b": "stack2_crossfit",
+      "pearson": 0.997237,
+      "spearman": 0.959892,
+      "both_right": 24232,
+      "a_only_right": 94,
+      "b_only_right": 38,
+      "both_wrong": 636,
+      "mcnemar_p": 1.186e-06,
+      "label_agreement": 0.99472,
+      "oracle_accuracy": 0.97456
+    },
+    "D_vs_mistral_24b_oof": {
+      "a": "s-mean4",
+      "b": "mistral_24b",
+      "pearson": 0.99308,
+      "spearman": 0.966244,
+      "both_right": 24189,
+      "a_only_right": 137,
+      "b_only_right": 123,
+      "both_wrong": 551,
+      "mcnemar_p": 0.4202,
+      "label_agreement": 0.9896,
+      "oracle_accuracy": 0.97796
+    },
+    "test_changed_vs_mistral_24b": 156,
+    "test_positive_share": 0.50004,
+    "mistral_24b_per_fold_vs_qwen3_14b": [
+      {
+        "fold": 0,
+        "mistral_24b": 0.9718,
+        "qwen3_14b": 0.9698,
+        "m24_only_right": 38,
+        "q14_only_right": 28,
+        "mcnemar_p": 0.2678
+      },
+      {
+        "fold": 1,
+        "mistral_24b": 0.9704,
+        "qwen3_14b": 0.9696,
+        "m24_only_right": 34,
+        "q14_only_right": 30,
+        "mcnemar_p": 0.708
+      },
+      {
+        "fold": 2,
+        "mistral_24b": 0.9754,
+        "qwen3_14b": 0.9738,
+        "m24_only_right": 36,
+        "q14_only_right": 28,
+        "mcnemar_p": 0.3817
+      },
+      {
+        "fold": 3,
+        "mistral_24b": 0.9738,
+        "qwen3_14b": 0.9744,
+        "m24_only_right": 30,
+        "q14_only_right": 33,
+        "mcnemar_p": 0.8013
+      },
+      {
+        "fold": 4,
+        "mistral_24b": 0.971,
+        "qwen3_14b": 0.97,
+        "m24_only_right": 40,
+        "q14_only_right": 35,
+        "mcnemar_p": 0.6445
+      }
+    ],
+    "fold_minutes": [
+      88.93,
+      88.91,
+      89.06,
+      89.63,
+      89.63
+    ],
+    "gpu": "NVIDIA H800 PCIe",
+    "seeds": [
+      42,
+      42,
+      42,
+      43,
+      42
+    ],
+    "fold3_seed": 43,
+    "fold3_log": [
+      "[17:57:51] command: code/finetune_llm.py --data-dir data --output runs/cv-mistral-24b/mistral-24b-f3 --folds 5 --fold 3 --preset mistral-24b --seed 42 --split-seed 42 --eval-every 0.5 --model mistralai/Mistral-Small-24B-Base-2501",
+      "[18:32:14]   VALIDATION accuracy 49.9000% (AUC 0.5346) at update 625 (epoch 0.50)",
+      "[19:25:13] VALIDATION accuracy 52.0800% (AUC 0.5454) on 5,000 reviews; test positive share 0.1535; prediction took 23.7 min",
+      "[00:14:52] command: code/finetune_llm.py --data-dir data --output runs/cv-mistral-24b/mistral-24b-f3 --folds 5 --fold 3 --preset mistral-24b --seed 43 --split-seed 42 --eval-every 0.5 --model mistralai/Mistral-Small-24B-Base-2501",
+      "[00:48:57]   VALIDATION accuracy 96.8200% (AUC 0.9948) at update 625 (epoch 0.50)",
+      "[01:44:30] VALIDATION accuracy 97.3800% (AUC 0.9958) on 5,000 reviews; test positive share 0.5016; prediction took 24.7 min"
+    ]
+  },
+  "stage7": {
+    "options_estimated_accuracy": {
+      "single:qwen38_27b": 0.97296,
+      "s-mean": 0.97344,
+      "stack": 0.973924,
+      "z-mean": 0.973664,
+      "mean": 0.9734,
+      "rank-mean": 0.97328
+    },
+    "paired_vs_qwen38_27b": {
+      "s-mean": {
+        "a_only": 115,
+        "b_only": 103,
+        "n_discordant": 218,
+        "p_value": 0.4563410015092822
+      },
+      "z-mean": {
+        "a_only": 124,
+        "b_only": 106,
+        "n_discordant": 230,
+        "p_value": 0.2622670291041895
+      },
+      "mean": {
+        "a_only": 114,
+        "b_only": 103,
+        "n_discordant": 217,
+        "p_value": 0.49732674594131726
+      },
+      "rank-mean": {
+        "a_only": 108,
+        "b_only": 100,
+        "n_discordant": 208,
+        "p_value": 0.6275255016466619
+      }
+    },
+    "standard_error": 0.0010169477154701716,
+    "rule_choice": "s-mean",
+    "rule_threshold": 0.97384,
+    "rule_met": false,
+    "oof_margin_sd": {
+      "deberta": 7.235659,
+      "qwen3": 7.406937,
+      "qwen3_14b": 6.953923,
+      "mistral_24b": 8.546129,
+      "qwen38_27b": 6.998437
+    },
+    "oof_margin_correlation": [
+      [
+        1.0,
+        0.9831,
+        0.9837,
+        0.979,
+        0.9824
+      ],
+      [
+        0.9831,
+        1.0,
+        0.9918,
+        0.982,
+        0.9895
+      ],
+      [
+        0.9837,
+        0.9918,
+        1.0,
+        0.9884,
+        0.993
+      ],
+      [
+        0.979,
+        0.982,
+        0.9884,
+        1.0,
+        0.9867
+      ],
+      [
+        0.9824,
+        0.9895,
+        0.993,
+        0.9867,
+        1.0
+      ]
+    ],
+    "s_mean5_oof_accuracy": 0.97344,
+    "s_mean5_test_rows_differing_from_upload": 4,
+    "E_vs_D_oof": {
+      "a": "s-mean5",
+      "b": "s-mean4",
+      "pearson": 0.999744,
+      "spearman": 0.997562,
+      "both_right": 24306,
+      "a_only_right": 30,
+      "b_only_right": 20,
+      "both_wrong": 644,
+      "mcnemar_p": 0.2026,
+      "label_agreement": 0.998,
+      "oracle_accuracy": 0.97424
+    },
+    "E_vs_B_oof": {
+      "a": "s-mean5",
+      "b": "stack2_crossfit",
+      "pearson": 0.996936,
+      "spearman": 0.959875,
+      "both_right": 24225,
+      "a_only_right": 111,
+      "b_only_right": 45,
+      "both_wrong": 619,
+      "mcnemar_p": 1.28e-07,
+      "label_agreement": 0.99376,
+      "oracle_accuracy": 0.97524
+    },
+    "E_vs_qwen38_27b_oof": {
+      "a": "s-mean5",
+      "b": "qwen38_27b",
+      "pearson": 0.99594,
+      "spearman": 0.973161,
+      "both_right": 24221,
+      "a_only_right": 115,
+      "b_only_right": 103,
+      "both_wrong": 561,
+      "mcnemar_p": 0.4563,
+      "label_agreement": 0.99128,
+      "oracle_accuracy": 0.97756
+    },
+    "test_changed_vs_qwen38_27b": 170,
+    "test_positive_share": 0.49972,
+    "qwen38_27b_per_fold_vs_mistral_24b": [
+      {
+        "fold": 0,
+        "qwen38_27b": 0.9708,
+        "mistral_24b": 0.9718,
+        "q27_only_right": 27,
+        "m24_only_right": 32,
+        "mcnemar_p": 0.6029
+      },
+      {
+        "fold": 1,
+        "qwen38_27b": 0.9744,
+        "mistral_24b": 0.9704,
+        "q27_only_right": 41,
+        "m24_only_right": 21,
+        "mcnemar_p": 0.01513
+      },
+      {
+        "fold": 2,
+        "qwen38_27b": 0.9736,
+        "mistral_24b": 0.9754,
+        "q27_only_right": 30,
+        "m24_only_right": 39,
+        "mcnemar_p": 0.3356
+      },
+      {
+        "fold": 3,
+        "qwen38_27b": 0.9752,
+        "mistral_24b": 0.9738,
+        "q27_only_right": 33,
+        "m24_only_right": 26,
+        "mcnemar_p": 0.435
+      },
+      {
+        "fold": 4,
+        "qwen38_27b": 0.9708,
+        "mistral_24b": 0.971,
+        "q27_only_right": 40,
+        "m24_only_right": 41,
+        "mcnemar_p": 1.0
+      }
+    ],
+    "fold_minutes": [
+      137.21,
+      136.56,
+      135.97,
+      136.16,
+      136.29
+    ],
+    "fold_timings": [
+      {
+        "train_minutes": 95.18,
+        "mid_training_eval_minutes": 7.63,
+        "predict_minutes": 39.67
+      },
+      {
+        "train_minutes": 94.11,
+        "mid_training_eval_minutes": 6.72,
+        "predict_minutes": 39.66
+      },
+      {
+        "train_minutes": 94.32,
+        "mid_training_eval_minutes": 6.63,
+        "predict_minutes": 39.56
+      },
+      {
+        "train_minutes": 94.58,
+        "mid_training_eval_minutes": 6.56,
+        "predict_minutes": 39.48
+      },
+      {
+        "train_minutes": 94.36,
+        "mid_training_eval_minutes": 6.75,
+        "predict_minutes": 39.67
+      }
+    ],
+    "zero_shot_check": [
+      {
+        "update": 0,
+        "epoch": 0.0,
+        "check_rows": 256,
+        "check_auc": 0.979185741317219,
+        "check_accuracy": 0.87109375,
+        "phase": "zero-shot"
+      },
+      {
+        "update": 0,
+        "epoch": 0.0,
+        "check_rows": 256,
+        "check_auc": 0.9729497638471447,
+        "check_accuracy": 0.8828125,
+        "phase": "zero-shot"
+      },
+      {
+        "update": 0,
+        "epoch": 0.0,
+        "check_rows": 256,
+        "check_auc": 0.97216796875,
+        "check_accuracy": 0.8828125,
+        "phase": "zero-shot"
+      },
+      {
+        "update": 0,
+        "epoch": 0.0,
+        "check_rows": 256,
+        "check_auc": 0.9790940766550522,
+        "check_accuracy": 0.8828125,
+        "phase": "zero-shot"
+      },
+      {
+        "update": 0,
+        "epoch": 0.0,
+        "check_rows": 256,
+        "check_auc": 0.9913411938098747,
+        "check_accuracy": 0.92578125,
+        "phase": "zero-shot"
+      }
+    ],
+    "mid_epoch_accuracy": [
+      0.959,
+      0.9716,
+      0.9738,
+      0.9728,
+      0.9676
+    ],
+    "environment": {
+      "python": "3.12.3",
+      "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.35",
+      "torch": "2.8.0+cu128",
+      "transformers": "5.22.0",
+      "peft": "0.21.2",
+      "device": "cuda",
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "vram_gb": 95.0,
+      "dtype": "torch.bfloat16"
+    },
+    "seeds": [
+      42,
+      42,
+      42,
+      42,
+      42
+    ],
+    "preset": "qwen3.8-27b"
+  },
+  "stage4_selection": [
+    "stage4_exact",
+    "stack_exact"
+  ],
+  "stage5_selection": [
+    "stack_exact",
+    "stage5_exact"
+  ],
+  "stage6_selection": [
+    "stack_exact",
+    "stage6_exact"
+  ],
+  "duplicates": {
+    "train_duplicate_groups": 102,
+    "train_groups_with_one_label": 102,
+    "train_rows_repeating_an_earlier_row": 104,
+    "test_rows_with_identical_train_review": 227,
+    "distinct_texts_shared_by_train_and_test": 222,
+    "test_rows_with_identical_train_review_after_cleaning": 230,
+    "test_twins_where_model_disagrees_with_train_label": {
+      "nblr": 0,
+      "deberta": 4,
+      "electra": 2,
+      "deberta_rerun": 3,
+      "qwen3": 4,
+      "qwen3_14b": 4,
+      "mistral_24b": 4,
+      "qwen38_27b": 3,
+      "stack": 4
+    },
+    "backfill_final_A": {
+      "n_changed": 4,
+      "changed": [
+        {
+          "id": "30886",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "34592",
+          "from": "negative",
+          "to": "positive"
+        },
+        {
+          "id": "38371",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "42721",
+          "from": "negative",
+          "to": "positive"
+        }
+      ],
+      "output_sha256": "17f55fc207e8345b57c97d590e0721ee51d513c22bfd67aeb337a1dc8aef7356"
+    },
+    "backfill_final_B": {
+      "n_changed": 4,
+      "changed": [
+        {
+          "id": "30886",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "34592",
+          "from": "negative",
+          "to": "positive"
+        },
+        {
+          "id": "38371",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "42721",
+          "from": "negative",
+          "to": "positive"
+        }
+      ],
+      "output_sha256": "24bc9a9529092ae1a9aa7ed974998430ddb03b5ee227ac4bf0be935456de538a"
+    },
+    "backfill_rerun": {
+      "n_changed": 3,
+      "changed": [
+        {
+          "id": "25993",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "30886",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "42721",
+          "from": "negative",
+          "to": "positive"
+        }
+      ],
+      "output_sha256": "26ec721997c8c4665d35b90681c6bbd929fcfdd3afc421995b6dba40b85f2b80"
+    },
+    "backfill_stage5": {
+      "n_changed": 4,
+      "changed": [
+        {
+          "id": "30886",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "34592",
+          "from": "negative",
+          "to": "positive"
+        },
+        {
+          "id": "38371",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "42721",
+          "from": "negative",
+          "to": "positive"
+        }
+      ],
+      "output_sha256": "ccc45b404d633e05239aac92153e9c5ea82cd444119500d0d21fd7415e79c33f"
+    },
+    "backfill_stage6": {
+      "n_changed": 4,
+      "changed": [
+        {
+          "id": "30886",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "34592",
+          "from": "negative",
+          "to": "positive"
+        },
+        {
+          "id": "38371",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "42721",
+          "from": "negative",
+          "to": "positive"
+        }
+      ],
+      "output_sha256": "4efa15e476448c46668b3d902ffc0e7f53ee5910a2b35f3ba90f110cf817f605"
+    },
+    "backfill_stage7": {
+      "n_changed": 4,
+      "changed": [
+        {
+          "id": "30886",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "34592",
+          "from": "negative",
+          "to": "positive"
+        },
+        {
+          "id": "38371",
+          "from": "positive",
+          "to": "negative"
+        },
+        {
+          "id": "42721",
+          "from": "negative",
+          "to": "positive"
+        }
+      ],
+      "output_sha256": "9ac9d596470d1bbc97ababb18ebf046edc852ed2a6b0daae794a8b8c2b37732a"
+    }
+  },
+  "kaggle": [
+    {
+      "key": "nblr",
+      "description": "NB-LR, uni/bi/trigrams (Stage 1)",
+      "file": "results/submission.csv",
+      "public": 0.9173,
+      "sha256": "6cd29733998ab0d22f5b27ea1b76257200cb3e56c3fd33db07f0857e82c42732",
+      "positive": 12785,
+      "negative": 12215,
+      "final_selection": false
+    },
+    {
+      "key": "deberta_s42",
+      "description": "DeBERTa-v3-large, seed 42 (Stage 2)",
+      "file": "runs/deberta/submission.csv",
+      "public": 0.9688,
+      "sha256": "cc4f338f6ed409c9df9042a8d83849b1a0f95fef8e5f2ccb127aad4b40b88c8f",
+      "positive": 12286,
+      "negative": 12714,
+      "final_selection": false
+    },
+    {
+      "key": "ens_deb_nblr",
+      "description": "Mean of DeBERTa and NB-LR (Stage 2)",
+      "file": "ensemble/submission.csv",
+      "public": 0.9691,
+      "sha256": "9aeaa207af76e1e597e10854d4553fc53650d58dd4f6d83da1ebb039e3710cd5",
+      "positive": 12364,
+      "negative": 12636,
+      "final_selection": false
+    },
+    {
+      "key": "ensemble2",
+      "description": "Mean of 4 transformer runs and NB-LR (Stage 2)",
+      "file": "ensemble2/submission.csv",
+      "public": 0.9705,
+      "sha256": "90ef5e1f83edbd60d5a24f79c63d94dd95ed596f2753f755e84a57ffd7104dd9",
+      "positive": 12482,
+      "negative": 12518,
+      "final_selection": false
+    },
+    {
+      "key": "deberta_5fold",
+      "description": "DeBERTa-v3-large, mean of 5 fold models (Stage 3)",
+      "file": "ensemble-final/submission.csv",
+      "public": 0.9715,
+      "sha256": "a1ad4709f61085c592e03692aef98822cd50e82b16d86a01a9d24d9a41203add",
+      "positive": 12542,
+      "negative": 12458,
+      "final_selection": false
+    },
+    {
+      "key": "electra_5fold",
+      "description": "ELECTRA-large, mean of 5 fold models (Stage 3)",
+      "file": "ensemble-electra/submission.csv",
+      "public": 0.9694,
+      "sha256": "74d010426256e9ec4107be30b9553bc55178f7eb14c9375a7835f998e4264e6f",
+      "positive": 12575,
+      "negative": 12425,
+      "final_selection": false
+    },
+    {
+      "key": "rerun_exact",
+      "description": "DeBERTa 5-fold re-run + exact-match backfill (Stage 3)",
+      "file": "ensemble-retrain-control/submission_exact.csv",
+      "public": 0.9701,
+      "sha256": "26ec721997c8c4665d35b90681c6bbd929fcfdd3afc421995b6dba40b85f2b80",
+      "positive": 12576,
+      "negative": 12424,
+      "final_selection": false
+    },
+    {
+      "key": "pilot",
+      "description": "DeBERTa 5-fold + Qwen3 fold 0, s-mean (Stage 4 pilot)",
+      "file": "ensemble-pilot/submission.csv",
+      "public": 0.9732,
+      "sha256": "f4072381f4d7a2ada559ed953bf1e0666d9a9a09d974594d995eef6bcab5a8ce",
+      "positive": 12528,
+      "negative": 12472,
+      "final_selection": false
+    },
+    {
+      "key": "qwen3_5fold",
+      "description": "Qwen3-8B + LoRA, mean of 5 fold models (Stage 4)",
+      "file": "ensemble-qwen3/submission.csv",
+      "public": 0.9736,
+      "sha256": "ede9d5c0baf8f8b250280ebced14f5aa0b640c3de2fd25b645f99ed59e280add",
+      "positive": 12489,
+      "negative": 12511,
+      "final_selection": false
+    },
+    {
+      "key": "stage4",
+      "description": "Stage 4 rule choice (= Qwen3 5-fold)",
+      "file": "ensemble-stage4/submission.csv",
+      "public": 0.9736,
+      "sha256": "ede9d5c0baf8f8b250280ebced14f5aa0b640c3de2fd25b645f99ed59e280add",
+      "positive": 12489,
+      "negative": 12511,
+      "final_selection": false
+    },
+    {
+      "key": "stage4_exact",
+      "description": "Qwen3 5-fold + exact-match backfill (final A)",
+      "file": "ensemble-stage4/submission_exact.csv",
+      "public": 0.9738,
+      "sha256": "17f55fc207e8345b57c97d590e0721ee51d513c22bfd67aeb337a1dc8aef7356",
+      "positive": 12489,
+      "negative": 12511,
+      "final_selection": false
+    },
+    {
+      "key": "stack_exact",
+      "description": "Stack DeBERTa + Qwen3-8B + exact-match backfill (final)",
+      "file": "ensemble-stage4-stack/submission_exact.csv",
+      "public": 0.9745,
+      "sha256": "24bc9a9529092ae1a9aa7ed974998430ddb03b5ee227ac4bf0be935456de538a",
+      "positive": 12514,
+      "negative": 12486,
+      "final_selection": false
+    },
+    {
+      "key": "stage5_exact",
+      "description": "s-mean DeBERTa + Qwen3-8B + Qwen3-14B + exact-match backfill (Stage 5, final)",
+      "file": "ensemble-stage5/submission_exact.csv",
+      "public": 0.9756,
+      "sha256": "ccc45b404d633e05239aac92153e9c5ea82cd444119500d0d21fd7415e79c33f",
+      "positive": 12503,
+      "negative": 12497,
+      "final_selection": false
+    },
+    {
+      "key": "stage6_exact",
+      "description": "s-mean DeBERTa + Qwen3-8B + Qwen3-14B + Mistral-24B + exact-match backfill (Stage 6, final)",
+      "file": "ensemble-stage6/submission_exact.csv",
+      "public": 0.9762,
+      "sha256": "4efa15e476448c46668b3d902ffc0e7f53ee5910a2b35f3ba90f110cf817f605",
+      "positive": 12501,
+      "negative": 12499,
+      "final_selection": true
+    },
+    {
+      "key": "stage7_exact",
+      "description": "s-mean of the four families + Qwen3.8-27B + exact-match backfill (Stage 7, final)",
+      "file": "ensemble-stage7/submission_exact.csv",
+      "public": 0.9765,
+      "sha256": "9ac9d596470d1bbc97ababb18ebf046edc852ed2a6b0daae794a8b8c2b37732a",
+      "positive": 12493,
+      "negative": 12507,
+      "final_selection": true
+    }
+  ],
+  "kaggle_label_differences": {
+    "stage4_exact_vs_stack_exact": 119,
+    "qwen3_5fold_vs_deberta_5fold": 375,
+    "deberta_5fold_vs_ensemble2": 196,
+    "stack_exact_vs_deberta_5fold": 256,
+    "qwen3_5fold_vs_stage4": 0,
+    "stage4_vs_stage4_exact": 4,
+    "pilot_vs_qwen3_5fold": 215,
+    "rerun_exact_vs_deberta_5fold": 110,
+    "deberta_5fold_vs_electra_5fold": 315,
+    "stack_exact_vs_nblr": 1743,
+    "stage5_exact_vs_stack_exact": 73,
+    "stage5_exact_vs_stage4_exact": 174,
+    "stage6_exact_vs_stage5_exact": 42,
+    "stage6_exact_vs_stack_exact": 91,
+    "stage7_exact_vs_stage6_exact": 28,
+    "stage7_exact_vs_stack_exact": 109
+  },
+  "self_training": {
+    "n_test_agreeing": 24159,
+    "n_pseudo": 16911,
+    "kept_fraction": 0.67644,
+    "pseudo_weight": 0.5,
+    "lr": 5e-06,
+    "epochs": 1.0,
+    "history": [
+      {
+        "update": 0,
+        "epoch": 0.0,
+        "holdout_accuracy": 0.9672
+      },
+      {
+        "update": 1232,
+        "epoch": 0.5,
+        "holdout_accuracy": 0.9584
+      },
+      {
+        "update": 2464,
+        "epoch": 1.0,
+        "holdout_accuracy": 0.9652
+      }
+    ],
+    "train_minutes": 9.72,
+    "submission_sha256": "cc4f338f6ed409c9df9042a8d83849b1a0f95fef8e5f2ccb127aad4b40b88c8f",
+    "identical_to_round1": true
+  },
+  "rerun_screening": [
+    {
+      "run": "retrain-screen-control",
+      "lr": 1e-05,
+      "epochs": 2.0,
+      "head": 128,
+      "holdout_accuracy": 0.9684,
+      "zero_step_accuracy": 0.4988
+    },
+    {
+      "run": "retrain-screen-lr7e6",
+      "lr": 7e-06,
+      "epochs": 3.0,
+      "head": 128,
+      "holdout_accuracy": 0.9668,
+      "zero_step_accuracy": 0.4988
+    },
+    {
+      "run": "retrain-screen-lr15e6",
+      "lr": 1.5e-05,
+      "epochs": 1.5,
+      "head": 128,
+      "holdout_accuracy": 0.9628,
+      "zero_step_accuracy": 0.4988
+    },
+    {
+      "run": "retrain-screen-head256",
+      "lr": 1e-05,
+      "epochs": 2.0,
+      "head": 256,
+      "holdout_accuracy": 0.9652,
+      "zero_step_accuracy": 0.4988
+    }
+  ],
+  "examples": {
+    "qwen3_right_deberta_wrong": [
+      {
+        "id": 15105,
+        "label": "negative",
+        "words": 988,
+        "qwen3_margin": -7.45,
+        "deberta_margin": 6.33,
+        "start": "In his 1966 film \"Blow Up\", Antonioni had his hero question truth against a backdrop of British youth protesters. By setting such questions against a fabric of hippie youth movements, Antonioni questioned, intentionally or not, the effectiveness of these organisations. How can you fight for a cause when what you think is true may actually be a lie? On the flip side, the film said that we must fight and actively challenge what we see precisely because others may be deceiving us with false images ",
+        "end": "existing outside of the herd, you create waves. Your comments, actions and critical eye, challenges the status quo. As such, Donnersmarck's film has novelists and artists undermining Nazi Germany, whilst Kubrick has Alex the artist/criminal fighting Nazi droogs, painting the town in blood and sperm."
+      },
+      {
+        "id": 21377,
+        "label": "negative",
+        "words": 162,
+        "qwen3_margin": -8.18,
+        "deberta_margin": 5.45,
+        "start": "Exceptionally horrible tale that I can barely put into words. The best part of the movie was when one of the murder victims turns up at the end, alive and well, only to be massacred again. There is the chance that I missed some crucial plot elements since I may have been in a slight coma during the time this baby was on. The box that the movie comes in shows scenes that are never even in the film. I was lured in by the crude images of bondage torture and promises of a 'Euro-trash, sexy horror fl",
+        "end": "eling this was the budget version and about one quarter of the film was left out. All the good stuff more than likely. I got the PG-13 addition that made about as much sense as the end to the new 'Planet of the Apes' movie. Watch this one with a friend and a bottle of the hard stuff. You'll need it."
+      },
+      {
+        "id": 8182,
+        "label": "positive",
+        "words": 217,
+        "qwen3_margin": 7.11,
+        "deberta_margin": -6.38,
+        "start": "Child 'Sexploitation' is one of the most serious issues facing our world today and I feared that any film on the topic would jump straight to scenes of an explicitly sexual nature in order to shock and disturb the audience. After having seen both 'Trade' and 'Holly', one film moved me to want to actually see a change in international laws. The other felt like a poor attempt at making me cry for five minutes with emotive music and the odd suicide. I do not believe that turning this issue into a H",
+        "end": "unengaging and at times offensive to the cause. If I had wanted a cheap laugh I would not have signed up for a film on child trafficking. For anyone who would like to watch a powerful film that actually means something I would suggest saving the money on the cinema ticket for the release of 'Holly'."
+      },
+      {
+        "id": 20119,
+        "label": "negative",
+        "words": 73,
+        "qwen3_margin": -7.64,
+        "deberta_margin": 5.31,
+        "start": "This one is a cut above the usual softcore T&A, with the spirit of a dead actress returning to claim the film role she believes is rightfully hers, and using the body of an aspiring young actress to do so. As always, the gorgeously sexy Amber Newman the is main attraction; her sensuous presence overshadows the mildly attractive, Shauna O'Brien Plot: *1/2 out of **** Sex/nudity: *** out of ****",
+        "end": "laim the film role she believes is rightfully hers, and using the body of an aspiring young actress to do so. As always, the gorgeously sexy Amber Newman the is main attraction; her sensuous presence overshadows the mildly attractive, Shauna O'Brien Plot: *1/2 out of **** Sex/nudity: *** out of ****"
+      },
+      {
+        "id": 12414,
+        "label": "positive",
+        "words": 209,
+        "qwen3_margin": 6.17,
+        "deberta_margin": -5.92,
+        "start": "I saw this movie the day it opened in NYC, at the Ziegfield. At the time Madonna was not quite the cultural icon she is now. She had a couple of hits, was very good in \"Desparately Seeking Susan\" and I had tickets to see her in concert at Giants Stadium. \"Who's That Girl?\" gives Madonna an actual role to play, which is not just a variation of her own personality. She does the madcap/heroine routine better than you might think. Griffin Dunne is very well cast as the man around to witness all the ",
+        "end": "shares a glass of champagne with the leads and has the greatest apartment on the Upper West Side, complete with a rain forest and everything. Compared to most Madonna movies (the ones I've been able to tolerate anyway), this is fantastic. On its own, its not that bad. 6/10. PS The concert was lousy."
+      },
+      {
+        "id": 14548,
+        "label": "negative",
+        "words": 211,
+        "qwen3_margin": -7.17,
+        "deberta_margin": 4.33,
+        "start": "The only thing more full of holes than this movie's premise is its script. Flatliners is the ideal showcase for Joel Schumacher's glorious, flamboyant, brazen lack of talent. The plot is totally illogical but super fake-ponderous and everything is art-directed within an inch of its life in the most clichéd, overheated way. I love how the med school autopsy room is a cavernous vaulted marble mausoleum low-lit in red with huge Rembrandt paintings hanging from the walls. I love how Keifer Sutherlan",
+        "end": "st need some space\" is the funniest friggin' thing in the whole universe!!!! What kind of a world do we live in where Joel Schumacher gets to keep having people throw money at him? \"Flatliners\" made me want to review the man's entire oeuvre solely for the kind of high-quality yuks contained therein."
+      },
+      {
+        "id": 5622,
+        "label": "positive",
+        "words": 991,
+        "qwen3_margin": 6.29,
+        "deberta_margin": -4.42,
+        "start": "Once again I must play something of the contrarian. Most of the reviews for Ab Tak Chappan have been extremely positive. Mine is positive, but only slightly. A 7 out of 10 is equivalent to a \"C\" letter grade from me. It seems that a lot of the praise is rooted in two factors: One, that Ab Tak Chappan is more realistic than the typical Bollywood film, and two, that it is trying to do things differently. The first point I couldn't care less about. I'm not looking for realism in films, and so I do ",
+        "end": "aking it more focused and about a half-hour shorter, both of which would have benefited its impact. This is not an action-packed film by any means. For at least the first 45 minutes or so, I found myself admiring Ab Tak Chappan's considerable style, but saying, \"Okay, get on with the story already\"."
+      },
+      {
+        "id": 8390,
+        "label": "positive",
+        "words": 140,
+        "qwen3_margin": 4.66,
+        "deberta_margin": -5.98,
+        "start": "I'm going to make this short and sweet. It's not surprising that you had no use for this film. This is a story about the power, beauty and possibilities inherent in a meaningful education. Based on your pathetically composed comments I can see that your own education has been woefully neglected... or worse... completely wasted. Your comments are those of a truly ignorant person. I would advise you to do something about this condition... but in your case I feel it's probably too late. My hope is ",
+        "end": "at you yourself don't intend to go into the teaching profession ( especially in Film Studies) because you could only do damage. Oh... one last bit of advice. In the future, if you intend to write more opinion pieces, you should really proofread your work. It will make people take you more seriously."
+      },
+      {
+        "id": 6015,
+        "label": "positive",
+        "words": 224,
+        "qwen3_margin": 5.22,
+        "deberta_margin": -5.38,
+        "start": "A bus drops off a nameless man outside a run-down Standard Oil gas station in the middle of nowhere. We never learn where the bus came from, or why he is on it, or who he even is. Why is he the only passenger? Is he a prisoner? Is he the \"bothersome man\" referred to in the title of the movie? Has he died and gone to heaven, or hell? Like our man, we don't get a chance to stop and wonder. He is met by a gatekeeper of sorts and shuttled off to a nondescript city. From day one, all the choices are ",
+        "end": "ics, or the secret police? And why are there no children? Is the story even set in the real world? Whenever we think we might be getting some answers, new mysteries unfold. \"The Bothersome Man\" leaves you half relieved that it's over, half wanting more. I hope they make it into a computer game soon."
+      },
+      {
+        "id": 9407,
+        "label": "negative",
+        "words": 777,
+        "qwen3_margin": -6.07,
+        "deberta_margin": 4.52,
+        "start": "There is an interesting discussion in this movie. Is being a moral person good enough, or do you need something more? The movie preaches that without the guidance of God, being a morally good person is not enough. There is a line early in the movie, \"You and I can look at a person who is morally good, but both know he is going to go to hell.\" While I am not a Christian, the discussions about this throughout the course of the movie were fascinating, but not in the way the movie intended. I left t",
+        "end": "htened times, the church would have enlightened as well. I'm glad I saw this movie. While I was fairly certain before that being morally good was enough, now I know it for a fact. Worth watching if you are not a Christian, to affirm how happy you are to not be as ignorant as the folks in this movie."
+      },
+      {
+        "id": 2802,
+        "label": "negative",
+        "words": 167,
+        "qwen3_margin": -5.53,
+        "deberta_margin": 4.95,
+        "start": "I have read the other user comments and I am happy someone has compared it to the original by Kamal called Perumarzhakalam released in 2004. The original had a tight story and no loopholes as described above about the Indian Govt not having proper records, or even bad shoots and bloopers. The story is great and a touchy one and well described by others. But sadly Nagesh taking credit for it as his own story is a sad thing and amounts to nothing other than plagiarism. I guess he has been affected",
+        "end": "er movies, but now I suspect if any of them were originals after all. Here is a link in IMDb for the original masterpiece. http://www.imdb.com/title/tt0425350/#comment I recommend everyone to see the original, even with subtitles if needed, to know what class direction and class acting is all about."
+      },
+      {
+        "id": 21869,
+        "label": "positive",
+        "words": 487,
+        "qwen3_margin": 5.9,
+        "deberta_margin": -4.58,
+        "start": "I borrowed this movie despite its extremely low rating, because I wanted to see how the crew manages to animate the presence of multiple worlds. As a matter of fact, they didn't - at least, so its seems. Some cameo appearance cut rather clumsily into the movie - that's it, this is what the majority of viewers think. However, the surprise comes at the end, and unfortunately then, when probably most of the viewers have already stopped this movie. I was also astonished when I saw that the Brazilian",
+        "end": "ich has already taken off shore. She jumps into the water, arrives at the boat - and they are away. Miraculously beautiful. It remembers me a bit to the end of a poem by a Rhetoromance writer: When I awoke, I saw Death standing at my bed. But I closed my eyes. When I opened them again - he was gone."
+      },
+      {
+        "id": 11794,
+        "label": "negative",
+        "words": 165,
+        "qwen3_margin": -6.49,
+        "deberta_margin": 3.93,
+        "start": "I realize why people hate this film. And, I hated Blair Witch Project,so go figure? This is about as staged as it gets & yes they do insult your intelligence by trying to make it seem real.I really liked the madame lalaurie storyline though it's more than likely made up. But, the main reason I like this film, is fake or not when the ghosts start attacking & kidnapping them,I get chill-bumps every time & have to look behind me as it feels like something's there with me.i know it's my imagination,",
+        "end": " me goosebumps,so that makes this a creepy delight.Not for everyone, as skeptics will hate it & not for gorehounds as with a PG-13 rating there is no gore. And, the females are very annoying!You'll wish the ghosts would take them off & experiment on them before it's all said & done. ** out of *****."
+      },
+      {
+        "id": 7717,
+        "label": "negative",
+        "words": 145,
+        "qwen3_margin": -7.84,
+        "deberta_margin": 2.57,
+        "start": "Mario Lewis of the Competitive Enterprise Institute has written a definitive 120-page point-by-point, line-by-line refutation of this mendacious film, which should be titled A CONVENIENT LIE. The website address where his debunking report, which is titled \"A SKEPTIC'S GUIDE TO AN INCONVENIENT TRUTH\" can be found at is :www.cei.org. A shorter 10-page version can be found at: www.cei.org/pdf/5539.pdf Once you read those demolitions, you'll realize that alleged \"global warming\" is no more real or d",
+        "end": " TOMORROW, which was based on a book written by alleged UFO abductee Whitley Strieber. As James \"The Amazing\" Randi does to psychics, and Philip Klass does to UFOs, and Gerald Posner does to JFK conspir-idiocy theories, so does Mario Lewis does to Al Gore's movie and the whole \"global warming\" scam."
+      },
+      {
+        "id": 3449,
+        "label": "negative",
+        "words": 247,
+        "qwen3_margin": -6.87,
+        "deberta_margin": 3.36,
+        "start": "This was a very good show. I enjoyed the construction of real time and flashback, seeing the old Diggers meeting again and recalling the terrors of their captivity in Changi POW Camp. The main problem with the way the show was written is that the scenes of life in Changi are more like a holiday camp than what the place must have been like. I am old enough to remember film footage of the men being liberated from Changi and other Japanese POW camps. No actor could lose enough weight to have a rese",
+        "end": "make fun of the Crucifixion because it is obviously comedy, even if some consider it to be in bad taste. \"Changi\" is written as a portrayal of a real event and, as such, might be regarded by younger people as a true record. Great performances by a fine cast cannot redeem this lightweight screenplay."
+      }
+    ],
+    "deberta_right_qwen3_wrong": [
+      {
+        "id": 9876,
+        "label": "positive",
+        "words": 174,
+        "qwen3_margin": -6.98,
+        "deberta_margin": 6.14,
+        "start": "I gave it a seven only because the acting is good. And of course by that I mean Wilkinson. The other two principals were \"decent\". But the characters themselves...what on earth was so bad about the character Wilkinson played (James Manning)? I didn't see him behaving like the martinet Emily Watson accused him of being. Bill Bule, on the other hand, was an insufferable jerk who I was praying would meet an extremely brutal and prolonged demise. Who was I kidding? Tom Wilkinson isn't Paul Bettany a",
+        "end": "y would she even want to be in the same TOWN as him, to say nothing of the same \"room\". I noticed some other reviews, one person said she \"cried\" at the end, to witness James' tragedy. ??? WHAT tragedy? What, you mean losing an imbecile who finds someone like Bill Bule AMUSING???!!! Give us a break."
+      },
+      {
+        "id": 12592,
+        "label": "negative",
+        "words": 136,
+        "qwen3_margin": 2.68,
+        "deberta_margin": -8.06,
+        "start": "As soon as it hits a screen, it destroys all intelligent life forms around ! But on behalf of its producers I must say it doesn't fall into any known movie category, it deserves a brand new denomination of its own ! It's a \"Neurological drama\" ! It saddens and depresses every single neuron inside a person's brain. It's the closest thing one will ever get to a stroke without actually suffering one. It drives you speechless, all you members go numb, your mouth falls open and remains so, and the mo",
+        "end": "s you speechless, all you members go numb, your mouth falls open and remains so, and the most strange symptom of all is that you get yourself wishing to go blind and deaf. No small feat for such a sort of a \"movie\". The only word that comes to my mind just having finished my ordeal is OUTRAGE !!!!!!"
+      },
+      {
+        "id": 17098,
+        "label": "positive",
+        "words": 113,
+        "qwen3_margin": -5.02,
+        "deberta_margin": 4.64,
+        "start": "This movie has everything that makes a bad movie worth watching - sloppy editing, little to no continuity, insane dialog, bad (you might even say non-existent) acting, pointless story lines, shots that go on FAR too long...and it's perfect for MST3K-style riffing, not to mention the \"Corpse Eaters Drinking Game\": Scribble on forms...take a shot - Sign your name...take a shot - Catch a bad Foley edit...take many, many shots. The only reason I didn't rate it higher than 8 is because there's not en",
+        "end": "name...take a shot - Catch a bad Foley edit...take many, many shots. The only reason I didn't rate it higher than 8 is because there's not enough gratuitous nudity and because despite its insane badness, it's only an hour long - hell, a movie like this should have been at least 20-30 minutes longer!"
+      },
+      {
+        "id": 467,
+        "label": "negative",
+        "words": 209,
+        "qwen3_margin": 3.91,
+        "deberta_margin": -5.66,
+        "start": "Bangville Police supposedly marked the debut of the Keystone Kops, named after the studio they worked for. In this one, however, they don't dress in the silly cop costumes or drive the fast-paced car that's their trademark. Anyway, Mabel Normand is a farm girl here who's begged her dad for a calf. She later sees some strange men in the barn and quickly calls the police. One answers and the chase is on. Next, Mabel slams her door just as someone is coming in. Turns out it's her mother who jumps t",
+        "end": "at's developed is Mabel's who exudes charm with just her face and big eyes and seems so optimistically cheery here except, of course, when she's frightened. It's easy to see why she became a star. It's largely because of her that I'd recommended seeing this at least once and why I'm giving this a 4."
+      },
+      {
+        "id": 2036,
+        "label": "positive",
+        "words": 332,
+        "qwen3_margin": -5.02,
+        "deberta_margin": 4.55,
+        "start": "This is apparently the second remake of this film, having been filmed before in 1911 and 1918. And, in so many ways it reminds me of the later film, A YANK AT OXFORD. Both films concern a conceited blow-hard who arrives at one of the top schools in the world and both, ultimately, show the blow-hard slowly learning about teamwork and decency. In this film, William Haines is \"Tom Brown\" and his main rival, \"Bob\" is played by Frances X. Bushman. And, in a supporting role is Jack Pickford--always re",
+        "end": "anyone giving the film a score of 10 is STRONGLY advised to see these other films. 4/25/08==I just checked and saw this this small film was the highest rated film on IMDb from the 1920!! Talk about over-rated! There are dozens and dozens of better films--how this film got to be #1 is anyone's guess."
+      },
+      {
+        "id": 9026,
+        "label": "negative",
+        "words": 180,
+        "qwen3_margin": 3.31,
+        "deberta_margin": -6.23,
+        "start": "About the movie itself, there are ample comments. I just wanted to say something about the German version, which I have seen recently on TV. It is heavily cut. From 103 to 76 minutes! It is usual that the most bloody scenes are cut for German TV. I understand the reasons for that, but this movie was something else. They did not only cut \"gore-shots\" - they have cut entire sequences, sparing only glimpses. Like: \"WE have to attack THEM\" - one 5 second shot of explosions in the camp - protagonist ",
+        "end": " string of erratic, disconnected scenes that don't make any sense anymore. I could not stand to watch the end after spending 60 minutes on this nonsense. I think I would have given the original 7/10 The German version is worth only 1/10 Get it on DVD (and check the runtime first) or forget about it."
+      },
+      {
+        "id": 19865,
+        "label": "positive",
+        "words": 128,
+        "qwen3_margin": -5.75,
+        "deberta_margin": 3.46,
+        "start": "By mistake, I ordered a series from the BBC, their new version of Robin Hood. Very disappointing in comparison with RoS. Terrible costuming and backgrounds. While I enjoyed the Sheriff, who took cues from the Nick Grace character, the rest of the cast left much to be desired. As a \"for instance\", Marion's costuming looked suspiciously like it came from Walmart. And Sir Guy, well, he looked a bit like a character from an outer space movie! RoS has stolen the spotlight, probably forever, in the te",
+        "end": "ovie! RoS has stolen the spotlight, probably forever, in the telling of this tale. Cast, costuming, story lines, scenery, filming and soundtrack by Clannad are all superb, as is evidenced by all the continual feedback some 26 years on. RoS is a timeless classic. My thanks to all who made the series."
+      },
+      {
+        "id": 18160,
+        "label": "negative",
+        "words": 108,
+        "qwen3_margin": 2.51,
+        "deberta_margin": -6.44,
+        "start": "this movie delivers. the best is when the awkward teenage neighbor tries to bike away from the babysitter and in the background looks like he's never been anywhere near a bike in his life as he attempts not to fall off. but this movie doesn't stop there, when less than 5 minutes later it delivers a scene of nothing but an arm reaching through a fence and into a cooler pulling out a beer. stereotypical grilling dads, several plot lines that go nowhere, and a former seaQuest actress with a bluetoo",
+        "end": "utes later it delivers a scene of nothing but an arm reaching through a fence and into a cooler pulling out a beer. stereotypical grilling dads, several plot lines that go nowhere, and a former seaQuest actress with a bluetooth cell phone all add up to making this the perfect Saturday night at home."
+      },
+      {
+        "id": 17450,
+        "label": "negative",
+        "words": 79,
+        "qwen3_margin": 5.49,
+        "deberta_margin": -3.18,
+        "start": "It's Die Hard meets Cliffhanger when a ski resort is besieged by terrorists and it's up to one cop, Jack (Crackerjack) to stop this. A B-action movie that borrows from other films and is quite good with pretty good action, a ridiculous plot (as always in these movies) and three fine stars. Thomas Ian Griffith as the cop and Nastasja Kinski and Christopher Plummer as terrorists. If you don't like stupid B-action movies this is not for you.",
+        "end": "n movie that borrows from other films and is quite good with pretty good action, a ridiculous plot (as always in these movies) and three fine stars. Thomas Ian Griffith as the cop and Nastasja Kinski and Christopher Plummer as terrorists. If you don't like stupid B-action movies this is not for you."
+      },
+      {
+        "id": 9309,
+        "label": "negative",
+        "words": 133,
+        "qwen3_margin": 1.38,
+        "deberta_margin": -7.19,
+        "start": "I have an awful pan-and-scan videotape of \"Boom!\", and I want to see it in all its widescreen glory. So I voted \"1\" and hope you will too. Together, we can pull this movie down into the pits of cinematic dross, and hope that someone will see an opportunity for BIG MONEY in releasing \"Boom!\" in its Director's Cut Extended Version. The movie is one of my howling favorites you just look at the people involved, the director, the actors, the cameraman, and you say to yourself, \"Yep, I guess you can f",
+        "end": "tors, the cameraman, and you say to yourself, \"Yep, I guess you can fool some of the people for a lot of time.\" Producers considering the DVD release of \"Boom!\" should note that, everywhere it's been shown, there have been sellout crowds in the theaters. But it hasn't been up to Frostbite Falls yet."
+      }
+    ],
+    "both_wrong_confident": [
+      {
+        "id": 16131,
+        "label": "positive",
+        "words": 52,
+        "qwen3_margin": -9.46,
+        "deberta_margin": -8.56,
+        "start": "Nothing new is this tired serio-comedy that wastes the talents of Danny Glover and Whoopi Goldberg. Considering that this was produced by the stars and Spike Lee, it's pretty tame and tired stuff. And how come the Whoop never changes her hair or glasses over the many years this film covers? Blah!",
+        "end": "Nothing new is this tired serio-comedy that wastes the talents of Danny Glover and Whoopi Goldberg. Considering that this was produced by the stars and Spike Lee, it's pretty tame and tired stuff. And how come the Whoop never changes her hair or glasses over the many years this film covers? Blah!"
+      },
+      {
+        "id": 6851,
+        "label": "positive",
+        "words": 78,
+        "qwen3_margin": -8.57,
+        "deberta_margin": -8.59,
+        "start": "Why a good actress like Elizabeth Berkley stars in this commonplace movie???!!! The cast gives some good performance (Elizabeth Berkley as a Barbie girl, Ele Keats as a girl without mother and Justin Whalin, a guy eternally lessened by his bother), but the direction is extremely boring and the story is NOT so interesting and original. I can NOT believe that a movie like this was produced for the big screen! Julie Corman (the producer): are you CRAZY???!!!",
+        "end": "eats as a girl without mother and Justin Whalin, a guy eternally lessened by his bother), but the direction is extremely boring and the story is NOT so interesting and original. I can NOT believe that a movie like this was produced for the big screen! Julie Corman (the producer): are you CRAZY???!!!"
+      },
+      {
+        "id": 20942,
+        "label": "positive",
+        "words": 171,
+        "qwen3_margin": -8.66,
+        "deberta_margin": -8.47,
+        "start": "I was really excited about seeing this film. I thought finally Australia had made a good film.. but I was wrong. This was the most pathetic attempt at a slasher film ever. I feel sorry for Molly Ringwald having to come all the way to Australia to make an awful movie. The acting was terrible (especially that Australian guy who was trying to speak in an American accent), and the plot was also pretty bad. When I first heard about this film coming out, I thought that the title was pathetic (because ",
+        "end": "ARNING!!! MAJOR SPOILERS!!! Probably the worst thing about the film was the ending. I was expecting a big surprise about who the killer was.. but the killer wasn't even human.. which turned this realistic slasher film into an awful horror movie. Don't see this film.. you'll probably be disappointed!"
+      },
+      {
+        "id": 21626,
+        "label": "positive",
+        "words": 130,
+        "qwen3_margin": -8.26,
+        "deberta_margin": -8.47,
+        "start": "This is the kind of movie that you rent when you are incredibly tired, or impaired in some other way... The acting in this movie is so bad it seems intentional, and to let you know how bad the special effects are, there is one scene when the puppets are coming alive where you can see most of a hand holding the puppet, moving it about. The movie looked as if it was filmed with a camcorder. When I saw this movie for the first time, a fistfight nearly erupted when my friends and I were calling each",
+        "end": "ith a camcorder. When I saw this movie for the first time, a fistfight nearly erupted when my friends and I were calling each other names from this flick, that's how terrible it was. If you enjoy getting mad at movies, I recommend this to you, otherwise, flee as though your very life depended on it."
+      },
+      {
+        "id": 6097,
+        "label": "positive",
+        "words": 246,
+        "qwen3_margin": -8.71,
+        "deberta_margin": -7.86,
+        "start": "Hrm-I think that line was from the old movie posters. This is a dumb movie that seems to have been translated from some language that was totally unfamiliar to the translator. Here's a tip: Any movie that starts with a black screen and text reading \"In the future...\" is going to be fun. This means that the premise is so implausible that they have to explain it to you. In this case, \"In the future...\" means that, instead of fighting wars, nations have guys climb into giant robots and duke it out ",
+        "end": "actic fight degenerates into (and I'm not making this up) two guys hitting each other with sticks. I can always get a laugh in a bar by re-enacting the final scene, complete with a last line guaranteed to leave any audience scratching their heads. Like I said-it's dumb. That's why I bought the tape."
+      },
+      {
+        "id": 175,
+        "label": "positive",
+        "words": 225,
+        "qwen3_margin": -8.25,
+        "deberta_margin": -7.94,
+        "start": "I remember this film as the other person that commented said. I recorded over it but wish I had it now just because it had to be one of the worst movies ever. Funny, in a real bad way. I remember the tag line on the box was \"The ultimate frontal lobotomy\". I got it from my mom, who got it from a friend at work who said it was the worst / cheesiest movie she had ever seen, so my mom said \"My son will probably love it.\" and the woman gave it to her just to get it out of her possession. I then late",
+        "end": " funnel. When the killer killed they would show him coming forward with the \"weapon\" and then cut to a close up of what appeared to be raw chicken and fake blood on the victims head. I don't know what else to say about this \"gem\" except that if you like bad films, it doesn't get any worse than this."
+      },
+      {
+        "id": 859,
+        "label": "negative",
+        "words": 336,
+        "qwen3_margin": 8.1,
+        "deberta_margin": 7.75,
+        "start": "This has to be one of the all time greatest horror movies. Charles Band made the best movie of 96' in this little seen gem. Highly realistic and , incredibly stylised- with a visual flair David Fincher would envy, its not hard to see why Band went on to make such classics as 'Killjoy 2: Deliverance From Evil', 'The Regina Pierce Affair', 'Virgins of Sherwood Forest', and 'Timegate: Tales of the Saddle Tramps'. With a highly sophisticated story- a tiny body with a large head controls a family of ",
+        "end": "the copious amounts of full frontal nudity, which were ultimately unnecessary in achieving the composer's goal- to create a timeless epic that would forever go down in history as possibly the greatest film of all time. If it were not for this slight problem i would have given this film a perfect 10."
+      },
+      {
+        "id": 794,
+        "label": "negative",
+        "words": 299,
+        "qwen3_margin": 8.25,
+        "deberta_margin": 7.53,
+        "start": "With the plethora of repetitive and derivative sitcoms jamming fall, summer, winter and spring line-ups, it's nice to see a show that sets itself from the lot in more than one area. 'Earl' takes an unusual approach. It's not about the \"daily musings of an eccentric family\" (zzzz..) nor about the other boring stuff you see everywhere in sitcoms. The show is about this small-time white trash thief (Earl) who scratches off a lottery card and scores big time. Right at that moment, 'Karma' took it aw",
+        "end": "hing. Did they finally free a cubicle or two for quality assurance? Let's hope so. And let's hope for more quality shows like these will occupy the line-ups; shows that'll make both us TV viewers and NBC executives stop crying over the long gone days of NBC's golden days (Frasier, Seinfeld, Friends)"
+      },
+      {
+        "id": 8858,
+        "label": "positive",
+        "words": 138,
+        "qwen3_margin": -7.98,
+        "deberta_margin": -7.78,
+        "start": "This was one of the worst Columbo episodes that I have seen, However, I am only in the second season. The typical Columbo activities are both amusing and irritating. His cigar ashes causing him trouble have been seen before, And the bit where he always identifies in some way with the murderer--in this case cooking ,Tho the scene on the TV cooking show distracted from the main theme. Also not explained was why the brother at the beginning of the show was cutting part of the wires of the mixer. Th",
+        "end": "ther at the beginning of the show was cutting part of the wires of the mixer. The reason was never explained ,nor did it serve any purpose. But the part I disliked the most was the death of the bride to be . This was never explained and it is the main reason why I give this episode such a low grade."
+      },
+      {
+        "id": 15183,
+        "label": "positive",
+        "words": 121,
+        "qwen3_margin": -7.93,
+        "deberta_margin": -7.77,
+        "start": "...dislike this movie and everyone would understand why. The plot is poor, so is the acting. But in my opinion it is better than Halloween 5, although even this does not give many surprising moments. A few scenes are really well directed. But these few moments do not deliver the reason to rent it. I do not despise violence in movies, but H6 features extraordinary strong and bloody scenes which do not fit to the tradition of the Halloween-Movies. The most sucking aspect about H6 is the lack of te",
+        "end": "y strong and bloody scenes which do not fit to the tradition of the Halloween-Movies. The most sucking aspect about H6 is the lack of tension. No comparison to the first masterpiece. Halloween 6 only gets 4 out of 10 stars from me. If you want, rent it. But don't expect a great horror-experience...."
+      },
+      {
+        "id": 24863,
+        "label": "positive",
+        "words": 172,
+        "qwen3_margin": -7.18,
+        "deberta_margin": -8.5,
+        "start": "Pulling in 2.6 million viewers, one has to wonder what everyone's opinions on the storyline/plot is. Reading the run down over at lifetime, I was led to believe that this would be an edge-of-your-seat thriller about a single mother being stalked and finally confronting the stalker. Sadly I was mistaken. While the main plot is interesting enough - Single mother run off road one night, then is stalked by same guy, the reasoning behind the stalking left nothing but a really bad taste in my mouth. L",
+        "end": " would do anything to protect her son from harm, and she's looking pretty good too these days. Leighton is really the only good thing about this movie. I think many people will identify with the main character, after discovering why the stalker is stalking, it will be a view-only-once type of movie."
+      },
+      {
+        "id": 13476,
+        "label": "positive",
+        "words": 124,
+        "qwen3_margin": -7.56,
+        "deberta_margin": -8.09,
+        "start": "Okay, first of all I got this movie as a Christmas present so it was FREE! FIRST - This movie was meant to be in stereoscopic 3D. It is for the most part, but whenever the main character is in her car the movie falls flat to 2D! What!!?!?! It's not that hard to film in a car!!! SECOND - The story isn't very good. There are a lot of things wrong with it. THIRD - Why are they showing all of the deaths in the beginning of the film! It made the movie suck whenever some was going to get killed!!! Wat",
+        "end": "t very good. There are a lot of things wrong with it. THIRD - Why are they showing all of the deaths in the beginning of the film! It made the movie suck whenever some was going to get killed!!! Watch it for a good laugh , but don't waste your time buying it. Just download it or something for cheap."
+      },
+      {
+        "id": 8600,
+        "label": "positive",
+        "words": 150,
+        "qwen3_margin": -7.79,
+        "deberta_margin": -7.86,
+        "start": "This film Evil Breed: The legend of samhain contains very little thought or effort. It is ridiculed with specs of ultra fast \"slasher\" style death and plain disgusting acts of death. The acting was rated a D as the actors show very little ability, and the stupidity of them in the film is too questionable. The way they portrayed what people their ages act like was incredibly different. The odd split of porn is fit in thought it really doesn't offer much, and any area that is respectable but is qu",
+        "end": " absolute gut wrenching death. Example is the poor fellow whom is disemboweled from his anus, and the scene lasts for about 5 minutes. It is terribly obvious of how little of a fight the kids put up. This film is a good choice for someone who likes to watch some awful deaths and practically torture."
+      },
+      {
+        "id": 4919,
+        "label": "negative",
+        "words": 385,
+        "qwen3_margin": 8.04,
+        "deberta_margin": 7.55,
+        "start": "This 1997 film-blanc classic tale of smoldering passion has achieved its well-deserved legendary status as one of the screen's greatest sagas of a doomed and hopeless love. The pervasive, ongoing and progressive magnetism between Judge Reinhold and what's-her-name is sure to set many a viewer's heart a-flutter with memories of one's own first crush. The brilliant screenplay dangles this embryonic affair-to-be in front of the enraptured audience, sitting transfixed as the abstract, almost-express",
+        "end": "n of its owner!\", and the rest of the storyline could then be dedicated to parsing every syllable, subtlety and nuance of that phrase. Had that plot line been done, this film could have topped \"Titanic\" at the Golden Globes that year, I'm convinced. My one regret? That I didn't read the novel first."
+      },
+      {
+        "id": 16266,
+        "label": "positive",
+        "words": 160,
+        "qwen3_margin": -7.35,
+        "deberta_margin": -8.22,
+        "start": "But the opposite, sorry bud, i completely understand how you can be dragged into a film because you relate to the subject ( and you have). This film is terrible, the main character would give any charlie brown subtitler a run for his money he just constantly mumbles which is always a laugh, most scenes just feel awkward with characters more often than not gazing across to another with a look of...its your line now, then i will react. Best British comedy? Please buddy, have a strong word with you",
+        "end": "o the people involved...they have made a film...and maybe motorbike enthusiasts may be into it but people that still live here on earth with an actual sense of humour will struggle with this more than smiling at the Christmas present they're nan bought them...was that overly harsh? i do apologise..."
+      }
+    ],
+    "both_wrong_total": 520
+  },
+  "final_selection": [
+    "stage6_exact",
+    "stage7_exact"
+  ]
+}

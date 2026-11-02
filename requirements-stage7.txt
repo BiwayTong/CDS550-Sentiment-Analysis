@@ -1,0 +1,14 @@
+# Stage 7 (Qwen3.8-27B) on a rented Linux GPU. PyTorch comes with the machine image (>= 2.7, CUDA >= 12.8);
+# do not install torch from here. Unlike stages 4-6 (transformers 4.57.6), Qwen3.8 needs transformers >= 5.2
+# (architecture Qwen3_5ForConditionalGeneration), and PEFT >= 0.18 for transformers 5.
+# fla 0.4.2 is pinned: newer releases need a triton newer than the 3.4.0 that torch 2.8 ships (install with --no-deps).
+# flash-linear-attention = fast kernels for the 48 Gated DeltaNet layers (without it they run on a slow
+# fp32 torch loop). causal-conv1d is optional and installed separately (plan, step 2), because it compiles.
+transformers>=5.2,<6
+peft>=0.18
+accelerate>=1.0
+flash-linear-attention==0.4.2
+fla-core==0.4.2
+huggingface_hub
+numpy>=1.24
+pandas>=2.0

@@ -1,0 +1,23 @@
+{
+  "python": "3.12.14",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "seed": 42,
+  "stage": "eda",
+  "quick": false,
+  "plots": false,
+  "train_sha256": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+  "test_sha256": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f",
+  "total_seconds": 15.271931886672974,
+  "command": [
+    "outputs/individual-project/submission/code/run_pipeline.py",
+    "--data-dir",
+    "outputs/individual-project/submission/data",
+    "--output",
+    "outputs/individual-project/work/optimization_validation/eda_rerun",
+    "--stage",
+    "eda",
+    "--no-plots"
+  ]
+}

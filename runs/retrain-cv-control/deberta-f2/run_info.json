@@ -1,0 +1,116 @@
+{
+  "mode": "train",
+  "command": "code\\finetune_transformer.py --data-dir data --output runs\\retrain-cv-control\\deberta-f2 --folds 5 --fold 2 --preset large --seed 42 --split-seed 42 --max-len 512 --head 128 --eval-every 0.25 --epochs 2.0 --lr 1e-05 --fresh-start --verify-fresh",
+  "preset": "large",
+  "config": {
+    "model": "microsoft/deberta-v3-large",
+    "lr": 1e-05,
+    "epochs": 2.0,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "grad_ckpt": false
+  },
+  "fresh_start": true,
+  "verify_fresh": true,
+  "init_checkpoint": "microsoft/deberta-v3-large",
+  "best_checkpoint": "runs\\retrain-cv-control\\deberta-f2\\best_model",
+  "max_len": 512,
+  "head": 128,
+  "seed": 42,
+  "split_seed": 42,
+  "holdout_frac": 0.1,
+  "n_train": 20000,
+  "n_holdout": 5000,
+  "folds": 5,
+  "fold": 2,
+  "split": {
+    "mode": "kfold",
+    "folds": 5,
+    "fold": 2
+  },
+  "holdout_accuracy": 0.9696,
+  "test_positive_share": 0.50508,
+  "submission": {
+    "rows": 25000,
+    "positive": 12627,
+    "negative": 12373,
+    "sha256": "bcfc4b68906b7296fa45f16fea35b42769715332a4c0db77d259101a5b265091"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5090 D v2",
+    "vram_gb": 23.9,
+    "amp": "torch.bfloat16"
+  },
+  "data_sha256": {
+    "train.csv": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+    "test.csv": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f"
+  },
+  "total_minutes": 29.73,
+  "history": [
+    {
+      "update": 0,
+      "epoch": 0.0,
+      "holdout_accuracy": 0.4988,
+      "phase": "fresh_initialisation"
+    },
+    {
+      "update": 312,
+      "epoch": 0.25,
+      "holdout_accuracy": 0.958
+    },
+    {
+      "update": 624,
+      "epoch": 0.499,
+      "holdout_accuracy": 0.9568
+    },
+    {
+      "update": 936,
+      "epoch": 0.749,
+      "holdout_accuracy": 0.9662
+    },
+    {
+      "update": 1248,
+      "epoch": 0.998,
+      "holdout_accuracy": 0.9636
+    },
+    {
+      "update": 1250,
+      "epoch": 1.0,
+      "holdout_accuracy": 0.9646
+    },
+    {
+      "update": 1560,
+      "epoch": 1.248,
+      "holdout_accuracy": 0.9688
+    },
+    {
+      "update": 1872,
+      "epoch": 1.498,
+      "holdout_accuracy": 0.9694
+    },
+    {
+      "update": 2184,
+      "epoch": 1.747,
+      "holdout_accuracy": 0.9692
+    },
+    {
+      "update": 2496,
+      "epoch": 1.997,
+      "holdout_accuracy": 0.967
+    },
+    {
+      "update": 2500,
+      "epoch": 2.0,
+      "holdout_accuracy": 0.967
+    }
+  ],
+  "timings": {
+    "train_minutes": 27.48,
+    "predict_minutes": 1.74
+  }
+}

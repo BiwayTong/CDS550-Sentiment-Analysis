@@ -1,0 +1,76 @@
+[01:36:20] ======================================================================
+[01:36:20] command: code/finetune_transformer.py --data-dir data --output runs/deberta-large-s2 --seed 2
+[01:36:20] device=cuda (NVIDIA GeForce RTX 5090 D v2, 23.9 GB) torch=2.11.0+cu128 transformers=4.57.6 preset=large amp=torch.bfloat16
+[01:36:20] config: {"model": "microsoft/deberta-v3-large", "lr": 1e-05, "epochs": 2, "batch_size": 8, "grad_accum": 2, "grad_ckpt": false}
+[01:36:20] train=22,500 holdout=2,500 test=25,000 max_len=512 head=128
+[01:36:27] tokenised in 5s; mean length 257 tokens, 3,006 of 25,000 training reviews truncated (head+tail)
+[01:36:29] memory probe ok: batch 8 x accumulation 2, grad_ckpt=False, peak 15.7 GB
+[01:36:29] 1407 updates/epoch, 2814 updates total, warm-up 281, eval every 704
+[01:36:40] epoch 1 update 50/2814 loss 0.7148 lr 1.81e-06 elapsed 0.2 min ETA 10.7 min
+[01:36:51] epoch 1 update 100/2814 loss 0.6944 lr 3.59e-06 elapsed 0.4 min ETA 10.3 min
+[01:37:03] epoch 1 update 150/2814 loss 0.5952 lr 5.37e-06 elapsed 0.6 min ETA 10.0 min
+[01:37:14] epoch 1 update 200/2814 loss 0.2480 lr 7.15e-06 elapsed 0.7 min ETA 9.8 min
+[01:37:24] epoch 1 update 250/2814 loss 0.1968 lr 8.93e-06 elapsed 0.9 min ETA 9.5 min
+[01:37:35] epoch 1 update 300/2814 loss 0.1997 lr 9.92e-06 elapsed 1.1 min ETA 9.3 min
+[01:37:46] epoch 1 update 350/2814 loss 0.1576 lr 9.73e-06 elapsed 1.3 min ETA 9.1 min
+[01:37:58] epoch 1 update 400/2814 loss 0.1716 lr 9.53e-06 elapsed 1.5 min ETA 9.0 min
+[01:38:09] epoch 1 update 450/2814 loss 0.1697 lr 9.33e-06 elapsed 1.7 min ETA 8.8 min
+[01:38:21] epoch 1 update 500/2814 loss 0.1883 lr 9.14e-06 elapsed 1.9 min ETA 8.6 min
+[01:38:32] epoch 1 update 550/2814 loss 0.1559 lr 8.94e-06 elapsed 2.1 min ETA 8.5 min
+[01:38:43] epoch 1 update 600/2814 loss 0.1564 lr 8.74e-06 elapsed 2.2 min ETA 8.3 min
+[01:38:55] epoch 1 update 650/2814 loss 0.1430 lr 8.54e-06 elapsed 2.4 min ETA 8.1 min
+[01:39:07] epoch 1 update 700/2814 loss 0.1729 lr 8.35e-06 elapsed 2.6 min ETA 8.0 min
+[01:39:17]   HOLD-OUT accuracy 95.7600% at update 704 (epoch 0.50)
+[01:39:18]   new best -> saved runs\deberta-large-s2\best_model
+[01:39:28] epoch 1 update 750/2814 loss 0.1374 lr 8.15e-06 elapsed 3.0 min ETA 8.2 min
+[01:39:40] epoch 1 update 800/2814 loss 0.1643 lr 7.95e-06 elapsed 3.2 min ETA 8.0 min
+[01:39:50] epoch 1 update 850/2814 loss 0.1210 lr 7.75e-06 elapsed 3.4 min ETA 7.8 min
+[01:40:01] epoch 1 update 900/2814 loss 0.1531 lr 7.56e-06 elapsed 3.5 min ETA 7.5 min
+[01:40:12] epoch 1 update 950/2814 loss 0.1374 lr 7.36e-06 elapsed 3.7 min ETA 7.3 min
+[01:40:23] epoch 1 update 1000/2814 loss 0.1314 lr 7.16e-06 elapsed 3.9 min ETA 7.1 min
+[01:40:33] epoch 1 update 1050/2814 loss 0.1546 lr 6.96e-06 elapsed 4.1 min ETA 6.8 min
+[01:40:44] epoch 1 update 1100/2814 loss 0.1048 lr 6.77e-06 elapsed 4.3 min ETA 6.6 min
+[01:40:55] epoch 1 update 1150/2814 loss 0.1019 lr 6.57e-06 elapsed 4.4 min ETA 6.4 min
+[01:41:06] epoch 1 update 1200/2814 loss 0.1147 lr 6.37e-06 elapsed 4.6 min ETA 6.2 min
+[01:41:18] epoch 1 update 1250/2814 loss 0.1562 lr 6.17e-06 elapsed 4.8 min ETA 6.0 min
+[01:41:29] epoch 1 update 1300/2814 loss 0.1191 lr 5.98e-06 elapsed 5.0 min ETA 5.8 min
+[01:41:39] epoch 1 update 1350/2814 loss 0.1298 lr 5.78e-06 elapsed 5.2 min ETA 5.6 min
+[01:41:51] epoch 1 update 1400/2814 loss 0.1339 lr 5.58e-06 elapsed 5.4 min ETA 5.4 min
+[01:42:01]   HOLD-OUT accuracy 96.0400% at update 1407 (epoch 1.00)
+[01:42:02]   new best -> saved runs\deberta-large-s2\best_model
+[01:42:12]   HOLD-OUT accuracy 96.0000% at update 1408 (epoch 1.00)
+[01:42:21] epoch 2 update 1450/2814 loss 0.1026 lr 5.38e-06 elapsed 5.9 min ETA 5.5 min
+[01:42:32] epoch 2 update 1500/2814 loss 0.1097 lr 5.19e-06 elapsed 6.1 min ETA 5.3 min
+[01:42:43] epoch 2 update 1550/2814 loss 0.0538 lr 4.99e-06 elapsed 6.2 min ETA 5.1 min
+[01:42:54] epoch 2 update 1600/2814 loss 0.1102 lr 4.79e-06 elapsed 6.4 min ETA 4.9 min
+[01:43:05] epoch 2 update 1650/2814 loss 0.0919 lr 4.60e-06 elapsed 6.6 min ETA 4.7 min
+[01:43:17] epoch 2 update 1700/2814 loss 0.0959 lr 4.40e-06 elapsed 6.8 min ETA 4.5 min
+[01:43:28] epoch 2 update 1750/2814 loss 0.0625 lr 4.20e-06 elapsed 7.0 min ETA 4.2 min
+[01:43:39] epoch 2 update 1800/2814 loss 0.1010 lr 4.00e-06 elapsed 7.2 min ETA 4.0 min
+[01:43:50] epoch 2 update 1850/2814 loss 0.0704 lr 3.81e-06 elapsed 7.4 min ETA 3.8 min
+[01:44:02] epoch 2 update 1900/2814 loss 0.0950 lr 3.61e-06 elapsed 7.6 min ETA 3.6 min
+[01:44:13] epoch 2 update 1950/2814 loss 0.1086 lr 3.41e-06 elapsed 7.7 min ETA 3.4 min
+[01:44:24] epoch 2 update 2000/2814 loss 0.1084 lr 3.21e-06 elapsed 7.9 min ETA 3.2 min
+[01:44:34] epoch 2 update 2050/2814 loss 0.1086 lr 3.02e-06 elapsed 8.1 min ETA 3.0 min
+[01:44:45] epoch 2 update 2100/2814 loss 0.0604 lr 2.82e-06 elapsed 8.3 min ETA 2.8 min
+[01:44:57]   HOLD-OUT accuracy 96.2800% at update 2112 (epoch 1.50)
+[01:44:58]   new best -> saved runs\deberta-large-s2\best_model
+[01:45:06] epoch 2 update 2150/2814 loss 0.0809 lr 2.62e-06 elapsed 8.6 min ETA 2.7 min
+[01:45:17] epoch 2 update 2200/2814 loss 0.0947 lr 2.42e-06 elapsed 8.8 min ETA 2.5 min
+[01:45:28] epoch 2 update 2250/2814 loss 0.1068 lr 2.23e-06 elapsed 9.0 min ETA 2.3 min
+[01:45:40] epoch 2 update 2300/2814 loss 0.0633 lr 2.03e-06 elapsed 9.2 min ETA 2.1 min
+[01:45:50] epoch 2 update 2350/2814 loss 0.0920 lr 1.83e-06 elapsed 9.4 min ETA 1.8 min
+[01:46:02] epoch 2 update 2400/2814 loss 0.0544 lr 1.63e-06 elapsed 9.6 min ETA 1.6 min
+[01:46:14] epoch 2 update 2450/2814 loss 0.1269 lr 1.44e-06 elapsed 9.8 min ETA 1.4 min
+[01:46:24] epoch 2 update 2500/2814 loss 0.0687 lr 1.24e-06 elapsed 9.9 min ETA 1.2 min
+[01:46:35] epoch 2 update 2550/2814 loss 0.0885 lr 1.04e-06 elapsed 10.1 min ETA 1.0 min
+[01:46:45] epoch 2 update 2600/2814 loss 0.0692 lr 8.45e-07 elapsed 10.3 min ETA 0.8 min
+[01:46:57] epoch 2 update 2650/2814 loss 0.0450 lr 6.47e-07 elapsed 10.5 min ETA 0.6 min
+[01:47:08] epoch 2 update 2700/2814 loss 0.0696 lr 4.50e-07 elapsed 10.7 min ETA 0.4 min
+[01:47:19] epoch 2 update 2750/2814 loss 0.0520 lr 2.53e-07 elapsed 10.8 min ETA 0.3 min
+[01:47:30] epoch 2 update 2800/2814 loss 0.1206 lr 5.53e-08 elapsed 11.0 min ETA 0.1 min
+[01:47:43]   HOLD-OUT accuracy 96.2800% at update 2814 (epoch 2.00)
+[01:47:43] training finished in 11.23 min; best hold-out accuracy 96.2800%
+[01:49:21] best checkpoint: hold-out accuracy 96.2000%; test positive share 0.4901
+[01:49:21] wrote runs\deberta-large-s2\submission.csv sha256=9ebe2b4838c67e56d998a932c4375269f2bff8462f152ba3e25914b797ea608b
+[01:49:21] done in 13.03 min -> runs\deberta-large-s2

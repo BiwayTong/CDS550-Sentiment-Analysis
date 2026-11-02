@@ -1,0 +1,115 @@
+{
+  "mode": "train",
+  "command": "code/finetune_llm.py --data-dir data --output runs/cv-mistral-24b/mistral-24b-f1 --folds 5 --fold 1 --preset mistral-24b --seed 42 --split-seed 42 --eval-every 0.5 --model mistralai/Mistral-Small-24B-Base-2501",
+  "preset": "mistral-24b",
+  "config": {
+    "lr": 0.0001,
+    "epochs": 1.0,
+    "seqs_per_update": 16,
+    "token_budget": 4096,
+    "max_micro": 16,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "model": "mistralai/Mistral-Small-24B-Base-2501",
+    "grad_ckpt": true,
+    "tokenizer_kwargs": {
+      "fix_mistral_regex": true
+    },
+    "max_len": 1024,
+    "head": 256,
+    "head_lr_mult": 2.0,
+    "label_smoothing": 0.0,
+    "weight_decay": 0.01,
+    "warmup": 0.05,
+    "prompt_version": "v1"
+  },
+  "trainer": "finetune_llm.py",
+  "split": {
+    "mode": "kfold",
+    "folds": 5,
+    "fold": 1,
+    "split_seed": 42
+  },
+  "folds": 5,
+  "fold": 1,
+  "seed": 42,
+  "split_seed": 42,
+  "n_train": 20000,
+  "n_holdout": 5000,
+  "holdout_accuracy": 0.9704,
+  "holdout_auc": 0.9943250973003892,
+  "test_positive_share": 0.49968,
+  "prompt": {
+    "version": "v1",
+    "prefix": "Movie review:\n",
+    "suffix": "\n\nQuestion: Overall, is this review of the movie positive or negative?\nAnswer:",
+    "verbalizer": [
+      " negative",
+      " positive"
+    ],
+    "verbalizer_ids": [
+      8289,
+      6818
+    ]
+  },
+  "submission": {
+    "rows": 25000,
+    "positive": 12492,
+    "negative": 12508,
+    "sha256": "bfb40aaa22e01e3df0b10d58bde20b52eae7656d445905fbe2721f863402a575"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-5.15.0-161-generic-x86_64-with-glibc2.35",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.6",
+    "peft": "0.18.1",
+    "device": "cuda",
+    "gpu": "NVIDIA H800 PCIe",
+    "vram_gb": 79.2,
+    "dtype": "torch.bfloat16"
+  },
+  "data_sha256": {
+    "train.csv": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+    "test.csv": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f"
+  },
+  "total_minutes": 88.91,
+  "history": [
+    {
+      "update": 0,
+      "epoch": 0.0,
+      "check_rows": 256,
+      "check_auc": 0.9928234067349567,
+      "check_accuracy": 0.94921875,
+      "phase": "zero-shot"
+    },
+    {
+      "update": 625,
+      "epoch": 0.5,
+      "holdout_accuracy": 0.9234,
+      "holdout_auc": 0.9920914083656335
+    },
+    {
+      "update": 1250,
+      "epoch": 1.0,
+      "holdout_accuracy": 0.9704,
+      "holdout_auc": 0.9943250973003892,
+      "phase": "final (re-loaded)"
+    }
+  ],
+  "fingerprint": {
+    "zero_shot_auc": 0.9928234067349567,
+    "zero_shot_accuracy": 0.94921875,
+    "check_rows": 256,
+    "skipped_updates": 0,
+    "oom_retries": 0,
+    "reload_max_abs_diff": 0.0,
+    "mean_abs_margin_change": 5.921209421008825
+  },
+  "timings": {
+    "train_minutes": 62.62,
+    "mid_training_eval_minutes": 4.19,
+    "predict_minutes": 24.65
+  }
+}

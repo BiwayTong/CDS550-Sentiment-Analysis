@@ -1,0 +1,122 @@
+{
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_folds": 5,
+  "n_oof": 25000,
+  "oof_accuracy": 0.97296,
+  "oof_correct": 24324,
+  "oof_wilson_95": [
+    0.9708755239784477,
+    0.9748991445028949
+  ],
+  "oof_se": 0.0010258428417647598,
+  "per_fold": [
+    {
+      "fold": 0,
+      "n_val": 5000,
+      "accuracy": 0.9708,
+      "epochs": 1.0,
+      "minutes": 137.21,
+      "model": "Qwen/Qwen3.8-27B"
+    },
+    {
+      "fold": 1,
+      "n_val": 5000,
+      "accuracy": 0.9744,
+      "epochs": 1.0,
+      "minutes": 136.56,
+      "model": "Qwen/Qwen3.8-27B"
+    },
+    {
+      "fold": 2,
+      "n_val": 5000,
+      "accuracy": 0.9736,
+      "epochs": 1.0,
+      "minutes": 135.97,
+      "model": "Qwen/Qwen3.8-27B"
+    },
+    {
+      "fold": 3,
+      "n_val": 5000,
+      "accuracy": 0.9752,
+      "epochs": 1.0,
+      "minutes": 136.16,
+      "model": "Qwen/Qwen3.8-27B"
+    },
+    {
+      "fold": 4,
+      "n_val": 5000,
+      "accuracy": 0.9708,
+      "epochs": 1.0,
+      "minutes": 136.29,
+      "model": "Qwen/Qwen3.8-27B"
+    }
+  ],
+  "per_fold_mean": 0.9729599999999999,
+  "per_fold_sd": 0.0020513410247932928,
+  "model": "Qwen/Qwen3.8-27B",
+  "accuracy_by_length": [
+    {
+      "bucket": "<100",
+      "n": 3037,
+      "accuracy": 0.9700362199539019,
+      "wilson_95": [
+        0.9633536770224638,
+        0.9755311369711359
+      ]
+    },
+    {
+      "bucket": "100-199",
+      "n": 11702,
+      "accuracy": 0.9724833361818492,
+      "wilson_95": [
+        0.9693608001323816,
+        0.9752957549332532
+      ]
+    },
+    {
+      "bucket": "200-299",
+      "n": 4636,
+      "accuracy": 0.9708800690250216,
+      "wilson_95": [
+        0.9656363318664685,
+        0.9753440671195659
+      ]
+    },
+    {
+      "bucket": "300-499",
+      "n": 3635,
+      "accuracy": 0.9744154057771665,
+      "wilson_95": [
+        0.9687599471284528,
+        0.9790691642019221
+      ]
+    },
+    {
+      "bucket": ">=500",
+      "n": 1990,
+      "accuracy": 0.9824120603015075,
+      "wilson_95": [
+        0.9756383374487432,
+        0.9873268248790965
+      ]
+    }
+  ],
+  "test": {
+    "positive_share": 0.49748,
+    "unanimous_share": 0.97968,
+    "mean_fold_correlation": 0.9964356219637017,
+    "min_fold_correlation": 0.9941546288968016
+  },
+  "submission": {
+    "rows": 25000,
+    "positive": 12437,
+    "negative": 12563,
+    "sha256": "0a13ddadf62879592a5ae5c3d449fff0a2b616747005a078de44930f0799478a"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-12",
+  "command": "python code/run_pipeline.py --data-dir data --output <tmp> --stage cv (resumed with --time-budget-min)",
+  "candidates": 42,
+  "folds": 5,
+  "max_abs_diff_vs_results_cv_results_csv": 0.0,
+  "best_candidate": {
+    "name": "nblr_3g_C1_b0.75",
+    "family": "nblr",
+    "ngram_max": 3,
+    "C": 1.0,
+    "beta": 0.75,
+    "alpha": 1.0
+  },
+  "oof_scores_best_max_abs_diff": 0.0,
+  "figures_byte_identical": [
+    "class_balance.png",
+    "review_length.png",
+    "polar_ngrams.png",
+    "model_comparison.png",
+    "nblr_grid.png",
+    "confusion_matrix.png",
+    "error_analysis.png",
+    "learning_curve.png",
+    "top_features.png",
+    "test_score_distribution.png"
+  ],
+  "eda_json_identical": true,
+  "environment": {
+    "python": "3.10.12",
+    "platform": "Linux-6.8.0-138-generic-aarch64-with-glibc2.35",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "seed": 42,
+    "stage": "cv",
+    "quick": false,
+    "plots": true,
+    "train_sha256": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+    "test_sha256": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f",
+    "total_seconds": 135.46771025657654,
+    "command": [
+      "code/run_pipeline.py",
+      "--data-dir",
+      "data",
+      "--output",
+      "/tmp/fullcv",
+      "--stage",
+      "cv",
+      "--time-budget-min",
+      "2.4"
+    ]
+  },
+  "final_stage_with_plots_submission_sha256": "6cd29733998ab0d22f5b27ea1b76257200cb3e56c3fd33db07f0857e82c42732"
+}

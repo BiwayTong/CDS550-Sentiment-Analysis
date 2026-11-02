@@ -1,0 +1,135 @@
+{
+  "mode": "train",
+  "command": "code\\finetune_transformer.py --data-dir data --output runs\\retrain-screen-lr7e6 --preset large --max-len 512 --head 128 --lr 7e-6 --epochs 3 --eval-every 0.25 --seed 42 --split-seed 42 --fresh-start",
+  "preset": "large",
+  "config": {
+    "model": "microsoft/deberta-v3-large",
+    "lr": 7e-06,
+    "epochs": 3.0,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "grad_ckpt": false
+  },
+  "fresh_start": true,
+  "verify_fresh": true,
+  "init_checkpoint": "microsoft/deberta-v3-large",
+  "best_checkpoint": "runs\\retrain-screen-lr7e6\\best_model",
+  "max_len": 512,
+  "head": 128,
+  "seed": 42,
+  "split_seed": 42,
+  "holdout_frac": 0.1,
+  "n_train": 22500,
+  "n_holdout": 2500,
+  "folds": 0,
+  "fold": null,
+  "split": {
+    "mode": "holdout",
+    "holdout_frac": 0.1
+  },
+  "holdout_accuracy": 0.9668,
+  "test_positive_share": 0.50144,
+  "submission": {
+    "rows": 25000,
+    "positive": 12536,
+    "negative": 12464,
+    "sha256": "045e6d42995138d18f3bc58d84cd5b024145b0a2ff17f1d8aae45cccd5e6180b"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5090 D v2",
+    "vram_gb": 23.9,
+    "amp": "torch.bfloat16"
+  },
+  "data_sha256": {
+    "train.csv": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+    "test.csv": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f"
+  },
+  "total_minutes": 20.08,
+  "history": [
+    {
+      "update": 0,
+      "epoch": 0.0,
+      "holdout_accuracy": 0.4988,
+      "phase": "fresh_initialisation"
+    },
+    {
+      "update": 352,
+      "epoch": 0.25,
+      "holdout_accuracy": 0.9452
+    },
+    {
+      "update": 704,
+      "epoch": 0.5,
+      "holdout_accuracy": 0.9572
+    },
+    {
+      "update": 1056,
+      "epoch": 0.751,
+      "holdout_accuracy": 0.9588
+    },
+    {
+      "update": 1407,
+      "epoch": 1.0,
+      "holdout_accuracy": 0.964
+    },
+    {
+      "update": 1408,
+      "epoch": 1.001,
+      "holdout_accuracy": 0.964
+    },
+    {
+      "update": 1760,
+      "epoch": 1.251,
+      "holdout_accuracy": 0.9644
+    },
+    {
+      "update": 2112,
+      "epoch": 1.501,
+      "holdout_accuracy": 0.964
+    },
+    {
+      "update": 2464,
+      "epoch": 1.751,
+      "holdout_accuracy": 0.9644
+    },
+    {
+      "update": 2814,
+      "epoch": 2.0,
+      "holdout_accuracy": 0.9612
+    },
+    {
+      "update": 2816,
+      "epoch": 2.001,
+      "holdout_accuracy": 0.9624
+    },
+    {
+      "update": 3168,
+      "epoch": 2.252,
+      "holdout_accuracy": 0.964
+    },
+    {
+      "update": 3520,
+      "epoch": 2.502,
+      "holdout_accuracy": 0.964
+    },
+    {
+      "update": 3872,
+      "epoch": 2.752,
+      "holdout_accuracy": 0.9668
+    },
+    {
+      "update": 4221,
+      "epoch": 3.0,
+      "holdout_accuracy": 0.9668
+    }
+  ],
+  "timings": {
+    "train_minutes": 18.1,
+    "predict_minutes": 1.62
+  }
+}

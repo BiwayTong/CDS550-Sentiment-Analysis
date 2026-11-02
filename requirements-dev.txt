@@ -1,0 +1,4 @@
+# Optional validation only; training and the core unittest suite remain NumPy-only.
+-r requirements.txt
+scipy>=1.10
+scikit-learn>=1.5

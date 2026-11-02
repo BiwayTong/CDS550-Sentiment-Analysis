@@ -1,0 +1,113 @@
+{
+  "a": "runs\\cv-deberta\\deberta-f0",
+  "b": "runs\\cv-qwen3\\qwen3-f0",
+  "names": [
+    "deberta",
+    "qwen3"
+  ],
+  "n_common": 5000,
+  "ensemble": "s-mean",
+  "accuracy": {
+    "deberta": 0.9656,
+    "qwen3": 0.9684,
+    "s-mean": 0.9672,
+    "z-mean (comparison)": 0.9674,
+    "rank-mean (comparison)": 0.9672
+  },
+  "mcnemar": {
+    "qwen3_vs_deberta": {
+      "a_only": 57,
+      "b_only": 43,
+      "n_discordant": 100,
+      "p_value": 0.19334790449564246
+    },
+    "s-mean_vs_deberta": {
+      "a_only": 24,
+      "b_only": 16,
+      "n_discordant": 40,
+      "p_value": 0.26818725105476915
+    },
+    "s-mean_vs_qwen3": {
+      "a_only": 27,
+      "b_only": 33,
+      "n_discordant": 60,
+      "p_value": 0.5189580031896518
+    }
+  },
+  "margin_correlation": 0.9852356570071178,
+  "rank_correlation": 0.9341534266014009,
+  "both_wrong": 115,
+  "by_length": [
+    {
+      "bucket": "<100",
+      "n": 635,
+      "deberta": 0.9716535433070866,
+      "qwen3": 0.9748031496062992,
+      "s-mean": 0.9716535433070866
+    },
+    {
+      "bucket": "100-199",
+      "n": 2329,
+      "deberta": 0.9630742808072134,
+      "qwen3": 0.9626449119793903,
+      "s-mean": 0.9630742808072134
+    },
+    {
+      "bucket": "200-299",
+      "n": 865,
+      "deberta": 0.9641618497109826,
+      "qwen3": 0.9630057803468208,
+      "s-mean": 0.9653179190751445
+    },
+    {
+      "bucket": "300-499",
+      "n": 758,
+      "deberta": 0.9683377308707124,
+      "qwen3": 0.9802110817941952,
+      "s-mean": 0.974934036939314
+    },
+    {
+      "bucket": ">=500",
+      "n": 413,
+      "deberta": 0.9685230024213075,
+      "qwen3": 0.9806295399515739,
+      "s-mean": 0.9733656174334141
+    }
+  ],
+  "explicit_rating": {
+    "n_with_rating": 422,
+    "n_rule_applies": 403,
+    "deberta": 0.9715639810426541,
+    "qwen3": 0.9786729857819905,
+    "s-mean": 0.9739336492890995,
+    "rule_accuracy_where_it_applies": 0.967741935483871,
+    "s_errors_rule_would_fix": 1,
+    "s_correct_rule_would_break": 7
+  },
+  "duplicates": {
+    "train_duplicate_groups": 102,
+    "train_groups_same_label": 102,
+    "test_reviews_with_identical_train_review": 230
+  },
+  "validation_margin_mean_sd": {
+    "deberta": [
+      -0.010146484375,
+      7.038592110189928
+    ],
+    "qwen3": [
+      -0.2576763702392578,
+      7.196878144020601
+    ]
+  },
+  "a_test": "ensemble-deberta\\test_predictions.csv",
+  "b_test": "runs\\cv-qwen3\\qwen3-f0\\test_predictions.csv",
+  "test_agreement": 0.98316,
+  "test_changed_vs_a": 178,
+  "test_disagrees_with_identical_train_review": 5,
+  "submission": {
+    "rows": 25000,
+    "positive": 12528,
+    "negative": 12472,
+    "sha256": "f4072381f4d7a2ada559ed953bf1e0666d9a9a09d974594d995eef6bcab5a8ce"
+  }
+}

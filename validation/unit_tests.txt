@@ -1,0 +1,29 @@
+test_confusion_matrix_accepts_numeric_binary_types (test_sentiment.EvaluationTests.test_confusion_matrix_accepts_numeric_binary_types) ... ok
+test_confusion_matrix_rejects_mismatched_nonbinary_or_nonvector_labels (test_sentiment.EvaluationTests.test_confusion_matrix_rejects_mismatched_nonbinary_or_nonvector_labels) ... ok
+test_metrics_match_known_confusion_matrix (test_sentiment.EvaluationTests.test_metrics_match_known_confusion_matrix) ... ok
+test_metrics_zero_denominators_return_finite_zero (test_sentiment.EvaluationTests.test_metrics_zero_denominators_return_finite_zero) ... ok
+test_stratified_folds_partition_data_without_leakage (test_sentiment.EvaluationTests.test_stratified_folds_partition_data_without_leakage) ... ok
+test_cleaning_tokenisation_and_ngrams (test_sentiment.FeatureTests.test_cleaning_tokenisation_and_ngrams) ... ok
+test_document_frequency_pruning_and_deterministic_order (test_sentiment.FeatureTests.test_document_frequency_pruning_and_deterministic_order) ... ok
+test_single_pass_fit_transform_preserves_separate_fit_transform_results (test_sentiment.FeatureTests.test_single_pass_fit_transform_preserves_separate_fit_transform_results) ... ok
+test_tfidf_matches_dense_definition_and_keeps_empty_rows (test_sentiment.FeatureTests.test_tfidf_matches_dense_definition_and_keeps_empty_rows) ... ok
+test_logistic_fit_snapshot_is_reused_released_and_fresh_on_refit (test_sentiment.ModelTests.test_logistic_fit_snapshot_is_reused_released_and_fresh_on_refit) ... ok
+test_logistic_regression_matches_independent_one_dimensional_optimum (test_sentiment.ModelTests.test_logistic_regression_matches_independent_one_dimensional_optimum) ... ok
+test_naive_bayes_matches_manual_likelihoods (test_sentiment.ModelTests.test_naive_bayes_matches_manual_likelihoods) ... ok
+test_nb_lr_ratio_uses_presence_and_probabilities_match_scores (test_sentiment.ModelTests.test_nb_lr_ratio_uses_presence_and_probabilities_match_scores) ... ok
+test_count_vectorizer_matches_sklearn_with_project_token_pattern (test_sentiment.SklearnReferenceTests.test_count_vectorizer_matches_sklearn_with_project_token_pattern) ... skipped 'optional reference tests require scipy and scikit-learn'
+test_default_log1p_tf_matches_explicit_sklearn_compatibility_mode (test_sentiment.SklearnReferenceTests.test_default_log1p_tf_matches_explicit_sklearn_compatibility_mode) ... skipped 'optional reference tests require scipy and scikit-learn'
+test_linear_tf_matches_sklearn_with_equal_parameters (test_sentiment.SklearnReferenceTests.test_linear_tf_matches_sklearn_with_equal_parameters) ... skipped 'optional reference tests require scipy and scikit-learn'
+test_logistic_regression_matches_sklearn_coefficients_and_predictions (test_sentiment.SklearnReferenceTests.test_logistic_regression_matches_sklearn_coefficients_and_predictions) ... skipped 'optional reference tests require scipy and scikit-learn'
+test_metrics_match_sklearn (test_sentiment.SklearnReferenceTests.test_metrics_match_sklearn) ... skipped 'optional reference tests require scipy and scikit-learn'
+test_naive_bayes_matches_sklearn_probabilities (test_sentiment.SklearnReferenceTests.test_naive_bayes_matches_sklearn_probabilities) ... skipped 'optional reference tests require scipy and scikit-learn'
+test_nb_lr_matches_scipy_and_sklearn_composition (test_sentiment.SklearnReferenceTests.test_nb_lr_matches_scipy_and_sklearn_composition) ... skipped 'optional reference tests require scipy and scikit-learn'
+test_empty_matrix_products_keep_declared_dimensions (test_sentiment.SparseMatrixTests.test_empty_matrix_products_keep_declared_dimensions) ... ok
+test_fit_local_float64_products_match_current_matrix_values (test_sentiment.SparseMatrixTests.test_fit_local_float64_products_match_current_matrix_values) ... ok
+test_products_and_masked_column_sums_match_dense_algebra (test_sentiment.SparseMatrixTests.test_products_and_masked_column_sums_match_dense_algebra) ... ok
+test_scaling_normalisation_and_value_transforms (test_sentiment.SparseMatrixTests.test_scaling_normalisation_and_value_transforms) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.023s
+
+OK (skipped=7)

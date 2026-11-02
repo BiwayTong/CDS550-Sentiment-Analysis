@@ -1,0 +1,259 @@
+{
+  "n_holdout": 2500,
+  "deberta": {
+    "accuracy": 0.9672,
+    "precision_positive": 0.9717969379532635,
+    "recall_positive": 0.9624900239425379,
+    "f1_positive": 0.9671210906174819,
+    "confusion_matrix": [
+      [
+        1212,
+        35
+      ],
+      [
+        47,
+        1206
+      ]
+    ]
+  },
+  "nblr": {
+    "accuracy": 0.9176,
+    "precision_positive": 0.9017651573292402,
+    "recall_positive": 0.9377494014365523,
+    "f1_positive": 0.9194053208137715,
+    "confusion_matrix": [
+      [
+        1119,
+        128
+      ],
+      [
+        78,
+        1175
+      ]
+    ]
+  },
+  "ensemble_mean_in_sample": {
+    "accuracy": 0.968,
+    "precision_positive": 0.9680766161213089,
+    "recall_positive": 0.9680766161213089,
+    "f1_positive": 0.9680766161213089,
+    "confusion_matrix": [
+      [
+        1207,
+        40
+      ],
+      [
+        40,
+        1213
+      ]
+    ]
+  },
+  "deberta_accuracy_95ci": [
+    0.9594697928534016,
+    0.9734965737090836
+  ],
+  "agreement": {
+    "both_correct": 2260,
+    "deberta_only": 158,
+    "nblr_only": 34,
+    "both_wrong": 48
+  },
+  "margin_correlation": 0.7905839172016876,
+  "accuracy_by_length": [
+    {
+      "words": "0-127",
+      "n": 670,
+      "deberta": 0.9716417910447761,
+      "nblr": 0.9328358208955224
+    },
+    {
+      "words": "128-255",
+      "n": 1064,
+      "deberta": 0.9652255639097744,
+      "nblr": 0.9201127819548872
+    },
+    {
+      "words": "256-511",
+      "n": 550,
+      "deberta": 0.9654545454545455,
+      "nblr": 0.9018181818181819
+    },
+    {
+      "words": "512+",
+      "n": 216,
+      "deberta": 0.9675925925925926,
+      "nblr": 0.8981481481481481
+    }
+  ],
+  "deberta_accuracy_by_confidence": [
+    {
+      "quintile": 1,
+      "accuracy": 0.8623481781376519
+    },
+    {
+      "quintile": 2,
+      "accuracy": 0.9834710743801653
+    },
+    {
+      "quintile": 3,
+      "accuracy": 0.9955849889624724
+    },
+    {
+      "quintile": 4,
+      "accuracy": 0.9945945945945946
+    },
+    {
+      "quintile": 5,
+      "accuracy": 0.9980544747081712
+    }
+  ],
+  "deberta_errors_in_lowest_confidence_quintile": 68,
+  "deberta_errors": 82,
+  "training_history": [
+    {
+      "update": 704,
+      "epoch": 0.5,
+      "holdout_accuracy": 0.956
+    },
+    {
+      "update": 1407,
+      "epoch": 1.0,
+      "holdout_accuracy": 0.9592
+    },
+    {
+      "update": 1408,
+      "epoch": 1.001,
+      "holdout_accuracy": 0.96
+    },
+    {
+      "update": 2112,
+      "epoch": 1.501,
+      "holdout_accuracy": 0.9672
+    },
+    {
+      "update": 2814,
+      "epoch": 2.0,
+      "holdout_accuracy": 0.9648
+    }
+  ],
+  "run": {
+    "config": {
+      "model": "microsoft/deberta-v3-large",
+      "lr": 1e-05,
+      "epochs": 2,
+      "batch_size": 8,
+      "grad_accum": 2,
+      "grad_ckpt": false
+    },
+    "max_len": 512,
+    "head": 128,
+    "seed": 42,
+    "n_train": 22500,
+    "n_holdout": 2500,
+    "environment": {
+      "python": "3.12.10",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.6",
+      "device": "cuda",
+      "gpu": "NVIDIA GeForce RTX 5090 D v2",
+      "vram_gb": 23.9,
+      "amp": "torch.bfloat16"
+    },
+    "timings": {
+      "train_minutes": 13.12,
+      "predict_minutes": 1.61
+    }
+  },
+  "ensemble": {
+    "options_estimated_accuracy": {
+      "single:deberta": 0.9672,
+      "mean": 0.96824,
+      "stack": 0.9685600000000001
+    },
+    "choice": "mean",
+    "weights": {
+      "deberta": 0.5,
+      "nblr": 0.5
+    },
+    "submission_sha256": "9aeaa207af76e1e597e10854d4553fc53650d58dd4f6d83da1ebb039e3710cd5"
+  },
+  "deberta_submission": {
+    "rows": 25000,
+    "positive": 12286,
+    "negative": 12714,
+    "sha256": "cc4f338f6ed409c9df9042a8d83849b1a0f95fef8e5f2ccb127aad4b40b88c8f"
+  },
+  "hardest_deberta_errors": [
+    {
+      "id": 16785,
+      "label": "negative",
+      "margin": 7.73,
+      "nblr_score": 7.97,
+      "text_start": "This sleek, sexy movie is a must-see. Only upon multiple viewings can one truly understand the uniqueness of this film. Personally I enjoy the narrator for his intelligent, no subject left untouched, style of narration. The introduction grips you right away, and holds you at the edge of your seat th"
+    },
+    {
+      "id": 11560,
+      "label": "positive",
+      "margin": -7.64,
+      "nblr_score": -5.22,
+      "text_start": "E. Elias Merhige's existentialist experiment in the enduring is definitely one hell of a boring watch. This is like something Alexander de Large was forced to watch in \"A Clockwork Orange.\" But, despite just how unwatchable this film really is, it is a success.<br /><br />If you are reading this and"
+    },
+    {
+      "id": 8600,
+      "label": "positive",
+      "margin": -7.62,
+      "nblr_score": -3.57,
+      "text_start": "This film Evil Breed: The legend of samhain contains very little thought or effort. It is ridiculed with specs of ultra fast \"slasher\" style death and plain disgusting acts of death. The acting was rated a D as the actors show very little ability, and the stupidity of them in the film is too questio"
+    },
+    {
+      "id": 21584,
+      "label": "negative",
+      "margin": 7.61,
+      "nblr_score": 2.78,
+      "text_start": "Some of the greatest and most loved horror movies have a wicked sense of humour, but when a film comes along that isn't as original as the \"classics\" but just goes at it for laughs then a bunch of po-faced, wanna-be critics completely slag it off. This film made me laugh aloud several times, this is"
+    },
+    {
+      "id": 4819,
+      "label": "positive",
+      "margin": -7.45,
+      "nblr_score": -4.1,
+      "text_start": "Bears about as much resemblance to Dean Koontz's novel as Jessica Simpson does to a rocket scientist. If you've read the book, I suggest you put it as far out of your mind as possible before watching the movie.<br /><br />Watchers is your typical \"Boy meets dog, dog turns out to be super-intelligent"
+    },
+    {
+      "id": 7445,
+      "label": "negative",
+      "margin": 7.44,
+      "nblr_score": 1.91,
+      "text_start": "This solid little horror film is actually one of Renny Harlin's best. The story is pretty routine stuff, but the atmosphere is what really makes it come alive; in fact, the ghost story is almost an afterthought. The real horror comes from the prison setting itself, and Renny H. spares no detail in s"
+    },
+    {
+      "id": 15335,
+      "label": "positive",
+      "margin": -7.28,
+      "nblr_score": -2.9,
+      "text_start": "After seeing Meredith in \"Beyond the Prairie\" I had to buy another film with her staring. I cannot believe how she let herself into this teenage flick. It's best to watch this one with the sound off but just concentrate on Meredith as she moves across the screen. Save your money until the TV network"
+    },
+    {
+      "id": 4199,
+      "label": "positive",
+      "margin": -7.25,
+      "nblr_score": -2.45,
+      "text_start": "I work in a library and expected to like this movie when it came out 5 years ago. Well I liked Parker Posey a lot (she's a wonderful actress) and Omar Townsend was really cute as her boyfriend (he couldn't act but when you look like him who cares?) but the movie was bad. It wasn't funny or cute or m"
+    },
+    {
+      "id": 6041,
+      "label": "negative",
+      "margin": 7.22,
+      "nblr_score": 5.19,
+      "text_start": "The five or so really good westerns that Mann made are unequaled as an ensemble in Hollywood. Even John Ford never made that many with so much quality. The curious thing about them all is how uneven they are. Ford's My Darling Clementine is worth about two and a half of any of them. Or at least two."
+    },
+    {
+      "id": 19193,
+      "label": "positive",
+      "margin": -7.06,
+      "nblr_score": -1.93,
+      "text_start": "Of course, seeing a few boom mikes doesn't mean anything, does it? Lord, Rudy Ray Moore and D'Urville Martin really put this one together didn't they? I laughed a lot, as often happens in these types of movies, but I don't know what I was supposed to laugh at because I laughed at so many other thing"
+    }
+  ]
+}

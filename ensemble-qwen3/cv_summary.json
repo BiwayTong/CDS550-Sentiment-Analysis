@@ -1,0 +1,138 @@
+{
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_folds": 5,
+  "n_oof": 25000,
+  "oof_accuracy": 0.97024,
+  "oof_correct": 24256,
+  "oof_wilson_95": [
+    0.9680602690443351,
+    0.9722752352407346
+  ],
+  "oof_se": 0.0010746970252122226,
+  "per_fold": [
+    {
+      "fold": 0,
+      "n_val": 5000,
+      "accuracy": 0.9684,
+      "epochs": 1.0,
+      "minutes": 69.82,
+      "model": "Qwen/Qwen3-8B-Base"
+    },
+    {
+      "fold": 1,
+      "n_val": 5000,
+      "accuracy": 0.9698,
+      "epochs": 1.0,
+      "minutes": 69.35,
+      "model": "Qwen/Qwen3-8B-Base"
+    },
+    {
+      "fold": 2,
+      "n_val": 5000,
+      "accuracy": 0.9736,
+      "epochs": 1.0,
+      "minutes": 69.24,
+      "model": "Qwen/Qwen3-8B-Base"
+    },
+    {
+      "fold": 3,
+      "n_val": 5000,
+      "accuracy": 0.9718,
+      "epochs": 1.0,
+      "minutes": 69.33,
+      "model": "Qwen/Qwen3-8B-Base"
+    },
+    {
+      "fold": 4,
+      "n_val": 5000,
+      "accuracy": 0.9676,
+      "epochs": 1.0,
+      "minutes": 69.21,
+      "model": "Qwen/Qwen3-8B-Base"
+    }
+  ],
+  "per_fold_mean": 0.9702400000000001,
+  "per_fold_sd": 0.0024633310780323415,
+  "model": "Qwen/Qwen3-8B-Base",
+  "stage2_holdout": {
+    "file": "runs\\deberta\\holdout_predictions.csv",
+    "n": 2500,
+    "accuracy": 0.9672,
+    "fold_accuracy_on_same_rows": 0.9692,
+    "wilson_95": [
+      0.9616743340925274,
+      0.9752858953405165
+    ],
+    "mcnemar": {
+      "a_only": 27,
+      "b_only": 22,
+      "n_discordant": 49,
+      "p_value": 0.5681724128491652
+    }
+  },
+  "accuracy_by_length": [
+    {
+      "bucket": "<100",
+      "n": 3037,
+      "accuracy": 0.9667434968719131,
+      "wilson_95": [
+        0.9597534893709743,
+        0.972554198079763
+      ]
+    },
+    {
+      "bucket": "100-199",
+      "n": 11702,
+      "accuracy": 0.9691505725517006,
+      "wilson_95": [
+        0.9658604497053349,
+        0.9721327655795873
+      ]
+    },
+    {
+      "bucket": "200-299",
+      "n": 4636,
+      "accuracy": 0.9691544434857636,
+      "wilson_95": [
+        0.9637758132174697,
+        0.9737561921854735
+      ]
+    },
+    {
+      "bucket": "300-499",
+      "n": 3635,
+      "accuracy": 0.9722145804676754,
+      "wilson_95": [
+        0.9663525548757964,
+        0.977079552748784
+      ]
+    },
+    {
+      "bucket": ">=500",
+      "n": 1990,
+      "accuracy": 0.9809045226130654,
+      "wilson_95": [
+        0.9738994726062622,
+        0.9860564235893032
+      ]
+    }
+  ],
+  "test": {
+    "positive_share": 0.49956,
+    "unanimous_share": 0.98036,
+    "mean_fold_correlation": 0.9959218578590944,
+    "min_fold_correlation": 0.9929235199363043
+  },
+  "submission": {
+    "rows": 25000,
+    "positive": 12489,
+    "negative": 12511,
+    "sha256": "ede9d5c0baf8f8b250280ebced14f5aa0b640c3de2fd25b645f99ed59e280add"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "models": [
+    "deberta",
+    "electra"
+  ],
+  "oof_rows": 25000,
+  "choice": "single:deberta",
+  "single_oof_accuracy": {
+    "deberta": 0.96728,
+    "electra": 0.96412
+  },
+  "options_estimated_accuracy": {
+    "single:deberta": 0.96728,
+    "z-mean": 0.966772,
+    "mean": 0.96724,
+    "rank-mean": 0.96704,
+    "stack": 0.9677680000000001
+  },
+  "standard_error": 0.0011258202769536532,
+  "weights": {
+    "deberta": 1.0
+  },
+  "oof_margin_correlation": [
+    [
+      1.0,
+      0.9838
+    ],
+    [
+      0.9838,
+      1.0
+    ]
+  ],
+  "test_positive_share": 0.50168,
+  "submission_sha256": "a1ad4709f61085c592e03692aef98822cd50e82b16d86a01a9d24d9a41203add"
+}

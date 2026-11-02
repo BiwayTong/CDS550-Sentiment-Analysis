@@ -1,0 +1,23 @@
+{
+  "runs": [
+    "runs\\deberta",
+    "runs\\deberta-large-s1",
+    "runs\\deberta-large-s2",
+    "runs\\roberta-large"
+  ],
+  "n_test": 25000,
+  "n_agreeing": 24159,
+  "n_kept": 16911,
+  "kept_fraction": 0.67644,
+  "keep_frac": 0.7,
+  "min_prob": 0.5,
+  "threshold_negative": 0.00044844136867219005,
+  "threshold_positive": 0.9988254762367117,
+  "kept_positive_share": 0.4967181124711726,
+  "model_disagreement_with_pseudo": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

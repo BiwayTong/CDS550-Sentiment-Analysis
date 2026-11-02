@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-12",
+  "unit_tests": {
+    "discovered": 24,
+    "passed": 17,
+    "skipped": 7,
+    "skip_reasons": [
+      "optional reference tests require scipy and scikit-learn"
+    ]
+  },
+  "full_final_prediction_sha256": "6cd29733998ab0d22f5b27ea1b76257200cb3e56c3fd33db07f0857e82c42732",
+  "full_final_prediction_byte_identical": true,
+  "full_eda_matches_with_roundoff_tolerance": true,
+  "eda_roundoff_fields": {
+    "words_per_review_train": [
+      {
+        "count": 25000.0,
+        "mean": 231.61304,
+        "std": 173.19610058407406,
+        "min": 6.0,
+        "25%": 126.0,
+        "50%": 173.0,
+        "75%": 280.0,
+        "max": 2278.0
+      },
+      {
+        "count": 25000.0,
+        "mean": 231.61304,
+        "std": 173.1961005840741,
+        "min": 6.0,
+        "25%": 126.0,
+        "50%": 173.0,
+        "75%": 280.0,
+        "max": 2278.0
+      }
+    ]
+  },
+  "source_sha256": {
+    "code/run_pipeline.py": "16ed5793bb419fc9d772e20dd13a4bd94864b24a3266382477a673014fd5e958",
+    "code/sentiment/__init__.py": "a33b61fffcb6f5858d5ed1c11c4bb4b2004db130a2df57013e421d31103a5de1",
+    "code/sentiment/evaluation.py": "07787b0c452ab757a73fcfebd908a9e60f6e2b84772d3e0d5ea34399872fd1c7",
+    "code/sentiment/features.py": "0e93cee544772abe4d168a71dcc2afe9c3338b11d092dda96032c5e9b0ba478b",
+    "code/sentiment/models.py": "8aa73dbf6cf9eb6cf394f33288c9aafee880b17c36daa72c177585e47a645f0f",
+    "code/sentiment/plots.py": "5f2ca492fc4ffc84bf853a7cd4d7ba3b99719ac4cc377e514d3268ab72f12164",
+    "code/sentiment/sparse.py": "7ea2c14ce98e19ad648bfa04ba7a997f62ea57bdac2537137586dfb018eaa5bf",
+    "tests/test_sentiment.py": "55a5543700fb4ca72592c3b4d40a86ee1ed83a333ee716a383f1d48e6d43272b"
+  },
+  "limitations": [
+    "SciPy/sklearn reference checks were skipped: the libraries are absent and dependency installation approval review could not complete.",
+    "Figures were checked by AST comparison only; matplotlib rendering was not executed in this environment.",
+    "The full 42-candidate CV was not repeated; the original results were retained, with a 500-review quick-grid CV and cache-resume check.",
+    "Vectorizer timings are a single local run and its peak memory increases slightly."
+  ]
+}

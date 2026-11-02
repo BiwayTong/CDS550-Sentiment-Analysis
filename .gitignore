@@ -1,0 +1,41 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+.idea/
+.vscode/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Course datasets and trained weights
+data/*
+!data/README.md
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.zip
+
+# Local reruns
+results_rerun/
+
+# Root-level generated submission
+/submission.csv
+
+# Competition outputs are kept local at every directory depth
+submission*
+sample_submission*
+test_predictions*
+test_margins*
+test_scores*
+pseudo.csv

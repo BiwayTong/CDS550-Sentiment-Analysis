@@ -1,0 +1,107 @@
+{
+  "models": [
+    "deberta",
+    "qwen3",
+    "qwen3_14b",
+    "mistral_24b",
+    "qwen38_27b"
+  ],
+  "folders": [
+    "deberta=ensemble-deberta",
+    "qwen3=ensemble-qwen3",
+    "qwen3_14b=ensemble-qwen3-14b",
+    "mistral_24b=ensemble-mistral-24b",
+    "qwen38_27b=ensemble-qwen38-27b"
+  ],
+  "oof_rows": 25000,
+  "choice": "s-mean",
+  "single_oof_accuracy": {
+    "deberta": 0.96728,
+    "qwen3": 0.97024,
+    "qwen3_14b": 0.97152,
+    "mistral_24b": 0.97248,
+    "qwen38_27b": 0.97296
+  },
+  "options_estimated_accuracy": {
+    "single:qwen38_27b": 0.97296,
+    "s-mean": 0.97344,
+    "stack": 0.973924,
+    "z-mean": 0.973664,
+    "mean": 0.9734,
+    "rank-mean": 0.97328
+  },
+  "paired_vs_best_single": {
+    "s-mean": {
+      "a_only": 115,
+      "b_only": 103,
+      "n_discordant": 218,
+      "p_value": 0.4563410015092822
+    },
+    "z-mean": {
+      "a_only": 124,
+      "b_only": 106,
+      "n_discordant": 230,
+      "p_value": 0.2622670291041895
+    },
+    "mean": {
+      "a_only": 114,
+      "b_only": 103,
+      "n_discordant": 217,
+      "p_value": 0.49732674594131726
+    },
+    "rank-mean": {
+      "a_only": 108,
+      "b_only": 100,
+      "n_discordant": 208,
+      "p_value": 0.6275255016466619
+    }
+  },
+  "standard_error": 0.0010169477154701716,
+  "weights": {
+    "deberta": 0.0276408833001539,
+    "qwen3": 0.02700171406886176,
+    "qwen3_14b": 0.028760743138016288,
+    "mistral_24b": 0.023402407707182753,
+    "qwen38_27b": 0.028577811515773363
+  },
+  "oof_margin_correlation": [
+    [
+      1.0,
+      0.9831,
+      0.9837,
+      0.979,
+      0.9824
+    ],
+    [
+      0.9831,
+      1.0,
+      0.9918,
+      0.982,
+      0.9895
+    ],
+    [
+      0.9837,
+      0.9918,
+      1.0,
+      0.9884,
+      0.993
+    ],
+    [
+      0.979,
+      0.982,
+      0.9884,
+      1.0,
+      0.9867
+    ],
+    [
+      0.9824,
+      0.9895,
+      0.993,
+      0.9867,
+      1.0
+    ]
+  ],
+  "test_positive_share": 0.49972,
+  "test_predictions_changed_vs_best_single": 170,
+  "submission_sha256": "ad9bd72fe92086ddf6ab6f63acc867c9073ede71b8dae02b39b1149eeeae69f6"
+}

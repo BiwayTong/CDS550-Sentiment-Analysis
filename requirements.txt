@@ -1,0 +1,5 @@
+# Only three third-party packages are needed; the learning algorithms are implemented in code/sentiment/.
+# Tested with Python 3.10 (numpy 2.2.6, pandas 2.3.3, matplotlib 3.10.9). Any numpy >= 1.24 / pandas >= 2.0 works.
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7

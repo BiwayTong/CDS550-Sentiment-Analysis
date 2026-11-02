@@ -1,0 +1,76 @@
+{
+  "config": {
+    "lr": 0.0001,
+    "epochs": 1.0,
+    "seqs_per_update": 16,
+    "token_budget": 4096,
+    "max_micro": 16,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "model": "Qwen/Qwen3-8B-Base",
+    "grad_ckpt": true,
+    "max_len": 1024,
+    "head": 256,
+    "head_lr_mult": 2.0,
+    "label_smoothing": 0.0,
+    "weight_decay": 0.01,
+    "warmup": 0.05,
+    "prompt_version": "v1"
+  },
+  "preset": "qwen3-8b",
+  "split": {
+    "mode": "kfold",
+    "folds": 5,
+    "fold": 2,
+    "split_seed": 42
+  },
+  "verbalizer": [
+    " negative",
+    " positive"
+  ],
+  "verbalizer_ids": [
+    8225,
+    6785
+  ],
+  "prefix": "Movie review:\n",
+  "suffix": "\n\nQuestion: Overall, is this review of the movie positive or negative?\nAnswer:",
+  "bos_id": null,
+  "pad_id": 151643,
+  "hidden_size": 4096,
+  "seed": 42,
+  "updates": 1250,
+  "train_command": "code\\finetune_llm.py --data-dir data --output runs\\cv-qwen3\\qwen3-f2 --folds 5 --fold 2 --preset qwen3-8b --seed 42 --split-seed 42 --eval-every 0.5",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "peft": "0.18.1"
+  },
+  "history": [
+    {
+      "update": 0,
+      "epoch": 0.0,
+      "check_rows": 256,
+      "check_auc": 0.9803466796875,
+      "check_accuracy": 0.94140625,
+      "phase": "zero-shot"
+    },
+    {
+      "update": 625,
+      "epoch": 0.5,
+      "holdout_accuracy": 0.9718,
+      "holdout_auc": 0.9953026929435114
+    }
+  ],
+  "fingerprint": {
+    "zero_shot_auc": 0.9803466796875,
+    "zero_shot_accuracy": 0.94140625,
+    "check_rows": 256,
+    "skipped_updates": 0,
+    "oom_retries": 0
+  },
+  "timings": {
+    "train_minutes": 49.56,
+    "mid_training_eval_minutes": 4.63
+  }
+}

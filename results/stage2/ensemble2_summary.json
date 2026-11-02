@@ -1,0 +1,543 @@
+{
+  "n_holdout": 2500,
+  "models": [
+    "deberta",
+    "deberta-large-s1",
+    "deberta-large-s2",
+    "roberta-large",
+    "nblr"
+  ],
+  "runs": {
+    "deberta": {
+      "holdout_accuracy": 0.9672,
+      "errors": 82,
+      "holdout_accuracy_95ci": [
+        0.9594697928534016,
+        0.9734965737090836
+      ],
+      "test_positive_share": 0.49144,
+      "model": "microsoft/deberta-v3-large",
+      "seed": 42,
+      "best_epoch": 1.501,
+      "best_eval_during_training": 0.9672,
+      "history": [
+        {
+          "update": 704,
+          "epoch": 0.5,
+          "holdout_accuracy": 0.956
+        },
+        {
+          "update": 1407,
+          "epoch": 1.0,
+          "holdout_accuracy": 0.9592
+        },
+        {
+          "update": 1408,
+          "epoch": 1.001,
+          "holdout_accuracy": 0.96
+        },
+        {
+          "update": 2112,
+          "epoch": 1.501,
+          "holdout_accuracy": 0.9672
+        },
+        {
+          "update": 2814,
+          "epoch": 2.0,
+          "holdout_accuracy": 0.9648
+        }
+      ],
+      "train_minutes": 13.12,
+      "predict_minutes": 1.61,
+      "submission_sha256": "cc4f338f6ed409c9df9042a8d83849b1a0f95fef8e5f2ccb127aad4b40b88c8f"
+    },
+    "deberta-large-s1": {
+      "holdout_accuracy": 0.9672,
+      "errors": 82,
+      "holdout_accuracy_95ci": [
+        0.9594697928534016,
+        0.9734965737090836
+      ],
+      "test_positive_share": 0.50268,
+      "model": "microsoft/deberta-v3-large",
+      "seed": 1,
+      "best_epoch": 2.0,
+      "best_eval_during_training": 0.9672,
+      "history": [
+        {
+          "update": 704,
+          "epoch": 0.5,
+          "holdout_accuracy": 0.9604
+        },
+        {
+          "update": 1407,
+          "epoch": 1.0,
+          "holdout_accuracy": 0.9636
+        },
+        {
+          "update": 1408,
+          "epoch": 1.001,
+          "holdout_accuracy": 0.9632
+        },
+        {
+          "update": 2112,
+          "epoch": 1.501,
+          "holdout_accuracy": 0.966
+        },
+        {
+          "update": 2814,
+          "epoch": 2.0,
+          "holdout_accuracy": 0.9672
+        }
+      ],
+      "train_minutes": 21.49,
+      "predict_minutes": 1.66,
+      "submission_sha256": "2fbeb44ef685f09a431e9f56c9cc7573271a9f4d8010fa8180d7bde4b4664b42"
+    },
+    "deberta-large-s2": {
+      "holdout_accuracy": 0.962,
+      "errors": 95,
+      "holdout_accuracy_95ci": [
+        0.9537685504394047,
+        0.9688137726596282
+      ],
+      "test_positive_share": 0.49012,
+      "model": "microsoft/deberta-v3-large",
+      "seed": 2,
+      "best_epoch": 1.501,
+      "best_eval_during_training": 0.9628,
+      "history": [
+        {
+          "update": 704,
+          "epoch": 0.5,
+          "holdout_accuracy": 0.9576
+        },
+        {
+          "update": 1407,
+          "epoch": 1.0,
+          "holdout_accuracy": 0.9604
+        },
+        {
+          "update": 1408,
+          "epoch": 1.001,
+          "holdout_accuracy": 0.96
+        },
+        {
+          "update": 2112,
+          "epoch": 1.501,
+          "holdout_accuracy": 0.9628
+        },
+        {
+          "update": 2814,
+          "epoch": 2.0,
+          "holdout_accuracy": 0.9628
+        }
+      ],
+      "train_minutes": 11.23,
+      "predict_minutes": 1.63,
+      "submission_sha256": "9ebe2b4838c67e56d998a932c4375269f2bff8462f152ba3e25914b797ea608b"
+    },
+    "roberta-large": {
+      "holdout_accuracy": 0.9624,
+      "errors": 94,
+      "holdout_accuracy_95ci": [
+        0.9542056809645618,
+        0.9691754147085829
+      ],
+      "test_positive_share": 0.50224,
+      "model": "roberta-large",
+      "seed": 42,
+      "best_epoch": 2.0,
+      "best_eval_during_training": 0.9624,
+      "history": [
+        {
+          "update": 704,
+          "epoch": 0.5,
+          "holdout_accuracy": 0.9496
+        },
+        {
+          "update": 1407,
+          "epoch": 1.0,
+          "holdout_accuracy": 0.9556
+        },
+        {
+          "update": 1408,
+          "epoch": 1.001,
+          "holdout_accuracy": 0.9548
+        },
+        {
+          "update": 2112,
+          "epoch": 1.501,
+          "holdout_accuracy": 0.9608
+        },
+        {
+          "update": 2814,
+          "epoch": 2.0,
+          "holdout_accuracy": 0.9624
+        }
+      ],
+      "train_minutes": 6.15,
+      "predict_minutes": 0.57,
+      "submission_sha256": "3b12f90e24e5a0450ee95fc866470733c63eb746502eb113b61af07a853294a6"
+    },
+    "nblr": {
+      "holdout_accuracy": 0.9176,
+      "errors": 206,
+      "holdout_accuracy_95ci": [
+        0.9061695675228234,
+        0.927748999849809
+      ],
+      "test_positive_share": 0.5114,
+      "model": "NB-LR (Stage 1, out-of-fold)"
+    }
+  },
+  "margin_correlation": [
+    [
+      1.0,
+      0.9893,
+      0.9889,
+      0.9809,
+      0.7906
+    ],
+    [
+      0.9893,
+      1.0,
+      0.9898,
+      0.9848,
+      0.8024
+    ],
+    [
+      0.9889,
+      0.9898,
+      1.0,
+      0.9822,
+      0.7909
+    ],
+    [
+      0.9809,
+      0.9848,
+      0.9822,
+      1.0,
+      0.8079
+    ],
+    [
+      0.7906,
+      0.8024,
+      0.7909,
+      0.8079,
+      1.0
+    ]
+  ],
+  "ensemble": {
+    "choice": "mean",
+    "options_estimated_accuracy": {
+      "single:deberta": 0.9672,
+      "mean": 0.96904,
+      "stack": 0.96872
+    },
+    "weights": {
+      "deberta": 0.2,
+      "deberta-large-s1": 0.2,
+      "deberta-large-s2": 0.2,
+      "roberta-large": 0.2,
+      "nblr": 0.2
+    },
+    "submission_sha256": "90ef5e1f83edbd60d5a24f79c63d94dd95ed596f2753f755e84a57ffd7104dd9",
+    "in_sample_mean_accuracy": 0.9692
+  },
+  "agreement": {
+    "errors_of_ensemble_in_sample": 77,
+    "ensemble_vs_best_single": {
+      "best_single": "deberta",
+      "fixed_by_ensemble": 17,
+      "broken_by_ensemble": 12,
+      "mcnemar_exact_p": 0.45825831964612007
+    },
+    "wrong_in_all_transformer_runs": 49,
+    "wrong_in_all_models": 36,
+    "wrong_in_at_least_one_model": 278
+  },
+  "ablation_named": {
+    "all_models": {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "deberta-large-s2",
+        "roberta-large",
+        "nblr"
+      ],
+      "mean_cv": 0.96904,
+      "stack_cv": 0.96872
+    },
+    "transformers_only": {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "deberta-large-s2",
+        "roberta-large"
+      ],
+      "mean_cv": 0.97,
+      "stack_cv": 0.9684799999999999
+    },
+    "deberta_runs_only": {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "deberta-large-s2"
+      ],
+      "mean_cv": 0.966,
+      "stack_cv": 0.9663999999999999
+    },
+    "deberta_seed42_plus_nblr": {
+      "models": [
+        "deberta",
+        "nblr"
+      ],
+      "mean_cv": 0.96824,
+      "stack_cv": 0.9685600000000001
+    }
+  },
+  "ablation_mean_cv_range": [
+    0.96136,
+    0.97
+  ],
+  "ablation_n_subsets": 26,
+  "ablation": [
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s1"
+      ],
+      "mean_cv": 0.966,
+      "stack_cv": 0.9671200000000001
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s2"
+      ],
+      "mean_cv": 0.9688800000000001,
+      "stack_cv": 0.9685599999999999
+    },
+    {
+      "models": [
+        "deberta",
+        "roberta-large"
+      ],
+      "mean_cv": 0.96552,
+      "stack_cv": 0.9646399999999999
+    },
+    {
+      "models": [
+        "deberta",
+        "nblr"
+      ],
+      "mean_cv": 0.96824,
+      "stack_cv": 0.9685600000000001
+    },
+    {
+      "models": [
+        "deberta-large-s1",
+        "deberta-large-s2"
+      ],
+      "mean_cv": 0.9674400000000001,
+      "stack_cv": 0.9669599999999999
+    },
+    {
+      "models": [
+        "deberta-large-s1",
+        "roberta-large"
+      ],
+      "mean_cv": 0.96632,
+      "stack_cv": 0.9686400000000001
+    },
+    {
+      "models": [
+        "deberta-large-s1",
+        "nblr"
+      ],
+      "mean_cv": 0.9671999999999998,
+      "stack_cv": 0.96624
+    },
+    {
+      "models": [
+        "deberta-large-s2",
+        "roberta-large"
+      ],
+      "mean_cv": 0.9632799999999999,
+      "stack_cv": 0.96584
+    },
+    {
+      "models": [
+        "deberta-large-s2",
+        "nblr"
+      ],
+      "mean_cv": 0.9669599999999999,
+      "stack_cv": 0.96304
+    },
+    {
+      "models": [
+        "roberta-large",
+        "nblr"
+      ],
+      "mean_cv": 0.96136,
+      "stack_cv": 0.9618399999999999
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "deberta-large-s2"
+      ],
+      "mean_cv": 0.966,
+      "stack_cv": 0.9663999999999999
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "roberta-large"
+      ],
+      "mean_cv": 0.96976,
+      "stack_cv": 0.96792
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "nblr"
+      ],
+      "mean_cv": 0.9681599999999999,
+      "stack_cv": 0.9688000000000001
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s2",
+        "roberta-large"
+      ],
+      "mean_cv": 0.966,
+      "stack_cv": 0.9666399999999999
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s2",
+        "nblr"
+      ],
+      "mean_cv": 0.9667999999999999,
+      "stack_cv": 0.96752
+    },
+    {
+      "models": [
+        "deberta",
+        "roberta-large",
+        "nblr"
+      ],
+      "mean_cv": 0.966,
+      "stack_cv": 0.9667199999999999
+    },
+    {
+      "models": [
+        "deberta-large-s1",
+        "deberta-large-s2",
+        "roberta-large"
+      ],
+      "mean_cv": 0.968,
+      "stack_cv": 0.96728
+    },
+    {
+      "models": [
+        "deberta-large-s1",
+        "deberta-large-s2",
+        "nblr"
+      ],
+      "mean_cv": 0.968,
+      "stack_cv": 0.9671200000000001
+    },
+    {
+      "models": [
+        "deberta-large-s1",
+        "roberta-large",
+        "nblr"
+      ],
+      "mean_cv": 0.96624,
+      "stack_cv": 0.9680799999999999
+    },
+    {
+      "models": [
+        "deberta-large-s2",
+        "roberta-large",
+        "nblr"
+      ],
+      "mean_cv": 0.96344,
+      "stack_cv": 0.9644
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "deberta-large-s2",
+        "roberta-large"
+      ],
+      "mean_cv": 0.97,
+      "stack_cv": 0.9684799999999999
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "deberta-large-s2",
+        "nblr"
+      ],
+      "mean_cv": 0.9680799999999999,
+      "stack_cv": 0.96792
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "roberta-large",
+        "nblr"
+      ],
+      "mean_cv": 0.9688000000000001,
+      "stack_cv": 0.96904
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s2",
+        "roberta-large",
+        "nblr"
+      ],
+      "mean_cv": 0.9670399999999999,
+      "stack_cv": 0.96632
+    },
+    {
+      "models": [
+        "deberta-large-s1",
+        "deberta-large-s2",
+        "roberta-large",
+        "nblr"
+      ],
+      "mean_cv": 0.96832,
+      "stack_cv": 0.9680799999999999
+    },
+    {
+      "models": [
+        "deberta",
+        "deberta-large-s1",
+        "deberta-large-s2",
+        "roberta-large",
+        "nblr"
+      ],
+      "mean_cv": 0.96904,
+      "stack_cv": 0.96872
+    }
+  ],
+  "test": {
+    "positive_share": 0.49928,
+    "differs_from_best_single": 290,
+    "differs_from_previous_ensemble": 246
+  }
+}

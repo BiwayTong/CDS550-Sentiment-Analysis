@@ -1,0 +1,87 @@
+[22:46:11] ======================================================================
+[22:46:11] command: code\finetune_transformer.py --data-dir data --output runs\retrain-screen-head256 --preset large --max-len 512 --head 256 --lr 1e-5 --epochs 2 --eval-every 0.25 --seed 42 --split-seed 42 --fresh-start
+[22:46:11] device=cuda (NVIDIA GeForce RTX 5090 D v2, 23.9 GB) torch=2.11.0+cu128 transformers=4.57.6 preset=large amp=torch.bfloat16
+[22:46:11] config: {"model": "microsoft/deberta-v3-large", "lr": 1e-05, "epochs": 2.0, "batch_size": 8, "grad_accum": 2, "grad_ckpt": false}
+[22:46:12] train=22,500 holdout=2,500 test=25,000 max_len=512 head=256 split={'mode': 'holdout', 'holdout_frac': 0.1}
+[22:46:21] tokenised in 5s; mean length 257 tokens, 3,006 of 25,000 training reviews truncated (head+tail)
+[22:46:23] memory probe ok: batch 8 x accumulation 2, grad_ckpt=False, peak 15.7 GB
+[22:46:33]   FRESH-START baseline: hold-out accuracy 49.8800% at update 0
+[22:46:34]   initial baseline saved -> runs\retrain-screen-head256\best_model
+[22:46:34] 1407 updates/epoch, 2814 updates total, warm-up 281, eval every 352
+[22:46:45] epoch 1 update 50/2814 loss 0.6886 lr 1.81e-06 elapsed 0.2 min ETA 10.4 min
+[22:46:56] epoch 1 update 100/2814 loss 0.6813 lr 3.59e-06 elapsed 0.4 min ETA 10.4 min
+[22:47:08] epoch 1 update 150/2814 loss 0.4361 lr 5.37e-06 elapsed 0.6 min ETA 10.3 min
+[22:47:20] epoch 1 update 200/2814 loss 0.2223 lr 7.15e-06 elapsed 0.8 min ETA 10.1 min
+[22:47:32] epoch 1 update 250/2814 loss 0.1881 lr 8.93e-06 elapsed 1.0 min ETA 9.9 min
+[22:47:43] epoch 1 update 300/2814 loss 0.1951 lr 9.92e-06 elapsed 1.2 min ETA 9.7 min
+[22:47:54] epoch 1 update 350/2814 loss 0.1734 lr 9.73e-06 elapsed 1.3 min ETA 9.5 min
+[22:48:04]   HOLD-OUT accuracy 95.0000% at update 352 (epoch 0.25)
+[22:48:05]   new best -> saved runs\retrain-screen-head256\best_model
+[22:48:15] epoch 1 update 400/2814 loss 0.1530 lr 9.53e-06 elapsed 1.7 min ETA 10.2 min
+[22:48:26] epoch 1 update 450/2814 loss 0.1789 lr 9.33e-06 elapsed 1.9 min ETA 9.9 min
+[22:48:37] epoch 1 update 500/2814 loss 0.2480 lr 9.14e-06 elapsed 2.1 min ETA 9.5 min
+[22:48:49] epoch 1 update 550/2814 loss 0.1228 lr 8.94e-06 elapsed 2.3 min ETA 9.3 min
+[22:49:01] epoch 1 update 600/2814 loss 0.1773 lr 8.74e-06 elapsed 2.5 min ETA 9.1 min
+[22:49:12] epoch 1 update 650/2814 loss 0.1778 lr 8.54e-06 elapsed 2.6 min ETA 8.8 min
+[22:49:23] epoch 1 update 700/2814 loss 0.1069 lr 8.35e-06 elapsed 2.8 min ETA 8.5 min
+[22:49:33]   HOLD-OUT accuracy 95.6000% at update 704 (epoch 0.50)
+[22:49:34]   new best -> saved runs\retrain-screen-head256\best_model
+[22:49:44] epoch 1 update 750/2814 loss 0.1466 lr 8.15e-06 elapsed 3.2 min ETA 8.7 min
+[22:49:55] epoch 1 update 800/2814 loss 0.1454 lr 7.95e-06 elapsed 3.4 min ETA 8.5 min
+[22:50:06] epoch 1 update 850/2814 loss 0.1767 lr 7.75e-06 elapsed 3.5 min ETA 8.2 min
+[22:50:18] epoch 1 update 900/2814 loss 0.1217 lr 7.56e-06 elapsed 3.7 min ETA 8.0 min
+[22:50:30] epoch 1 update 950/2814 loss 0.1376 lr 7.36e-06 elapsed 3.9 min ETA 7.7 min
+[22:50:41] epoch 1 update 1000/2814 loss 0.1151 lr 7.16e-06 elapsed 4.1 min ETA 7.5 min
+[22:50:52] epoch 1 update 1050/2814 loss 0.1555 lr 6.96e-06 elapsed 4.3 min ETA 7.2 min
+[22:51:02]   HOLD-OUT accuracy 96.1600% at update 1056 (epoch 0.75)
+[22:51:03]   new best -> saved runs\retrain-screen-head256\best_model
+[22:51:13] epoch 1 update 1100/2814 loss 0.1733 lr 6.77e-06 elapsed 4.7 min ETA 7.3 min
+[22:51:25] epoch 1 update 1150/2814 loss 0.1618 lr 6.57e-06 elapsed 4.9 min ETA 7.0 min
+[22:51:37] epoch 1 update 1200/2814 loss 0.1137 lr 6.37e-06 elapsed 5.1 min ETA 6.8 min
+[22:51:48] epoch 1 update 1250/2814 loss 0.1403 lr 6.17e-06 elapsed 5.2 min ETA 6.5 min
+[22:51:59] epoch 1 update 1300/2814 loss 0.1377 lr 5.98e-06 elapsed 5.4 min ETA 6.3 min
+[22:52:10] epoch 1 update 1350/2814 loss 0.1234 lr 5.78e-06 elapsed 5.6 min ETA 6.1 min
+[22:52:21] epoch 1 update 1400/2814 loss 0.1259 lr 5.58e-06 elapsed 5.8 min ETA 5.8 min
+[22:52:31]   HOLD-OUT accuracy 96.1600% at update 1407 (epoch 1.00)
+[22:52:41]   HOLD-OUT accuracy 96.2000% at update 1408 (epoch 1.00)
+[22:52:42]   new best -> saved runs\retrain-screen-head256\best_model
+[22:52:51] epoch 2 update 1450/2814 loss 0.1003 lr 5.38e-06 elapsed 6.3 min ETA 5.9 min
+[22:53:02] epoch 2 update 1500/2814 loss 0.0956 lr 5.19e-06 elapsed 6.5 min ETA 5.7 min
+[22:53:14] epoch 2 update 1550/2814 loss 0.0881 lr 4.99e-06 elapsed 6.7 min ETA 5.4 min
+[22:53:25] epoch 2 update 1600/2814 loss 0.1259 lr 4.79e-06 elapsed 6.9 min ETA 5.2 min
+[22:53:37] epoch 2 update 1650/2814 loss 0.0976 lr 4.60e-06 elapsed 7.1 min ETA 5.0 min
+[22:53:47] epoch 2 update 1700/2814 loss 0.1021 lr 4.40e-06 elapsed 7.2 min ETA 4.7 min
+[22:53:59] epoch 2 update 1750/2814 loss 0.0904 lr 4.20e-06 elapsed 7.4 min ETA 4.5 min
+[22:54:10]   HOLD-OUT accuracy 96.2800% at update 1760 (epoch 1.25)
+[22:54:11]   new best -> saved runs\retrain-screen-head256\best_model
+[22:54:20] epoch 2 update 1800/2814 loss 0.0840 lr 4.00e-06 elapsed 7.8 min ETA 4.4 min
+[22:54:31] epoch 2 update 1850/2814 loss 0.0853 lr 3.81e-06 elapsed 8.0 min ETA 4.1 min
+[22:54:42] epoch 2 update 1900/2814 loss 0.1025 lr 3.61e-06 elapsed 8.1 min ETA 3.9 min
+[22:54:53] epoch 2 update 1950/2814 loss 0.0998 lr 3.41e-06 elapsed 8.3 min ETA 3.7 min
+[22:55:04] epoch 2 update 2000/2814 loss 0.0667 lr 3.21e-06 elapsed 8.5 min ETA 3.5 min
+[22:55:17] epoch 2 update 2050/2814 loss 0.0720 lr 3.02e-06 elapsed 8.7 min ETA 3.2 min
+[22:55:27] epoch 2 update 2100/2814 loss 0.0540 lr 2.82e-06 elapsed 8.9 min ETA 3.0 min
+[22:55:39]   HOLD-OUT accuracy 96.3600% at update 2112 (epoch 1.50)
+[22:55:40]   new best -> saved runs\retrain-screen-head256\best_model
+[22:55:48] epoch 2 update 2150/2814 loss 0.0708 lr 2.62e-06 elapsed 9.2 min ETA 2.9 min
+[22:56:00] epoch 2 update 2200/2814 loss 0.0965 lr 2.42e-06 elapsed 9.4 min ETA 2.6 min
+[22:56:13] epoch 2 update 2250/2814 loss 0.0681 lr 2.23e-06 elapsed 9.7 min ETA 2.4 min
+[22:56:25] epoch 2 update 2300/2814 loss 0.0790 lr 2.03e-06 elapsed 9.9 min ETA 2.2 min
+[22:56:36] epoch 2 update 2350/2814 loss 0.0983 lr 1.83e-06 elapsed 10.0 min ETA 2.0 min
+[22:56:47] epoch 2 update 2400/2814 loss 0.0613 lr 1.63e-06 elapsed 10.2 min ETA 1.8 min
+[22:56:58] epoch 2 update 2450/2814 loss 0.0773 lr 1.44e-06 elapsed 10.4 min ETA 1.5 min
+[22:57:10]   HOLD-OUT accuracy 96.4400% at update 2464 (epoch 1.75)
+[22:57:11]   new best -> saved runs\retrain-screen-head256\best_model
+[22:57:19] epoch 2 update 2500/2814 loss 0.0724 lr 1.24e-06 elapsed 10.8 min ETA 1.4 min
+[22:57:30] epoch 2 update 2550/2814 loss 0.0539 lr 1.04e-06 elapsed 10.9 min ETA 1.1 min
+[22:57:41] epoch 2 update 2600/2814 loss 0.0541 lr 8.45e-07 elapsed 11.1 min ETA 0.9 min
+[22:57:53] epoch 2 update 2650/2814 loss 0.0659 lr 6.47e-07 elapsed 11.3 min ETA 0.7 min
+[22:58:04] epoch 2 update 2700/2814 loss 0.1129 lr 4.50e-07 elapsed 11.5 min ETA 0.5 min
+[22:58:14] epoch 2 update 2750/2814 loss 0.0619 lr 2.53e-07 elapsed 11.7 min ETA 0.3 min
+[22:58:26] epoch 2 update 2800/2814 loss 0.0690 lr 5.53e-08 elapsed 11.9 min ETA 0.1 min
+[22:58:38]   HOLD-OUT accuracy 96.4800% at update 2814 (epoch 2.00)
+[22:58:39]   new best -> saved runs\retrain-screen-head256\best_model
+[22:58:39] training finished in 12.09 min; best hold-out accuracy 96.4800%
+[23:00:17] best checkpoint: hold-out accuracy 96.5200%; test positive share 0.4995
+[23:00:17] wrote runs\retrain-screen-head256\submission.csv sha256=30ee71045da93614ad0bc8d6550fdc570ff58b7dae7062058d96f48e4a064ca1
+[23:00:17] done in 14.1 min -> runs\retrain-screen-head256

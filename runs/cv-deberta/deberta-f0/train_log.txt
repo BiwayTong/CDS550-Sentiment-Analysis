@@ -1,0 +1,70 @@
+[13:22:28] ======================================================================
+[13:22:28] command: code\finetune_transformer.py --data-dir data --output runs\cv-deberta\deberta-f0 --folds 5 --fold 0 --preset auto --seed 42 --split-seed 42 --max-len 512 --head 128
+[13:22:28] device=cuda (NVIDIA GeForce RTX 5090 D v2, 23.9 GB) torch=2.11.0+cu128 transformers=4.57.6 preset=large amp=torch.bfloat16
+[13:22:28] config: {"model": "microsoft/deberta-v3-large", "lr": 1e-05, "epochs": 2, "batch_size": 8, "grad_accum": 2, "grad_ckpt": false}
+[13:22:28] train=20,000 holdout=5,000 test=25,000 max_len=512 head=128 split={'mode': 'kfold', 'folds': 5, 'fold': 0}
+[13:22:36] tokenised in 5s; mean length 257 tokens, 3,006 of 25,000 training reviews truncated (head+tail)
+[13:22:38] memory probe ok: batch 8 x accumulation 2, grad_ckpt=False, peak 15.7 GB
+[13:22:38] 1250 updates/epoch, 2500 updates total, warm-up 250, eval every 625
+[13:22:54] epoch 1 update 50/2500 loss 0.6980 lr 2.04e-06 elapsed 0.3 min ETA 13.2 min
+[13:23:11] epoch 1 update 100/2500 loss 0.6730 lr 4.04e-06 elapsed 0.6 min ETA 13.4 min
+[13:23:28] epoch 1 update 150/2500 loss 0.3512 lr 6.04e-06 elapsed 0.8 min ETA 13.2 min
+[13:23:44] epoch 1 update 200/2500 loss 0.1941 lr 8.04e-06 elapsed 1.1 min ETA 12.8 min
+[13:24:04] epoch 1 update 250/2500 loss 0.1971 lr 1.00e-05 elapsed 1.4 min ETA 13.0 min
+[13:24:21] epoch 1 update 300/2500 loss 0.1342 lr 9.78e-06 elapsed 1.7 min ETA 12.6 min
+[13:24:43] epoch 1 update 350/2500 loss 0.1679 lr 9.56e-06 elapsed 2.1 min ETA 12.8 min
+[13:25:01] epoch 1 update 400/2500 loss 0.1949 lr 9.33e-06 elapsed 2.4 min ETA 12.5 min
+[13:25:20] epoch 1 update 450/2500 loss 0.1928 lr 9.11e-06 elapsed 2.7 min ETA 12.3 min
+[13:25:36] epoch 1 update 500/2500 loss 0.1259 lr 8.89e-06 elapsed 3.0 min ETA 11.9 min
+[13:25:55] epoch 1 update 550/2500 loss 0.1817 lr 8.67e-06 elapsed 3.3 min ETA 11.6 min
+[13:26:14] epoch 1 update 600/2500 loss 0.1360 lr 8.44e-06 elapsed 3.6 min ETA 11.4 min
+[13:26:52]   HOLD-OUT accuracy 94.6600% at update 625 (epoch 0.50)
+[13:26:53]   new best -> saved runs\cv-deberta\deberta-f0\best_model
+[13:27:02] epoch 1 update 650/2500 loss 0.1612 lr 8.22e-06 elapsed 4.4 min ETA 12.6 min
+[13:27:28] epoch 1 update 700/2500 loss 0.1554 lr 8.00e-06 elapsed 4.8 min ETA 12.4 min
+[13:27:43] epoch 1 update 750/2500 loss 0.1305 lr 7.78e-06 elapsed 5.1 min ETA 11.9 min
+[13:27:59] epoch 1 update 800/2500 loss 0.1598 lr 7.56e-06 elapsed 5.4 min ETA 11.4 min
+[13:28:18] epoch 1 update 850/2500 loss 0.1703 lr 7.33e-06 elapsed 5.7 min ETA 11.0 min
+[13:28:34] epoch 1 update 900/2500 loss 0.1030 lr 7.11e-06 elapsed 5.9 min ETA 10.6 min
+[13:28:56] epoch 1 update 950/2500 loss 0.1303 lr 6.89e-06 elapsed 6.3 min ETA 10.3 min
+[13:29:14] epoch 1 update 1000/2500 loss 0.1629 lr 6.67e-06 elapsed 6.6 min ETA 9.9 min
+[13:29:30] epoch 1 update 1050/2500 loss 0.1473 lr 6.44e-06 elapsed 6.9 min ETA 9.5 min
+[13:29:47] epoch 1 update 1100/2500 loss 0.1396 lr 6.22e-06 elapsed 7.2 min ETA 9.1 min
+[13:30:03] epoch 1 update 1150/2500 loss 0.1404 lr 6.00e-06 elapsed 7.4 min ETA 8.7 min
+[13:30:22] epoch 1 update 1200/2500 loss 0.1111 lr 5.78e-06 elapsed 7.7 min ETA 8.4 min
+[13:30:40] epoch 1 update 1250/2500 loss 0.1272 lr 5.56e-06 elapsed 8.0 min ETA 8.0 min
+[13:31:07]   HOLD-OUT accuracy 96.3800% at update 1250 (epoch 1.00)
+[13:31:07]   new best -> saved runs\cv-deberta\deberta-f0\best_model
+[13:31:26] epoch 2 update 1300/2500 loss 0.0912 lr 5.33e-06 elapsed 8.8 min ETA 8.1 min
+[13:31:47] epoch 2 update 1350/2500 loss 0.1192 lr 5.11e-06 elapsed 9.2 min ETA 7.8 min
+[13:32:05] epoch 2 update 1400/2500 loss 0.0550 lr 4.89e-06 elapsed 9.5 min ETA 7.4 min
+[13:32:25] epoch 2 update 1450/2500 loss 0.0776 lr 4.67e-06 elapsed 9.8 min ETA 7.1 min
+[13:32:46] epoch 2 update 1500/2500 loss 0.1080 lr 4.44e-06 elapsed 10.1 min ETA 6.8 min
+[13:33:04] epoch 2 update 1550/2500 loss 0.0646 lr 4.22e-06 elapsed 10.4 min ETA 6.4 min
+[13:33:21] epoch 2 update 1600/2500 loss 0.1000 lr 4.00e-06 elapsed 10.7 min ETA 6.0 min
+[13:33:40] epoch 2 update 1650/2500 loss 0.0788 lr 3.78e-06 elapsed 11.0 min ETA 5.7 min
+[13:34:01] epoch 2 update 1700/2500 loss 0.0632 lr 3.56e-06 elapsed 11.4 min ETA 5.4 min
+[13:34:18] epoch 2 update 1750/2500 loss 0.1101 lr 3.33e-06 elapsed 11.7 min ETA 5.0 min
+[13:34:34] epoch 2 update 1800/2500 loss 0.0793 lr 3.11e-06 elapsed 11.9 min ETA 4.6 min
+[13:34:51] epoch 2 update 1850/2500 loss 0.1133 lr 2.89e-06 elapsed 12.2 min ETA 4.3 min
+[13:35:26]   HOLD-OUT accuracy 96.5600% at update 1875 (epoch 1.50)
+[13:35:26]   new best -> saved runs\cv-deberta\deberta-f0\best_model
+[13:35:35] epoch 2 update 1900/2500 loss 0.0679 lr 2.67e-06 elapsed 13.0 min ETA 4.1 min
+[13:35:51] epoch 2 update 1950/2500 loss 0.0913 lr 2.44e-06 elapsed 13.2 min ETA 3.7 min
+[13:36:03] epoch 2 update 2000/2500 loss 0.0588 lr 2.22e-06 elapsed 13.4 min ETA 3.4 min
+[13:36:14] epoch 2 update 2050/2500 loss 0.0641 lr 2.00e-06 elapsed 13.6 min ETA 3.0 min
+[13:36:28] epoch 2 update 2100/2500 loss 0.0869 lr 1.78e-06 elapsed 13.8 min ETA 2.6 min
+[13:36:40] epoch 2 update 2150/2500 loss 0.1048 lr 1.56e-06 elapsed 14.0 min ETA 2.3 min
+[13:36:52] epoch 2 update 2200/2500 loss 0.0802 lr 1.33e-06 elapsed 14.2 min ETA 1.9 min
+[13:37:05] epoch 2 update 2250/2500 loss 0.0486 lr 1.11e-06 elapsed 14.5 min ETA 1.6 min
+[13:37:17] epoch 2 update 2300/2500 loss 0.0884 lr 8.89e-07 elapsed 14.7 min ETA 1.3 min
+[13:37:29] epoch 2 update 2350/2500 loss 0.0857 lr 6.67e-07 elapsed 14.9 min ETA 0.9 min
+[13:37:43] epoch 2 update 2400/2500 loss 0.0724 lr 4.44e-07 elapsed 15.1 min ETA 0.6 min
+[13:37:57] epoch 2 update 2450/2500 loss 0.0851 lr 2.22e-07 elapsed 15.3 min ETA 0.3 min
+[13:38:11] epoch 2 update 2500/2500 loss 0.0861 lr 0.00e+00 elapsed 15.6 min ETA 0.0 min
+[13:38:29]   HOLD-OUT accuracy 96.3200% at update 2500 (epoch 2.00)
+[13:38:29] training finished in 15.85 min; best hold-out accuracy 96.5600%
+[13:40:14] best checkpoint: hold-out accuracy 96.5600%; test positive share 0.4990
+[13:40:14] wrote runs\cv-deberta\deberta-f0\submission.csv sha256=6ba23668d608b8510291f3c00ac31ee62230729f08f20ccebd6ee7611ca061c3
+[13:40:14] note: in --folds mode this is the *single-fold* prediction. The submission to use is the average of the folds, written by code/run_cv.py or code/assemble_cv.py.
+[13:40:14] done in 17.77 min -> runs\cv-deberta\deberta-f0

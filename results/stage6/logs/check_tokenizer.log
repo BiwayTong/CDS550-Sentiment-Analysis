@@ -1,0 +1,5 @@
+tokenizer: LlamaTokenizerFast | vocabulary 131072 | bos 1 | pad None
+verbalizer ' negative' -> [8289]
+verbalizer ' positive' -> [6818]
+2004 of 2004 texts tokenised identically
+TOKENIZER OK

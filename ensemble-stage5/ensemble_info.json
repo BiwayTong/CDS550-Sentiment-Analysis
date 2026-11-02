@@ -1,0 +1,79 @@
+{
+  "models": [
+    "deberta",
+    "qwen3",
+    "qwen3_14b"
+  ],
+  "folders": [
+    "deberta=ensemble-deberta",
+    "qwen3=ensemble-qwen3",
+    "qwen3_14b=ensemble-qwen3-14b"
+  ],
+  "oof_rows": 25000,
+  "choice": "s-mean",
+  "single_oof_accuracy": {
+    "deberta": 0.96728,
+    "qwen3": 0.97024,
+    "qwen3_14b": 0.97152
+  },
+  "options_estimated_accuracy": {
+    "single:qwen3_14b": 0.97152,
+    "s-mean": 0.97204,
+    "stack": 0.972208,
+    "z-mean": 0.97148,
+    "mean": 0.972,
+    "rank-mean": 0.972
+  },
+  "paired_vs_best_single": {
+    "s-mean": {
+      "a_only": 131,
+      "b_only": 118,
+      "n_discordant": 249,
+      "p_value": 0.44703924382362525
+    },
+    "z-mean": {
+      "a_only": 129,
+      "b_only": 130,
+      "n_discordant": 259,
+      "p_value": 1.0
+    },
+    "mean": {
+      "a_only": 131,
+      "b_only": 119,
+      "n_discordant": 250,
+      "p_value": 0.4866918474841146
+    },
+    "rank-mean": {
+      "a_only": 108,
+      "b_only": 96,
+      "n_discordant": 204,
+      "p_value": 0.44128575924792734
+    }
+  },
+  "standard_error": 0.001042655041708426,
+  "weights": {
+    "deberta": 0.046068138833589824,
+    "qwen3": 0.045002856781436264,
+    "qwen3_14b": 0.04793457189669381
+  },
+  "oof_margin_correlation": [
+    [
+      1.0,
+      0.9831,
+      0.9837
+    ],
+    [
+      0.9831,
+      1.0,
+      0.9918
+    ],
+    [
+      0.9837,
+      0.9918,
+      1.0
+    ]
+  ],
+  "test_positive_share": 0.50012,
+  "test_predictions_changed_vs_best_single": 183,
+  "submission_sha256": "c8f1d7fc8c336216623906256b7b69720f19c1de9cf2e6a6f777f4e224c53383"
+}

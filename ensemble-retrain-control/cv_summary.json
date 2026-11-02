@@ -1,0 +1,138 @@
+{
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_folds": 5,
+  "n_oof": 25000,
+  "oof_accuracy": 0.96768,
+  "oof_correct": 24192,
+  "oof_wilson_95": [
+    0.9654148989040938,
+    0.9698013920197777
+  ],
+  "oof_se": 0.0011184885801830973,
+  "per_fold": [
+    {
+      "fold": 0,
+      "n_val": 5000,
+      "accuracy": 0.9646,
+      "epochs": 2.0,
+      "minutes": 24.97,
+      "model": "microsoft/deberta-v3-large"
+    },
+    {
+      "fold": 1,
+      "n_val": 5000,
+      "accuracy": 0.9686,
+      "epochs": 2.0,
+      "minutes": 14.82,
+      "model": "microsoft/deberta-v3-large"
+    },
+    {
+      "fold": 2,
+      "n_val": 5000,
+      "accuracy": 0.9696,
+      "epochs": 2.0,
+      "minutes": 29.73,
+      "model": "microsoft/deberta-v3-large"
+    },
+    {
+      "fold": 3,
+      "n_val": 5000,
+      "accuracy": 0.9706,
+      "epochs": 2.0,
+      "minutes": 24.15,
+      "model": "microsoft/deberta-v3-large"
+    },
+    {
+      "fold": 4,
+      "n_val": 5000,
+      "accuracy": 0.965,
+      "epochs": 2.0,
+      "minutes": 15.55,
+      "model": "microsoft/deberta-v3-large"
+    }
+  ],
+  "per_fold_mean": 0.96768,
+  "per_fold_sd": 0.002726169473822211,
+  "model": "microsoft/deberta-v3-large",
+  "stage2_holdout": {
+    "file": "runs\\retrain-screen-control\\holdout_predictions.csv",
+    "n": 2500,
+    "accuracy": 0.9684,
+    "fold_accuracy_on_same_rows": 0.966,
+    "wilson_95": [
+      0.9581503793747103,
+      0.9724196694654398
+    ],
+    "mcnemar": {
+      "a_only": 17,
+      "b_only": 23,
+      "n_discordant": 40,
+      "p_value": 0.42959050784338615
+    }
+  },
+  "accuracy_by_length": [
+    {
+      "bucket": "<100",
+      "n": 3037,
+      "accuracy": 0.9660849522555153,
+      "wilson_95": [
+        0.959035509325302,
+        0.9719567528168627
+      ]
+    },
+    {
+      "bucket": "100-199",
+      "n": 11702,
+      "accuracy": 0.9676978294308666,
+      "wilson_95": [
+        0.9643377870010517,
+        0.9707508955589448
+      ]
+    },
+    {
+      "bucket": "200-299",
+      "n": 4636,
+      "accuracy": 0.9654874892148404,
+      "wilson_95": [
+        0.9598354634385746,
+        0.9703687056002994
+      ]
+    },
+    {
+      "bucket": "300-499",
+      "n": 3635,
+      "accuracy": 0.9675378266850069,
+      "wilson_95": [
+        0.9612647819924749,
+        0.9728236927572915
+      ]
+    },
+    {
+      "bucket": ">=500",
+      "n": 1990,
+      "accuracy": 0.9753768844221106,
+      "wilson_95": [
+        0.9675970758932084,
+        0.981324844484017
+      ]
+    }
+  ],
+  "test": {
+    "positive_share": 0.50308,
+    "unanimous_share": 0.97108,
+    "mean_fold_correlation": 0.9926117993329869,
+    "min_fold_correlation": 0.987907628225396
+  },
+  "submission": {
+    "rows": 25000,
+    "positive": 12577,
+    "negative": 12423,
+    "sha256": "4df89334015c5e7ab0face997981fd2e7d0ef0a0125e2fc4659542380b59af12"
+  }
+}

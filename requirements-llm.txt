@@ -1,0 +1,8 @@
+# Stage 4 (decoder LLM + LoRA, code/finetune_llm.py) only. Install the CUDA build of PyTorch first
+# (see requirements-gpu.txt), then:
+#   py -3.12 -m pip install -r requirements-llm.txt
+# transformers is pinned to the version every GPU run of this project used, so pip cannot upgrade it.
+-r requirements-gpu.txt
+transformers==4.57.6
+peft==0.18.1
+accelerate>=0.30

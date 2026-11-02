@@ -1,0 +1,79 @@
+{
+  "config": {
+    "lr": 0.0001,
+    "epochs": 1.0,
+    "seqs_per_update": 16,
+    "token_budget": 4096,
+    "max_micro": 16,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "model": "mistralai/Mistral-Small-24B-Base-2501",
+    "grad_ckpt": true,
+    "tokenizer_kwargs": {
+      "fix_mistral_regex": true
+    },
+    "max_len": 1024,
+    "head": 256,
+    "head_lr_mult": 2.0,
+    "label_smoothing": 0.0,
+    "weight_decay": 0.01,
+    "warmup": 0.05,
+    "prompt_version": "v1"
+  },
+  "preset": "mistral-24b",
+  "split": {
+    "mode": "kfold",
+    "folds": 5,
+    "fold": 2,
+    "split_seed": 42
+  },
+  "verbalizer": [
+    " negative",
+    " positive"
+  ],
+  "verbalizer_ids": [
+    8289,
+    6818
+  ],
+  "prefix": "Movie review:\n",
+  "suffix": "\n\nQuestion: Overall, is this review of the movie positive or negative?\nAnswer:",
+  "bos_id": 1,
+  "pad_id": 2,
+  "hidden_size": 5120,
+  "seed": 42,
+  "updates": 1250,
+  "train_command": "code/finetune_llm.py --data-dir data --output runs/cv-mistral-24b/mistral-24b-f2 --folds 5 --fold 2 --preset mistral-24b --seed 42 --split-seed 42 --eval-every 0.5 --model mistralai/Mistral-Small-24B-Base-2501",
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.6",
+    "peft": "0.18.1"
+  },
+  "history": [
+    {
+      "update": 0,
+      "epoch": 0.0,
+      "check_rows": 256,
+      "check_auc": 0.9873046875,
+      "check_accuracy": 0.953125,
+      "phase": "zero-shot"
+    },
+    {
+      "update": 625,
+      "epoch": 0.5,
+      "holdout_accuracy": 0.9654,
+      "holdout_auc": 0.9944060477788352
+    }
+  ],
+  "fingerprint": {
+    "zero_shot_auc": 0.9873046875,
+    "zero_shot_accuracy": 0.953125,
+    "check_rows": 256,
+    "skipped_updates": 0,
+    "oom_retries": 0
+  },
+  "timings": {
+    "train_minutes": 62.8,
+    "mid_training_eval_minutes": 4.13
+  }
+}

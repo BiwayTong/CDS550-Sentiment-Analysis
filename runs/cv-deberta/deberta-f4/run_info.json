@@ -1,0 +1,76 @@
+{
+  "mode": "train",
+  "command": "code\\finetune_transformer.py --data-dir data --output runs\\cv-deberta\\deberta-f4 --folds 5 --fold 4 --preset auto --seed 42 --split-seed 42 --max-len 512 --head 128",
+  "preset": "large",
+  "config": {
+    "model": "microsoft/deberta-v3-large",
+    "lr": 1e-05,
+    "epochs": 2,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "grad_ckpt": false
+  },
+  "max_len": 512,
+  "head": 128,
+  "seed": 42,
+  "split_seed": 42,
+  "holdout_frac": 0.1,
+  "n_train": 20000,
+  "n_holdout": 5000,
+  "folds": 5,
+  "fold": 4,
+  "split": {
+    "mode": "kfold",
+    "folds": 5,
+    "fold": 4
+  },
+  "holdout_accuracy": 0.9642,
+  "test_positive_share": 0.50168,
+  "submission": {
+    "rows": 25000,
+    "positive": 12542,
+    "negative": 12458,
+    "sha256": "52dbb715c1c26bd485d6d813b821b2bc8c98e895ce44891d655af227e76fe6a9"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5090 D v2",
+    "vram_gb": 23.9,
+    "amp": "torch.bfloat16"
+  },
+  "data_sha256": {
+    "train.csv": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+    "test.csv": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f"
+  },
+  "total_minutes": 16.54,
+  "history": [
+    {
+      "update": 625,
+      "epoch": 0.5,
+      "holdout_accuracy": 0.9564
+    },
+    {
+      "update": 1250,
+      "epoch": 1.0,
+      "holdout_accuracy": 0.9612
+    },
+    {
+      "update": 1875,
+      "epoch": 1.5,
+      "holdout_accuracy": 0.9624
+    },
+    {
+      "update": 2500,
+      "epoch": 2.0,
+      "holdout_accuracy": 0.9642
+    }
+  ],
+  "timings": {
+    "train_minutes": 14.62,
+    "predict_minutes": 1.74
+  }
+}

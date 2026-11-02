@@ -1,0 +1,21 @@
+{
+  "python": "3.10.12",
+  "platform": "Linux-6.8.0-138-generic-aarch64-with-glibc2.35",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "seed": 42,
+  "stage": "all",
+  "quick": false,
+  "train_sha256": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+  "test_sha256": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f",
+  "total_seconds": 97.6600923538208,
+  "command": [
+    "run_pipeline.py",
+    "--data-dir",
+    "../data",
+    "--output",
+    "../results",
+    "--time-budget-min",
+    "1.6"
+  ]
+}

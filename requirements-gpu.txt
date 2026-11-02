@@ -1,0 +1,8 @@
+# Stage 2 (transformer fine-tuning) only. Install the CUDA build of PyTorch FIRST, matching your driver:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128   (required for RTX 50-series; fine for 30/40-series)
+# then:  pip install -r requirements-gpu.txt
+-r requirements.txt
+transformers>=4.40,<5
+sentencepiece>=0.1.99
+protobuf>=3.20
+tiktoken>=0.5

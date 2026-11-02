@@ -1,0 +1,76 @@
+{
+  "mode": "train",
+  "command": "code\\finetune_transformer.py --data-dir data --output runs\\cv-electra\\electra-f3 --folds 5 --fold 3 --preset large --seed 42 --split-seed 42 --max-len 512 --head 128 --model google/electra-large-discriminator",
+  "preset": "large",
+  "config": {
+    "model": "google/electra-large-discriminator",
+    "lr": 1e-05,
+    "epochs": 2,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "grad_ckpt": false
+  },
+  "max_len": 512,
+  "head": 128,
+  "seed": 42,
+  "split_seed": 42,
+  "holdout_frac": 0.1,
+  "n_train": 20000,
+  "n_holdout": 5000,
+  "folds": 5,
+  "fold": 3,
+  "split": {
+    "mode": "kfold",
+    "folds": 5,
+    "fold": 3
+  },
+  "holdout_accuracy": 0.9702,
+  "test_positive_share": 0.50176,
+  "submission": {
+    "rows": 25000,
+    "positive": 12544,
+    "negative": 12456,
+    "sha256": "a56063fb2b6e1d37b3426e08779977157c992dcf5f097a12977b8db309757025"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5090 D v2",
+    "vram_gb": 23.9,
+    "amp": "torch.bfloat16"
+  },
+  "data_sha256": {
+    "train.csv": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+    "test.csv": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f"
+  },
+  "total_minutes": 8.54,
+  "history": [
+    {
+      "update": 625,
+      "epoch": 0.5,
+      "holdout_accuracy": 0.9634
+    },
+    {
+      "update": 1250,
+      "epoch": 1.0,
+      "holdout_accuracy": 0.9652
+    },
+    {
+      "update": 1875,
+      "epoch": 1.5,
+      "holdout_accuracy": 0.9686
+    },
+    {
+      "update": 2500,
+      "epoch": 2.0,
+      "holdout_accuracy": 0.9698
+    }
+  ],
+  "timings": {
+    "train_minutes": 7.3,
+    "predict_minutes": 1.07
+  }
+}

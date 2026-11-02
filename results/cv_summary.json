@@ -1,0 +1,243 @@
+{
+  "n_candidates": 42,
+  "n_folds": 5,
+  "best_candidate": {
+    "name": "nblr_3g_C1_b0.75",
+    "family": "nblr",
+    "ngram_max": 3,
+    "C": 1.0,
+    "beta": 0.75,
+    "alpha": 1.0
+  },
+  "best_description": "NB-LR (uni+bi+tri, C=1.0, beta=0.75)",
+  "best_cv_mean_accuracy": 0.9178000453280019,
+  "best_cv_std_accuracy": 0.0035310836939574496,
+  "best_fold_accuracies": [
+    0.9134173165366927,
+    0.9190161967606478,
+    0.923,
+    0.9169833966793358,
+    0.9165833166633327
+  ],
+  "best_oof_metrics": {
+    "accuracy": 0.9178,
+    "precision_positive": 0.9068448450003884,
+    "recall_positive": 0.9316730523627076,
+    "f1_positive": 0.9190913028071971,
+    "specificity_negative": 0.9038646568313021,
+    "confusion_matrix": [
+      [
+        11273,
+        1199
+      ],
+      [
+        856,
+        11672
+      ]
+    ]
+  },
+  "accuracy_by_length": [
+    {
+      "bucket": "<100",
+      "n": 3037,
+      "accuracy": 0.9180111952584787
+    },
+    {
+      "bucket": "100-149",
+      "n": 6821,
+      "accuracy": 0.9217123588916581
+    },
+    {
+      "bucket": "150-199",
+      "n": 4881,
+      "accuracy": 0.9166154476541692
+    },
+    {
+      "bucket": "200-299",
+      "n": 4636,
+      "accuracy": 0.9109145815358067
+    },
+    {
+      "bucket": "300-499",
+      "n": 3635,
+      "accuracy": 0.9160935350756534
+    },
+    {
+      "bucket": "500+",
+      "n": 1990,
+      "accuracy": 0.9261306532663317
+    }
+  ],
+  "accuracy_by_confidence": [
+    {
+      "score_range": [
+        0.0003830246037484497,
+        1.5623539453055535
+      ],
+      "n": 5000,
+      "accuracy": 0.7108
+    },
+    {
+      "score_range": [
+        1.5623539453055535,
+        2.9415873672236432
+      ],
+      "n": 5000,
+      "accuracy": 0.9184
+    },
+    {
+      "score_range": [
+        2.9415873672236432,
+        4.411077307811533
+      ],
+      "n": 5000,
+      "accuracy": 0.9758
+    },
+    {
+      "score_range": [
+        4.411077307811533,
+        6.550406606019082
+      ],
+      "n": 5000,
+      "accuracy": 0.9878
+    },
+    {
+      "score_range": [
+        6.550406606019082,
+        35.057849927736186
+      ],
+      "n": 5000,
+      "accuracy": 0.9962
+    }
+  ],
+  "hardest_misclassified_examples": [
+    {
+      "id": 15544,
+      "true": "positive",
+      "pred": "negative",
+      "score": -10.215306678974672,
+      "excerpt": "\"2001: A Space Odyssey\" is set in 2001 and the main character is HAL. A computer. That's right, a computer who talks and thinks entirely on its own. This was made in 1968 and to think by 2001 it would be conceivable that computers would talk is a joke. If this was in 3064, a talking computer that had emotions and made its own decisions would be considered just as moronic as this. There is nothing "
+    },
+    {
+      "id": 13950,
+      "true": "negative",
+      "pred": "positive",
+      "score": 10.054384194793844,
+      "excerpt": "I went to see this 3 nights ago here in Cork, Ireland. It was the world premiere of it, in the tiny cinema in the Triskel Arts Centre as part of the Cork Film Festival.<br /><br />I found \"Strange Fruit\" to be an excellent movie. It is a bit rough around the edges, but for a low-budget movie that is to be expected! In general the acting (particularly from the main lead Kent Faulcon) is wonderful, "
+    },
+    {
+      "id": 20591,
+      "true": "positive",
+      "pred": "negative",
+      "score": -8.78134864954139,
+      "excerpt": "I have never seen such a movie before. I was on the edge of my seat and constantly laughing throughout the entire movie. I never thought such horrible acting existed it was all just too funny. The story behind the movie is decent but the movies scenes fail to portray them. I have never seen such a stupid movie in my life which is why it I think its worth watching. I give this movie 10 out of 10 fo"
+    },
+    {
+      "id": 9039,
+      "true": "negative",
+      "pred": "positive",
+      "score": 8.644088950923797,
+      "excerpt": "Lois Weber's film \"Hypocrites\" was and still kind of is a very bold and daring film. I enjoyed it and was very impressed by the filming and story of it. The priest sees the hypocrisy of the people in his church and tries to show them the \"naked\" truth. The people are appalled when he reveals the naked statue portraying truth, after failing to lead them to it and the few that did, help along the wa"
+    },
+    {
+      "id": 859,
+      "true": "negative",
+      "pred": "positive",
+      "score": 8.030514887687577,
+      "excerpt": "This has to be one of the all time greatest horror movies. Charles Band made the best movie of 96' in this little seen gem. Highly realistic and , incredibly stylised- with a visual flair David Fincher would envy, its not hard to see why Band went on to make such classics as 'Killjoy 2: Deliverance From Evil', 'The Regina Pierce Affair', 'Virgins of Sherwood Forest', and 'Timegate: Tales of the Sa"
+    },
+    {
+      "id": 16785,
+      "true": "negative",
+      "pred": "positive",
+      "score": 7.9677241495017395,
+      "excerpt": "This sleek, sexy movie is a must-see. Only upon multiple viewings can one truly understand the uniqueness of this film. Personally I enjoy the narrator for his intelligent, no subject left untouched, style of narration. The introduction grips you right away, and holds you at the edge of your seat throughout the film. He provides wonderful insight into the world of the trainables and allows the aud"
+    },
+    {
+      "id": 20942,
+      "true": "positive",
+      "pred": "negative",
+      "score": -7.753661988604952,
+      "excerpt": "I was really excited about seeing this film. I thought finally Australia had made a good film.. but I was wrong.<br /><br />This was the most pathetic attempt at a slasher film ever. I feel sorry for Molly Ringwald having to come all the way to Australia to make an awful movie.<br /><br />The acting was terrible (especially that Australian guy who was trying to speak in an American accent), and th"
+    },
+    {
+      "id": 13189,
+      "true": "positive",
+      "pred": "negative",
+      "score": -7.701739685887587,
+      "excerpt": "This film got terrible reviews but because it was offbeat and because critics don't usually \"get\" offbeat films, I thought I'd give it a try. Unfortunately they were largely right in this instance.<br /><br />The film just has an awkward feel too it that is most off putting. The sort of feel that is impossible to describe, but it's not a good one. To further confound things, the script is a dull a"
+    }
+  ],
+  "learning_curve": [
+    {
+      "train_size": 999,
+      "valid_accuracy": 0.8578284343131374,
+      "train_accuracy": 1.0
+    },
+    {
+      "train_size": 1999,
+      "valid_accuracy": 0.8734253149370126,
+      "train_accuracy": 1.0
+    },
+    {
+      "train_size": 3999,
+      "valid_accuracy": 0.8862227554489103,
+      "train_accuracy": 1.0
+    },
+    {
+      "train_size": 7999,
+      "valid_accuracy": 0.8986202759448111,
+      "train_accuracy": 0.9998749843730467
+    },
+    {
+      "train_size": 11999,
+      "valid_accuracy": 0.9052189562087583,
+      "train_accuracy": 1.0
+    },
+    {
+      "train_size": 15999,
+      "valid_accuracy": 0.911617676464707,
+      "train_accuracy": 1.0
+    },
+    {
+      "train_size": 19999,
+      "valid_accuracy": 0.9134173165366927,
+      "train_accuracy": 1.0
+    }
+  ],
+  "mean_features_by_ngram": {
+    "1": 43526.6,
+    "2": 365479.4,
+    "3": 749962.6
+  },
+  "best_per_family": [
+    {
+      "family": "nb",
+      "name": "nb_counts_3g",
+      "description": "Multinomial NB (counts, uni+bi+tri, alpha=1.0)",
+      "cv_mean_accuracy": 0.8863200603104024,
+      "cv_std_accuracy": 0.007162775166392868
+    },
+    {
+      "family": "nb_binary",
+      "name": "nb_binary_3g",
+      "description": "Multinomial NB (binary, uni+bi+tri, alpha=1.0)",
+      "cv_mean_accuracy": 0.8920400764832029,
+      "cv_std_accuracy": 0.007838366748531384
+    },
+    {
+      "family": "lr_tfidf",
+      "name": "lr_tfidf_3g_C16",
+      "description": "TF-IDF + Logistic Regression (uni+bi+tri, C=16.0)",
+      "cv_mean_accuracy": 0.9129998931727957,
+      "cv_std_accuracy": 0.00373669725004374
+    },
+    {
+      "family": "nblr",
+      "name": "nblr_3g_C1_b0.75",
+      "description": "NB-LR (uni+bi+tri, C=1.0, beta=0.75)",
+      "cv_mean_accuracy": 0.9178000453280019,
+      "cv_std_accuracy": 0.0035310836939574496
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "plotting_review": {
+    "method": "AST comparison after function-parameter substitutions",
+    "blocks_compared": 10,
+    "blocks_matching": [
+      "class_balance",
+      "review_length",
+      "polar_ngrams",
+      "model_comparison",
+      "confusion_matrix",
+      "error_analysis",
+      "learning_curve",
+      "nblr_grid",
+      "top_features",
+      "test_score_distribution"
+    ],
+    "matplotlib_runtime_executed": false,
+    "limitation": "matplotlib is absent from the bundled runtime; rendered figures were not checked"
+  },
+  "cv_smoke": {
+    "training_reviews": 500,
+    "source": "submission/data/train.csv first 500 rows",
+    "quick": true,
+    "candidates": 4,
+    "folds": 5,
+    "candidate_fold_fits": 20,
+    "plots": false,
+    "cache_reload_exact_in_memory_results": true,
+    "cache_reload_exact_summary": true,
+    "cache_files_unchanged_on_reload": true,
+    "learning_curve_points": 2,
+    "best_candidate": "nblr_2g_C0.3_b0.5",
+    "best_oof_accuracy": 0.798
+  },
+  "original_comparison": {
+    "method": "Original plotting-only statements stripped from temporary in-memory AST; original numerical code and models loaded in isolated package",
+    "eda_exact_equal": true,
+    "cv_non_timing_columns_exact_equal": true,
+    "fold_score_arrays_exact_equal": 20,
+    "best_oof_scores_exact_equal": true,
+    "cv_summary_and_learning_curve_exact_equal": true,
+    "timing_columns_compared": false
+  },
+  "tests": {
+    "total": 24,
+    "core_passed": 17,
+    "optional_sklearn_skipped": 7,
+    "added": "LR fit snapshot identity, release, mutable-data refit compared with fresh CSR"
+  }
+}

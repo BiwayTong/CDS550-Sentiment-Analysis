@@ -1,0 +1,36 @@
+{
+  "runs": [
+    "runs/deberta"
+  ],
+  "models": [
+    "deberta",
+    "nblr"
+  ],
+  "n_holdout": 2500,
+  "single_holdout_accuracy": {
+    "deberta": 0.9672,
+    "nblr": 0.9176
+  },
+  "options_estimated_accuracy": {
+    "single:deberta": 0.9672,
+    "mean": 0.96824,
+    "stack": 0.9685600000000001
+  },
+  "choice": "mean",
+  "weights": {
+    "deberta": 0.5,
+    "nblr": 0.5
+  },
+  "margin_correlation": [
+    [
+      1.0,
+      0.7906
+    ],
+    [
+      0.7906,
+      1.0
+    ]
+  ],
+  "test_positive_share": 0.49456,
+  "submission_sha256": "9aeaa207af76e1e597e10854d4553fc53650d58dd4f6d83da1ebb039e3710cd5"
+}

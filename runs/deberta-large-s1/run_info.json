@@ -1,0 +1,74 @@
+{
+  "mode": "train",
+  "command": "code/finetune_transformer.py --data-dir data --output runs/deberta-large-s1 --seed 1",
+  "preset": "large",
+  "config": {
+    "model": "microsoft/deberta-v3-large",
+    "lr": 1e-05,
+    "epochs": 2,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "grad_ckpt": false
+  },
+  "max_len": 512,
+  "head": 128,
+  "seed": 1,
+  "split_seed": 42,
+  "holdout_frac": 0.1,
+  "n_train": 22500,
+  "n_holdout": 2500,
+  "holdout_accuracy": 0.9672,
+  "test_positive_share": 0.50268,
+  "submission": {
+    "rows": 25000,
+    "positive": 12567,
+    "negative": 12433,
+    "sha256": "2fbeb44ef685f09a431e9f56c9cc7573271a9f4d8010fa8180d7bde4b4664b42"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5090 D v2",
+    "vram_gb": 23.9,
+    "amp": "torch.bfloat16"
+  },
+  "data_sha256": {
+    "train.csv": "7ac773a401d6ac9ae7860d86f29828f0784006a1c219f1cb1dec491ffaae2043",
+    "test.csv": "a7ea87ed4f9708849746e463d951122174ff8e3c0e44c8b70c6268a60d129b9f"
+  },
+  "total_minutes": 23.32,
+  "history": [
+    {
+      "update": 704,
+      "epoch": 0.5,
+      "holdout_accuracy": 0.9604
+    },
+    {
+      "update": 1407,
+      "epoch": 1.0,
+      "holdout_accuracy": 0.9636
+    },
+    {
+      "update": 1408,
+      "epoch": 1.001,
+      "holdout_accuracy": 0.9632
+    },
+    {
+      "update": 2112,
+      "epoch": 1.501,
+      "holdout_accuracy": 0.966
+    },
+    {
+      "update": 2814,
+      "epoch": 2.0,
+      "holdout_accuracy": 0.9672
+    }
+  ],
+  "timings": {
+    "train_minutes": 21.49,
+    "predict_minutes": 1.66
+  }
+}

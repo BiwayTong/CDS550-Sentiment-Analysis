@@ -1,0 +1,122 @@
+{
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_folds": 5,
+  "n_oof": 25000,
+  "oof_accuracy": 0.97248,
+  "oof_correct": 24312,
+  "oof_wilson_95": [
+    0.9703783457541645,
+    0.9744364702219533
+  ],
+  "oof_se": 0.0010346525909695483,
+  "per_fold": [
+    {
+      "fold": 0,
+      "n_val": 5000,
+      "accuracy": 0.9718,
+      "epochs": 1.0,
+      "minutes": 88.93,
+      "model": "mistralai/Mistral-Small-24B-Base-2501"
+    },
+    {
+      "fold": 1,
+      "n_val": 5000,
+      "accuracy": 0.9704,
+      "epochs": 1.0,
+      "minutes": 88.91,
+      "model": "mistralai/Mistral-Small-24B-Base-2501"
+    },
+    {
+      "fold": 2,
+      "n_val": 5000,
+      "accuracy": 0.9754,
+      "epochs": 1.0,
+      "minutes": 89.06,
+      "model": "mistralai/Mistral-Small-24B-Base-2501"
+    },
+    {
+      "fold": 3,
+      "n_val": 5000,
+      "accuracy": 0.9738,
+      "epochs": 1.0,
+      "minutes": 89.63,
+      "model": "mistralai/Mistral-Small-24B-Base-2501"
+    },
+    {
+      "fold": 4,
+      "n_val": 5000,
+      "accuracy": 0.971,
+      "epochs": 1.0,
+      "minutes": 89.63,
+      "model": "mistralai/Mistral-Small-24B-Base-2501"
+    }
+  ],
+  "per_fold_mean": 0.97248,
+  "per_fold_sd": 0.002076535576386796,
+  "model": "mistralai/Mistral-Small-24B-Base-2501",
+  "accuracy_by_length": [
+    {
+      "bucket": "<100",
+      "n": 3037,
+      "accuracy": 0.967072769180112,
+      "wilson_95": [
+        0.960112725427155,
+        0.9728526746778686
+      ]
+    },
+    {
+      "bucket": "100-199",
+      "n": 11702,
+      "accuracy": 0.9732524354811143,
+      "wilson_95": [
+        0.9701701301802677,
+        0.9760241186809162
+      ]
+    },
+    {
+      "bucket": "200-299",
+      "n": 4636,
+      "accuracy": 0.9717428817946505,
+      "wilson_95": [
+        0.9665682406902085,
+        0.9761363550873714
+      ]
+    },
+    {
+      "bucket": "300-499",
+      "n": 3635,
+      "accuracy": 0.971939477303989,
+      "wilson_95": [
+        0.9660522667839092,
+        0.9768302153774467
+      ]
+    },
+    {
+      "bucket": ">=500",
+      "n": 1990,
+      "accuracy": 0.978894472361809,
+      "wilson_95": [
+        0.9715954205869708,
+        0.9843481207655618
+      ]
+    }
+  ],
+  "test": {
+    "positive_share": 0.50004,
+    "unanimous_share": 0.97212,
+    "mean_fold_correlation": 0.9921980731638845,
+    "min_fold_correlation": 0.9883881718152684
+  },
+  "submission": {
+    "rows": 25000,
+    "positive": 12501,
+    "negative": 12499,
+    "sha256": "a5fc530b3ecd13404fb0376a99f7cff57fe698316d343f3de6c699a5cf53ac54"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "mode": "pseudo-label",
+  "command": "code\\pseudo_label.py --data-dir data --stage train --pseudo pseudo\\pseudo.csv --base runs\\deberta --preset large --output runs\\deberta-pl --weight 0.5 --epochs 1 --lr 5e-6",
+  "preset": "large",
+  "config": {
+    "model": "microsoft/deberta-v3-large",
+    "lr": 5e-06,
+    "epochs": 1.0,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "grad_ckpt": false
+  },
+  "base_run": "runs\\deberta",
+  "init_from_base": false,
+  "pseudo_csv": "pseudo\\pseudo.csv",
+  "n_pseudo": 16911,
+  "pseudo_weight": 0.5,
+  "pseudo_positive_share": 0.4967181124711726,
+  "max_len": 512,
+  "head": 128,
+  "seed": 7,
+  "split_seed": 42,
+  "holdout_frac": 0.1,
+  "n_train": 22500,
+  "n_holdout": 2500,
+  "holdout_accuracy": 0.9672,
+  "test_positive_share": 0.49144,
+  "history": [
+    {
+      "update": 0,
+      "epoch": 0.0,
+      "holdout_accuracy": 0.9672
+    },
+    {
+      "update": 1232,
+      "epoch": 0.5,
+      "holdout_accuracy": 0.9584
+    },
+    {
+      "update": 2464,
+      "epoch": 1.0,
+      "holdout_accuracy": 0.9652
+    }
+  ],
+  "submission": {
+    "rows": 25000,
+    "positive": 12286,
+    "negative": 12714,
+    "sha256": "cc4f338f6ed409c9df9042a8d83849b1a0f95fef8e5f2ccb127aad4b40b88c8f"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "torch": "2.11.0+cu128",
+    "transformers": "4.57.6",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5090 D v2"
+  },
+  "timings": {
+    "train_minutes": 9.72
+  },
+  "total_minutes": 11.53
+}
